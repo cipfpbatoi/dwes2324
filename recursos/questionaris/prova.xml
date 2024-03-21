@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+    <!-- Exercici 1 -->
+    <question type="essay">
+        <name>
+            <text>Exercici 1</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[<p>Genera una matriu de números aleatoris entre 1 i 500 no repetits de 10x10 i mostra-los en una taula, afegint una fila i una columna on es mostre la suma de cada fila i de cada columna. Els números par estaran en blau i els senars en vermell. Calen al meyns les següent funcions: <code>generaMatriu($n,$m)</code> i <code>espar($n)</code>.</p>]]></text>
+        </questiontext>
+        <generalfeedback format="html">
+            <text></text>
+        </generalfeedback>
+        <defaultgrade>1.5</defaultgrade>
+        <penalty>0.0</penalty>
+        <hidden>0</hidden>
+        <responseformat>editor</responseformat>
+        <responsefieldlines>15</responsefieldlines>
+        <graderinfo format="html">
+            <text><![CDATA[<p>Guia d'Avaluació per a l'Exercici 1:</p>
+            <ul>
+                <li><strong>Generació de la Matriu (0,4 punts)</strong>: Correcta generació de la matriu.</li>
+                <li><strong>Funció esPar (0,3 punts)</strong>: Implementació correcta de la funció esPar.</li>
+                <li><strong>Suma de Files i Columnes (0,4 punts)</strong>: Correcta suma de files i columnes.</li>
+                <li><strong>Estil Visual (0,2 punts)</strong>: Números parells en blau i senars en vermell.</li>
+                <li><strong>Presentació de Dades (0,2 punts)</strong>: Dades ben presentades en una taula.</li>
+            </ul>
+            ]]></text>
+        </graderinfo>
+        <responsetemplate format="html">
+            <text></text>
+        </responsetemplate>
+    </question>
+    <!-- Repeteix aquesta estructura per a cada exercici -->
+</quiz>

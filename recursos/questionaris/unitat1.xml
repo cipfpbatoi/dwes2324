@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+    <question type="multichoice">
+        <name>
+            <text>Ús principal de Composer en PHP</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[Quin és l'ús principal de Composer en PHP?]]></text>
+        </questiontext>
+        <answer fraction="0%">
+            <text>Crear documents PDF</text>
+        </answer>
+        <answer fraction="100">
+            <text>Gestionar la dependència</text>
+        </answer>
+        <answer fraction="0%">
+            <text>Registrar activitats del sistema</text>
+        </answer>
+        <answer fraction="0%">
+            <text>Crear tests unitaris</text>
+        </answer>
+    </question>
+    <question type="multichoice">
+        <name>
+            <text>Funció de la llibreria Monolog en PHP</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[Què permet fer la llibreria Monolog en PHP?]]></text>
+        </questiontext>
+        <answer fraction="0%">
+            <text>Gestionar bases de dades</text>
+        </answer>
+        <answer fraction="0%">
+            <text>Optimitzar el rendiment del servidor</text>
+        </answer>
+        <answer fraction="100">
+            <text>Registrar activitats del sistema</text>
+        </answer>
+        <answer fraction="0%">
+            <text>Traduir contingut a diversos idiomes</text>
+        </answer>
+    </question>
+    <question type="multichoice">
+        <name>
+            <text>Què és phpDocumentor?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[Què és phpDocumentor?]]></text>
+        </questiontext>
+        <answer fraction="0%">
+            <text>Una eina per a crear backups de bases de dades</text>
+        </answer>
+        <answer fraction="0%">
+            <text>Un gestor de continguts com WordPress</text>
+        </answer>
+        <answer fraction="100">
+            <text>Una eina per a documentar codi PHP</text>
+        </answer>
+        <answer fraction="0%">
+            <text>Un framework per a desenvolupament web</text>
+        </answer>
+    </question>
+    <question type="multichoice">
+        <name>
+            <text>Concepte de Web Scraping</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[Què és el Web Scraping?]]></text>
+        </questiontext>
+        <answer fraction="0%">
+            <text>Metodologia de proves en desenvolupament web</text>
+        </answer>
+        <answer fraction="100">
+            <text>Navegació i extracció automàtica d'informació de pàgines web</text>
+        </answer>
+        <answer fraction="0%">
+            <text>Encriptació de dades en transferències web</text>
+        </answer>
+        <answer fraction="0%">
+            <text>Gestió de bases de dades en línia</text>
+        </answer>
+    </question>
+    <question type="multichoice">
+        <name>
+            <text>Què és un API?</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[Què és un API?]]></text>
+        </questiontext>
+        <answer fraction="0%">
+            <text>Un servei de xat en línia</text>
+        </answer>
+        <answer fraction="100">
+            <text>Un conjunt de funcions que permeten l'intercanvi de dades entre aplicacions</text>
+        </answer>
+        <answer fraction="0%">
+            <text>Un servei de gestió de bases de dades en línia</text>
+        </answer>
+        <answer fraction="0%">
+            <text>Un servei de traducció de textos en línia</text>
+        </answer>
+    </question>
+    <question type="multichoice">
+        <name>
+            <text>Metodologia TDD en PHP</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[Quina eina s'utilitza en PHP per seguir la metodologia TDD (Test Driven Development)?]]></text>
+        </questiontext>
+        <answer fraction="0%">
+            <text>Composer</text>
+        </answer>
+        <answer fraction="100">
+            <text>PHPUnit</text>
+        </answer>
+        <answer fraction="0%">
+            <text>Monolog</text>
+        </answer>
+        <answer fraction="0%">
+            <text>Twig</text>
+        </answer>
+    </question>
+    <question type="multichoice">
+        <name>
+            <text>Proveïdors de Dades en Codeception</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[Quina és la funció dels proveïdors de dades en Codeception?]]></text>
+        </questiontext>
+        <answer fraction="0%">
+            <text>Desenvolupar interfícies d'usuari en PHP</text>
+        </answer>
+        <answer fraction="100">
+            <text>Provar amb diferents conjunts de dades utilitzant el mateix test</text>
+        </answer>
+        <answer fraction="0%">
+            <text>Gestió de llibreries i dependències en PHP</text>
+        </answer>
+        <answer fraction="0%">
+            <text>Automatització de navegació web i extracció de dades</text>
+        </answer>
+    </question>
+    <question type="multichoice">
+        <name>
+            <text>Legalitat del Web Scraping</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[Quin factor és important per determinar la legalitat del Web Scraping?]]></text>
+        </questiontext>
+        <answer fraction="0%">
+            <text>La velocitat de navegació i extracció de les dades</text>
+        </answer>
+        <answer fraction="100">
+            <text>Si el contingut està protegit per drets d'autor o restringit per usuari/contrasenya</text>
+        </answer>
+        <answer fraction="0%">
+            <text>El tipus de dades que s'extreu (text, imatges, vídeos, etc.)</text>
+        </answer>
+        <answer fraction="0%">
+            <text>La quantitat de dades que s'extreu en una sola sessió</text>
+        </answer>
+    </question>
+    <question type="multichoice">
+        <name>
+            <text>Recomanació per al Web Scraping legal</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[Quina recomanació és important seguir per a realitzar Web Scraping de manera legal i ètica?]]></text>
+        </questiontext>
+        <answer fraction="0%">
+            <text>Utilitzar sempre VPNs o proxies</text>
+        </answer>
+        <answer fraction="100">
+            <text>Estudiar l'arxiu 'robots.txt' del lloc web</text>
+        </answer>
+        <answer fraction="0%">
+            <text>Extraure dades exclusivament de llocs web governamentals</text>
+        </answer>
+        <answer fraction="0%">
+            <text>Limitar la freqüència d'accés a la pàgina web</text>
+        </answer>
+    </question>
+    <question type="multichoice">
+        <name>
+            <text>Uso básico de DOMPDF</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[Quins són els passos bàsics per utilitzar DOMPDF per convertir HTML en PDF en PHP?]]></text>
+        </questiontext>
+        <answer fraction="0%">
+            <text>Instal·lar DOMPDF, configurar l'entorn de servidor i escriure HTML</text>
+        </answer>
+        <answer fraction="0%">
+            <text>Descarregar DOMPDF, configurar CSS i utilitzar la funció 'pdf_create'</text>
+        </answer>
+        <answer fraction="100">
+            <text>Incloure autoloader, utilitzar la classe Dompdf, i cridar els mètodes 'loadHtml', 'render' i 'stream'</text>
+        </answer>
+        <answer fraction="0%">
+            <text>Utilitzar un editor visual HTML, renderitzar en PDF i descarregar el fitxer</text>
+        </answer>
+    </question>
+    <question type="multichoice">
+        <name>
+            <text>Components de la llibreria Goutte de PHP</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[Quins components inclou la llibreria Goutte de PHP?]]></text>
+        </questiontext>
+        <answer fraction="0%">
+            <text>Un navegador web i un intèrpret de JavaScript</text>
+        </answer>
+        <answer fraction="100">
+            <text>Un navegador web , un crawler in un selector de CSS</text>
+        </answer>
+        <answer fraction="0%">
+            <text>Un crawler i un intèrpret de JavaScript</text>
+        </answer>
+        <answer fraction="0%">
+            <text>Un crawler i un gestor de bases de dades</text>
+        </answer>
+    </question>
+    <question type="multichoice">
+        <name>
+            <text>Funció de la llibreria Goutte de PHP</text>
+        </name>
+        <questiontext format="html">
+            <text><![CDATA[Quina és la funció principal de la llibreria Goutte de PHP?]]></text>
+        </questiontext>
+        <answer fraction="0%">
+            <text>Crear documents PDF</text>
+        </answer>
+        <answer fraction="100">
+            <text>Automatitzar la navegació web i extracció de dades</text>
+        </answer>
+        <answer fraction="0%">
+            <text>Registrar activitats del sistema</text>
+        </answer>
+        <answer fraction="0%">
+            <text>Crear tests unitaris</text>
+        </answer>
+    </question>
+</quiz>
