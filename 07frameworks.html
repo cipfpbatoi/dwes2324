@@ -1,0 +1,989 @@
+
+<!doctype html>
+<html lang="ca" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://cipfpbatoi.github.io/dwes2223/07frameworks.html">
+      
+      
+        <link rel="prev" href="05accesoDatos.html">
+      
+      
+        <link rel="next" href="07laravelRutesVistes.html">
+      
+      
+      <link rel="icon" href="imagenes/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.41">
+    
+    
+      
+        <title>7.- Framework Laravel - Desenvolupament web en entorn de Servidor</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-X6D0LR7TC8"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-X6D0LR7TC8",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-X6D0LR7TC8",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="Teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#frameworks-php-laravel" class="md-skip">
+          Salta el contingut
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Capçalera">
+    <a href="index.html" title="Desenvolupament web en entorn de Servidor" class="md-header__button md-logo" aria-label="Desenvolupament web en entorn de Servidor" data-md-component="logo">
+      
+  <img src="imagenes/logofp.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Desenvolupament web en entorn de Servidor
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              7.- Framework Laravel
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="Teal"  aria-label="Canviar a mode nit"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Canviar a mode nit" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="light-blue" data-md-color-accent="Teal"  aria-label="Canviar a mode dia"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Canviar a mode dia" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Neteja" aria-label="Neteja" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicialitzant cerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navegació" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Desenvolupament web en entorn de Servidor" class="md-nav__button md-logo" aria-label="Desenvolupament web en entorn de Servidor" data-md-component="logo">
+      
+  <img src="imagenes/logofp.png" alt="logo">
+
+    </a>
+    Desenvolupament web en entorn de Servidor
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inicio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01arquitecturas.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.- Arquitectures Web
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02php.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.- El llenguatge PHP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03web.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.- Programació Web
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="04phpoo.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.- PHP Orientat a Objectes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="05accesoDatos.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.- Accès a Dades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="07frameworks.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    7.- Framework Laravel
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="07laravelRutesVistes.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.1- Rutes i vistes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="07laravelControladors.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.2- Controladors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="07laravelModelsDades.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.3- Models i Dades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="07laravelValidacioAutenticacio.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.4- Validació i Autenticació
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="07laravelNotificacions.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.5- Notificacions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="07laravelTasques.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.6- Tasques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="07laravelBatoiBook.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.7- Activitat Batoi Books
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="08rest.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.- Serveis Web
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="09mashup.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    9.- Webs Hibrides
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="10solucions.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.- Solucions Exercicis propossats
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<style>
+    img { margin: 20px 0; border-radius: 8px; }
+
+    .alert { color: #BD1550; }
+    .warning { color: #E97F02; }
+    .success { color: #8A9B0F; }
+
+    .center { text-align: center; }
+    .right { text-align: right; }
+
+    .img-small { max-width: 200px; margin: auto; }
+    .img-medium { max-width: 400px; margin: auto; }
+    .img-large { max-width: 800px; margin: auto; }
+
+    .leyenda {
+        font-size: small;
+        margin: 10px 0;
+    }
+</style>
+
+<h1 id="frameworks-php-laravel">Frameworks PHP. Laravel<a class="headerlink" href="#frameworks-php-laravel" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>Duració estimada: 26hores</p>
+</blockquote>
+<h1 id="introduccio-als-frameworks-php-i-laravel">INTRODUCCIÓ ALS FRAMEWORKS PHP I LARAVEL<a class="headerlink" href="#introduccio-als-frameworks-php-i-laravel" title="Permanent link">&para;</a></h1>
+<h2 id="frameworks">Frameworks<a class="headerlink" href="#frameworks" title="Permanent link">&para;</a></h2>
+<p>Un <strong>framework</strong> és una eina que proporciona una sèrie de mòduls que ajuden a organitzar i desenvolupar un producte programari. En el cas concret dels <strong>frameworks PHP</strong>, la majoria d'ells proporcionen una sèrie de comandos o eines per a crear projectes amb una estructura determinada (normalment, seguint el patró <strong>MVC</strong> que veurem després), de manera que ja donen una base de treball feta, i facilitats per a poder crear el model de dades, la connexió a la base de dades, les rutes de les diferents seccions de l'aplicació, etc.
+Els frameworks PHP com Laravel, Symfony, CodeIgniter, i CakePHP, ofereixen eines robustes per accelerar el desenvolupament web. Un framework ben dissenyat pot ajudar a :</p>
+<ul>
+<li>Evitar problemes comuns </li>
+<li>Estandarditzar el codi </li>
+<li>Facilitar el manteniment. </li>
+</ul>
+<p>Entre aquests, Laravel destaca per les seves fortes funcionalitats, comunitat activa i constant evolució.</p>
+<h3 id="exemples-de-frameworks-php">Exemples de frameworks PHP<a class="headerlink" href="#exemples-de-frameworks-php" title="Permanent link">&para;</a></h3>
+<p>Actualment existeix una gran varietat de frameworks PHP que triar per a desenvolupar les nostres aplicacions. Alguns dels més populars són:</p>
+<ul>
+<li>
+<p><strong>Laravel</strong>, un framework relativament recent (va ser creat en 2011), i que ha guanyat bastant popularitat en els últims anys. La seua ﬁlosofia és el poder desenvolupar projectes de manera elegant i simple. Compta amb una àmplia comunitat de suport darrere, i se li augura un futur bastant consolidat.</p>
+</li>
+<li>
+<p><strong>Symfony</strong>, creat en 2005, compta amb més camí fet que Laravel, i una estructura més consolidada. En les seues primeres versions es presentava com un framework més monolític (s'instal·laven massa mòduls que després no necessitàvem), però recentment ha adaptat la seua estructura per a fer-la més modular.</p>
+</li>
+<li>
+<p><strong>CodeIgniter</strong>, un framework més lleuger que els anteriors, però també amb un ampli grup de seguidors i desenvolupadors. Va ser creat en 2006 i, encara que ha patit una etapa d'abandó, ha tornat a agafar força en els últims anys, potser a causa de la seua simplicitat d'ús.</p>
+</li>
+<li>
+<p><strong>CakePHP</strong>, creat en 2005, és un altre framework similar a CodeIgniter quant a simplicitat i facilitat d'ús. Té una àmplia comunitat també darrere que li dóna suport.</p>
+</li>
+<li>
+<p><strong>Zend</strong>, creat en 2006, és un altre framework bastant popular, encara que potser amb menor visibilitat que els anteriors hui dia, a l'altura de CakePHP.</p>
+</li>
+<li>
+<p><strong>Phalcon</strong>, un altre framework de recent creació (2012), amb una potent capacitat de processament de pàgines PHP, i la possibilitat de treballar com microframework (més lleuger, per a oferir funcionalitats molt especíﬁcas) o com framework complet.</p>
+</li>
+</ul>
+<p>De fet, molts frameworks més antics també han incorporat recentment la possibilitat d'executar-los com microframeworks. Quasi tots els frameworks PHP tenen una sèrie de característiques comunes, com són l'ús del patró MVC per a desenvolupar els seus projectes, la injecció de dependències per a gestionar recursos com ara connexions a bases de dades, o elements compartits per tota l'aplicació, la possibilitat de desenvolupar tant webs completes com serveis REST accessibles des de diversos clients, etc.</p>
+<h4 id="quin-triar">Quin triar<a class="headerlink" href="#quin-triar" title="Permanent link">&para;</a></h4>
+<p>A l'hora de decantar-nos per l'un o l'altre framework, no ens hauríem de deixar enganyar per la popularitat d'aquest, en termes de quota de mercat. En aqueix terreny, Symfony i Laravel probablement són els més demandats, però la corba d'aprenentatge en ells pot ser que siga més pronunciada que en uns altres a priori més senzills, com CodeIgniter o CakePHP.</p>
+<p>Cada framework pot estar millor orientat que un altre per a determinats tipus de projectes o necessitats. Si volem aprendre una cosa ràpida per a llançar l'aplicació com més prompte millor, potser Symfony <strong>no</strong> és la millor opció. Si, per contra, preferim xopar-nos d'un framework amb una comunitat important darrere que ens puga donar suport i ens garantisca un temps de vida llarg, llavors Symfony o Laravel poden ser millors candidats.</p>
+<h4 id="per-que-laravel">Per què Laravel?<a class="headerlink" href="#per-que-laravel" title="Permanent link">&para;</a></h4>
+<h6 id="comparativa-amb-altres-frameworks">Comparativa amb Altres Frameworks<a class="headerlink" href="#comparativa-amb-altres-frameworks" title="Permanent link">&para;</a></h6>
+<p>Comparat amb altres frameworks com Symfony o CodeIgniter, Laravel sobresurt per la seva sintaxi expressiva i elegant, una curva d'aprenentatge amigable i un ecosistema ric. Per exemple, mentre Symfony pot ser més adequat per a aplicacions d'alta complexitat, Laravel és sovint preferit per la seva facilitat d'ús i eficiència en el desenvolupament de projectes de diverses mides.</p>
+<h6 id="raons-especifiques-per-triar-laravel">Raons Específiques per Triar Laravel<a class="headerlink" href="#raons-especifiques-per-triar-laravel" title="Permanent link">&para;</a></h6>
+<p>Laravel s'adapta bé a una àmplia gamma d'aplicacions, des de llocs web simples fins a aplicacions empresarials complexes. Destaca per la seva arquitectura MVC, suport natu per a APIs RESTful, i funcions com Eloquent ORM, que simplifiquen les operacions de bases de dades. A més, Laravel posseeix una gran documentació i una comunitat vibrant, facilitant l'aprenentatge i la resolució de problemes.</p>
+<h6 id="tendencies-recents-i-actualitzacions-de-laravel">Tendències Recents i Actualitzacions de Laravel<a class="headerlink" href="#tendencies-recents-i-actualitzacions-de-laravel" title="Permanent link">&para;</a></h6>
+<p>En les versions recents, Laravel ha incorporat millores significatives en rendiment, seguretat i funcionalitats modernes. Això inclou l'actualització a les darreres versions de PHP, millorant la compatibilitat i rendiment. Es recomana estar atent a les últimes actualitzacions per aprofitar al màxim el potencial de Laravel.</p>
+<h6 id="exemples-practics-i-estudis-de-casos">Exemples Pràctics i Estudis de Casos<a class="headerlink" href="#exemples-practics-i-estudis-de-casos" title="Permanent link">&para;</a></h6>
+<p>En el món real, Laravel s'ha utilitzat en una àmplia varietat de projectes, des de sistemes de gestió de continguts fins a aplicacions de comerç electrònic. Aquesta versatilitat és testimoni de la seva eficàcia com a eina de desenvolupament.Aquí teniu alguns exemples:</p>
+<ul>
+<li>Laracasts: És una plataforma d'aprenentatge en línia enfocada a PHP i Laravel, i fa un ús extensiu de Laravel.</li>
+<li>Vogue Archive: El lloc web de l'arxiu de Vogue, que ofereix accés a tots els números de la revista des de 1892, està construït amb Laravel.</li>
+<li>MyRank: Una plataforma en línia per a l'educació i l'avaluació, MyRank utilitza Laravel per gestionar el seu contingut i les funcions interactives.</li>
+<li>Alison: Un dels portals d'aprenentatge en línia més grans, Alison també fa ús de Laravel per a la seva infraestructura web.</li>
+<li>Startups.co: Una plataforma per a emprenedors que busca ajuda amb la planificació, el finançament i la creixença dels seus negocis. Laravel és utilitzat per a mantenir la seva plataforma.</li>
+</ul>
+<h2 id="caracteristiques-laravel">Característiques Laravel<a class="headerlink" href="#caracteristiques-laravel" title="Permanent link">&para;</a></h2>
+<p><strong>Laravel</strong> és un framework de codi obert per al desenvolupament d'aplicacions web en PHP que posseeix una sintaxi simple, expressiva i elegant. Va ser creat en 2011 per Taylor Otwell, inspirant-se en <strong>Ruby on Rails i Symfony</strong>, dels quals ha adoptat els seus principals avantatges.</p>
+<p>Laravel facilita el desenvolupament simplificant el treball amb tasques comunes com l'autenticació, el enrutamiendo, gestió sessions, l'emmagatzematge en caché, etc. Algunes de les principals característiques i avantatges de Laravel són:</p>
+<ul>
+<li>Esta dissenyat per a desenvolupar sota el patró <strong>MVC</strong> (model - vista - controlador), centrant-se en la correcta separació i modularització del codi. El que facilita el treball en equip, així com la claredat, el manteniment i la reutilització del codi.</li>
+<li>Eloquent, el ORM de Laravel, fa que treballar amb bases de dades sigui més senzill i intuïtiu, especialment en la gestió de relacions complexes.</li>
+<li>Permet la gestió de <strong>bases de dades</strong> i la manipulació de taules des de codi, mantenint un control de versions de les mateixes mitjançant el seu sistema de <strong>Migracions</strong>.</li>
+<li>Utilitza un <strong>sistema de plantilles</strong> per a les vistes anomenat <strong>Blade</strong>, el qual fa ús de la cache per a donar-li major velocitat. Blade facilita la
+  creació de <strong>vistes</strong> mitjançant l'ús de layouts, herència i seccions.</li>
+<li>Facilita l'extensió de funcionalitat mitjançant paquets o <strong>llibreries externes</strong>. D'aquesta forma és molt senzill afegir paquets que ens
+  faciliten el desenvolupament d'una aplicació i ens estalvien molt temps de programació.</li>
+<li>Incorpora un <strong>intèrpret de línia de comandos</strong> anomenat <strong>Artisan</strong> que ens ajudarà amb un munt de tasques rutinàries com la creació de
+  diferents components de codi, treball amb la base de dades i migracions, gestió de rutes, cachés, cues, tasques programades, etc.</li>
+<li>Laravel Jetstream ofereix una implementació robusta per a l'autenticació i la gestió de sessions. Laravel Sanctum es utilitza per a APIs tokenitzades, proporcionant una solució elegant per a la autenticació d'APIs.</li>
+<li>Laravel inclou proteccions de seguretat com la protecció CSRF, xifrat segur de contrasenyes i defenses contra injeccions SQL, garantint un entorn segur per al desenvolupament d'aplicacions web.</li>
+<li>Amb Laravel, és possible construir arquitectures de microserveis eficaces, utilitzant Laravel Lumen o integrant-se amb altres serveis i APIs.</li>
+<li>Laravel facilita la creació d'APIs RESTful amb característiques com les API Resources i la integració amb Laravel Passport per l'autenticació OAuth.</li>
+<li>La comunitat de Laravel és una de les més actives i de suport en el món PHP, amb recursos com Laracasts, paquets de tercers, i fòrums extensos.</li>
+</ul>
+<h2 id="primers-passos-amb-laravel">Primers passos amb Laravel<a class="headerlink" href="#primers-passos-amb-laravel" title="Permanent link">&para;</a></h2>
+<h3 id="installacio-amb-docker-laravel-sail">Instal·lacio amb docker (laravel sail)<a class="headerlink" href="#installacio-amb-docker-laravel-sail" title="Permanent link">&para;</a></h3>
+<p>Si ja esteu desenvolupant Linux i Docker Compose està instal·lat, podeu utilitzar una senzilla ordre de terminal per a crear un nou projecte Laravel. Per exemple, per a crear una nova aplicació Laravel en un directori anomenat "exemple-app", podeu executar l'ordre següent al terminal:</p>
+<p>curl -s https://laravel.build/example-app | bash</p>
+<p>Per descomptat, podeu canviar "exemple-app" en aquest URL a qualsevol cosa que vulgueu - només assegureu-vos que el nom de l'aplicació només conté caràcters alfanumèrics, guions i guions baixos. El directori de l'aplicació Laravel es crearà dins del directori des del qual executeu l'ordre.</p>
+<p>La instal·lació del <strong>Sail</strong> pot trigar diversos minuts mentre els contenidors de l'aplicació del <strong>sail</strong> es construeixen a la vostra màquina local.</p>
+<p>Després de crear el projecte, </p>
+<p>Seria bó comprovar que el .env inclou la següent configuració:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">WWWUSER = 1000</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">WWWGROUP = 1000</span>
+</code></pre></div>
+<p>Ara podeu navegar al directori de l'aplicació i iniciar Laravel Sail. Laravel Sail proporciona una interfície senzilla de línia d'ordres per a interactuar amb la configuració predeterminada de l'acoblador Laravel:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">cd exemple-app &amp;&amp; ./vendor/bin/sail up &amp;</span>
+</code></pre></div></p>
+<p>Un cop iniciats els contenidors Docker de l'aplicació, podeu accedir a l'aplicació al vostre navegador web a: http://localhost.</p>
+<p>Per a executar una terminal en el contenidor haurem d'executar:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">./vendor/bin/sail bash</span>
+</code></pre></div>
+<p>I per a inicialitzar la base de dades des de dins del contenidor:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">php artisan migrate</span>
+</code></pre></div>
+<h5 id="phpmyadmin">phpmyadmin<a class="headerlink" href="#phpmyadmin" title="Permanent link">&para;</a></h5>
+<p>Si volem que funcione el phpmyadmin haurien d'afegir un altre contenidor docker, o farem incluint el següent codi en el docker-compose.yml</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">myadmin:</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="x">    image: &#39;phpmyadmin:latest&#39;</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">    ports:</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">      - 8080:80</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">    environment:</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">      MYSQL_ROOT_PASSWORD: &#39;${DB_PASSWORD}&#39;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">    links:</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">      - &quot;mysql:db&quot;</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">    depends_on:</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">      - mysql</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">    networks:</span>
+<span class="linenos" data-linenos="12 "></span><span class="x">      - sail</span>
+</code></pre></div>
+<h3 id="installacio-des-de-repositori-github">Instal·lació des de repositori github<a class="headerlink" href="#installacio-des-de-repositori-github" title="Permanent link">&para;</a></h3>
+<p>Seguiu aquests passos per a un repositori de Laravel amb Sail després de clonar des de Github. Aquest és un exemple</p>
+<ol>
+<li>
+<p><strong>Clona el repositori, exemple:</strong></p>
+<p>$ git clone https://github.com/example/laravel-backend-api.git</p>
+</li>
+<li>
+<p><strong>Canvia el directori a l'aplicació/projecte de nova creació.</strong></p>
+<p>$ cd laravel-backend-api</p>
+</li>
+<li>
+<p><strong>Copia el fitxer .env</strong></p>
+<p>$ cp .env.example .env</p>
+</li>
+<li>
+<p><strong>Obre .env per a coincidir la configuració amb les línies següents:</strong></p>
+</li>
+</ol>
+<p>```php
+   DB_CONNECTION=mysql
+   DB_HOST=mysql
+   DB_PORT=3306
+   DB_DATABASE=batoiBook
+   DB_USERNAME=root
+   DB_PASSWORD=1234</p>
+<ol start="5">
+<li>** Afegix el phpmyadmin a docker-compose.yml**</li>
+</ol>
+<p><code>php
+   myadmin:
+       image: 'phpmyadmin:latest'
+       ports:
+         - 8080:80
+       environment:
+         MYSQL_ROOT_PASSWORD: '${DB_PASSWORD}'
+       links:
+         - "mysql:db"
+       depends_on:
+         - mysql
+       networks:
+         - sail</code></p>
+<ol start="5">
+<li>
+<p><strong>Instal·la totes les dependències requerides</strong></p>
+<p>$ docker run --rm -v $(pwd):/opt -w /opt laravelsail/php82-composer:latest composer install</p>
+<p>NOTA: Això pot trigar una estona si aquesta és la primera vegada que s'instal·la com a contenidor.</p>
+</li>
+<li>
+<p><strong>Executa els servidors amb Sail</strong></p>
+<p>$ vendor/bin/sail up -d</p>
+</li>
+<li>
+<p><strong>Entra en el phpmyadmin (localhost:8080) i crea la base de dades batoiBook.</strong></p>
+</li>
+<li>
+<p><strong>Inicia el terminal del contenidor</strong></p>
+<p>$ vendor/bin/sail bash</p>
+</li>
+<li>
+<p><strong>Genera la clau APP.KEY.</strong></p>
+<p>$ php artisan key:generate</p>
+</li>
+<li>
+<p><strong>Construeix la llavor.</strong></p>
+<p>$ php artisan migrate:fresh --seed</p>
+</li>
+<li>
+<p><strong>Genera els node_modules</strong></p>
+<p>$ npm install</p>
+<p>$ npm run build</p>
+</li>
+</ol>
+<p>Ara podeu obrir la vostra aplicació amb el vostre navegador: http://localhost</p>
+<p>Ara que ja tenim tot el sistema preparat per a desenvolupar projectes Laravel, vegem els primers passos que hem de donar per a crear aquests projectes.</p>
+<h3 id="el-comanament-artisan">El comanament Artisan<a class="headerlink" href="#el-comanament-artisan" title="Permanent link">&para;</a></h3>
+<p>Laravel inclou un interfície de línia de comandos (CLI, Command line interface) anomenat <strong>Artisan</strong>. Aquesta utilitat ens va a permetre realitzar múltiples tasques necessàries durant el procés de desenvolupament o desplegament a producció d'una aplicació, per la qual cosa ens facilitarà i accelerarà el treball.
+Per a veure una llista de totes les opcions que inclou Artisan podem executar el següent comando en un consola o terminal del sistema en la carpeta arrel del nostre projecte:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>php artisan list
+</code></pre></div>
+<p>Si volem obtenir una ajuda més detallada sobre alguna de les opcions de Artisan simplement hem d'escriure la paraula <strong>help</strong> davant del comando en qüestió, per exemple:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>php artisan help migrate
+</code></pre></div>
+<p>A poc a poc anirem veient més opcions de Artisan, de moment anem a comentar solament dues opcions importants: el llistat de rutes i la generació de codi.</p>
+<p>Per a veure un llistat amb totes les rutes que hem definit en el fitxer routes.php podem executar el comando:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>php artisan route:list
+</code></pre></div>
+<p>Açò ens mostrarà una taula amb el mètode, l'adreça, l'acció i els filtres definits per a totes les rutes. D'aquesta forma podem comprovar totes les rutes de la nostra aplicació i assegurar-nos que estiga tot correcte.</p>
+<h3 id="estructura-dun-projecte-laravel">Estructura d'un projecte Laravel<a class="headerlink" href="#estructura-dun-projecte-laravel" title="Permanent link">&para;</a></h3>
+<p>En crear un nou projecte de Laravel se'ns generarà una estructura de carpetes i fitxers per a organitzar el nostre codi. És important que coneguem perquè val cada element i on hem de col·locar el nostre codi. Les carpetes que més utilitzarem i les que millor haurem de conèixer són:</p>
+<ul>
+<li>
+<p><strong>app</strong> – Conté el codi central de la vostra aplicació. Aviat explorarem aquest directori amb més detall; no obstant això, gairebé totes les classes de la vostra aplicació estaran en aquest directori.</p>
+</li>
+<li>
+<p><strong>bootstrap</strong> - Conté el fitxer app.php que arrossega l'entorn de treball. Aquest directori també alberga un directori de memòria cau que conté els fitxers generats per l'entorn de treball per a l'optimització del rendiment, com ara els fitxers de memòria cau de rutes i serveis. Normalment no hauríeu de modificar cap fitxer dins d'aquest directori.</p>
+</li>
+<li><strong>config</strong> – conté tots els fitxers de configuració de l'aplicació. És una gran idea llegir tots aquests fitxers i familiaritzar-se amb totes les opcions disponibles.</li>
+<li><strong>database</strong> – En aquesta carpeta s'inclou tot el relacionat amb la definició de la base de dades del nostre projecte. Dins d'ella podem trobar al seu torn tres carpetes: factors, migrations i seeds. En el capítol sobre base de dades analitzarem millor el seu contingut.</li>
+<li><strong>public</strong> – conté el fitxer index.php, que és el punt d'entrada per a totes les peticions que entren a la vostra aplicació i configura la càrrega automàtica. Aquest directori també allotja els vostres actius com imatges, JavaScript i CSS.</li>
+<li><strong>lang</strong> – En aquesta carpeta es guarden arxius PHP que contenen arrays amb els textos del nostre lloc web en
+  diferents llenguatges, solament serà necessari utilitzar-la en cas que es desitge que l'aplicació es puga traduir.</li>
+<li><strong>resources</strong> – conté les vostres vistes, així com els vostres actius crus i no compilats com CSS o JavaScript.</li>
+<li><strong>storage</strong> – En aquesta carpeta Laravel emmagatzema tota la informació interna necessaris per a l'execució de la web, com són els arxius de sessió, la caché, la compilació de les vistes, fique informació i els logs del sistema. El directori storage/app/public es pot utilitzar per emmagatzemar fitxers generats per l'usuari, com ara avatars de perfil, que haurien de ser accessibles públicament. Hauríeu de crear un enllaç simbòlic al públic/emmagatzematge que apunti a aquest directori. Podeu crear l'enllaç utilitzant l'ordre php artisan storage:link Artisan.</li>
+<li><strong>routes</strong> – En aquesta carpeta es defineixen totes les rutes del nostre lloc web, enllaçant una URL del navegador amb un mètode d'un controlador. A més ens permet realitzar validacions (mitjançant Middleware) i altres operacions sobre les rutes del nostre lloc. Hi han per a accedir a contingut web normal
+  ( web.php ), com per a serveis web ( api.php ), com per a comandos i altres opcions.</li>
+<li><strong>tests</strong>–Esta carpeta se utilitza per als fixers amb les proves automatitzades. Laravel inclou un sistema que facilita tot el procés de
+  proves amb PHPUnit.</li>
+<li><strong>vendor</strong> – En aquesta carpeta s'allotgen totes les llibreries i dependències que conformen el framework de Laravel. Aquesta carpeta tampoc l'haurem de modificar, ja que tot el codi que conté són llibreries que s'instal·len i actualitzen mitjançant l'eina <strong>Composer</strong>.
+  A més en la carpeta arrel també podem trobar dos fitxers molt importants i que també utilitzarem:</li>
+<li><strong>.env</strong> – Aquest fitxer s'utilitza per a emmagatzemar els valors de configuració que són propis de la màquina o instal·lació actual. El que ens permet canviar fàcilment la configuració segons la màquina en la qual s'instal·le i
+  tenir opcions diferents per a producció, per a diferents desenvolupadors, etc. Important, aquest fitxer hauria d'estar en el <strong>.gitignore</strong>.</li>
+<li><strong>composer.json</strong> – Aquest fitxer és l'utilitzat per Composer per a realitzar la instal·lació de Laravel. En una instal·lació inicial
+  únicament s'especificarà la instal·lació d'un paquet, el propi framework de Laravel, però podem especificar la instal·lació d'altres llibreries o paquets externs que afigen funcionalitat a Laravel.</li>
+</ul>
+<h4 id="carpeta-app">Carpeta App<a class="headerlink" href="#carpeta-app" title="Permanent link">&para;</a></h4>
+<p>La majoria de la vostra aplicació es troba al directori d'aplicacions. De manera predeterminada, aquest directori es troba a l'espai de noms d'App i el Composer el carrega automàticament utilitzant l'estàndard de càrrega automàtica PSR-4.
+El directori d'aplicacions conté una varietat de directoris addicionals com Console, Http i Providers. Penseu en els directoris Console i Http com proporcionar una API al nucli de la vostra aplicació. El protocol HTTP i la CLI són mecanismes per interactuar amb la vostra aplicació, però en realitat no contenen lògica d'aplicació. En altres paraules, són dues maneres d'emetre ordres a la vostra sol·licitud. El directori Consola conté totes les vostres ordres de l'Artisan, mentre que el directori Http conté les vostres controladores, programari intermediari i peticions.</p>
+<p>Es generaran una varietat d'altres directoris dins del directori d'aplicacions a mesura que utilitzeu les ordres make Artisan per generar classes. Així, per exemple, el directori d'apps/Jobs no existirà fins que executeu l'ordre make:job Artisan per generar una classe de treball.
+* <strong>app/Console</strong> - Per definir els nostres comanaments
+* <strong>app/Exceptions</strong> - Per definir les nostres exempcions
+* <strong>app/Models</strong> - Per a definir els models
+* <strong>app/Http/Controllers</strong> – Conté tots els arxius amb les classes dels controladors que serveixen per a interactuar amb els models, les vistes i manejar la lògica de l'aplicació.
+* <strong>app/Http/Middleware</strong> – Són els filtres o classes intermèdies que podem utilitzar per a realitzar determinades accions, com la validació de permisos, abans o després de l'execució d'una petició a una ruta del nostre projecte web.
+* <strong>Providers</strong> - Conté els proveïdors de serveis de l'aplicació, més els que puguem definir nosaltres.
+* A més, ací s'inclouen, o es poden incloure, carpetes addicionals per a la nostra aplicació, com la carpeta <strong>Events</strong> per a definir els esdeveniments que ocórreguen, o diferents carpetes per a emmagatzemar el model de dades o classes de la nostra aplicació.</p>
+<h3 id="arquitectura-dun-projecte-laravel">Arquitectura d'un projecte Laravel<a class="headerlink" href="#arquitectura-dun-projecte-laravel" title="Permanent link">&para;</a></h3>
+<p>Una vegada vista l'estructura de carpetes i arxius que es genera quan creguem un projecte Laravel, és important també tindre unes nocions bàsiques de com s'interconnecten els elements internament, i què fa que un projecte Laravel es puga posar en marxa.</p>
+<h4 id="els-proveidors-de-serveis-service-providers">Els proveïdors de serveis (service providers)<a class="headerlink" href="#els-proveidors-de-serveis-service-providers" title="Permanent link">&para;</a></h4>
+<p>Els proveïdors de serveis són els principals responsables de l'arrancada o posada en marxa de tot projecte Laravel, la qual cosa es coneix com bootstrapping. S'encarreguen de registrar els components del projecte, dependències externes, classes i mètodes deﬁnidos per nosaltres, per a fer-los accessibles a la resta de l'aplicació.</p>
+<p>Si obrim l'arxiu <strong>config/app.php</strong> del nostre projecte Laravel, veurem entre altres coses una secció denominada <strong>providers</strong>, on es deﬁnix un array amb tots els proveïdors de serveis que es posen en marxa en arrancar l'aplicació. Entre altres coses, hi ha proveïdors de serveis per a accés a la base de dades (<strong>DatabaseServiceProvider</strong>), autenticació d'usuaris (<strong>AuthServiceProvider</strong>), etc.</p>
+<h5 id="les-classes-del-nucli-de-laravel">Les classes del nucli de Laravel<a class="headerlink" href="#les-classes-del-nucli-de-laravel" title="Permanent link">&para;</a></h5>
+<p>Per a poder desenvolupar els components de les aplicacions Laravel, és necessari comptar amb una infraestructura prèvia de classes que ens faciliten aquesta tasca. Així, al llarg de les següents sessions farem ús d'algunes classes proporcionades per Laravel que vénen preinstal·lades amb el framework, com ara <strong>Route,Model</strong> etc, i que ens permeten o bé heretar d'elles per a crear altres subclasses (com és el cas dels models de dades) o bé utilitzar alguns mètodes d'utilitat que aquestes classes proporcionen (com el cas del classe <strong>Route</strong>, per exemple).</p>
+<p>Convé tindre present que totes aquestes classes pertanyents al nucli de Laravel parteixen d'un espai de noms comú anomenat <strong>Illuminate</strong> , per la qual cosa, en els arxius font on les utilitzem, serà freqüent trobar instruccions <strong>use</strong> que comencen per aquest espai de noms. Per exemple:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">use Illuminate\Database\Eloquent\Model;</span>
+</code></pre></div>
+<h5 id="altres-elements">Altres elements<a class="headerlink" href="#altres-elements" title="Permanent link">&para;</a></h5>
+<p>A més dels dos pilars anteriors sobre els quals se sustenta fonamentalment el desenvolupament de projectes en Laravel, podem parlar d'altres elements que ens poden resultar d'utilitat en el desenvolupament, com són els facades i els contracts.</p>
+<p>Les facades proporcionen una interfície estàtica als elements de l'aplicació, de manera que faciliten l'accésa uns certs mètodes o utilitats. Per exemple, la facade    <strong>cache</strong> permet accedir de manera senzilla amb el seu mètode <strong>get</strong>a unes certes propietats cachejades prèviament.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">return Cache::get(&#39;key&#39;);</span>
+</code></pre></div>
+<p>Els <strong>contracts</strong> són un conjunt d'interfícies que proporcionen el nucli de serveis oferits per Laravel. Per exemple, mètodes per a enviar e-mails, o encolar tasques en una cola de prioritat, etc.</p>
+<h3 id="mvc-model-vista-controlador">MVC: Model - Vista - Controlador<a class="headerlink" href="#mvc-model-vista-controlador" title="Permanent link">&para;</a></h3>
+<p>El model–vista–controlador (MVC) és un patró d'arquitectura de programari que separa les dades i la lògica de negoci d'una aplicació de la interfície d'usuari i el mòdul encarregat de gestionar els esdeveniments i les comunicacions. Per a açò MVC proposa la construcció de tres components diferents que són el model, la vista i el controlador, és a dir, d'una banda defineix components per a la representació de la informació, i d'altra banda per a la interacció de l'usuari. Aquest patró d'arquitectura de programari es basa en les idees de <strong>reutilització de codi</strong> i la <strong>separació de conceptes</strong>, característiques que cerquen facilitar la tasca de desenvolupament d'aplicacions i el seu posterior manteniment.
+De manera genèrica, els components de MVC es podrien definir com segueix:</p>
+<ul>
+<li>El <strong>Model</strong>: És la <strong>representació de la informació</strong> amb la qual el sistema opera, per tant gestiona tots els accessos a aquesta informació, tant consultes com a actualitzacions. Les peticions d'accés o manipulació d'informació arriben al 'model' a través del 'controlador'.</li>
+<li>El <strong>Controlador</strong>: <strong>Respon a esdeveniments</strong> (usualment accions de l'usuari) i <strong>invoca peticions al 'model'</strong> quan es fa alguna sol·licitud d'informació (per exemple, editar un document o un registre en una base de dades). Per tant es podria dir que el 'controlador' fa d'intermediari entre la 'vista' i el 'model'.</li>
+<li>La <strong>Vista</strong>: <strong>Presenta el 'model'</strong> i les dades preparades pel controlador a l'usuari de <strong>forma visual</strong>. L'usuari podrà interactuar amb la vista i realitzar altres peticions que s'enviaran al controlador.</li>
+</ul>
+<p><img alt="Modelo Vista Controlador" src="imagenes/07/mvc.png" /></p>
+<h4 id="funcionament-basic">Funcionament bàsic<a class="headerlink" href="#funcionament-basic" title="Permanent link">&para;</a></h4>
+<p>El funcionament bàsic que segueix Laravel després d'una petició web a una URL del nostre lloc és el següent:</p>
+<ul>
+<li>
+<p>Totes les peticions entren a través del fitxer <strong>public/index.php</strong>, el qual en primer lloc comprovarà en el fitxer de rutes (<strong>routes/web.php</strong>) si la URL és vàlida i en cas de ser-ho al fet que controlador ha de fer la petició.</p>
+</li>
+<li>
+<p>A continuació cridarà al mètode del controlador assignat per a aquesta ruta. Com hem vist, el controlador és el punt d'entrada de les peticions de l'usuari, el qual, depenent de la petició:</p>
+<ul>
+<li>Accedirà a la base de dades (si fóra necessari) a través dels "models" per a obtenir dades (o per a afegir, modificar o eliminar).</li>
+<li>Després d'obtenir les dades necessàries els prepararà per a passar-li'ls a la vista.</li>
+</ul>
+</li>
+<li>
+<p>En el tercer pas el controlador cridarà a una vista amb una sèrie de dades associades, la qual es prepararà per a
+  mostrar-se correctament a partir de les dades d'entrada i finalment es mostrarà a l'usuari.
+  A continuació s'inclou un xicotet esquema d'aquest funcionament:</p>
+</li>
+</ul>
+<figure>
+  <img src="imagenes/07/l101.png" />
+  <figcaption>Funcionament Bàsic Laravel</figcaption>
+</figure>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2021-2023 Aitor Medrano, Luis Alemañ, Ignasi Gomis - Licencia CC BY-NC-SA
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/aitormedrano" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.2 4.2 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.52 8.52 0 0 1-5.33 1.84q-.51 0-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<a.medrano@edu.gva.es>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.13c-.15.01-.29.06-.39.17l-1 1 2.05 2 1-1c.22-.21.22-.56 0-.77l-1.24-1.23a.56.56 0 0 0-.38-.17m-2 1.75L13 19.94V22h2.06l6.06-6.07M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h7v-.89l8.24-8.22c.47-.49 1.12-.76 1.8-.76.34 0 .68.06 1 .19V6c0-1.12-.92-2-2.04-2m0 4-8 5-8-5V6l8 5 8-5"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": ".", "features": ["header.autohide", "toc.integrate", "content.tabs.link"], "search": "assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copiat al porta-retalls", "clipboard.copy": "C\u00f2pia al porta-retalls", "search.result.more.one": "1 m\u00e9s en aquesta p\u00e0gina", "search.result.more.other": "# m\u00e9s en aquesta p\u00e0gina", "search.result.none": "Cap document coincideix", "search.result.one": "1 document coincident", "search.result.other": "# documents coincidents", "search.result.placeholder": "Escriu per a comen\u00e7ar a cercar", "search.result.term.missing": "Desaparegut", "select.version": "Selecciona la versi\u00f3"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>

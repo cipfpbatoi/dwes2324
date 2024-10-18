@@ -1,0 +1,1430 @@
+
+<!doctype html>
+<html lang="ca" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://cipfpbatoi.github.io/dwes2223/09mashup.html">
+      
+      
+        <link rel="prev" href="08rest.html">
+      
+      
+        <link rel="next" href="10solucions.html">
+      
+      
+      <link rel="icon" href="imagenes/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.41">
+    
+    
+      
+        <title>9.- Webs Hibrides - Desenvolupament web en entorn de Servidor</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-X6D0LR7TC8"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-X6D0LR7TC8",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-X6D0LR7TC8",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="Teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#webs-hibrides" class="md-skip">
+          Salta el contingut
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Capçalera">
+    <a href="index.html" title="Desenvolupament web en entorn de Servidor" class="md-header__button md-logo" aria-label="Desenvolupament web en entorn de Servidor" data-md-component="logo">
+      
+  <img src="imagenes/logofp.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Desenvolupament web en entorn de Servidor
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              9.- Webs Hibrides
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="Teal"  aria-label="Canviar a mode nit"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Canviar a mode nit" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="light-blue" data-md-color-accent="Teal"  aria-label="Canviar a mode dia"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Canviar a mode dia" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Neteja" aria-label="Neteja" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicialitzant cerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navegació" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Desenvolupament web en entorn de Servidor" class="md-nav__button md-logo" aria-label="Desenvolupament web en entorn de Servidor" data-md-component="logo">
+      
+  <img src="imagenes/logofp.png" alt="logo">
+
+    </a>
+    Desenvolupament web en entorn de Servidor
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Inicio
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01arquitecturas.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    1.- Arquitectures Web
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02php.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    2.- El llenguatge PHP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03web.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    3.- Programació Web
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="04phpoo.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    4.- PHP Orientat a Objectes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="05accesoDatos.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    5.- Accès a Dades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="07frameworks.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.- Framework Laravel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="07laravelRutesVistes.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.1- Rutes i vistes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="07laravelControladors.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.2- Controladors
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="07laravelModelsDades.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.3- Models i Dades
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="07laravelValidacioAutenticacio.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.4- Validació i Autenticació
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="07laravelNotificacions.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.5- Notificacions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="07laravelTasques.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.6- Tasques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="07laravelBatoiBook.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    7.7- Activitat Batoi Books
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="08rest.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    8.- Serveis Web
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    9.- Webs Hibrides
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="09mashup.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    9.- Webs Hibrides
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Taula de continguts">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Taula de continguts
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#caracteristiques-de-les-webs-hibrides" class="md-nav__link">
+    <span class="md-ellipsis">
+      Característiques de les webs híbrides
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#utilitzacio-de-repositoris-dinformacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      Utilització de repositoris d'informació
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exemple-de-reutilitzacio-de-codi" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemple de reutilització de codi
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exemple de reutilització de codi">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#autenticacio-amb-google" class="md-nav__link">
+    <span class="md-ellipsis">
+      Autenticació amb Google
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#websockets" class="md-nav__link">
+    <span class="md-ellipsis">
+      WebSockets
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="WebSockets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#configuracio-basica" class="md-nav__link">
+    <span class="md-ellipsis">
+      Configuració Bàsica
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creacio-de-canals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Creació de Canals
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#escoltar-esdeveniments-amb-echo" class="md-nav__link">
+    <span class="md-ellipsis">
+      Escoltar Esdeveniments amb Echo
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#disparar-esdeveniments-en-temps-real" class="md-nav__link">
+    <span class="md-ellipsis">
+      Disparar Esdeveniments en Temps Real
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exemple-complet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exemple Complet
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integracio-amb-chatgpt-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      Integració amb ChatGPT API
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestio-de-pagaments" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gestió de pagaments
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Gestió de pagaments">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paypal" class="md-nav__link">
+    <span class="md-ellipsis">
+      PayPal
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#activitats" class="md-nav__link">
+    <span class="md-ellipsis">
+      Activitats
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="10solucions.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    10.- Solucions Exercicis propossats
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<style>
+    img { margin: 20px 0; border-radius: 8px; }
+
+    .alert { color: #BD1550; }
+    .warning { color: #E97F02; }
+    .success { color: #8A9B0F; }
+
+    .center { text-align: center; }
+    .right { text-align: right; }
+
+    .img-small { max-width: 200px; margin: auto; }
+    .img-medium { max-width: 400px; margin: auto; }
+    .img-large { max-width: 800px; margin: auto; }
+
+    .leyenda {
+        font-size: small;
+        margin: 10px 0;
+    }
+</style>
+
+<h1 id="webs-hibrides">Webs híbrides<a class="headerlink" href="#webs-hibrides" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>Duració estimada: 8 sessions</p>
+</blockquote>
+<h2 id="caracteristiques-de-les-webs-hibrides">Característiques de les webs híbrides<a class="headerlink" href="#caracteristiques-de-les-webs-hibrides" title="Permanent link">&para;</a></h2>
+<p>Les aplicacions web híbrides, també conegudes com a "mashups", són una combinació de dades i/o funcionalitats provinents de diverses fonts per a crear un nou tipus d'aplicació o servei.
+Les seues característiques principals són:</p>
+<ul>
+<li><strong>Integració de Dades de Diversos Orígens</strong>: Les aplicacions web híbrides aprofiten dades i funcionalitats de múltiples fonts, com ara serveis web, APIs, i altres recursos en línia. Això permet combinar i reutilitzar recursos existents de manera creativa per a desenvolupar aplicacions més complexes i funcionals.</li>
+<li><strong>Ús de Serveis Web i APIs</strong>: Moltes d'aquestes aplicacions utilitzen dades accessibles a través de serveis web, com els que ofereixen empreses com Google, Yahoo!, Flickr, Microsoft, i Amazon. Aquestes dades es troben sovint en formats com JSON o XML i es poden accedir i manipular mitjançant APIs específiques.</li>
+<li><strong>Sindicació Web (RSS/Atom)</strong>: Algunes aplicacions web híbrides fan ús de protocols de sindicació web, com RSS o Atom, per accedir a continguts actualitzats de manera regular. Aquests protocols simplifiquen el procés de compartir i distribuir continguts web.</li>
+<li><strong>Dades Internes</strong>: A més de les fonts externes, les aplicacions web híbrides poden incloure dades internes generades i gestionades per l'entitat propietària de l'aplicació, com podrien ser les dades corporatives o de negoci.</li>
+<li><strong>Web Scraping</strong>: Encara que és menys comú, algunes aplicacions utilitzen tècniques d'enginyeria inversa, com el web scraping, per extreure dades des de llocs web. Això pot ser útil per obtenir informació com els preus dels productes en les botigues en línia.</li>
+</ul>
+<p>Aquesta actualització reflecteix l'evolució constant en el camp del desenvolupament web i la integració de tecnologies, destacant la importància de les fonts diverses de dades i la capacitat de combinar-les de forma innovadora en el disseny d'aplicacions web híbrides​​.</p>
+<h2 id="utilitzacio-de-repositoris-dinformacio">Utilització de repositoris d'informació<a class="headerlink" href="#utilitzacio-de-repositoris-dinformacio" title="Permanent link">&para;</a></h2>
+<p>Per a poder reutilitzar codi i informació cal que tingem en conte les següents consideracions:</p>
+<ul>
+<li><strong>Integració de Serveis Web de Tercers</strong>: En el desenvolupament d'aplicacions web híbrides, és comú utilitzar serveis proporcionats per tercers. Aquests serveis poden oferir funcionalitats específiques que enriquiran l'aplicació sense necessitat de desenvolupar-les des de zero. Un exemple podria ser l'ús de l'API de Google Maps per mostrar la ubicació geogràfica de les franquícies d'una empresa en un mapa.</li>
+<li><strong>Desenvolupament d'Aplicacions Pràctiques</strong>: En aquest context, es posa l'accent en el desenvolupament d'aplicacions que faciliten processos específics, com podria ser la gestió d'enviaments en una botiga en línia. Aquest tipus d'aplicació pot millorar significativament l'experiència dels usuaris i l'eficiència de les operacions de l'empresa.</li>
+<li><strong>Reconeixement de Necessitats i Oportunitats</strong>: És important identificar funcionalitats que poden ser útils per als usuaris, fins i tot quan aquests no les han sol·licitat explícitament. Aquesta anticipació de necessitats pot ser un factor clau en el desenvolupament d'aplicacions web híbrides exitoses.</li>
+<li><strong>Condicions i Límits en l'Ús de Serveis de Tercers</strong>: Quan s'utilitzen serveis de tercers, cal tenir en compte les condicions i límits que aquests imposen. Això inclou restriccions d'ús, límits de sol·licituds, entre d'altres aspectes legals i tècnics.</li>
+<li><strong>Adquisició d'Experiència en Desenvolupament Web</strong>: El desenvolupament d'aquestes aplicacions també serveix com una oportunitat per adquirir experiència pràctica en l'àmbit del desenvolupament web, millorant així les habilitats tècniques dels desenvolupadors.</li>
+</ul>
+<p>Per exemple podriem desenvolupar:</p>
+<ul>
+<li><strong>Integració de Google Maps API</strong>: Imaginem que estàs desenvolupant una aplicació web per a una cadena de restaurants. Pots integrar l'API de Google Maps per mostrar la ubicació de tots els restaurants en un mapa interactiu. Els usuaris poden buscar el restaurant més proper, obtenir direccions, i fins i tot veure imatges del lloc.</li>
+<li><strong>Gestió d'Enviaments amb APIs de Logística</strong>: Per una botiga en línia, pots integrar APIs de serveis de missatgeria com UPS, FedEx o DHL. Això permet als usuaris fer seguiment dels seus enviaments en temps real, calcular costos d'enviament, i gestionar devolucions de manera eficient.</li>
+<li><strong>Integració de Passarel·les de Pagament</strong>: En una aplicació d'e-commerce, l'ús de passarel·les de pagament com Stripe, PayPal, o Square és essencial. Això no només ofereix una solució de pagament segura als usuaris, sinó que també simplifica la gestió financera de la botiga.</li>
+<li><strong>Ús de APIs de Xarxes Socials</strong>: Podries integrar APIs de xarxes socials com Facebook, Twitter, o Instagram per permetre als usuaris compartir productes o experiències directament des de la teva aplicació. Això pot augmentar la visibilitat i l'engagement del teu negoci.</li>
+<li><strong>Serveis Meteorològics Integrats</strong>: Per a una aplicació d'activitats a l'aire lliure, com una app de senderisme, integrar dades meteorològiques en temps real mitjançant APIs com OpenWeatherMap pot ser molt útil. Els usuaris podrien planificar les seves activitats basant-se en les condicions meteorològiques actuals i les previsions.</li>
+<li><strong>Recollida d'Opinions amb APIs de Ressenyes</strong>: En una aplicació per a hotels o restaurants, integrar un sistema de recollida d'opinions com Yelp o TripAdvisor pot ajudar a obtenir feedback valuós dels clients i millorar la qualitat del servei.</li>
+</ul>
+<h2 id="exemple-de-reutilitzacio-de-codi">Exemple de reutilització de codi<a class="headerlink" href="#exemple-de-reutilitzacio-de-codi" title="Permanent link">&para;</a></h2>
+<h3 id="autenticacio-amb-google">Autenticació amb Google<a class="headerlink" href="#autenticacio-amb-google" title="Permanent link">&para;</a></h3>
+<h4 id="pas-1-installacio">Pas 1 - Instal·lació<a class="headerlink" href="#pas-1-installacio" title="Permanent link">&para;</a></h4>
+<p>Se suposa que ja tenim instal·lat el paquet sanctum. En cas contrari caldria instal·lar-lo:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="go">composer require laravel/sanctum</span>
+</code></pre></div>
+<p>Instal·lem el paquet de Google:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="go">composer require laravel/socialite</span>
+</code></pre></div>
+<h4 id="pas-2-configuracio">Pas 2 - Configuració<a class="headerlink" href="#pas-2-configuracio" title="Permanent link">&para;</a></h4>
+<p>Publica la Configuració de Sanctum:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="go">php artisan vendor:publish --provider=&quot;Laravel\Sanctum\SanctumServiceProvider&quot;</span>
+</code></pre></div>
+<p>Afegeix el middleware de Sanctum a la teva API en app/Http/Kernel.php.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">&#39;api&#39; =&gt; [</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">            \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">            \Illuminate\Routing\Middleware\ThrottleRequests::class.&#39;:api&#39;,</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">            \Illuminate\Routing\Middleware\SubstituteBindings::class,</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">        ],</span>
+</code></pre></div>
+<h4 id="pas-3-crear-credencials-a-google-cloud">Pas 3 - Crear credencials a Google cloud<a class="headerlink" href="#pas-3-crear-credencials-a-google-cloud" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Obre la Consola de Google Cloud: Visita <a href="https://goo.gle/3oFLcJ5">Google Cloud Console</a>.</li>
+</ul>
+<p><strong>Crear un Projecte a Google Cloud</strong></p>
+<ul>
+<li>Crea un Nou Projecte: En la consola, crea un nou projecte si encara no en tens cap.</li>
+<li>Navega al Projecte: Un cop creat, selecciona el projecte per a configurar les credencials.</li>
+</ul>
+<p><strong>Configurar OAuth Consent Screen</strong></p>
+<ul>
+<li>Vés a "APIs &amp; Services &gt; OAuth consent screen".</li>
+<li>Selecciona l'usuari extern i omple els detalls necessaris. <img alt="Fig.1" src="imagenes/09/consentiment1.png" />.</li>
+<li>Afegeix la informació del teu domini i els detalls de l'aplicació. <img alt="Fig.2" src="imagenes/09/consentiment2.png" />.</li>
+</ul>
+<p><strong>Crear Credencials</strong></p>
+<ul>
+<li>Vés a "APIs &amp; Services &gt; Credentials". </li>
+<li>Clica a "Create Credentials" i selecciona "OAuth client ID".</li>
+<li>Selecciona l'aplicació web com a tipus d'aplicació. <img alt="Fig.3" src="imagenes/09/credencials1.png" />.</li>
+<li>Afegeix les URL de redirecció autoritzades des de Laravel (p. ex., http://localhost/auth/google/callback per a l'entorn de desenvolupament).</li>
+<li>Obté l'ID de Client i el Secret de Client: Després de crear les credencials, anota l'ID de client i el secret que Google proporciona. <img alt="Fig.4" src="imagenes/09/credencials2.png" />.</li>
+</ul>
+<h4 id="pas-4-configuracio-de-socialite-per-a-google">Pas 4 - Configuració de Socialite per a Google<a class="headerlink" href="#pas-4-configuracio-de-socialite-per-a-google" title="Permanent link">&para;</a></h4>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">GOOGLE_CLIENT_ID=your-google-client-id</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">GOOGLE_CLIENT_SECRET=your-google-client-secret</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">GOOGLE_REDIRECT=http://your-callback-url</span>
+</code></pre></div>
+Afegeix la Configuració de Google a config/services.php:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">&#39;google&#39; =&gt; [</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">    &#39;client_id&#39; =&gt; env(&#39;GOOGLE_CLIENT_ID&#39;),</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">    &#39;client_secret&#39; =&gt; env(&#39;GOOGLE_CLIENT_SECRET&#39;),</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">    &#39;redirect&#39; =&gt; env(&#39;GOOGLE_REDIRECT&#39;),</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">],</span>
+</code></pre></div>
+<h4 id="pas-5-creacio-de-rutes-i-controladors">Pas 5 - Creació de Rutes i Controladors<a class="headerlink" href="#pas-5-creacio-de-rutes-i-controladors" title="Permanent link">&para;</a></h4>
+<p>Defineix rutes en routes/web.php per a redirigir cap a Google i per al callback.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">Route::get(&#39;auth/google&#39;, &#39;Auth\LoginController@redirectToGoogle&#39;);</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">Route::get(&#39;auth/google/callback&#39;, &#39;Auth\LoginController@handleGoogleCallback&#39;);</span>
+</code></pre></div>
+<p>En LoginController, afegeix la lògica per a redirigir a l'usuari cap a Google i manejar el callback.</p>
+<p>redirectToGoogle: Redirigeix l'usuari a la pàgina d'autenticació de Google.
+handleGoogleCallback: Processa la resposta de Google, crea o troba un usuari, i genera un token de Sanctum.</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="c1">// En LoginController </span>
+<span class="linenos" data-linenos=" 3 "></span>
+<span class="linenos" data-linenos=" 4 "></span><span class="k">public</span> <span class="k">function</span> <span class="nf">redirectToGoogle</span><span class="p">()</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="p">{</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="k">return</span> <span class="nx">Socialite</span><span class="o">::</span><span class="na">driver</span><span class="p">(</span><span class="s1">&#39;google&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">redirect</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="p">}</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span>
+<span class="linenos" data-linenos="10 "></span><span class="k">public</span> <span class="k">function</span> <span class="nf">handleGoogleCallback</span><span class="p">()</span>
+<span class="linenos" data-linenos="11 "></span><span class="p">{</span>
+<span class="linenos" data-linenos="12 "></span>    <span class="k">try</span> <span class="p">{</span>
+<span class="linenos" data-linenos="13 "></span>        <span class="nv">$user</span> <span class="o">=</span> <span class="nx">Socialite</span><span class="o">::</span><span class="na">driver</span><span class="p">(</span><span class="s1">&#39;google&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">user</span><span class="p">();</span>
+<span class="linenos" data-linenos="14 "></span>
+<span class="linenos" data-linenos="15 "></span>        <span class="c1">// Trobar o crear l&#39;usuari basat en la informació de Google</span>
+<span class="linenos" data-linenos="16 "></span>        <span class="nv">$localUser</span> <span class="o">=</span> <span class="nx">User</span><span class="o">::</span><span class="na">updateOrCreate</span><span class="p">(</span>
+<span class="linenos" data-linenos="17 "></span>            <span class="p">[</span><span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">email</span><span class="p">],</span>
+<span class="linenos" data-linenos="18 "></span>            <span class="p">[</span>
+<span class="linenos" data-linenos="19 "></span>                <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">name</span><span class="p">,</span>
+<span class="linenos" data-linenos="20 "></span>                <span class="s1">&#39;google_id&#39;</span> <span class="o">=&gt;</span> <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">id</span><span class="p">,</span>
+<span class="linenos" data-linenos="21 "></span>                <span class="c1">// Altres camps que vulguis guardar</span>
+<span class="linenos" data-linenos="22 "></span>            <span class="p">]</span>
+<span class="linenos" data-linenos="23 "></span>        <span class="p">);</span>
+<span class="linenos" data-linenos="24 "></span>
+<span class="linenos" data-linenos="25 "></span>        <span class="c1">// Iniciar sessió de l&#39;usuari</span>
+<span class="linenos" data-linenos="26 "></span>        <span class="nx">Auth</span><span class="o">::</span><span class="na">login</span><span class="p">(</span><span class="nv">$localUser</span><span class="p">);</span>
+<span class="linenos" data-linenos="27 "></span>
+<span class="linenos" data-linenos="28 "></span>        <span class="c1">// Generar token Sanctum</span>
+<span class="linenos" data-linenos="29 "></span>        <span class="nv">$token</span> <span class="o">=</span> <span class="nv">$localUser</span><span class="o">-&gt;</span><span class="na">createToken</span><span class="p">(</span><span class="s1">&#39;Personal Access Token&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">plainTextToken</span><span class="p">;</span>
+<span class="linenos" data-linenos="30 "></span>
+<span class="linenos" data-linenos="31 "></span>        <span class="c1">// Redirigir l&#39;usuari amb el token</span>
+<span class="linenos" data-linenos="32 "></span>        <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;auth.success&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;token&#39;</span> <span class="o">=&gt;</span> <span class="nv">$token</span><span class="p">]);</span> <span class="c1">// Asumint que tens una vista &#39;auth.success&#39;</span>
+<span class="linenos" data-linenos="33 "></span>
+<span class="linenos" data-linenos="34 "></span>    <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">\Exception</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos="35 "></span>        <span class="c1">// Maneig d&#39;errors</span>
+<span class="linenos" data-linenos="36 "></span>        <span class="k">return</span> <span class="nx">view</span><span class="p">(</span><span class="s1">&#39;auth.error&#39;</span><span class="p">,</span> <span class="p">[</span><span class="s1">&#39;error&#39;</span> <span class="o">=&gt;</span> <span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">()]);</span> <span class="c1">// Asumint que tens una vista &#39;auth.error&#39;</span>
+<span class="linenos" data-linenos="37 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="38 "></span><span class="p">}</span>
+</code></pre></div>
+Caldrà fer unes modificacions en el model User.php</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
+<span class="linenos" data-linenos="2 "></span><span class="k">protected</span> <span class="nv">$fillable</span> <span class="o">=</span> <span class="p">[</span>
+<span class="linenos" data-linenos="3 "></span>        <span class="s1">&#39;name&#39;</span><span class="p">,</span>
+<span class="linenos" data-linenos="4 "></span>        <span class="s1">&#39;email&#39;</span><span class="p">,</span>
+<span class="linenos" data-linenos="5 "></span>        <span class="s1">&#39;password&#39;</span><span class="p">,</span>
+<span class="linenos" data-linenos="6 "></span>        <span class="s1">&#39;google_id&#39;</span><span class="p">,</span>
+<span class="linenos" data-linenos="7 "></span>        <span class="s1">&#39;administrador&#39;</span><span class="p">,</span>
+<span class="linenos" data-linenos="8 "></span>    <span class="p">];</span>
+<span class="linenos" data-linenos="9 "></span><span class="cp">?&gt;</span>
+</code></pre></div>
+<p>I afegir el camp google_id a la migració de la base de dades</p>
+<h4 id="pas-6-creacio-de-les-vistes-de-comprovacio">Pas 6 - Creació de les vistes de comprovació<a class="headerlink" href="#pas-6-creacio-de-les-vistes-de-comprovacio" title="Permanent link">&para;</a></h4>
+<p>Crea dues vistes en resources/views/auth: success.blade.php i error.blade.php.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">{{-- resources/views/auth/success.blade.php --}}</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">&lt;!DOCTYPE html&gt;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">&lt;html lang=&quot;en&quot;&gt;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">&lt;head&gt;</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">    &lt;title&gt;Autenticació Exitosa&lt;/title&gt;</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">&lt;/head&gt;</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">&lt;body&gt;</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">    &lt;h1&gt;Benvingut/da!&lt;/h1&gt;</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">    &lt;p&gt;La teua autenticació ha sigut exitosa.&lt;/p&gt;</span>
+<span class="linenos" data-linenos="12 "></span><span class="x">    &lt;p&gt;El teu token d&#39;accés és: {{ $token }}&lt;/p&gt;</span>
+<span class="linenos" data-linenos="13 "></span><span class="x">&lt;/body&gt;</span>
+<span class="linenos" data-linenos="14 "></span><span class="x">&lt;/html&gt;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">{{-- resources/views/auth/error.blade.php --}}</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">&lt;!DOCTYPE html&gt;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">&lt;html lang=&quot;en&quot;&gt;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">&lt;head&gt;</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">    &lt;title&gt;Error d&#39;Autenticació&lt;/title&gt;</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">&lt;/head&gt;</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">&lt;body&gt;</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">    &lt;h1&gt;Error d&#39;Autenticació&lt;/h1&gt;</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">    &lt;p&gt;Ha ocorregut un error durant el procés d&#39;autenticació: {{ $error }}&lt;/p&gt;</span>
+<span class="linenos" data-linenos="12 "></span><span class="x">&lt;/body&gt;</span>
+<span class="linenos" data-linenos="13 "></span><span class="x">&lt;/html&gt;</span>
+</code></pre></div>
+<h2 id="websockets">WebSockets<a class="headerlink" href="#websockets" title="Permanent link">&para;</a></h2>
+<p>Els WebSockets permeten comunicacions bidireccionals en temps real entre el servidor i els clients. Laravel facilita treballar amb WebSockets a través de Laravel Echo i canals de difusió.</p>
+<h3 id="configuracio-basica">Configuració Bàsica<a class="headerlink" href="#configuracio-basica" title="Permanent link">&para;</a></h3>
+<p><strong>Instal·lar Laravel Echo</strong>: Utilitza npm per a instal·lar les dependències necessàries.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>npm<span class="w"> </span>install<span class="w"> </span>--save<span class="w"> </span>laravel-echo<span class="w"> </span>pusher-js
+</code></pre></div>
+<p><strong>Configuració del Fitxer .env</strong>: Defineix les claus i secrets de Pusher (o la teua solució WebSocket).</p>
+<h3 id="creacio-de-canals">Creació de Canals<a class="headerlink" href="#creacio-de-canals" title="Permanent link">&para;</a></h3>
+<p>Defineix canals en routes/channels.php. Per exemple, un canal privat:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">Broadcast::channel(&#39;channel-name&#39;, function ($user) {</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">    return true; // Autorització</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">});</span>
+</code></pre></div>
+<h3 id="escoltar-esdeveniments-amb-echo">Escoltar Esdeveniments amb Echo<a class="headerlink" href="#escoltar-esdeveniments-amb-echo" title="Permanent link">&para;</a></h3>
+<p>A l'frontend, utilitza Laravel Echo per a escoltar esdeveniments en un canal:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nx">Echo</span><span class="p">.</span><span class="nx">channel</span><span class="p">(</span><span class="s1">&#39;channel-name&#39;</span><span class="p">)</span>
+<span class="linenos" data-linenos="2 "></span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="s1">&#39;EventName&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">e</span><span class="p">);</span>
+<span class="linenos" data-linenos="4 "></span><span class="p">});</span>
+</code></pre></div>
+<h3 id="disparar-esdeveniments-en-temps-real">Disparar Esdeveniments en Temps Real<a class="headerlink" href="#disparar-esdeveniments-en-temps-real" title="Permanent link">&para;</a></h3>
+<p>Crea esdeveniments que implementen ShouldBroadcast i defineix en quin canal s'han d'emetre.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">class EventName implements ShouldBroadcast</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">{</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">    public function broadcastOn()</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">        return new Channel(&#39;channel-name&#39;);</span>
+<span class="linenos" data-linenos="6 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="7 "></span><span class="x">}</span>
+</code></pre></div>
+<h3 id="exemple-complet">Exemple Complet<a class="headerlink" href="#exemple-complet" title="Permanent link">&para;</a></h3>
+<h4 id="pas-1-configuracio-dels-websockets">Pas 1: Configuració dels WebSockets<a class="headerlink" href="#pas-1-configuracio-dels-websockets" title="Permanent link">&para;</a></h4>
+<p>Primer, has de configurar el teu sistema per a utilitzar WebSockets. Laravel Echo i Laravel WebSockets (un paquet que permet crear un servidor de WebSockets directament en Laravel) són opcions populars.</p>
+<ol>
+<li>Instal·la Laravel WebSockets:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>composer<span class="w"> </span>require<span class="w"> </span>beyondcode/laravel-websockets
+</code></pre></div>
+<ol start="2">
+<li>Publica les Configuracions i Migracions:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>php<span class="w"> </span>artisan<span class="w"> </span>vendor:publish<span class="w"> </span>--provider<span class="o">=</span><span class="s2">&quot;BeyondCode\LaravelWebSockets\WebSocketsServiceProvider&quot;</span><span class="w"> </span>--tag<span class="o">=</span><span class="s2">&quot;migrations&quot;</span>
+<span class="linenos" data-linenos="2 "></span>php<span class="w"> </span>artisan<span class="w"> </span>vendor:publish<span class="w"> </span>--provider<span class="o">=</span><span class="s2">&quot;BeyondCode\LaravelWebSockets\WebSocketsServiceProvider&quot;</span><span class="w"> </span>--tag<span class="o">=</span><span class="s2">&quot;config&quot;</span>
+</code></pre></div>
+<ol start="3">
+<li>Executa les Migracions:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>php<span class="w"> </span>artisan<span class="w"> </span>migrate
+</code></pre></div>
+<ol start="4">
+<li>Configura .env per a usar el driver pusher:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nv">BROADCAST_DRIVER</span><span class="o">=</span>pusher
+<span class="linenos" data-linenos="2 "></span>
+<span class="linenos" data-linenos="3 "></span><span class="nv">PUSHER_APP_ID</span><span class="o">=</span><span class="nb">local</span>
+<span class="linenos" data-linenos="4 "></span><span class="nv">PUSHER_APP_KEY</span><span class="o">=</span><span class="nb">local</span>
+<span class="linenos" data-linenos="5 "></span><span class="nv">PUSHER_APP_SECRET</span><span class="o">=</span><span class="nb">local</span>
+<span class="linenos" data-linenos="6 "></span><span class="nv">PUSHER_APP_CLUSTER</span><span class="o">=</span>mt1
+</code></pre></div>
+<ol start="5">
+<li>Inicia el servidor de WebSockets:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>php<span class="w"> </span>artisan<span class="w"> </span>websockets:serve
+</code></pre></div>
+<h4 id="pas-2-crear-event-que-utilitza-websockets">Pas 2: Crear Event Que Utilitza WebSockets<a class="headerlink" href="#pas-2-crear-event-que-utilitza-websockets" title="Permanent link">&para;</a></h4>
+<p>Ara, crearem un esdeveniment Laravel que utilitza WebSockets per a enviar notificacions.</p>
+<ol>
+<li>Crea un esdeveniment que implemente ShouldBroadcast:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>php<span class="w"> </span>artisan<span class="w"> </span>make:event<span class="w"> </span>BookSold
+</code></pre></div>
+<ol start="2">
+<li>Edita l'esdeveniment BookSold:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">namespace App\Events;</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">use Illuminate\Broadcasting\Channel;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">use Illuminate\Queue\SerializesModels;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">use Illuminate\Broadcasting\PrivateChannel;</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">use Illuminate\Broadcasting\PresenceChannel;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">use Illuminate\Foundation\Events\Dispatchable;</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">use Illuminate\Broadcasting\InteractsWithSockets;</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">use Illuminate\Contracts\Broadcasting\ShouldBroadcast;</span>
+<span class="linenos" data-linenos="10 "></span>
+<span class="linenos" data-linenos="11 "></span><span class="x">class BookSold implements ShouldBroadcast</span>
+<span class="linenos" data-linenos="12 "></span><span class="x">{</span>
+<span class="linenos" data-linenos="13 "></span><span class="x">    use Dispatchable, InteractsWithSockets, SerializesModels;</span>
+<span class="linenos" data-linenos="14 "></span>
+<span class="linenos" data-linenos="15 "></span><span class="x">    public $book;</span>
+<span class="linenos" data-linenos="16 "></span><span class="x">    public $user;</span>
+<span class="linenos" data-linenos="17 "></span>
+<span class="linenos" data-linenos="18 "></span><span class="x">    public function __construct($book, $user)</span>
+<span class="linenos" data-linenos="19 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="20 "></span><span class="x">        $this-&gt;book = $book;</span>
+<span class="linenos" data-linenos="21 "></span><span class="x">        $this-&gt;user = $user;</span>
+<span class="linenos" data-linenos="22 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="23 "></span>
+<span class="linenos" data-linenos="24 "></span><span class="x">    public function broadcastOn()</span>
+<span class="linenos" data-linenos="25 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="26 "></span><span class="x">        return new PrivateChannel(&#39;user.&#39;.$this-&gt;user-&gt;id);</span>
+<span class="linenos" data-linenos="27 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="28 "></span><span class="x">}</span>
+</code></pre></div>
+<h4 id="pas-3-disparar-lesdeveniment">Pas 3: Disparar l'Esdeveniment<a class="headerlink" href="#pas-3-disparar-lesdeveniment" title="Permanent link">&para;</a></h4>
+<p>Quan es realitze una venda, dispara l'esdeveniment:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">event(new BookSold($book, $user));</span>
+</code></pre></div>
+<h4 id="pas-4-escoltar-lesdeveniment-al-frontend">Pas 4: Escoltar l'Esdeveniment al Frontend<a class="headerlink" href="#pas-4-escoltar-lesdeveniment-al-frontend" title="Permanent link">&para;</a></h4>
+<p>Amb Laravel Echo, pots escoltar l'esdeveniment al frontend. Primer, assegura't de tindre Laravel Echo instal·lat i configurat al teu projecte frontend.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="nx">Echo</span><span class="p">.</span><span class="kr">private</span><span class="p">(</span><span class="s1">&#39;user.&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">userId</span><span class="p">)</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="s1">&#39;BookSold&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="3 "></span><span class="w">        </span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;El teu llibre s&#39;ha venut!&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="4 "></span><span class="w">        </span><span class="c1">// Actualitza la UI segons corresponga</span>
+<span class="linenos" data-linenos="5 "></span><span class="w">    </span><span class="p">});</span>
+</code></pre></div>
+<p>Aquest codi JavaScript escoltarà l'esdeveniment BookSold en un canal privat associat amb l'usuari. Quan es dispara l'esdeveniment, es mostrarà una alerta (o qualsevol altra acció que vulgues realitzar).</p>
+<h2 id="integracio-amb-chatgpt-api">Integració amb ChatGPT API<a class="headerlink" href="#integracio-amb-chatgpt-api" title="Permanent link">&para;</a></h2>
+<h4 id="registrat-i-obte-les-credencials-de-lapi">Registra't i Obté les Credencials de l'API<a class="headerlink" href="#registrat-i-obte-les-credencials-de-lapi" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Registra't a OpenAI: Visita el lloc web d'OpenAI i crea un compte si encara no en tens un.</li>
+<li>Accedeix a la Secció d'API: Un cop registrat, busca l'opció per accedir a les credencials de l'API.</li>
+<li>Crea un Nou Projecte/API Key: Segueix les instruccions per crear un nou projecte i genera una clau API. Aquesta clau et permetrà realitzar peticions a l'API de ChatGPT.</li>
+</ul>
+<h4 id="configura-les-credencials-de-lapi">Configura les Credencials de l'API<a class="headerlink" href="#configura-les-credencials-de-lapi" title="Permanent link">&para;</a></h4>
+<p>Guarda les Credencials: Un cop tinguis la clau API, hauràs de guardar-la de manera segura.
+Actualitza el Fitxer .env: Afegeix la teva clau API al teu fitxer .env de Laravel. Això manté les teves credencials segures i separades del teu codi font.</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">OPENAI_API_KEY=tua_clau_api</span>
+</code></pre></div>
+Conselles de Seguretat: No compartisques les teves claus API en el codi font, especialment si el codi és públic.</p>
+<p>En el teu fitxer de configuració (per exemple, config/services.php), afegeix una entrada per a OpenAI.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">&#39;openai&#39; =&gt; [</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">    &#39;api_key&#39; =&gt; env(&#39;OPENAI_API_KEY&#39;),</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">]</span>
+</code></pre></div>
+<h4 id="creacio-dun-service-per-a-openai">Creació d'un service per a OpenAI<a class="headerlink" href="#creacio-dun-service-per-a-openai" title="Permanent link">&para;</a></h4>
+<p>Per a això creem un directori Services i un fixer ChatGPTService.php</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="k">namespace</span> <span class="nx">App\Http\Services</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="k">use</span> <span class="nx">GuzzleHttp\Client</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span>
+<span class="linenos" data-linenos=" 8 "></span><span class="k">class</span> <span class="nc">ChatGTPService</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="p">{</span>
+<span class="linenos" data-linenos="10 "></span>    <span class="sd">/**</span>
+<span class="linenos" data-linenos="11 "></span><span class="sd">     * Register services.</span>
+<span class="linenos" data-linenos="12 "></span><span class="sd">     */</span>
+<span class="linenos" data-linenos="13 "></span>
+<span class="linenos" data-linenos="14 "></span>    <span class="k">protected</span> <span class="nv">$client</span><span class="p">;</span>
+<span class="linenos" data-linenos="15 "></span>
+<span class="linenos" data-linenos="16 "></span>    <span class="k">public</span> <span class="k">function</span> <span class="fm">__construct</span><span class="p">()</span>
+<span class="linenos" data-linenos="17 "></span>    <span class="p">{</span>
+<span class="linenos" data-linenos="18 "></span>        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">client</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Client</span><span class="p">([</span>
+<span class="linenos" data-linenos="19 "></span>            <span class="s1">&#39;base_uri&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;https://api.openai.com/v1/&#39;</span><span class="p">,</span>
+<span class="linenos" data-linenos="20 "></span>            <span class="s1">&#39;headers&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+<span class="linenos" data-linenos="21 "></span>                <span class="s1">&#39;Authorization&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Bearer &#39;</span> <span class="o">.</span> <span class="nx">config</span><span class="p">(</span><span class="s1">&#39;services.openai.api_key&#39;</span><span class="p">),</span>
+<span class="linenos" data-linenos="22 "></span>            <span class="p">],</span>
+<span class="linenos" data-linenos="23 "></span>        <span class="p">]);</span>
+<span class="linenos" data-linenos="24 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="25 "></span>
+<span class="linenos" data-linenos="26 "></span>    <span class="k">public</span> <span class="k">function</span> <span class="nf">response</span><span class="p">(</span><span class="nv">$question</span><span class="p">){</span>
+<span class="linenos" data-linenos="27 "></span>        <span class="k">try</span> <span class="p">{</span>
+<span class="linenos" data-linenos="28 "></span>            <span class="nv">$response</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">client</span><span class="o">-&gt;</span><span class="na">post</span><span class="p">(</span><span class="s1">&#39;chat/completions&#39;</span><span class="p">,</span> <span class="p">[</span>
+<span class="linenos" data-linenos="29 "></span>                <span class="s1">&#39;json&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+<span class="linenos" data-linenos="30 "></span>                    <span class="s1">&#39;model&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;gpt-3.5-turbo&#39;</span><span class="p">,</span>
+<span class="linenos" data-linenos="31 "></span>                    <span class="s1">&#39;messages&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+<span class="linenos" data-linenos="32 "></span>                        <span class="p">[</span><span class="s1">&#39;role&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;system&#39;</span><span class="p">,</span> <span class="s1">&#39;content&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Ets un fan del Barça.&#39;</span><span class="p">],</span>
+<span class="linenos" data-linenos="33 "></span>                        <span class="p">[</span><span class="s1">&#39;role&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;user&#39;</span><span class="p">,</span> <span class="s1">&#39;content&#39;</span> <span class="o">=&gt;</span> <span class="nv">$question</span><span class="p">],</span>
+<span class="linenos" data-linenos="34 "></span>                   <span class="p">],</span>
+<span class="linenos" data-linenos="35 "></span>                    <span class="s1">&#39;max_tokens&#39;</span> <span class="o">=&gt;</span> <span class="mi">250</span><span class="p">,</span>
+<span class="linenos" data-linenos="36 "></span>                <span class="p">],</span>
+<span class="linenos" data-linenos="37 "></span>            <span class="p">]);</span>
+<span class="linenos" data-linenos="38 "></span>
+<span class="linenos" data-linenos="39 "></span>            <span class="nv">$body</span> <span class="o">=</span> <span class="nv">$response</span><span class="o">-&gt;</span><span class="na">getBody</span><span class="p">();</span>
+<span class="linenos" data-linenos="40 "></span>            <span class="nv">$content</span> <span class="o">=</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nv">$body</span><span class="o">-&gt;</span><span class="na">getContents</span><span class="p">(),</span> <span class="k">true</span><span class="p">);</span>
+<span class="linenos" data-linenos="41 "></span>            <span class="k">return</span> <span class="nv">$content</span><span class="p">[</span><span class="s1">&#39;choices&#39;</span><span class="p">];</span>
+<span class="linenos" data-linenos="42 "></span>        <span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">\Exception</span> <span class="nv">$e</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos="43 "></span>            <span class="c1">// Gestiona l&#39;error</span>
+<span class="linenos" data-linenos="44 "></span>            <span class="k">echo</span> <span class="s2">&quot;Error: &quot;</span> <span class="o">.</span> <span class="nv">$e</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">();</span>
+<span class="linenos" data-linenos="45 "></span>        <span class="p">}</span>
+<span class="linenos" data-linenos="46 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="47 "></span><span class="p">}</span>
+</code></pre></div>
+<p>Ara la forma de utilitzar-lo de forma bàsica és la següent:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">    $chatService = new ChatGTPService();</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">    $reply = $chatService-&gt;response($question);</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">    $message = &#39;&#39;;</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">    foreach ($reply as $r){</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">        if ($r[&#39;message&#39;][&#39;role&#39;] == &#39;assistant&#39;) {</span>
+<span class="linenos" data-linenos="6 "></span><span class="x">                $message .= $r[&#39;message&#39;][&#39;content&#39;];</span>
+<span class="linenos" data-linenos="7 "></span><span class="x">        }</span>
+<span class="linenos" data-linenos="8 "></span><span class="x">    }</span>
+</code></pre></div>
+<p>A partir d'ahi hem de estudiar la <a href="https://platform.openai.com/docs/api-reference">documentació de l'API</a> per a poder fer peticions i tractar les respostes.
+Al mateix temps crearem les rutes, les vistes i els metodes necessaries per incrementar la funcionalitat de la nostra aplicació.</p>
+<h2 id="gestio-de-pagaments">Gestió de pagaments<a class="headerlink" href="#gestio-de-pagaments" title="Permanent link">&para;</a></h2>
+<p>La primera decisió que hem de pendre es triar la passarel·la de Pagament: Hi ha moltes opcions com Stripe, PayPal, PayU, Braintree, Square, Authorize.Net...
+Totes solen tindre entorn de proves(sanbox) on fer transaccions fictícies per a provar el funcionament de la passarel·la de pagament.</p>
+<h3 id="paypal">PayPal<a class="headerlink" href="#paypal" title="Permanent link">&para;</a></h3>
+<p>Per permetre que un usuari pague amb el seu compte PayPal Sandbox a un compte Business de Sandbox en una aplicació Laravel, hauràs de seguir una sèrie de passos. Aquests passos impliquen la configuració del teu entorn de Sandbox a PayPal i la integració amb la teva aplicació Laravel utilitzant el paquet paypal/rest-api-sdk-php o una altra biblioteca similar. Aquí tens una guia pas a pas:</p>
+<ul>
+<li>
+<p>Configura els Comptes Sandbox: Assegura't que tens dos comptes en PayPal Sandbox: un compte personal (que simula el comprador) i un compte Business (que simula el venedor).</p>
+</li>
+<li>
+<p>Instal·la el Paquet de PayPal en Laravel: Utilitza Composer per instal·lar el paquet <code>paypal/rest-api-sdk-php</code> o una altra biblioteca de PayPal compatible amb Laravel.</p>
+</li>
+<li>
+<p>Configura les Credencials de Sandbox en Laravel: Obté les credencials del teu compte Business de Sandbox (ID de client i secret) i configura-les en el teu projecte Laravel, normalment a través del fitxer .env. i configura el `services.php</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">&#39;paypal&#39; =&gt; [</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">&#39;client_id&#39; =&gt; env(&#39;PAYPAL_CLIENT_ID&#39;),</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">&#39;client_secret&#39; =&gt; env(&#39;PAYPAL_CLIENT_SECRET&#39;),</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">],</span>
+</code></pre></div>
+<ul>
+<li>Crea un Context d'API de PayPal: Utilitza les credencials del teu compte Business de Sandbox per crear un objecte ApiContext. Aquest objecte s'utilitzarà per a realitzar crides a l'API de PayPal.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">use PayPal\Rest\ApiContext;</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="x">use PayPal\Auth\OAuthTokenCredential;</span>
+<span class="linenos" data-linenos=" 3 "></span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">// ...</span>
+<span class="linenos" data-linenos=" 5 "></span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">public function createPayment()</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">{</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">    $apiContext = new ApiContext(new OAuthTokenCredential(</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">            env(&#39;PAYPAL_CLIENT_ID&#39;),     // ClientID</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">            env(&#39;PAYPAL_SECRET&#39;)         // ClientSecret</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">        )</span>
+<span class="linenos" data-linenos="12 "></span><span class="x">    );</span>
+<span class="linenos" data-linenos="13 "></span>
+<span class="linenos" data-linenos="14 "></span><span class="x">    // Configura el `ApiContext` segons les teves necessitats</span>
+<span class="linenos" data-linenos="15 "></span><span class="x">    $apiContext-&gt;setConfig([</span>
+<span class="linenos" data-linenos="16 "></span><span class="x">        &#39;mode&#39; =&gt; &#39;sandbox&#39;, // Mode Sandbox per a proves</span>
+<span class="linenos" data-linenos="17 "></span><span class="x">        // Altres configuracions...</span>
+<span class="linenos" data-linenos="18 "></span><span class="x">    ]);</span>
+<span class="linenos" data-linenos="19 "></span>
+<span class="linenos" data-linenos="20 "></span><span class="x">    // Aquí va la resta de la teva lògica de pagament...</span>
+<span class="linenos" data-linenos="21 "></span><span class="x">}</span>
+</code></pre></div>
+<ul>
+<li>Implementa la Lògica de Pagament:<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>* Desenvolupa la lògica en els teus controladors Laravel per crear sol·licituds de pagament. Això inclou la creació d&#39;objectes de pagament amb detalls com l&#39;import, la moneda, i la descripció.
+<span class="linenos" data-linenos="2 "></span>* Redirigeix l&#39;Usuari a PayPal: Quan un usuari iniciï un pagament, redirigeix-lo a la pàgina de pagament de PayPal utilitzant l&#39;URL proporcionada per la biblioteca. L&#39;usuari iniciarà sessió amb el seu compte personal de Sandbox per completar el pagament.
+<span class="linenos" data-linenos="3 "></span>* Gestiona la Resposta de PayPal: Després que l&#39;usuari completi el pagament, serà redirigit de tornada a la teva aplicació. Necessitaràs gestionar aquesta resposta per confirmar la transacció.
+<span class="linenos" data-linenos="4 "></span>* Prova el Procés de Pagament: Realitza proves utilitzant els teus comptes de Sandbox per assegurar-te que tot funciona com s&#39;espera. Això inclou iniciar un pagament amb el compte personal de Sandbox i rebre el pagament en el compte Business de Sandbox.
+<span class="linenos" data-linenos="5 "></span>* Revisa i Depura: Comprova que les transaccions es mostren correctament en els panells de control de Sandbox tant del comprador com del venedor. Depura qualsevol problema que puguis trobar.
+</code></pre></div>
+</li>
+</ul>
+<p>Exemple de creació d'un pagament amb el SDK de PayPal:</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">use PayPal\Api\Amount;</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="x">use PayPal\Api\Payer;</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">use PayPal\Api\Payment;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">use PayPal\Api\RedirectUrls;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">use PayPal\Api\Transaction;</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">use PayPal\Rest\ApiContext;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">use PayPal\Auth\OAuthTokenCredential;</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">class PaymentController extends Controller</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">{</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">    private $apiContext;</span>
+<span class="linenos" data-linenos="12 "></span>
+<span class="linenos" data-linenos="13 "></span><span class="x">    public function __construct()</span>
+<span class="linenos" data-linenos="14 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="15 "></span><span class="x">        $this-&gt;apiContext = new ApiContext(</span>
+<span class="linenos" data-linenos="16 "></span><span class="x">            new OAuthTokenCredential(</span>
+<span class="linenos" data-linenos="17 "></span><span class="x">                env(&#39;PAYPAL_SANDBOX_CLIENT_ID&#39;),     // ClientID</span>
+<span class="linenos" data-linenos="18 "></span><span class="x">                env(&#39;PAYPAL_SANDBOX_SECRET&#39;)         // ClientSecret</span>
+<span class="linenos" data-linenos="19 "></span><span class="x">            )</span>
+<span class="linenos" data-linenos="20 "></span><span class="x">        );</span>
+<span class="linenos" data-linenos="21 "></span><span class="x">        $this-&gt;apiContext-&gt;setConfig([&#39;mode&#39; =&gt; &#39;sandbox&#39;]);</span>
+<span class="linenos" data-linenos="22 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="23 "></span>
+<span class="linenos" data-linenos="24 "></span><span class="x">    public function createPayment()</span>
+<span class="linenos" data-linenos="25 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="26 "></span><span class="x">        $payer = new Payer();</span>
+<span class="linenos" data-linenos="27 "></span><span class="x">        $payer-&gt;setPaymentMethod(&#39;paypal&#39;);</span>
+<span class="linenos" data-linenos="28 "></span>
+<span class="linenos" data-linenos="29 "></span><span class="x">        $amount = new Amount();</span>
+<span class="linenos" data-linenos="30 "></span><span class="x">        $amount-&gt;setTotal(&#39;10.00&#39;);  // Defineix l&#39;import del pagament</span>
+<span class="linenos" data-linenos="31 "></span><span class="x">        $amount-&gt;setCurrency(&#39;EUR&#39;); // Defineix la moneda</span>
+<span class="linenos" data-linenos="32 "></span>
+<span class="linenos" data-linenos="33 "></span><span class="x">        $transaction = new Transaction();</span>
+<span class="linenos" data-linenos="34 "></span><span class="x">        $transaction-&gt;setAmount($amount);</span>
+<span class="linenos" data-linenos="35 "></span><span class="x">        $transaction-&gt;setDescription(&#39;Descripció del pagament&#39;);</span>
+<span class="linenos" data-linenos="36 "></span>
+<span class="linenos" data-linenos="37 "></span><span class="x">        $redirectUrls = new RedirectUrls();</span>
+<span class="linenos" data-linenos="38 "></span><span class="x">        $redirectUrls-&gt;setReturnUrl(url(&#39;/payment/success&#39;)) // URL de retorn en cas d&#39;èxit</span>
+<span class="linenos" data-linenos="39 "></span><span class="x">                     -&gt;setCancelUrl(url(&#39;/payment/cancel&#39;)); // URL de retorn en cas de cancel·lació</span>
+<span class="linenos" data-linenos="40 "></span>
+<span class="linenos" data-linenos="41 "></span><span class="x">        $payment = new Payment();</span>
+<span class="linenos" data-linenos="42 "></span><span class="x">        $payment-&gt;setIntent(&#39;sale&#39;)</span>
+<span class="linenos" data-linenos="43 "></span><span class="x">                -&gt;setPayer($payer)</span>
+<span class="linenos" data-linenos="44 "></span><span class="x">                -&gt;setTransactions([$transaction])</span>
+<span class="linenos" data-linenos="45 "></span><span class="x">                -&gt;setRedirectUrls($redirectUrls);</span>
+<span class="linenos" data-linenos="46 "></span>
+<span class="linenos" data-linenos="47 "></span><span class="x">        try {</span>
+<span class="linenos" data-linenos="48 "></span><span class="x">            $payment-&gt;create($this-&gt;apiContext);</span>
+<span class="linenos" data-linenos="49 "></span><span class="x">            return redirect()-&gt;away($payment-&gt;getApprovalLink());</span>
+<span class="linenos" data-linenos="50 "></span><span class="x">        } catch (Exception $e) {</span>
+<span class="linenos" data-linenos="51 "></span><span class="x">            // Gestiona l&#39;error aquí</span>
+<span class="linenos" data-linenos="52 "></span><span class="x">            return back()-&gt;with(&#39;error&#39;, &#39;Hi ha hagut un problema en processar el pagament&#39;);</span>
+<span class="linenos" data-linenos="53 "></span><span class="x">        }</span>
+<span class="linenos" data-linenos="54 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="55 "></span>
+<span class="linenos" data-linenos="56 "></span><span class="x">    public function successPayment(Request $request)</span>
+<span class="linenos" data-linenos="57 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="58 "></span><span class="x">        $paymentId = $request-&gt;get(&#39;paymentId&#39;);</span>
+<span class="linenos" data-linenos="59 "></span><span class="x">        $payerId = $request-&gt;get(&#39;PayerID&#39;);</span>
+<span class="linenos" data-linenos="60 "></span>
+<span class="linenos" data-linenos="61 "></span><span class="x">        if (empty($paymentId) || empty($payerId)) {</span>
+<span class="linenos" data-linenos="62 "></span><span class="x">            // Redirigeix a una pàgina d&#39;error o mostra un missatge</span>
+<span class="linenos" data-linenos="63 "></span><span class="x">            return redirect(&#39;/&#39;)-&gt;with(&#39;error&#39;, &quot;El pagament no s&#39;ha pogut verificar.&quot;);</span>
+<span class="linenos" data-linenos="64 "></span><span class="x">        }</span>
+<span class="linenos" data-linenos="65 "></span>
+<span class="linenos" data-linenos="66 "></span><span class="x">        $payment = Payment::get($paymentId, $this-&gt;apiContext);</span>
+<span class="linenos" data-linenos="67 "></span>
+<span class="linenos" data-linenos="68 "></span><span class="x">        $execution = new PaymentExecution();</span>
+<span class="linenos" data-linenos="69 "></span><span class="x">        $execution-&gt;setPayerId($payerId);</span>
+<span class="linenos" data-linenos="70 "></span>
+<span class="linenos" data-linenos="71 "></span><span class="x">        try {</span>
+<span class="linenos" data-linenos="72 "></span><span class="x">            // Executa el pagament</span>
+<span class="linenos" data-linenos="73 "></span><span class="x">            $result = $payment-&gt;execute($execution, $this-&gt;apiContext);</span>
+<span class="linenos" data-linenos="74 "></span>
+<span class="linenos" data-linenos="75 "></span><span class="x">            // Comprova que el pagament s&#39;ha completat amb èxit</span>
+<span class="linenos" data-linenos="76 "></span><span class="x">            if ($result-&gt;getState() == &#39;approved&#39;) {</span>
+<span class="linenos" data-linenos="77 "></span><span class="x">                // Aquí pots processar la informació de la transacció, </span>
+<span class="linenos" data-linenos="78 "></span><span class="x">                // com ara actualitzar la base de dades, etc.</span>
+<span class="linenos" data-linenos="79 "></span><span class="x">                return redirect(&#39;/&#39;)-&gt;with(&#39;success&#39;, &#39;Pagament completat amb èxit.&#39;);</span>
+<span class="linenos" data-linenos="80 "></span><span class="x">            }</span>
+<span class="linenos" data-linenos="81 "></span><span class="x">        } catch (Exception $e) {</span>
+<span class="linenos" data-linenos="82 "></span><span class="x">            // Gestiona els errors aquí</span>
+<span class="linenos" data-linenos="83 "></span><span class="x">            return redirect(&#39;/&#39;)-&gt;with(&#39;error&#39;, &#39;Hi ha hagut un problema en processar el teu pagament.&#39;);</span>
+<span class="linenos" data-linenos="84 "></span><span class="x">        }</span>
+<span class="linenos" data-linenos="85 "></span>
+<span class="linenos" data-linenos="86 "></span><span class="x">        return redirect(&#39;/&#39;)-&gt;with(&#39;error&#39;, &quot;El pagament no s&#39;ha pogut completar.&quot;);</span>
+<span class="linenos" data-linenos="87 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="88 "></span>
+<span class="linenos" data-linenos="89 "></span><span class="x">    // Aquí pots afegir els mètodes per gestionar la cancel·lació  del pagament</span>
+<span class="linenos" data-linenos="90 "></span><span class="x">}</span>
+</code></pre></div>
+Defineix les rutes</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">Route::get(&#39;/payment/create&#39;, &#39;PaymentController@createPayment&#39;);</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">Route::get(&#39;/payment/success&#39;, &#39;PaymentController@successPayment&#39;);</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">Route::get(&#39;/payment/cancel&#39;, &#39;PaymentController@cancelPayment&#39;);</span>
+</code></pre></div>
+<p>És important seguir aquests passos detalladament i referir-se a la documentació específica de la biblioteca que estàs utilitzant per obtenir instruccions detallades i exemples de codi. La clau està en la correcta configuració i integració de les credencials de PayPal Sandbox i la correcta gestió de les respostes de l'API de PayPal.</p>
+<p><strong>Notes Importants</strong>
+Aquest exemple és molt bàsic i només per a fins educatius. En un entorn de producció, hauràs de gestionar molts altres aspectes com la verificació de seguretat, el maneig d'errors més detallat, i la integració amb la base de dades.
+Assegura't de provar aquest codi en l'entorn de Sandbox de PayPal abans de considerar la seva implementació en producció.
+Personalitza els imports del pagament (import, moneda, descripció) segons les necessitats del teu projecte.</p>
+<h2 id="activitats">Activitats<a class="headerlink" href="#activitats" title="Permanent link">&para;</a></h2>
+<ol start="901">
+<li>Crea l'autenticació mitjançant google per a l'aplicació de BatoiBook</li>
+</ol>
+<p>Tria un: </p>
+<ol start="902">
+<li>Crea un canal de difusió per a l'aplicació de BatoiBook. Crea un esdeveniment que s'envie per aquest canal de difusió quan es realitze una venda</li>
+<li>Crea un chat per a l'API de ChatGPT en l'aplicació de BatoiBook. Fes que al mostrar el llibre (soles en show) ixca un index del llibre generat per chatgtp.</li>
+<li>Crea una pasarela de pagament per a l'aplicació de BatoiBook.</li>
+</ol>
+<p>Investiga:</p>
+<ol start="905">
+<li>Tria un e intenta intregrar en batoibooks:<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>* Integració de Google Maps API.
+<span class="linenos" data-linenos="2 "></span>* Gestió d&#39;Enviaments amb APIs de Logística.
+<span class="linenos" data-linenos="3 "></span>* Integració de Passarel·les de Pagament.
+<span class="linenos" data-linenos="4 "></span>* Ús de APIs de Xarxes Socials.
+<span class="linenos" data-linenos="5 "></span>* Serveis Meteorològics Integrats.
+<span class="linenos" data-linenos="6 "></span>* Recollida d&#39;Opinions amb APIs de Ressenyes.
+</code></pre></div>
+</li>
+</ol>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2021-2023 Aitor Medrano, Luis Alemañ, Ignasi Gomis - Licencia CC BY-NC-SA
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/aitormedrano" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.2 4.2 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.52 8.52 0 0 1-5.33 1.84q-.51 0-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<a.medrano@edu.gva.es>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.13c-.15.01-.29.06-.39.17l-1 1 2.05 2 1-1c.22-.21.22-.56 0-.77l-1.24-1.23a.56.56 0 0 0-.38-.17m-2 1.75L13 19.94V22h2.06l6.06-6.07M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h7v-.89l8.24-8.22c.47-.49 1.12-.76 1.8-.76.34 0 .68.06 1 .19V6c0-1.12-.92-2-2.04-2m0 4-8 5-8-5V6l8 5 8-5"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": ".", "features": ["header.autohide", "toc.integrate", "content.tabs.link"], "search": "assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copiat al porta-retalls", "clipboard.copy": "C\u00f2pia al porta-retalls", "search.result.more.one": "1 m\u00e9s en aquesta p\u00e0gina", "search.result.more.other": "# m\u00e9s en aquesta p\u00e0gina", "search.result.none": "Cap document coincideix", "search.result.one": "1 document coincident", "search.result.other": "# documents coincidents", "search.result.placeholder": "Escriu per a comen\u00e7ar a cercar", "search.result.term.missing": "Desaparegut", "select.version": "Selecciona la versi\u00f3"}}</script>
+    
+    
+      <script src="assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>
