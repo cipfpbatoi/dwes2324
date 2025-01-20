@@ -1,0 +1,11 @@
+Criteri,Puntuació Total,Complet(2),A mitjes(1),No(0)
+Paraula a Endevinar,1,Paraula definida correctament,Paraula definida però amb errors,No s'ha definit la paraula
+Inicialització de les Lletres,3,Array creat correctament,Array creat però amb errors,No s'ha creat l'array
+Funció per a Comprovar Intents,5,Funció creada i funcional,Funció creada però amb errors,No s'ha creat la funció
+Comprovació d'Intents,3,Comprovació realitzada correctament,Comprovació amb errors,No s'ha realitzat la comprovació
+Inicialització de la Graella,4,Funció creada correctament,Funció creada però amb errors,No s'ha creat la funció
+Pintar la Graella,4,Funció creada i funcional,Funció creada però amb errors,No s'ha creat la funció
+Realitzar Moviments,5,Funció creada i funcional,Funció creada però amb errors,No s'ha creat la funció
+Interfícies d'Usuari,6,Interfície correcta i funcional,Interfície creada però amb errors,No s'ha creat la interfície
+Estil CSS,2,CSS aplicat correctament,CSS aplicat però amb errors,No s'ha aplicat el CSS
+Comentaris i Claredat del Codi,1,Codi ben comentat i clar,Codi amb alguns comentaris,Codi sense comentaris o desordenat
