@@ -1,0 +1,1097 @@
+
+<!doctype html>
+<html lang="ca" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://cipfpbatoi.github.io/dwes2223/04dades_Laravel.html">
+      
+      
+      
+      
+      <link rel="icon" href="imagenes/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.18">
+    
+    
+      
+        <title>SA4 – Accés segur i estructurat a bases de dades amb Laravel - Desenvolupament web en entorn de Servidor</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-X6D0LR7TC8"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-X6D0LR7TC8",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-X6D0LR7TC8",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="Teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sa4-acces-segur-i-estructurat-a-bases-de-dades-amb-laravel" class="md-skip">
+          Salta el contingut
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Capçalera">
+    <a href="index.html" title="Desenvolupament web en entorn de Servidor" class="md-header__button md-logo" aria-label="Desenvolupament web en entorn de Servidor" data-md-component="logo">
+      
+  <img src="imagenes/logofp.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Desenvolupament web en entorn de Servidor
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              SA4 – Accés segur i estructurat a bases de dades amb Laravel
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="Teal"  aria-label="Canviar a mode nit"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Canviar a mode nit" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="light-blue" data-md-color-accent="Teal"  aria-label="Canviar a mode dia"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Canviar a mode dia" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Neteja" aria-label="Neteja" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicialitzant cerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navegació" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Desenvolupament web en entorn de Servidor" class="md-nav__button md-logo" aria-label="Desenvolupament web en entorn de Servidor" data-md-component="logo">
+      
+  <img src="imagenes/logofp.png" alt="logo">
+
+    </a>
+    Desenvolupament web en entorn de Servidor
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01arquitecturas.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.- Arquitectures Web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02php.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.- Programació web amb PHP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03MVC_Laravel.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.- Arquitectura MVC amb Laravel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="04dades_Laravel" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.- Accés segur i estructurat a bases de dades amb Laravel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="05accesoDatos.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.- Accès a Dades
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="06projecte.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    6.- Projecte Integrador Bloc 1
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="07frameworks.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    7.- Introducció a Laravel i el MVC
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="08laravelDades.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    8- Laravel i la gestió de Dades
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="09laravelAvan.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    9- Funcionalitats avançades de Laravel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="10laravelRestul.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    10.- Desenvolupament d'Apis amb Laravel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="11mashup.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    11.- Webs Hibrides
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="10solucions.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    12.- Solucions Exercicis propossats
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="13recuperacioPHP.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    13.- Exercicis recuperació
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="sa4-acces-segur-i-estructurat-a-bases-de-dades-amb-laravel">SA4 – Accés segur i estructurat a bases de dades amb Laravel<a class="headerlink" href="#sa4-acces-segur-i-estructurat-a-bases-de-dades-amb-laravel" title="Permanent link">&para;</a></h1>
+<details class="abstract">
+<summary>Duració i criteris d'evaluació</summary>
+<p>Duració estimada: 16 hores</p>
+<hr />
+<table>
+<thead>
+<tr>
+<th>Resultat d'aprenentatge</th>
+<th>Criteris d'avaluació</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RA6.-Desenvolupa aplicacions web d'accés a magatzems de dades, aplicant mesures per a mantindre la seguretat i la integritat de la informació.</td>
+<td>a) S'han analitzat les tecnologies que permeten l'accés mitjançant programació a la informació disponible en magatzems de dades.<br/> b) S'han creat aplicacions que establisquen connexions amb bases de dades.<br/> c) S'ha recuperat informació emmagatzemada en bases de dades.<br/> d) S'ha publicat en aplicacions web la informació recuperada.<br/> e) S'han utilitzat conjunts de dades per a emmagatzemar la informació.<br/> f) S'han creat aplicacions web que permeten l'actualització i l'eliminació d'informació disponible en una base de dades.<br/> g) S'han provat i documentat les aplicacions web.</td>
+</tr>
+</tbody>
+</table>
+</details>
+<h2 id="sa-41-connexio-a-la-base-de-dades">SA 4.1  Connexió a la base de dades<a class="headerlink" href="#sa-41-connexio-a-la-base-de-dades" title="Permanent link">&para;</a></h2>
+<h3 id="configuracio-de-la-base-de-dades-en-laravel">🔧 Configuració de la base de dades en Laravel<a class="headerlink" href="#configuracio-de-la-base-de-dades-en-laravel" title="Permanent link">&para;</a></h3>
+<p>Per a poder treballar amb bases de dades en Laravel, el primer pas és configurar l’accés al sistema gestor de base de dades (SGBD) que vulguem utilitzar. En aquest cas, farem servir MySQL.</p>
+<h4 id="1-fitxer-env-i-separacio-de-configuracions">📁 1. Fitxer <code>.env</code> i separació de configuracions<a class="headerlink" href="#1-fitxer-env-i-separacio-de-configuracions" title="Permanent link">&para;</a></h4>
+<p>Laravel utilitza un sistema de variables d'entorn, que permet separar la configuració segons la màquina, l'entorn (desenvolupament, producció...), o l’usuari.
+Aquesta configuració s’indica al fitxer <code>.env</code> que està a l’arrel del projecte. Allí definirem el tipus de connexió, el servidor, el nom de la base de dades, l’usuari i la contrasenya.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>DB_CONNECTION=mysql
+<span class="linenos" data-linenos="2 "></span>DB_HOST=localhost
+<span class="linenos" data-linenos="3 "></span>DB_PORT=3306
+<span class="linenos" data-linenos="4 "></span>DB_DATABASE=nom_base_de_dades
+<span class="linenos" data-linenos="5 "></span>DB_USERNAME=usuari
+<span class="linenos" data-linenos="6 "></span>DB_PASSWORD=contrasenya
+</code></pre></div>
+<h4 id="2-fitxer-configdatabasephp">⚙️ 2. Fitxer <code>config/database.php</code><a class="headerlink" href="#2-fitxer-configdatabasephp" title="Permanent link">&para;</a></h4>
+<p>Aquest fitxer defineix com Laravel interpreta aquestes variables. Per exemple, a l’inici veuràs:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">&#39;default&#39; =&gt; env(&#39;DB_CONNECTION&#39;, &#39;mysql&#39;),</span>
+</code></pre></div>
+<p>Això significa que Laravel utilitzarà la base de dades especificada a la variable DB_CONNECTION. Si no s’ha definit al .env, utilitzarà 'mysql' per defecte.
+Més avall, hi ha la secció connections amb les configuracions específiques per a cada tipus de base de dades. Per a MySQL:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">&#39;mysql&#39; =&gt; [</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">&#39;driver&#39; =&gt; &#39;mysql&#39;,</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">&#39;host&#39; =&gt; env(&#39;DB_HOST&#39;, &#39;127.0.0.1&#39;),</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">&#39;port&#39; =&gt; env(&#39;DB_PORT&#39;, &#39;3306&#39;),</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">&#39;database&#39; =&gt; env(&#39;DB_DATABASE&#39;, &#39;forge&#39;),</span>
+<span class="linenos" data-linenos="6 "></span><span class="x">&#39;username&#39; =&gt; env(&#39;DB_USERNAME&#39;, &#39;forge&#39;),</span>
+<span class="linenos" data-linenos="7 "></span><span class="x">&#39;password&#39; =&gt; env(&#39;DB_PASSWORD&#39;, &#39;&#39;),</span>
+<span class="linenos" data-linenos="8 "></span><span class="x">...</span>
+<span class="linenos" data-linenos="9 "></span><span class="x">],</span>
+</code></pre></div>
+<h4 id="3-contrasenya-i-parametres-necessaris">🔐 3. Contrasenya i paràmetres necessaris<a class="headerlink" href="#3-contrasenya-i-parametres-necessaris" title="Permanent link">&para;</a></h4>
+<p>Perquè Laravel puga connectar-se correctament a la base de dades, és necessari configurar correctament els valors següents en el fitxer <code>.env</code>:</p>
+<ul>
+<li>L’adreça del servidor.</li>
+<li>El nom de la base de dades.</li>
+<li>L’usuari.</li>
+<li>La contrasenya d’accés.</li>
+</ul>
+<p>En un entorn local, l’adreça del servidor sol ser “localhost”.</p>
+<h4 id="4-crear-la-base-de-dades-fora-de-laravel">🧱 4. Crear la base de dades (fora de Laravel)<a class="headerlink" href="#4-crear-la-base-de-dades-fora-de-laravel" title="Permanent link">&para;</a></h4>
+<p>Laravel pot crear taules, relacions i introduir dades, però la base de dades com a contenidor l’has de crear prèviament de forma manual.
+Pots fer-ho de dues maneres:</p>
+<ul>
+<li>✅ Amb una eina gràfica com phpMyAdmin (si tens XAMPP, Laragon, etc.).</li>
+<li>✅ Per línia de comandes, per exemple:</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>mysql<span class="w"> </span>-u<span class="w"> </span>root<span class="w"> </span>-p
+<span class="linenos" data-linenos="2 "></span>CREATE<span class="w"> </span>DATABASE<span class="w"> </span>nom_base_de_dades<span class="p">;</span>
+</code></pre></div>
+Una vegada creada, Laravel ja podrà accedir-hi i començar a treballar amb ella (creant taules, inserint dades...).</p>
+<h3 id="migracions-a-laravel-12">🔄 Migracions a Laravel 12<a class="headerlink" href="#migracions-a-laravel-12" title="Permanent link">&para;</a></h3>
+<p>Les migracions són un sistema de control de versions per a la base de dades. Permeten mantindre un registre dels canvis estructurals que es fan (crear, modificar o eliminar taules i camps), i facilitar que tot l’equip de treball tinga la base de dades sincronitzada.
+Les migracions funcionen conjuntament amb l’eina Schema Builder per definir l’estructura de la base de dades utilitzant codi PHP.</p>
+<hr />
+<h4 id="1estructura-i-funcionament">📁 1.Estructura i funcionament<a class="headerlink" href="#1estructura-i-funcionament" title="Permanent link">&para;</a></h4>
+<p>Les migracions es troben a la carpeta <code>database/migrations</code>. Cada fitxer inclou un timestamp en el nom, que indica l’ordre d’execució. Cada migració conté dues funcions:</p>
+<ul>
+<li><code>up</code>: per aplicar canvis (crear o modificar taules).</li>
+<li><code>down</code>: per revertir els canvis aplicats.</li>
+</ul>
+<p>Els fitxers de migració es creen mitjançant Artisan. És habitual trobar migracions per defecte en nous projectes Laravel (com la dels usuaris). Aquestes es poden modificar o eliminar segons les necessitats del projecte.</p>
+<hr />
+<h4 id="2tipus-de-columnes-i-modificadors">🔧 2.Tipus de columnes i modificadors<a class="headerlink" href="#2tipus-de-columnes-i-modificadors" title="Permanent link">&para;</a></h4>
+<p>A l’hora de definir les taules, Laravel proporciona molts tipus de columnes (<code>id</code>, <code>string</code>, <code>text</code>, <code>boolean</code>, <code>timestamp</code>...) i modificadors (<code>nullable</code>, <code>unique</code>, <code>default</code>, <code>after</code>, etc.).</p>
+<p>Els camps <code>id</code> i <code>timestamps</code> solen afegir-se per defecte:</p>
+<ul>
+<li><code>id</code>: clau primària auto-incremental.</li>
+<li><code>timestamps</code>: afegeix <code>created_at</code> i <code>updated_at</code>, gestionats automàticament per Laravel.</li>
+</ul>
+<p>Per columnes de text llarg, es recomana <code>text</code> o <code>longText</code> en lloc de <code>string</code>, que està limitat a 255 caràcters.</p>
+<p>Per a definir claus primàries compostes, es pot utilitzar el mètode <code>primary</code>.</p>
+<hr />
+<h4 id="3crear-una-nova-migracio">🛠️ 3.Crear una nova migració<a class="headerlink" href="#3crear-una-nova-migracio" title="Permanent link">&para;</a></h4>
+<p>Per a generar un fitxer de migració s’utilitza:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>php<span class="w"> </span>artisan<span class="w"> </span>make:migration<span class="w"> </span>nom_de_la_migracio
+</code></pre></div>
+<p>Laravel analitza el nom de la migració i, si detecta patrons com <code>create_XXX_table</code> o <code>add_XXX_to_YYY_table</code>, assumeix el tipus d’operació.</p>
+<p>També es poden especificar directament les opcions:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>php<span class="w"> </span>artisan<span class="w"> </span>make:migration<span class="w"> </span>crear_tabla_equips<span class="w"> </span>--create<span class="o">=</span>equips
+<span class="linenos" data-linenos="2 "></span>php<span class="w"> </span>artisan<span class="w"> </span>make:migration<span class="w"> </span>afegir_telefon_a_usuaris<span class="w"> </span>--table<span class="o">=</span>usuaris
+</code></pre></div>
+<hr />
+<h4 id="4modificar-una-taula-existent">🔁 4.Modificar una taula existent<a class="headerlink" href="#4modificar-una-taula-existent" title="Permanent link">&para;</a></h4>
+<p>Per a afegir o llevar camps d’una taula ja creada, es fa una nova migració indicant que s’està treballant sobre una taula existent.
+També es pot controlar l’ordre dels camps nous utilitzant modificadors com <code>after</code>.</p>
+<hr />
+<h4 id="5executar-migracions">🚀 5.Executar migracions<a class="headerlink" href="#5executar-migracions" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">// Per aplicar les migracions </span>
+<span class="linenos" data-linenos="2 "></span><span class="x">php artisan migrate</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">// Si es vol revertir l’última migració</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">php artisan migrate:rollback</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">// Si volem desfer totes les migracions</span>
+<span class="linenos" data-linenos="6 "></span><span class="x">php artisan migrate:reset</span>
+<span class="linenos" data-linenos="7 "></span><span class="x">// Un comanament interessant quan estem desenvolupant un nou lloc web és **migrate:refresh**, el qual desfarà tots els canvis i tornar a aplicar les migracions:</span>
+<span class="linenos" data-linenos="8 "></span><span class="x">php artisan migrate:fresh</span>
+</code></pre></div>
+<h4 id="6schema-builder">📐 6.Schema Builder<a class="headerlink" href="#6schema-builder" title="Permanent link">&para;</a></h4>
+<p>Una vegada creada una migració hem de completar els seus mètodes up i down per a indicar la taula que volem crear o el camp que volem modificar. En el mètode down sempre haurem d'afegir l'operació inversa, eliminar la taula que s'ha creat en el mètode up o eliminar la columna que s'ha afegit.</p>
+<p>Açò ens permetrà desfer migracions deixant la base de dades en el mateix estat en el qual es trobaven abans que s'afegiren.</p>
+<p>Per a especificar la taula a crear o modificar, així com les columnes i tipus de dades de les mateixes, s'utilitza la classe <strong>Schema</strong>. Aquesta classe té una sèrie de mètodes que ens permetrà especificar l'estructura de les taules independentment del sistema de base de dades que utilitzem.</p>
+<h5 id="crear-i-esborrar-una-taula">Crear i esborrar una taula<a class="headerlink" href="#crear-i-esborrar-una-taula" title="Permanent link">&para;</a></h5>
+<p>Per a afegir una nova taula a la base de dades s'utilitza el següent constructor:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">    Schema::create(&#39;users&#39;, function (Blueprint $table)     { </span>
+<span class="linenos" data-linenos="2 "></span><span class="x">        $table-&gt;increments(&#39;id&#39;);</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">    });</span>
+</code></pre></div>
+<p>On el primer argument és el nom de la taula i el segon és una funció que rep com a paràmetre un objecte
+del tipus Blueprint que utilitzarem per a configurar les columnes de la taula.</p>
+<p>En la secció down de la migració haurem d'eliminar la taula que hem creat, per a açò usarem algun dels
+següents mètodes:</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">    Schema::drop(&#39;users&#39;);</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">    Schema::dropIfExists(&#39;users&#39;);</span>
+</code></pre></div>
+En crear una migració amb el comando de Artisan make:migration ja ens ve aquest codi afegit per defecte, la creació i eliminació de la taula que s'ha indicat i a més s'afigen un parell de columnes per defecte (id i timestamps).</p>
+<h5 id="afegir-columnes">Afegir columnes<a class="headerlink" href="#afegir-columnes" title="Permanent link">&para;</a></h5>
+<p>El constructor Schema::create rep com a segon paràmetre una funció que ens permet especificar les columnes que va a tenir aquesta taula.</p>
+<p>En aquesta funció podem anar afegint tots els camps que vulguem, indicant per a cadascun d'ells el seu tipus i nom, i a més si volem també podrem indicar una sèrie de modificadors com a valor per defecte, índexs, etc. Per exemple:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">    Schema::create(&#39;users&#39;, function($table) {</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">        $table-&gt;increments(&#39;id&#39;); </span>
+<span class="linenos" data-linenos="3 "></span><span class="x">        $table-&gt;string(&#39;username&#39;, 32); </span>
+<span class="linenos" data-linenos="4 "></span><span class="x">        $table-&gt;string(&#39;password&#39;); </span>
+<span class="linenos" data-linenos="5 "></span><span class="x">        $table-&gt;smallInteger(&#39;vots&#39;); </span>
+<span class="linenos" data-linenos="6 "></span><span class="x">        $table-&gt;string(&#39;direccion&#39;); </span>
+<span class="linenos" data-linenos="7 "></span><span class="x">        $table-&gt;boolean(&#39;confirmat&#39;)-&gt;default(false);</span>
+<span class="linenos" data-linenos="8 "></span><span class="x">        $table-&gt;timestamps();</span>
+<span class="linenos" data-linenos="9 "></span><span class="x">    });</span>
+</code></pre></div>
+<p>Schema defineix molts tipus de dades que podem utilitzar per a definir les columnes d'una taula, alguns dels principals són:</p>
+<table>
+<thead>
+<tr>
+<th>Comando</th>
+<th>Tipus de camp</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$table-&gt;boolean('confirmed');</td>
+<td>BOOLEAN</td>
+</tr>
+<tr>
+<td>$table-&gt;enum('choices', array('foo', 'bar'));</td>
+<td>ENUM</td>
+</tr>
+<tr>
+<td>$table-&gt;float('amount');</td>
+<td>FLOAT</td>
+</tr>
+<tr>
+<td>$table-&gt;increments('id');</td>
+<td>Clau principal tipus INTEGER amb Acte-Increment</td>
+</tr>
+<tr>
+<td>$table-&gt;integer('votes');</td>
+<td>INTEGER</td>
+</tr>
+<tr>
+<td>$table-&gt;mediumInteger('numbers');</td>
+<td>MEDIUMINT</td>
+</tr>
+<tr>
+<td>$table-&gt;smallInteger('votes');</td>
+<td>SMALLINT</td>
+</tr>
+<tr>
+<td>$table-&gt;tinyInteger('numbers');</td>
+<td>TINYINT</td>
+</tr>
+<tr>
+<td>$table-&gt;string('email');</td>
+<td>VARCHAR</td>
+</tr>
+<tr>
+<td>$table-&gt;string('name', 100);</td>
+<td>VARCHAR amb la longitud indicada TEXT</td>
+</tr>
+<tr>
+<td>$table-&gt;text('description');</td>
+<td>TEXT</td>
+</tr>
+<tr>
+<td>$table-&gt;timestamp('added_on');</td>
+<td></td>
+</tr>
+<tr>
+<td>$table-&gt;timestamps();</td>
+<td>Afig els timestamps "created_at" i "updated_at"</td>
+</tr>
+<tr>
+<td>-&gt;nullable()</td>
+<td>Indicar que la columna permet valors NULL</td>
+</tr>
+<tr>
+<td>-&gt;default($value)</td>
+<td>Declara un valor per defecte per a una columna</td>
+</tr>
+<tr>
+<td>-&gt;unsigned()</td>
+<td>Afig UNSIGNED a les columnes tipus INTEGER</td>
+</tr>
+</tbody>
+</table>
+<p>Els tres últims es poden combinar amb la resta de tipus per a crear, per exemple, una columna que permeta nuls, amb un valor per defecte i de tipus unsigned.</p>
+<p>Per a consultar tots els tipus de dades que podem utilitzar podeu consultar la documentació de Laravel <a href="http://laravel.com/docs/8.x/migrations#creating-columns">en</a>:</p>
+<h5 id="afegir-indexs">Afegir índexs<a class="headerlink" href="#afegir-indexs" title="Permanent link">&para;</a></h5>
+<p>Schema suporta els següents tipus d'índexs:</p>
+<table>
+<thead>
+<tr>
+<th>Comanament</th>
+<th>Descripció</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$table-&gt;id();</td>
+<td>Afegir un clau primària id</td>
+</tr>
+<tr>
+<td>$table-&gt;primary('id');</td>
+<td>Afegir una clau primària</td>
+</tr>
+<tr>
+<td>$table-&gt;primary(array('first', 'last'));</td>
+<td>Definir una clau primària composta</td>
+</tr>
+<tr>
+<td>$table-&gt;unique('email');</td>
+<td>Definir el camp com UNIQUE</td>
+</tr>
+<tr>
+<td>$table-&gt;index('state');</td>
+<td>Afegir un índex a una columna</td>
+</tr>
+</tbody>
+</table>
+<p>En la taula s'especifica com afegir aquests índexs després de crear el camp, però també permet indicar aquests índexs alhora que es crea el camp:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">    $table-&gt;string(&#39;email&#39;)-&gt;unique();</span>
+</code></pre></div>
+<h5 id="claus-alienes">Claus alienes<a class="headerlink" href="#claus-alienes" title="Permanent link">&para;</a></h5>
+<p>Amb Schema també podem definir claus alienes entre taules:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">    $table-&gt;foreignId(&#39;module_id&#39;)-&gt;constrained(&#39;modules&#39;);</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">    $table-&gt;foreign(&#39;module_id&#39;)-&gt;references(&#39;code&#39;)-&gt;on(&#39;modules&#39;);</span>
+</code></pre></div>
+<p>En el primer exemple, a més de crear el camp crea la rel·lacio, i serveix si la clau a la que faig referència s'ha creat utilitzant $table-&gt;id();</p>
+<p>En cas contrari he d'especificar el camp ja creat i on es rel·laciona.</p>
+<p>La columna amb la clau aliena ha de ser del <strong>mateix tipus</strong> que la columna a la qual apunta. Si per exemple vam crear una columna a un índex auto-incremental haurem d'especificar que la columna siga <strong>unsigned</strong> per que no es produïsquen errors.</p>
+<p>També podem especificar les accions que s'han de realitzar per a "<strong>on delete</strong>" i "<strong>on update</strong>":</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">    $table-&gt;foreign(&#39;user_id&#39;)-&gt;references(&#39;id&#39;)-&gt;on(&#39;users&#39;)-&gt;onDelete(&#39;cascade&#39;);</span>
+</code></pre></div>
+<h3 id="models-de-dades-amb-eloquent-orm-laravel-12">🧩 Models de dades amb Eloquent ORM (Laravel 12)<a class="headerlink" href="#models-de-dades-amb-eloquent-orm-laravel-12" title="Permanent link">&para;</a></h3>
+<p>L’<strong>Object-Relational Mapping (ORM)</strong> és una tècnica que permet treballar amb una base de dades relacional utilitzant <strong>objectes</strong> en lloc de consultes SQL directes. Laravel inclou el seu propi ORM anomenat <strong>Eloquent</strong>, que permet fer operacions sobre la base de dades de forma molt intuïtiva.</p>
+<p>Amb Eloquent, cada <strong>model</strong> representa una <strong>taula</strong> de la base de dades, i cada <strong>instància del model</strong> representa un registre d’aquesta taula.</p>
+<hr />
+<h3 id="creacio-dun-model">🔧 Creació d’un model<a class="headerlink" href="#creacio-dun-model" title="Permanent link">&para;</a></h3>
+<p>Els models es creen dins la carpeta <code>app/Models</code>. Per generar-ne un:</p>
+<h2 id="creara-una-classe-movie-associada-per-defecte-a-la-taula-movies-si-la-taula-te-un-nom-diferent-podem-indicar-ho-al-model-amb-la-propietat-table-php-artisan-makemodel-movie-model-migracio-php-artisan-makemodel-movie-m-model-migracio-controlador-buit-php-artisan-makemodel-movie-mc-model-migracio-controlador-de-recursos-php-artisan-makemodel-movie-mcr"><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x"> //  crearà una classe `Movie` associada, per defecte, a la taula `movies`. Si la taula té un nom diferent, podem indicar-ho al model amb la propietat `$table`.</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">php artisan make:model Movie</span>
+<span class="linenos" data-linenos="3 "></span><span class="x"> // Model + migració </span>
+<span class="linenos" data-linenos="4 "></span><span class="x">php artisan make:model Movie -m</span>
+<span class="linenos" data-linenos="5 "></span><span class="x"> // Model + migració + controlador buit </span>
+<span class="linenos" data-linenos="6 "></span><span class="x">php artisan make:model Movie -mc</span>
+<span class="linenos" data-linenos="7 "></span><span class="x"> // Model + migració + controlador de recursos </span>
+<span class="linenos" data-linenos="8 "></span><span class="x">php artisan make:model Movie -mcr</span>
+</code></pre></div><a class="headerlink" href="#creara-una-classe-movie-associada-per-defecte-a-la-taula-movies-si-la-taula-te-un-nom-diferent-podem-indicar-ho-al-model-amb-la-propietat-table-php-artisan-makemodel-movie-model-migracio-php-artisan-makemodel-movie-m-model-migracio-controlador-buit-php-artisan-makemodel-movie-mc-model-migracio-controlador-de-recursos-php-artisan-makemodel-movie-mcr" title="Permanent link">&para;</a></h2>
+<h3 id="bones-practiques-de-nomenclatura">📐 Bones pràctiques de nomenclatura<a class="headerlink" href="#bones-practiques-de-nomenclatura" title="Permanent link">&para;</a></h3>
+<p>És recomanable mantindre una coherència entre:</p>
+<ul>
+<li>Model → <code>Movie</code></li>
+<li>Controlador → <code>MovieController</code></li>
+<li>Taula → <code>movies</code></li>
+<li>Vistes → <code>resources/views/movies/index.blade.php</code>, etc.</li>
+</ul>
+<hr />
+<h4 id="propietats-especials-dels-models">🔑 Propietats especials dels models<a class="headerlink" href="#propietats-especials-dels-models" title="Permanent link">&para;</a></h4>
+<ul>
+<li><code>$primaryKey</code>: per indicar una clau primària diferent de <code>id</code>.</li>
+<li><code>$timestamps = false</code>: si la taula no té camps <code>created_at</code> i <code>updated_at</code>.</li>
+</ul>
+<p>Exemple de definició completa:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">class User extends Model</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">{</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">    protected $table = &#39;my_users&#39;;</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">    protected $primaryKey = &#39;my_id&#39;;</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">    public $timestamps = false;</span>
+<span class="linenos" data-linenos="6 "></span><span class="x">}</span>
+</code></pre></div>
+<h4 id="us-dels-models-per-a-consultar-dades">📥 Ús dels models per a consultar dades<a class="headerlink" href="#us-dels-models-per-a-consultar-dades" title="Permanent link">&para;</a></h4>
+<p>Una vegada creat el model, es pot utilitzar en els controladors per consultar la base de dades i passar la informació a les vistes.</p>
+<h5 id="consultes-basiques">Consultes bàsiques<a class="headerlink" href="#consultes-basiques" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">// Tots els registres </span>
+<span class="linenos" data-linenos=" 2 "></span><span class="x">$movies = Movie::all();</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">// Condicionals </span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">$movies = Movie::where(&#39;precio&#39;, &#39;&lt;&#39;, 10)-&gt;get();</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x"> // Ordre</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">$movies = Movie::orderBy(&#39;titulo&#39;, &#39;desc&#39;)-&gt;get();</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">// Funcions agregades </span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">$total = Movie::count();</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">$max = Movie::max(&#39;preu&#39;);</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">$min = Movie::min(&#39;preu&#39;);</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">$avg = Movie::avg(&#39;preu&#39;);</span>
+<span class="linenos" data-linenos="12 "></span><span class="x">$sum = Movie::sum(&#39;preu&#39;);</span>
+</code></pre></div>
+<h3 id="seeders-i-factories-en-laravel-12">🌱 Seeders i 🏭 Factories en Laravel 12<a class="headerlink" href="#seeders-i-factories-en-laravel-12" title="Permanent link">&para;</a></h3>
+<p>Qun estem desenvolupant una aplicació, sovint necessitem disposar de <strong>dades de prova</strong> per poder treballar amb consultes, validacions, formularis, etc. Laravel ens ofereix dues eines molt útils per generar aquestes dades: els <strong>seeders</strong> i els <strong>factories</strong>.</p>
+<hr />
+<h4 id="seeders-sembradors-de-dades">🌱 Seeders (Sembradors de dades)<a class="headerlink" href="#seeders-sembradors-de-dades" title="Permanent link">&para;</a></h4>
+<p>Els <strong>seeders</strong> són classes que permeten <strong>inserir dades inicials</strong> a la base de dades de forma programada.</p>
+<h5 id="crear-un-seeder">Crear un seeder<a class="headerlink" href="#crear-un-seeder" title="Permanent link">&para;</a></h5>
+<p>Per crear un seeder:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>php artisan make:seeder NomDelSeeder
+</code></pre></div>
+<p>Es crearà una classe dins <code>database/seeders</code>. Dins del mètode <code>run()</code> podrem escriure les instruccions per crear els registres.</p>
+<h5 id="registrar-el-seeder">Registrar el seeder<a class="headerlink" href="#registrar-el-seeder" title="Permanent link">&para;</a></h5>
+<p>Perquè s’execute, cal registrar-lo al <code>DatabaseSeeder.php</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">$this-&gt;call(NomDelSeeder::class); </span>
+</code></pre></div>
+<h6 id="executar-els-seeders">Executar els seeders<a class="headerlink" href="#executar-els-seeders" title="Permanent link">&para;</a></h6>
+<p>Per executar tots els seeders registrats:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">php artisan db:seed</span>
+</code></pre></div>
+<p>Per netejar i tornar a sembrar la base de dades:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">php artisan migrate:fresh --seed</span>
+</code></pre></div>
+<h3 id="factories-fabriques-de-dades">🏭 Factories (Fàbriques de dades)<a class="headerlink" href="#factories-fabriques-de-dades" title="Permanent link">&para;</a></h3>
+<p>Els factories permeten generar dades falses de manera automatitzada i en gran quantitat.</p>
+<h4 id="crear-una-factory">Crear una factory<a class="headerlink" href="#crear-una-factory" title="Permanent link">&para;</a></h4>
+<p>Per crear una factory:</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">php artisan make:factory NomDelModelFactory</span>
+</code></pre></div>
+Es crearà dins database/factories una classe associada automàticament al model corresponent.</p>
+<h4 id="definir-la-factory">Definir la factory<a class="headerlink" href="#definir-la-factory" title="Permanent link">&para;</a></h4>
+<p>En el mètode definition(), s’utilitza el sistema faker per generar dades aleatòries (noms, correus, dates...).
+Els models han d’incloure el trait HasFactory per poder utilitzar les factories.</p>
+<h4 id="exemple-de-seeder-amb-factory">🧪 Exemple de seeder amb factory<a class="headerlink" href="#exemple-de-seeder-amb-factory" title="Permanent link">&para;</a></h4>
+<p>Un seeder pot usar una factory per generar múltiples registres:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">User::factory()-&gt;count(10)-&gt;create();</span>
+</code></pre></div>
+Per generar dades relacionades:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">$usuaris = User::all();</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">$usuaris-&gt;each(function($usuari) {</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">Post::factory()-&gt;count(2)-&gt;create([</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">&#39;user_id&#39; =&gt; $usuari-&gt;id</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">]);</span>
+<span class="linenos" data-linenos="6 "></span><span class="x">});</span>
+</code></pre></div>
+<h4 id="resum">🧰 Resum<a class="headerlink" href="#resum" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Eina</th>
+<th>Finalitat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Seeder</td>
+<td>Inserir dades específiques o inicials</td>
+</tr>
+<tr>
+<td>Factory</td>
+<td>Generar dades aleatòries amb estructura definida</td>
+</tr>
+<tr>
+<td>Faker</td>
+<td>Generador integrat per crear valors falsos</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h4 id="referencia">📚 Referència<a class="headerlink" href="#referencia" title="Permanent link">&para;</a></h4>
+<ul>
+<li><a href="https://laravel.com/docs/12.x/seeding">Laravel Docs – Database Seeding</a></li>
+<li><a href="https://laravel.com/docs/12.x/database-testing#defining-model-factories">Laravel Docs – Model Factories</a></li>
+</ul>
+<h3 id="42-primeres-operacions-amb-eloquent">4.2 Primeres operacions amb Eloquent<a class="headerlink" href="#42-primeres-operacions-amb-eloquent" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>create</code>, <code>update</code>, <code>delete</code>, <code>all()</code>, <code>find()</code></li>
+<li>Relacions bàsiques (1:1, 1:N, N:N)</li>
+<li>Eager loading (<code>with()</code>)</li>
+<li>Paginació</li>
+</ul>
+<h3 id="43-arquitectura-escalable-per-a-cruds-patrons-oop">4.3 Arquitectura escalable per a CRUDs (patrons OOP)<a class="headerlink" href="#43-arquitectura-escalable-per-a-cruds-patrons-oop" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Introducció als principis SOLID</li>
+<li>Patrons Laravel recomanats: Repository, Service, Factory</li>
+<li>Estructura recomanada: <code>Controller → Service → Repository → Model</code></li>
+<li>Exemple complet amb <code>Producte</code></li>
+</ul>
+<h3 id="44-autenticacio-hashing-i-autoritzacio">4.4 Autenticació, hashing i autorització<a class="headerlink" href="#44-autenticacio-hashing-i-autoritzacio" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Laravel Breeze: registre, login, logout</li>
+<li>Protecció de rutes amb <code>auth</code></li>
+<li>Hashing automàtic de contrasenyes</li>
+<li>Middleware i polítiques (<code>Policy</code>) per a autorització</li>
+</ul>
+<h3 id="45-formularis-amb-seguretat-i-feedback">4.5 Formularis amb seguretat i feedback<a class="headerlink" href="#45-formularis-amb-seguretat-i-feedback" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Validació amb <code>FormRequest</code></li>
+<li>Ús de <code>@csrf</code>, <code>@method</code>, <code>old()</code>, <code>@error</code></li>
+<li>Missatges flash amb <code>session()-&gt;flash()</code></li>
+<li>UX i manteniment d'estat</li>
+</ul>
+<h3 id="46-exercici-integrador-futbol-femeni-crud">4.6 Exercici integrador: Futbol Femení CRUD<a class="headerlink" href="#46-exercici-integrador-futbol-femeni-crud" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Migració i model <code>EquipFutbol</code></li>
+<li>Arquitectura amb Service i Repository</li>
+<li>Formularis validats i control d’accés amb auth</li>
+<li>Feedback i proves bàsiques</li>
+</ul>
+<h3 id="47-extensio-opcional-crud-dinamic-amb-livewire">4.7 Extensió opcional: CRUD dinàmic amb Livewire<a class="headerlink" href="#47-extensio-opcional-crud-dinamic-amb-livewire" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Introducció a Livewire</li>
+<li>Creació de component CRUD</li>
+<li>Connexió amb Service i Repository</li>
+<li>Millora UX sense JS explícit</li>
+</ul>
+<h3 id="annex-i-installacio-de-phpmyadmin-amb-docker-opcional">📎  Annex I: Instal·lació de phpMyAdmin amb Docker (opcional)<a class="headerlink" href="#annex-i-installacio-de-phpmyadmin-amb-docker-opcional" title="Permanent link">&para;</a></h3>
+<p>Si volem que funcione el phpmyadmin haurien d'afegir un altre contenidor docker, o farem incluint el següent codi en el docker-compose.yml</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">myadmin:</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="x"> image: &#39;phpmyadmin:latest&#39;</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x"> ports:</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x"> - 8080:80</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x"> environment:</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x"> MYSQL_ROOT_PASSWORD: &#39;${DB_PASSWORD}&#39;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x"> links:</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x"> - &quot;mysql:db&quot;</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x"> depends_on:</span>
+<span class="linenos" data-linenos="10 "></span><span class="x"> - mysql</span>
+<span class="linenos" data-linenos="11 "></span><span class="x"> networks:</span>
+<span class="linenos" data-linenos="12 "></span><span class="x"> - sail</span>
+</code></pre></div>
+I ara, ja podem accedir a http://localhost:8080 amb les credencials del .env.</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2021-2023 Aitor Medrano, Luis Alemañ, Ignasi Gomis - Licencia CC BY-NC-SA
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/aitormedrano" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.2 4.2 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.52 8.52 0 0 1-5.33 1.84q-.51 0-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<a.medrano@edu.gva.es>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.13c-.15.01-.29.06-.39.17l-1 1 2.05 2 1-1c.22-.21.22-.56 0-.77l-1.24-1.23a.56.56 0 0 0-.38-.17m-2 1.75L13 19.94V22h2.06l6.06-6.07M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h7v-.89l8.24-8.22c.47-.49 1.12-.76 1.8-.76.34 0 .68.06 1 .19V6c0-1.12-.92-2-2.04-2m0 4-8 5-8-5V6l8 5 8-5"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": ".", "features": ["header.autohide", "toc.integrate", "content.tabs.link"], "search": "assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiat al porta-retalls", "clipboard.copy": "C\u00f2pia al porta-retalls", "search.result.more.one": "1 m\u00e9s en aquesta p\u00e0gina", "search.result.more.other": "# m\u00e9s en aquesta p\u00e0gina", "search.result.none": "Cap document coincideix", "search.result.one": "1 document coincident", "search.result.other": "# documents coincidents", "search.result.placeholder": "Escriu per a comen\u00e7ar a cercar", "search.result.term.missing": "Desaparegut", "select.version": "Selecciona la versi\u00f3"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+    
+  </body>
+</html>
