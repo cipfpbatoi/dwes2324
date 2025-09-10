@@ -1,0 +1,671 @@
+
+<!doctype html>
+<html lang="ca" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://cipfpbatoi.github.io/dwes2223/01bisEntornDesenvolupament.html">
+      
+      
+      
+      
+      <link rel="icon" href="imagenes/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.19">
+    
+    
+      
+        <title>Entorn de desenvolupament - Desenvolupament web en entorn de Servidor</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-X6D0LR7TC8"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-X6D0LR7TC8",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-X6D0LR7TC8",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="Teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#entorn-de-desenvolupament" class="md-skip">
+          Salta el contingut
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Capçalera">
+    <a href="index.html" title="Desenvolupament web en entorn de Servidor" class="md-header__button md-logo" aria-label="Desenvolupament web en entorn de Servidor" data-md-component="logo">
+      
+  <img src="imagenes/logofp.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Desenvolupament web en entorn de Servidor
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Entorn de desenvolupament
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="Teal"  aria-label="Canviar a mode nit"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Canviar a mode nit" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="light-blue" data-md-color-accent="Teal"  aria-label="Canviar a mode dia"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Canviar a mode dia" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Neteja" aria-label="Neteja" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicialitzant cerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navegació" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Desenvolupament web en entorn de Servidor" class="md-nav__button md-logo" aria-label="Desenvolupament web en entorn de Servidor" data-md-component="logo">
+      
+  <img src="imagenes/logofp.png" alt="logo">
+
+    </a>
+    Desenvolupament web en entorn de Servidor
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01arquitecturas.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.- Arquitectures Web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02php.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.- Programació web amb PHP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03MVC_Laravel.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.- Arquitectura MVC amb Laravel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="04dades_Laravel.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.- Accés segur i estructurat a bases de dades amb Laravel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="05seguretat_Laravel.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.- Aplicacions segures i reactives en Laravel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="entorn-de-desenvolupament">Entorn de desenvolupament<a class="headerlink" href="#entorn-de-desenvolupament" title="Permanent link">&para;</a></h1>
+<p>Pera fer correr les aplicacions de servidor ens cal, com a mínim, un <strong>servidor web</strong>, l'interpret de <strong>php</strong> i un <strong>motor de base de dades</strong>. Hem de distinguir l'<strong>entorn de desenvolupament</strong>, on anem a programar i mantindre la nostra aplicació, de l'<strong>entorn de producció</strong>, on anem a executar-la.
+Normalment el primer depén de nosaltres mentre que el segon pot dependre de l'empresa on s'allotjarà la nostra web. Per a preparar el nostre entorn de desenvolupament podem optar per:</p>
+<ul>
+<li>Qualsevol solució <strong>LAMP</strong> (Linux, Apache, Mysql, PHP). Als que haurem d'afegir, una vegada els projectes es facen grans <strong>composer, git i les opcions de la part de client</strong>.</li>
+<li>Una màquina virtual ja configurada.</li>
+<li>Una solució docker.</li>
+</ul>
+<p>La primera solució és senzilla d'implementar però no hauria de ser la nostra primera opció per:</p>
+<ul>
+<li>Estem possant en funcionament en la nostra màquina una sèrie de serveis que normalment no fariem, baixant el rendiment de la màquina i obrint vulnerabilitats.</li>
+<li>Si treballem en grup, les instal·lacions i el funcionament no són iguals, depenen del sistema operatiu que té instal·lat cadascú. Allò que li funciona a ú  pot ser no li funciona a un altre. Això és inevitable quan el projecte es complica i es perd molt de temps.</li>
+<li>Passa el mateix quan passem a l'entorn de producció.</li>
+</ul>
+<p>La segona solució soluciona els dos primers problemes, doncs tots els desenvolupadors poden tindre virtualitzada, la mateixa màquina. Encara que si la màquina no la fem nosaltres sinó que utilitzem alguna ja configurada (<strong>vagrant</strong>) o si ens cal instal·lar alguna cosa més, ho hauria de fer tot l'equip.</p>
+<p>Així i tot, tindriem les següents desaventatges:</p>
+<ul>
+<li>A l'instal·lar una maquina virtual sencera ocupa recursos del sistema.</li>
+<li>La màquina instal·la més coses de les necessàries habitualment.</li>
+<li>No reprodueix l'entorn de producció.</li>
+</ul>
+<p>Pot ser molt útil, per exemple, quan la fem servir per desenvolupar en un framework, que ja ve configurat per fer-lo funcionar inmediatament i amb totes les característiques instal·lades.</p>
+<p>La tercera opció té les següents característiques:</p>
+<ul>
+<li>Al principi és més difícil de possar en funcionamet ja que calen coneixements de docker.</li>
+<li>Tots els desenvolupadors comparteixen entorn encara que utilitzen màquines o sistemes operatius diferents.</li>
+<li>Si hi ha algun canvi de configuració de l'entorn és fácilment transladable a tots els desenvolupadors.</li>
+<li>Es poden crear tants entorns  de desenvolupament com projectes diferents hi hajen.</li>
+<li>Els contenidors ocupen pocs recursos.</li>
+<li>Els projectes es poden possar en producció utilitzan una solució docker de manera inmediata.</li>
+</ul>
+<h3 id="xampp">XAMPP<a class="headerlink" href="#xampp" title="Permanent link">&para;</a></h3>
+<p>XAMPP (https://www.apachefriends.org/es/index.html) és una distribució composta amb el programari necessari per a desenvolupar en entorn servidor. Es compon de les següents eines sobre la base de les seues sigles:</p>
+<ul>
+<li>X per al sistema operatiu (d'aquí ve que es conega altrament com LAMP o WAMP).</li>
+<li>A per a Apatxe.</li>
+<li>M per a MySQL / MariaDB. També inclou phpMyAdmin per a l'administració de la base de dades des d'una interfície web.</li>
+<li>P per a PHP.</li>
+<li>l'última P per a Perl.</li>
+</ul>
+<p>Des de la pròpia pàgina es pot descarregar l'arxiu executable per al sistema operatiu del nostre ordinador. Es recomana llegir la FAQ de cada sistema operatiu amb instruccions per a la seua posada en marxa.</p>
+<div class="admonition note">
+<p class="admonition-title">XAMPP en Windows</p>
+<p>Si treballes amb el teu propi ordinador, XAMPP és una solució més senzilla que Docker, sobretot si treballes amb Windows com a sistema operatiu.</p>
+</div>
+<h3 id="docker">Docker<a class="headerlink" href="#docker" title="Permanent link">&para;</a></h3>
+<p>Docker (<a href="https://www.docker.com">https://www.docker.com</a>) és un gestor de contenidors, considerant un contenidor com un mètode de virtualització del sistema operatiu.</p>
+<p>L'ús de contenidors requereix menys recursos que una màquina virtual, per tant, el seu llançament i detenció són més ràpids que les màquines virtuals.</p>
+<p>Així doncs, <em>Docker</em> permet crear, provar i implementar aplicacions ràpidament, a partir d'una sèrie de plantilles que es coneixen com a <strong>imatges</strong> de <em>Docker</em>.</p>
+<p>Per a això és necessari tindre instal·lat <strong>Docker Desktop</strong> (<a href="https://www.docker.com/products/docker-desktop">https://www.docker.com/products/docker-desktop</a>) en els nostres entorns de desenvolupament (el qual ja inclou en <strong>nucli</strong> de <em>Docker</em> i l'eina <strong>docker compose</strong>). Per a instal·lar-ho en Windows, és necessari instal·lar prèviament <strong>WSL 2</strong>, el qual és un subsistema de <em>Linux</em> dins de <em>Windows</em>.</p>
+<p>Al llarg del curs anirem creant diferents contenidors amb els serveis necessaris, de manera que cada vegada només treballem amb el programari mínim.</p>
+<div class="admonition caution">
+<p class="admonition-title">Versions</p>
+<p>Al llarg del curs usarem PHP <code>8.1</code>. Respecte a <em>Docker</em>, per a escriure les anotacions hem utilitzat la versio <code>20.10</code> i la versio <code>2.19</code> de <strong>docker compose</strong>. Finalment, la versió de <em>Docker Desktop</em> que hem utilitzat és la <code>4.0</code>.</p>
+</div>
+<h4 id="installacio-de-docker">Instal·lació de docker<a class="headerlink" href="#installacio-de-docker" title="Permanent link">&para;</a></h4>
+<p>La instal·lació de docker dependrà del sistema operatiu que estem utilitzant. Ací anem a vore la que efecturan els que utilitzen linux, amb el sistema operatiu linux-mint o ubuntu , que és el que ve instal·lat en les imatges suministrades. Per a mac o windows s'haurà de mirar la pàgina web de <a href="https://www.docker.com/get-started">docker</a></p>
+<p>Ens donem privilegis</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo su
+</code></pre></div>
+<p>Utilitzant els repositoris de docker l'instal·lem:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>echo &quot;deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable&quot; | tee /etc/apt/sources.list.d/docker.list
+<span class="linenos" data-linenos="2 "></span>
+<span class="linenos" data-linenos="3 "></span>curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -
+<span class="linenos" data-linenos="4 "></span>
+<span class="linenos" data-linenos="5 "></span>apt update
+<span class="linenos" data-linenos="6 "></span>
+<span class="linenos" data-linenos="7 "></span>apt install docker-ce docker-ce-cli containerd.io pigz
+</code></pre></div>
+<p>Donem permisos a l'usuari afegint-lo al grup de docker</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>usermod -aG docker $USER
+</code></pre></div>
+On $USER és el teu usuari.</p>
+<p>També haurem d'instal·lar el docker-compose
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>curl -SL &quot;https://github.com/docker/compose/releases/download/v2.10.2/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose
+<span class="linenos" data-linenos="2 "></span>
+<span class="linenos" data-linenos="3 "></span>chmod +x /usr/local/bin/docker-compose
+</code></pre></div></p>
+<p>I provem</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>docker --version
+</code></pre></div>
+<p>Faltarà engegar el servei de docker per a poder executar contenidors</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>sudo systemctl start docker.service
+</code></pre></div>
+<h4 id="plantilla-servidor-web-php">Plantilla Servidor Web + PHP<a class="headerlink" href="#plantilla-servidor-web-php" title="Permanent link">&para;</a></h4>
+<p><strong>Docker</strong> es basa en l'ús d'imatges per a crear contenidors. <em>Docker Compose</em> simplifica el treball amb múltiples contenidors, i per això, per a facilitar l'arranc, ens centrarem en <em>Docker Compose</em> utilitzant una plantilla que únicament contindrà com a serveis Nginx i PHP.
+Per a facilitar la posada en marxa, us facilite un repositori en <a href="#GitHub-Classroom">github classroom</a> <a href="https://classroom.github.com/a/hrZehkpi">Nginx/PHP</a> disponible per a la seua descàrrega. <strong>L'haureu de possar en un directori fàcilment localitzable i amb un nom significatiu, ja que serà el vostre directori de treball</strong>.</p>
+<p>Dins d'este repositori, el fitxer <strong>'docker-compose.yaml'</strong> indica quines màquines ha de montar i té el següent aspecte</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:1"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Nginx i PHP</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="c1"># Services</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="nt">services</span><span class="p">:</span>
+<span class="linenos" data-linenos=" 3 "></span>
+<span class="linenos" data-linenos=" 4 "></span><span class="c1"># Nginx Service</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="nt">nginx</span><span class="p">:</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="nt">image</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">nginx:1.19</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="nt">ports</span><span class="p">:</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">80:80</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="nt">volumes</span><span class="p">:</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./src:/var/www/php</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./.docker/nginx/conf.d:/etc/nginx/conf.d</span>
+<span class="linenos" data-linenos="12 "></span><span class="nt">depends_on</span><span class="p">:</span>
+<span class="linenos" data-linenos="13 "></span><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">php</span>
+<span class="linenos" data-linenos="14 "></span>
+<span class="linenos" data-linenos="15 "></span><span class="c1"># PHP Service</span>
+<span class="linenos" data-linenos="16 "></span><span class="nt">php</span><span class="p">:</span><span class="w"> </span>
+<span class="linenos" data-linenos="17 "></span><span class="nt">build</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./.docker/php/</span>
+<span class="linenos" data-linenos="18 "></span><span class="nt">working_dir</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">/var/www/php</span>
+<span class="linenos" data-linenos="19 "></span><span class="nt">expose</span><span class="p">:</span>
+<span class="linenos" data-linenos="20 "></span><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">9000</span>
+<span class="linenos" data-linenos="21 "></span><span class="nt">volumes</span><span class="p">:</span>
+<span class="linenos" data-linenos="22 "></span><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./src:/var/www/php</span>
+<span class="linenos" data-linenos="23 "></span><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./.docker/php/conf.d/Xdebug.ini:/usr/local/etc/php/conf.d/docker-php-ext-xdebug.ini</span>
+<span class="linenos" data-linenos="24 "></span><span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./.docker/php/conf.d/error_reporting.ini:/usr/local/etc/php/conf.d/error_reporting.ini</span>
+<span class="linenos" data-linenos="25 "></span>
+<span class="linenos" data-linenos="26 "></span><span class="c1"># Más info en</span>
+<span class="linenos" data-linenos="27 "></span><span class="c1"># https://tech.osteel.med/posts/docker-for-local-web-development-part-1-a-basic-lemp-stack</span>
+<span class="linenos" data-linenos="28 "></span>
+<span class="linenos" data-linenos="29 "></span><span class="c1"># Lanzar con</span>
+<span class="linenos" data-linenos="30 "></span><span class="c1"># docker-compose up -d</span>
+<span class="linenos" data-linenos="31 "></span>
+<span class="linenos" data-linenos="32 "></span><span class="c1"># Ver los logs con</span>
+<span class="linenos" data-linenos="33 "></span><span class="c1"># docker-compose logs -f</span>
+</code></pre></div>
+</div>
+</div>
+</div>
+<p>Per arrencar les màquines o podem fer des de la consola amb</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="go">docker compose up -d</span>
+</code></pre></div>
+<p>Si volem accedir a un terminal interactiu dins del contenidor:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="go">docker exec -it nombreContenedor bash</span>
+</code></pre></div>
+<p>Altres comandos que podem arribar a utilitzar són:</p>
+<ul>
+<li><code>docker ps</code>: Veure els contenidors que es estan executant</li>
+<li><code>docker ps -a</code>: Veure tots els contenidors</li>
+<li><code>docker start nombreContenedor</code>: Arrancar un contenidor</li>
+<li><code>docker images</code>: Veure les imatges que tenim descarregades</li>
+</ul>
+<p>Una altra forma més senzilla per a llançar de nou els contenidors i gestionar-los una vegada creats és utilitzar la interfície gràfica que ofereix Docker Desktop:</p>
+<figure>
+  <img src="imagenes/01/dockerdesktop.png" />
+  <figcaption>Arranc de contenidor mitjançant Docker Desktop</figcaption>
+</figure>
+
+<div class="admonition tip">
+<p class="admonition-title">Docker stack</p>
+<p>Existeixen diverses opcions mitjançant Docker que ofereixen solucions completes i empaquetes per a tot el stack de desenvolupament. En posteriors sessions utilitzarem tant <em>Devilbox</em> (<a href="http://devilbox.org">http://devilbox.org</a>) com <em>Laradock</em> (<a href="https://laradock.io">https://laradock.io</a>)</p>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Però vull saver com funciona...</p>
+<p>En el mòdul de Desplegament d'aplicacions estudiareu en profunditat, a més de Docker, Apatxe i altres serveis que ens serviran d'ajuda per al desenvolupament en entorn servidor.</p>
+</div>
+<h3 id="tot-funciona">Tot funciona<a class="headerlink" href="#tot-funciona" title="Permanent link">&para;</a></h3>
+<p>Heu de comprovar que a l'accedir a <code>http://localhost</code> en el vostre navegador se us obre una pàgina de salutació.</p>
+<h3 id="entorn-de-desenvolupament_1">Entorn de desenvolupament<a class="headerlink" href="#entorn-de-desenvolupament_1" title="Permanent link">&para;</a></h3>
+<p>En este curso utilitzarem <a href="https://www.jetbrains.com/phpstorm/"><strong>PHP Storm</strong></a> com a entorn de desenvolupament. Existixen altres alternatives, com <a href="https://code.visualstudio.com"><strong>Visual Studio Code</strong></a>.</p>
+<h4 id="installacio">Instal·lació<a class="headerlink" href="#installacio" title="Permanent link">&para;</a></h4>
+<p>Podem fer-ho de manera automàtica utilitzant snap. Per fer-ho amb linux-mint</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="go">sudo rm /etc/apt/preferences.d/nosnap.pref</span>
+<span class="linenos" data-linenos="2 "></span><span class="go">sudo apt update</span>
+<span class="linenos" data-linenos="3 "></span><span class="go">sudo apt install snapd</span>
+<span class="linenos" data-linenos="4 "></span><span class="go">sudo snap install phpstorm --classic</span>
+</code></pre></div>
+També es pot instal·lar baixant-se el paquet de la pàgina web.</p>
+<h5 id="llicencia">Llicència<a class="headerlink" href="#llicencia" title="Permanent link">&para;</a></h5>
+<p>Podeu sol·licitar una llicència a i.gomismullor@edu.gva.es</p>
+<h3 id="entorn-de-proves">Entorn de proves<a class="headerlink" href="#entorn-de-proves" title="Permanent link">&para;</a></h3>
+<p>La màquina docker ve configurada amb <strong><a href="https://codeception.com/">codeception</a></strong> i una col·leció de proves per als exercicis que desenvoluparem al llarg de les primeres unitats.
+S'ha creat un shell per executar totes les proves</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="go">sh test.sh</span>
+</code></pre></div>
+<h3 id="github-classroom">GitHub Classroom<a class="headerlink" href="#github-classroom" title="Permanent link">&para;</a></h3>
+<p>Us podeu <a href="https://classroom.github.com/">registrar</a></p>
+<p><strong>Metodologia de treball amb el github classroom</strong></p>
+<ul>
+<li>Se proporcionarà a l'alumnat un enllaç amb la invitació.</li>
+<li>Accedint a l'enllaç a cada alumne se li crearà un repositori individual en l'organització.</li>
+<li>L'alumnat treballa en el seu repositori assignat. Se'l pot baixar per treballar en local.</li>
+<li>Inicialment, l'alumne crea una branca nova sobre la que va a treballar.</li>
+<li>Quan vullga sol.licitar ajuda o revisió del professor, l'alumne genera una pull request a la branca principal del seu repositori en la que cita al professor per tal que reba una notificació.</li>
+<li>El profesor proporciona retroalimentació mitjançant comentaris en la pull request o en un determinat commit individual.</li>
+<li>Opcionalment es poden utilitzar els issues y les cites d'usuari per sol·licitar la intervenció del profesor.</li>
+<li>Quan l'alumne finalitza la tasca, genera una últim pull request</li>
+<li>El profesor revisa la pull request i opcionalment fa comentaris.</li>
+</ul>
+<h2 id="referencies">Referències<a class="headerlink" href="#referencies" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Curs de introducció a Docker, per <em>Sergi García Barea</em> : <a href="https://sergarb1.github.io/CursoIntroduccionADocker/">https://sergarb1.github.io/CursoIntroduccionADocker/</a></li>
+<li>Article <a href="https://www.arquitecturajava.com/arquitecturas-web-y-su-evolucion/">Arquitectures Web i sa evolució</a></li>
+</ul>
+<h2 id="videos">Videos<a class="headerlink" href="#videos" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><a href="https://laracasts.com/series/php-for-beginners-2023-edition/episodes/1">Triar un llenguatge de programació</a></p>
+</li>
+<li>
+<p><a href="https://laracasts.com/series/php-for-beginners-2023-edition/episodes/2">Instal.Lació entorn de desenvolupament</a></p>
+</li>
+</ul>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2021-2025 Aitor Medrano, Luis Alemañ, Ignasi Gomis - Licencia CC BY-NC-SA
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/aitormedrano" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.2 4.2 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.52 8.52 0 0 1-5.33 1.84q-.51 0-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<a.medrano@edu.gva.es>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.13c-.15.01-.29.06-.39.17l-1 1 2.05 2 1-1c.22-.21.22-.56 0-.77l-1.24-1.23a.56.56 0 0 0-.38-.17m-2 1.75L13 19.94V22h2.06l6.06-6.07M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h7v-.89l8.24-8.22c.47-.49 1.12-.76 1.8-.76.34 0 .68.06 1 .19V6c0-1.12-.92-2-2.04-2m0 4-8 5-8-5V6l8 5 8-5"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": ".", "features": ["header.autohide", "toc.integrate", "content.tabs.link"], "search": "assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiat al porta-retalls", "clipboard.copy": "C\u00f2pia al porta-retalls", "search.result.more.one": "1 m\u00e9s en aquesta p\u00e0gina", "search.result.more.other": "# m\u00e9s en aquesta p\u00e0gina", "search.result.none": "Cap document coincideix", "search.result.one": "1 document coincident", "search.result.other": "# documents coincidents", "search.result.placeholder": "Escriu per a comen\u00e7ar a cercar", "search.result.term.missing": "Desaparegut", "select.version": "Selecciona la versi\u00f3"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+    
+  </body>
+</html>

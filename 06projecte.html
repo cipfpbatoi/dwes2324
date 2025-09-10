@@ -1,0 +1,863 @@
+
+<!doctype html>
+<html lang="ca" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://cipfpbatoi.github.io/dwes2223/06projecte.html">
+      
+      
+      
+      
+      <link rel="icon" href="imagenes/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.19">
+    
+    
+      
+        <title>Projecte Integrador Bloc 1. - Desenvolupament web en entorn de Servidor</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-X6D0LR7TC8"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-X6D0LR7TC8",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-X6D0LR7TC8",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="Teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#projecte-integrador-bloc-1" class="md-skip">
+          Salta el contingut
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Capçalera">
+    <a href="index.html" title="Desenvolupament web en entorn de Servidor" class="md-header__button md-logo" aria-label="Desenvolupament web en entorn de Servidor" data-md-component="logo">
+      
+  <img src="imagenes/logofp.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Desenvolupament web en entorn de Servidor
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Projecte Integrador Bloc 1.
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="Teal"  aria-label="Canviar a mode nit"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Canviar a mode nit" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="light-blue" data-md-color-accent="Teal"  aria-label="Canviar a mode dia"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Canviar a mode dia" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Neteja" aria-label="Neteja" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicialitzant cerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navegació" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Desenvolupament web en entorn de Servidor" class="md-nav__button md-logo" aria-label="Desenvolupament web en entorn de Servidor" data-md-component="logo">
+      
+  <img src="imagenes/logofp.png" alt="logo">
+
+    </a>
+    Desenvolupament web en entorn de Servidor
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01arquitecturas.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.- Arquitectures Web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02php.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.- Programació web amb PHP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03MVC_Laravel.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.- Arquitectura MVC amb Laravel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="04dades_Laravel.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.- Accés segur i estructurat a bases de dades amb Laravel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="05seguretat_Laravel.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.- Aplicacions segures i reactives en Laravel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="projecte-integrador-bloc-1">Projecte Integrador Bloc 1.<a class="headerlink" href="#projecte-integrador-bloc-1" title="Permanent link">&para;</a></h1>
+<details class="abstract">
+<summary>Duració i criteris d'avaluació</summary>
+<p>Duració estimada: 16 hores</p>
+<hr />
+<table>
+<thead>
+<tr>
+<th>Resultat d'aprenentatge</th>
+<th>Criteris d'avaluació</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3. Escriu blocs de sentències embeguts en llenguatges de marques, seleccionant i utilitzant les estructures de programació.</td>
+<td></td>
+</tr>
+<tr>
+<td>4. Desenvolupa aplicacions web embegudes en llenguatges de marques analitzant i incorporant funcionalitats segons especificacions.</td>
+<td></td>
+</tr>
+<tr>
+<td>5. Desenvolupa aplicacions web identificant i aplicant mecanismes per a separar el codi de presentació de la lògica de negoci.</td>
+<td></td>
+</tr>
+<tr>
+<td>6. Desenvolupa aplicacions web d'accés a magatzems de dades, aplicant mesures per a mantindre la seguretat i la integritat de la informació</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</details>
+<h1 id="enunciat-del-projecte-backend-de-batoibooks">Enunciat del Projecte: Backend de BatoiBooks<a class="headerlink" href="#enunciat-del-projecte-backend-de-batoibooks" title="Permanent link">&para;</a></h1>
+<h2 id="objectiu-del-projecte">Objectiu del Projecte<a class="headerlink" href="#objectiu-del-projecte" title="Permanent link">&para;</a></h2>
+<p>Desenvolupar el backend per a l’aplicació <strong>BatoiBooks</strong> en PHP, proporcionant:</p>
+<ul>
+<li>Autenticació per token JWT.</li>
+<li>Interfície d’administració amb funcionalitats avançades, com la generació de factures en PDF.</li>
+</ul>
+<hr />
+<h2 id="funcionalitats-del-backend">Funcionalitats del Backend<a class="headerlink" href="#funcionalitats-del-backend" title="Permanent link">&para;</a></h2>
+<h3 id="1-bbdd">1. BBDD<a class="headerlink" href="#1-bbdd" title="Permanent link">&para;</a></h3>
+<p>Crear la BBDD i les taules utilitzant el següent <a href="recursos/batoiBook/batoiBook-2.sql">sql</a> </p>
+<h3 id="2-autenticacio-per-al-frontend">2. Autenticació per al frontEnd<a class="headerlink" href="#2-autenticacio-per-al-frontend" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Registre</strong>: Endpoint per registrar nous usuaris. Rebrà dades com <code>email</code>, <code>nick</code> i <code>password</code>, i retornarà un token JWT per a la sessió de l’usuari.</p>
+</li>
+<li>
+<p><strong>Login</strong>: Endpoint per a l'inici de sessió, on es validarà <code>email</code> i <code>password</code>. En cas d'èxit, es generarà un token JWT amb la informació d'identificació de l'usuari.</p>
+</li>
+<li>
+<p><strong>Validació de Token</strong>: Cada controlador (excepte el de <code>login</code> i <code>register</code>) requerirà un token JWT vàlid per accedir a qualsevol dada, la qual cosa permetrà una gestió segura de la sessió.</p>
+</li>
+</ol>
+<hr />
+<h3 id="3-api-rest">3. API REST<a class="headerlink" href="#3-api-rest" title="Permanent link">&para;</a></h3>
+<p>Es crearà un fitxer PHP específic per a cada entitat, que atendrà les operacions CRUD bàsiques. Les taules que es gestionaran són:</p>
+<ul>
+<li><strong>Books</strong></li>
+<li><strong>Users</strong></li>
+<li><strong>Modules</strong></li>
+<li><strong>Courses</strong></li>
+</ul>
+<p>Per a cada taula es permetran operacions:</p>
+<ul>
+<li><strong>GET</strong>: Per obtenir dades (llistat o element per ID).</li>
+<li><strong>POST</strong>: Per inserir nous elements.</li>
+<li><strong>PUT</strong>: Per modificar elements existents.</li>
+<li><strong>DELETE</strong>: Per eliminar elements.</li>
+</ul>
+<p>Cada operació validarà les dades abans de ser processades i respondrà amb els estats corresponents.</p>
+<hr />
+<h4 id="exemples-de-peticions">Exemples de peticions<a class="headerlink" href="#exemples-de-peticions" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Tornar un llibre</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="err">GET /api/books.php?id=2</span>
+</code></pre></div>
+<ul>
+<li>Tornar tots els llibres</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="err">GET /api/books.php</span>
+</code></pre></div>
+<ul>
+<li>Afegir un llibre</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="err">POST /api/books.php</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="err">Contingut JSON: {</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="err">&quot;userId&quot;: 2,</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="err">&quot;moduleCode&quot;: &quot;0011&quot;,</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="err">&quot;publisher&quot;: &quot;Apunts&quot;,</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="err">&quot;price&quot;: 15.00,</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="err">&quot;pages&quot;: 100,</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="err">&quot;status&quot;: &quot;new&quot;,</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="err">&quot;photo&quot;: &quot;ruta_foto.jpg&quot;,</span>
+<span class="linenos" data-linenos="10 "></span><span class="err">&quot;comments&quot;: &quot;En bon estat&quot;</span>
+<span class="linenos" data-linenos="11 "></span><span class="err">}</span>
+</code></pre></div>
+<h3 id="4-interficie-dadministrador">4. Interfície d’Administrador<a class="headerlink" href="#4-interficie-dadministrador" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Autenticació de l'usuari</strong>: L'usuari s'autenticarà amb un usuari i es comprovarà que és l'administrador.</li>
+<li><strong>Accés al CRUD de Mòduls i Cursos</strong>: L’usuari administrador podrà gestionar completament les taules <code>modules</code> i <code>courses</code>.</li>
+<li><strong>Generació de Factures en PDF</strong>:<ul>
+<li>Permetre la selecció de dates i usuaris.</li>
+<li>Calcular un 10% de l’import total de les vendes per generar la factura.</li>
+<li>Incloure el logotip de l'aplicació, data de generació, import total i desglossament de vendes.</li>
+</ul>
+</li>
+</ol>
+<hr />
+<h2 id="exigencies-tecniques">Exigències Tècniques<a class="headerlink" href="#exigencies-tecniques" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Utilitzar PHP com a llenguatge del servidor.</li>
+<li>Estructurar el projecte amb fitxers separats per a cada entitat dins de la carpeta <code>api/</code> i <code>backend</code></li>
+<li>Utilitzar el format JSON per a la comunicació entre el client i el servidor.</li>
+<li>Garantir la seguretat en les peticions autenticades mitjançant el token JWT.</li>
+<li>Utilitzar en la mesura de lo possible el MVC en el backend i els control·ladors per a respondre a les peticions de l'API.</li>
+<li>Cal fer test de la lògica de la factura.</li>
+<li>Cal guardar en un fitxer de log les peticions que es fan a l'api en forma de: Usuari, IP client i Mètode utilitzat.   </li>
+<li>Utilitzar, en la mesura de lo possible, exempcions per al maneig d'errors de l'usuari.</li>
+</ul>
+<hr />
+<h2 id="exemples-de-resposta">Exemples de resposta<a class="headerlink" href="#exemples-de-resposta" title="Permanent link">&para;</a></h2>
+<p>Estos exemples es poden agafar com a referència per a la implementació de l'API. Però només són la base sobre la que construir una solució pròpia que puga incorporar l'harència de classes per fer
+mes eficient i reutilitzable el codi.</p>
+<h3 id="estructura-de-directoris">Estructura de directoris<a class="headerlink" href="#estructura-de-directoris" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>App
+<span class="linenos" data-linenos=" 2 "></span>├── Controllers
+<span class="linenos" data-linenos=" 3 "></span>│   ├── Api
+<span class="linenos" data-linenos=" 4 "></span>│   │   ├── ApiController.php 
+<span class="linenos" data-linenos=" 5 "></span>│   │   ├── BookController.php
+<span class="linenos" data-linenos=" 6 "></span>│   │   ├── CourseController.php
+<span class="linenos" data-linenos=" 7 "></span>│   │   ├── ModuleController.php
+<span class="linenos" data-linenos=" 8 "></span>│   │   └── AuthController.php
+<span class="linenos" data-linenos=" 9 "></span>│   ├── ModuleController.php
+<span class="linenos" data-linenos="10 "></span>│   ├── CourseController.php
+<span class="linenos" data-linenos="11 "></span>│   └── AuthController.php
+<span class="linenos" data-linenos="12 "></span>├── Helpers      
+<span class="linenos" data-linenos="13 "></span>├── Exceptions       
+<span class="linenos" data-linenos="14 "></span>├── Models
+<span class="linenos" data-linenos="15 "></span>│   ├── Book.php
+<span class="linenos" data-linenos="16 "></span>│   ├── Course.php
+<span class="linenos" data-linenos="17 "></span>│   ├── Module.php
+<span class="linenos" data-linenos="18 "></span>│   └── User.php
+<span class="linenos" data-linenos="19 "></span>├── Services
+<span class="linenos" data-linenos="20 "></span>│   ├── DBService.php
+<span class="linenos" data-linenos="21 "></span>│   └── AuthService.php
+<span class="linenos" data-linenos="22 "></span>├── Views
+<span class="linenos" data-linenos="23 "></span>├── logs 
+<span class="linenos" data-linenos="24 "></span>├── tests
+<span class="linenos" data-linenos="25 "></span>├── config
+<span class="linenos" data-linenos="26 "></span>│   └── connection.php
+<span class="linenos" data-linenos="27 "></span>├── src
+<span class="linenos" data-linenos="28 "></span>│   ├── api
+<span class="linenos" data-linenos="29 "></span>│   │   ├── books.php
+<span class="linenos" data-linenos="30 "></span>│   │   ├── courses.php
+<span class="linenos" data-linenos="31 "></span>│   │   ├── modules.php
+<span class="linenos" data-linenos="32 "></span>│   │   ├── register.php
+<span class="linenos" data-linenos="33 "></span>│   │   └── login.php
+<span class="linenos" data-linenos="34 "></span>│   ├── backend
+<span class="linenos" data-linenos="35 "></span>│   │   ├── login.php
+<span class="linenos" data-linenos="36 "></span>│   │   ├── generateInvoice.php
+<span class="linenos" data-linenos="37 "></span>│   │   ├── modules.php
+<span class="linenos" data-linenos="38 "></span>│   │   └── courses.php  
+<span class="linenos" data-linenos="39 "></span>└── └── index.php
+</code></pre></div>
+<h3 id="api">API<a class="headerlink" href="#api" title="Permanent link">&para;</a></h3>
+<h4 id="postman">POSTMAN<a class="headerlink" href="#postman" title="Permanent link">&para;</a></h4>
+<p>Ací tens una <a href="recursos/batoiBook/BatoiBooksApi.postman_collection.json">col.lecció del POSTMAN</a> per realitzar les peticions i provar-les.</p>
+<h4 id="dbservicephp">DBService.php<a class="headerlink" href="#dbservicephp" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">namespace BatoiBook\Services;</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">class DBService</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">{</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">    public static function connect(): \PDO</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">        $dbConfig =  require  $_SERVER[&#39;DOCUMENT_ROOT&#39;] . &#39;/../config/connection.php&#39;;</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">        try {</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">            $dsn = &quot;mysql:host=&quot; . $dbConfig[&#39;host&#39;] . &quot;;dbname=&quot; . $dbConfig[&#39;dbname&#39;];</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">            $db = new \PDO($dsn, $dbConfig[&#39;username&#39;], $dbConfig[&#39;password&#39;]);</span>
+<span class="linenos" data-linenos="12 "></span><span class="x">            $db-&gt;setAttribute(\PDO::ATTR_ERRMODE, \PDO::ERRMODE_EXCEPTION);</span>
+<span class="linenos" data-linenos="13 "></span><span class="x">        } catch (\PDOException $e) {</span>
+<span class="linenos" data-linenos="14 "></span><span class="x">            die(&quot;Error de connexió: &quot; . $e-&gt;getMessage());</span>
+<span class="linenos" data-linenos="15 "></span><span class="x">        }</span>
+<span class="linenos" data-linenos="16 "></span>
+<span class="linenos" data-linenos="17 "></span><span class="x">        return $db;</span>
+<span class="linenos" data-linenos="18 "></span>
+<span class="linenos" data-linenos="19 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="20 "></span><span class="x">}</span>
+</code></pre></div>
+<h4 id="model">Model<a class="headerlink" href="#model" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">namespace BatoiBook\Models;</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">class Course</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">{</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">   public function __construct(</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">   public int $id = 0,</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">   public string $course = &#39;&#39;,</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">   public int $familyId = 0,</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">   public string $vliteral = &#39;&#39;,</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">   public string $cliteral = &#39;&#39; ) </span>
+<span class="linenos" data-linenos="11 "></span><span class="x">   {}</span>
+<span class="linenos" data-linenos="12 "></span><span class="x">}</span>
+</code></pre></div>
+<h4 id="controlador">Controlador<a class="headerlink" href="#controlador" title="Permanent link">&para;</a></h4>
+<p>En el ApiController.php es troben les funcions comunes a tots els controladors, com el jsonResponse i errorResponse.  </p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">namespace BatoiBook\Controllers\Api;</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="x">use \PDO;</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">use \PDOException;</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">class CourseController extends ApiController</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">{</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">    protected PDO $db;</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">    public function __construct()</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">        $this-&gt;db = DBService::connect();</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="12 "></span>
+<span class="linenos" data-linenos="13 "></span><span class="x">    public function getAll(): void</span>
+<span class="linenos" data-linenos="14 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="15 "></span><span class="x">        $stmt = $this-&gt;db-&gt;prepare(&quot;SELECT * FROM courses&quot;);</span>
+<span class="linenos" data-linenos="16 "></span><span class="x">        $stmt-&gt;execute();</span>
+<span class="linenos" data-linenos="17 "></span><span class="x">        $stmt-&gt;setFetchMode(PDO::FETCH_CLASS | PDO::FETCH_PROPS_LATE, Course::class);</span>
+<span class="linenos" data-linenos="18 "></span>
+<span class="linenos" data-linenos="19 "></span><span class="x">        $this-&gt;jsonResponse($stmt-&gt;fetchAll());</span>
+<span class="linenos" data-linenos="20 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="21 "></span>
+<span class="linenos" data-linenos="22 "></span><span class="x">    public function getOne(int $id): void</span>
+<span class="linenos" data-linenos="23 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="24 "></span><span class="x">        //TODO: Implementar consulta </span>
+<span class="linenos" data-linenos="25 "></span><span class="x">        $record = $stmt-&gt;fetch();</span>
+<span class="linenos" data-linenos="26 "></span>
+<span class="linenos" data-linenos="27 "></span><span class="x">        if ($record) {</span>
+<span class="linenos" data-linenos="28 "></span><span class="x">            $this-&gt;jsonResponse($record);</span>
+<span class="linenos" data-linenos="29 "></span><span class="x">        } else {</span>
+<span class="linenos" data-linenos="30 "></span><span class="x">            $this-&gt;errorResponse(&quot;Record not found&quot;, 404);</span>
+<span class="linenos" data-linenos="31 "></span><span class="x">        }</span>
+<span class="linenos" data-linenos="32 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="33 "></span>
+<span class="linenos" data-linenos="34 "></span><span class="x">    public function create(array $data): int</span>
+<span class="linenos" data-linenos="35 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="36 "></span><span class="x">        try {</span>
+<span class="linenos" data-linenos="37 "></span><span class="x">            //TODO: Implementar inserció</span>
+<span class="linenos" data-linenos="38 "></span><span class="x">            return $this-&gt;db-&gt;lastInsertId();</span>
+<span class="linenos" data-linenos="39 "></span><span class="x">         } catch (PDOException $e) {</span>
+<span class="linenos" data-linenos="40 "></span><span class="x">            $this-&gt;errorResponse(&quot;Failed to create record: &quot; . $e-&gt;getMessage());</span>
+<span class="linenos" data-linenos="41 "></span><span class="x">        }</span>
+<span class="linenos" data-linenos="42 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="43 "></span>
+<span class="linenos" data-linenos="44 "></span><span class="x">    public function update(int $id, array $data): void</span>
+<span class="linenos" data-linenos="45 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="46 "></span><span class="x">        try {</span>
+<span class="linenos" data-linenos="47 "></span><span class="x">            //TODO: Implementar actualització</span>
+<span class="linenos" data-linenos="48 "></span>
+<span class="linenos" data-linenos="49 "></span><span class="x">            $stmt-&gt;execute();</span>
+<span class="linenos" data-linenos="50 "></span><span class="x">            if ($stmt-&gt;rowCount() &gt; 0) {</span>
+<span class="linenos" data-linenos="51 "></span><span class="x">                $this-&gt;jsonResponse([&quot;message&quot; =&gt; &quot;Record updated successfully&quot;]);</span>
+<span class="linenos" data-linenos="52 "></span><span class="x">            } else {</span>
+<span class="linenos" data-linenos="53 "></span><span class="x">                $this-&gt;errorResponse(&quot;Record not found&quot;, 404);</span>
+<span class="linenos" data-linenos="54 "></span><span class="x">            }</span>
+<span class="linenos" data-linenos="55 "></span><span class="x">        } catch (PDOException $e) {</span>
+<span class="linenos" data-linenos="56 "></span><span class="x">            $this-&gt;errorResponse(&quot;Failed to update record: &quot; . $e-&gt;getMessage());</span>
+<span class="linenos" data-linenos="57 "></span><span class="x">        }</span>
+<span class="linenos" data-linenos="58 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="59 "></span>
+<span class="linenos" data-linenos="60 "></span><span class="x">    public function delete(int $id): void</span>
+<span class="linenos" data-linenos="61 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="62 "></span><span class="x">        //TODO: Implementar eliminació</span>
+<span class="linenos" data-linenos="63 "></span><span class="x">        if ($stmt-&gt;rowCount() &gt; 0) {</span>
+<span class="linenos" data-linenos="64 "></span><span class="x">            $this-&gt;jsonResponse([&quot;message&quot; =&gt; &quot;Record deleted successfully&quot;]);</span>
+<span class="linenos" data-linenos="65 "></span><span class="x">        } else {</span>
+<span class="linenos" data-linenos="66 "></span><span class="x">            $this-&gt;errorResponse(&quot;Record not found&quot;, 404);</span>
+<span class="linenos" data-linenos="67 "></span><span class="x">        }</span>
+<span class="linenos" data-linenos="68 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="69 "></span><span class="x">}</span>
+</code></pre></div>
+<h4 id="coursesphp">courses.php<a class="headerlink" href="#coursesphp" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">require_once $_SERVER[&#39;DOCUMENT_ROOT&#39;] . &#39;/../vendor/autoload.php&#39;;</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="x">require_once $_SERVER[&#39;DOCUMENT_ROOT&#39;] . &#39;/../Helpers/functions.php&#39;;</span>
+<span class="linenos" data-linenos=" 3 "></span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">use BatoiBook\Controllers\Api\CourseController;</span>
+<span class="linenos" data-linenos=" 5 "></span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">header(&quot;Content-Type: application/json&quot;);</span>
+<span class="linenos" data-linenos=" 7 "></span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">$controller = new CourseController();</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">$method = $_SERVER[&#39;REQUEST_METHOD&#39;];</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">$id = isset($_GET[&#39;id&#39;]) ? (int)$_GET[&#39;id&#39;] : null;</span>
+<span class="linenos" data-linenos="11 "></span>
+<span class="linenos" data-linenos="12 "></span><span class="x">switch ($method) {</span>
+<span class="linenos" data-linenos="13 "></span><span class="x">    case &#39;GET&#39;:</span>
+<span class="linenos" data-linenos="14 "></span><span class="x">        if (isset($id)) {</span>
+<span class="linenos" data-linenos="15 "></span><span class="x">            $controller-&gt;getOne($id);</span>
+<span class="linenos" data-linenos="16 "></span><span class="x">        } else {</span>
+<span class="linenos" data-linenos="17 "></span><span class="x">            $controller-&gt;getAll ();</span>
+<span class="linenos" data-linenos="18 "></span><span class="x">       }</span>
+<span class="linenos" data-linenos="19 "></span><span class="x">        break;</span>
+<span class="linenos" data-linenos="20 "></span><span class="x">    case &#39;POST&#39;:</span>
+<span class="linenos" data-linenos="21 "></span><span class="x">        $data = json_decode(file_get_contents(&#39;php://input&#39;), true);</span>
+<span class="linenos" data-linenos="22 "></span>
+<span class="linenos" data-linenos="23 "></span><span class="x">        if ($data) {</span>
+<span class="linenos" data-linenos="24 "></span><span class="x">            $controller-&gt;create($data);</span>
+<span class="linenos" data-linenos="25 "></span><span class="x">        } else {</span>
+<span class="linenos" data-linenos="26 "></span><span class="x">            echo json_encode([&quot;error&quot; =&gt; &quot;Invalid data&quot;]);</span>
+<span class="linenos" data-linenos="27 "></span><span class="x">        }</span>
+<span class="linenos" data-linenos="28 "></span><span class="x">        break;</span>
+<span class="linenos" data-linenos="29 "></span><span class="x">    case &#39;PUT&#39;:</span>
+<span class="linenos" data-linenos="30 "></span><span class="x">        $data = json_decode(file_get_contents(&#39;php://input&#39;), true);</span>
+<span class="linenos" data-linenos="31 "></span>
+<span class="linenos" data-linenos="32 "></span><span class="x">        if (isset($_GET[&#39;id&#39;]) &amp;&amp; $data) {</span>
+<span class="linenos" data-linenos="33 "></span><span class="x">            $success = $controller-&gt;update ($id, $data);</span>
+<span class="linenos" data-linenos="34 "></span><span class="x">            echo json_encode([&quot;message&quot; =&gt; $success ? &quot;Field updated successfully&quot; : &quot;Book not found&quot;]);</span>
+<span class="linenos" data-linenos="35 "></span><span class="x">        } else {</span>
+<span class="linenos" data-linenos="36 "></span><span class="x">            echo json_encode([&quot;error&quot; =&gt; &quot;Invalid data or ID&quot;]);</span>
+<span class="linenos" data-linenos="37 "></span><span class="x">        }</span>
+<span class="linenos" data-linenos="38 "></span><span class="x">        break;</span>
+<span class="linenos" data-linenos="39 "></span><span class="x">    case &#39;DELETE&#39;:</span>
+<span class="linenos" data-linenos="40 "></span><span class="x">        if (isset($_GET[&#39;id&#39;])) {</span>
+<span class="linenos" data-linenos="41 "></span><span class="x">            $controller-&gt;delete ($id);</span>
+<span class="linenos" data-linenos="42 "></span><span class="x">        } else {</span>
+<span class="linenos" data-linenos="43 "></span><span class="x">            echo json_encode([&quot;error&quot; =&gt; &quot;ID not provided&quot;]);</span>
+<span class="linenos" data-linenos="44 "></span><span class="x">        }</span>
+<span class="linenos" data-linenos="45 "></span><span class="x">        break;</span>
+<span class="linenos" data-linenos="46 "></span><span class="x">    default:</span>
+<span class="linenos" data-linenos="47 "></span><span class="x">        echo json_encode([&quot;error&quot; =&gt; &quot;Invalid request method&quot;]);</span>
+<span class="linenos" data-linenos="48 "></span><span class="x">        break;</span>
+<span class="linenos" data-linenos="49 "></span><span class="x">}</span>
+</code></pre></div>
+<h3 id="autentificacio">Autentificació<a class="headerlink" href="#autentificacio" title="Permanent link">&para;</a></h3>
+<h4 id="requeriments-previs">Requeriments previs<a class="headerlink" href="#requeriments-previs" title="Permanent link">&para;</a></h4>
+<p>Cal instal·lar la llibreria <code>firebase/php-jwt</code> per a poder generar i validar els tokens JWT.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>composer<span class="w"> </span>require<span class="w"> </span>firebase/php-jwt
+</code></pre></div>
+<h4 id="loginphp">login.php<a class="headerlink" href="#loginphp" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">   require_once $_SERVER[&#39;DOCUMENT_ROOT&#39;] . &#39;/../vendor/autoload.php&#39;;</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">   use Firebase\JWT\JWT;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">   use Firebase\JWT\Key;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">   use BatoiBook\Services\DBService;</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">   // Clau secreta per generar el token (és important mantenir-la segura)</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">   $secretKey = &#39;clau_secreta&#39;;</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">   header(&#39;Content-Type: application/json&#39;);</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">   // Llegeix les dades de la petició</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">   $data = json_decode(file_get_contents(&quot;php://input&quot;));</span>
+<span class="linenos" data-linenos="12 "></span>
+<span class="linenos" data-linenos="13 "></span><span class="x">   if (!empty($data-&gt;email) &amp;&amp; !empty($data-&gt;password)) {</span>
+<span class="linenos" data-linenos="14 "></span>
+<span class="linenos" data-linenos="15 "></span><span class="x">        $db = DBService::connect();  </span>
+<span class="linenos" data-linenos="16 "></span><span class="x">        //TODO: Implementar consulta per recuperar l&#39;usuari</span>
+<span class="linenos" data-linenos="17 "></span><span class="x">        $user = $stmt-&gt;fetch();</span>
+<span class="linenos" data-linenos="18 "></span><span class="x">        if ($user) {</span>
+<span class="linenos" data-linenos="19 "></span><span class="x">            if (password_verify($data-&gt;password,$user-&gt;password)) {</span>
+<span class="linenos" data-linenos="20 "></span><span class="x">                $payload = [</span>
+<span class="linenos" data-linenos="21 "></span><span class="x">                     &quot;iss&quot; =&gt; &quot;http://localhost&quot;, // Issuer</span>
+<span class="linenos" data-linenos="22 "></span><span class="x">                     &quot;aud&quot; =&gt; &quot;http://localhost&quot;, // Audience</span>
+<span class="linenos" data-linenos="23 "></span><span class="x">                     &quot;iat&quot; =&gt; time(),             // Issued at</span>
+<span class="linenos" data-linenos="24 "></span><span class="x">                     &quot;exp&quot; =&gt; time() + 3600,      // Expira en una hora</span>
+<span class="linenos" data-linenos="25 "></span><span class="x">                     &quot;userId&quot; =&gt; $userId</span>
+<span class="linenos" data-linenos="26 "></span><span class="x">                 ];</span>
+<span class="linenos" data-linenos="27 "></span><span class="x">                $jwt = JWT::encode($payload, $secretKey, &#39;HS256&#39;);    </span>
+<span class="linenos" data-linenos="28 "></span><span class="x">                echo json_encode([&quot;success&quot; =&gt; true, &quot;token&quot; =&gt; $jwt]);</span>
+<span class="linenos" data-linenos="29 "></span><span class="x">            } else {</span>
+<span class="linenos" data-linenos="30 "></span><span class="x">                echo json_encode([&quot;success&quot; =&gt; false, &quot;message&quot; =&gt; &quot;Contrasenya incorrecta&quot;]);</span>
+<span class="linenos" data-linenos="31 "></span><span class="x">            }</span>
+<span class="linenos" data-linenos="32 "></span><span class="x">        } else {</span>
+<span class="linenos" data-linenos="33 "></span><span class="x">            echo json_encode([&quot;success&quot; =&gt; false, &quot;message&quot; =&gt; &quot;Usuari no trobat&quot;]);</span>
+<span class="linenos" data-linenos="34 "></span><span class="x">        }</span>
+<span class="linenos" data-linenos="35 "></span>
+<span class="linenos" data-linenos="36 "></span><span class="x">   } else {</span>
+<span class="linenos" data-linenos="37 "></span><span class="x">       echo json_encode([&quot;success&quot; =&gt; false, &quot;message&quot; =&gt; &quot;Falten dades&quot;]);</span>
+<span class="linenos" data-linenos="38 "></span><span class="x">   }</span>
+</code></pre></div>
+<h4 id="registerphp">register.php<a class="headerlink" href="#registerphp" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">//TODO: Implementar registre d&#39;usuari</span>
+</code></pre></div>
+<h4 id="validatephp">validate.php<a class="headerlink" href="#validatephp" title="Permanent link">&para;</a></h4>
+<p>per a validar que qualsevol petició a l'API siga autenticada.
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">if (!isset($_SERVER[&#39;HTTP_AUTHORIZATION&#39;])) {</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="x">      throw new UnAuthoritzedException(&quot;Token no proporcionat&quot;);</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">}</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">$authHeader = $_SERVER[&#39;HTTP_AUTHORIZATION&#39;];</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">[$type, $token] = explode(&quot; &quot;, $authHeader);</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">if ($type !== &#39;Bearer&#39;) {</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">    throw new UnAuthoritzedException(&quot;Tipus de token no vàlid&quot;);</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">}</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">try {</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">    $jwt = JWT::decode($token, new Key(SELF::SECRET_KEY, &#39;HS256&#39;));</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">    $userId = $jwt-&gt;userId;</span>
+<span class="linenos" data-linenos="12 "></span><span class="x">} catch (Exception $e) {</span>
+<span class="linenos" data-linenos="13 "></span><span class="x">    throw new UnAuthoritzedException(&quot;Token no vàlid o expirat&quot;);</span>
+<span class="linenos" data-linenos="14 "></span><span class="x">}</span>
+</code></pre></div></p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2021-2025 Aitor Medrano, Luis Alemañ, Ignasi Gomis - Licencia CC BY-NC-SA
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/aitormedrano" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.2 4.2 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.52 8.52 0 0 1-5.33 1.84q-.51 0-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<a.medrano@edu.gva.es>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.13c-.15.01-.29.06-.39.17l-1 1 2.05 2 1-1c.22-.21.22-.56 0-.77l-1.24-1.23a.56.56 0 0 0-.38-.17m-2 1.75L13 19.94V22h2.06l6.06-6.07M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h7v-.89l8.24-8.22c.47-.49 1.12-.76 1.8-.76.34 0 .68.06 1 .19V6c0-1.12-.92-2-2.04-2m0 4-8 5-8-5V6l8 5 8-5"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": ".", "features": ["header.autohide", "toc.integrate", "content.tabs.link"], "search": "assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiat al porta-retalls", "clipboard.copy": "C\u00f2pia al porta-retalls", "search.result.more.one": "1 m\u00e9s en aquesta p\u00e0gina", "search.result.more.other": "# m\u00e9s en aquesta p\u00e0gina", "search.result.none": "Cap document coincideix", "search.result.one": "1 document coincident", "search.result.other": "# documents coincidents", "search.result.placeholder": "Escriu per a comen\u00e7ar a cercar", "search.result.term.missing": "Desaparegut", "select.version": "Selecciona la versi\u00f3"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+    
+  </body>
+</html>

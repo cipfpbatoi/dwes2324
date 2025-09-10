@@ -1,0 +1,2132 @@
+
+<!doctype html>
+<html lang="ca" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://cipfpbatoi.github.io/dwes2223/10laravelRestul.html">
+      
+      
+      
+      
+      <link rel="icon" href="imagenes/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.19">
+    
+    
+      
+        <title>10laravelRestul - Desenvolupament web en entorn de Servidor</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-X6D0LR7TC8"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-X6D0LR7TC8",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-X6D0LR7TC8",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="Teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#servicios-rest" class="md-skip">
+          Salta el contingut
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Capçalera">
+    <a href="index.html" title="Desenvolupament web en entorn de Servidor" class="md-header__button md-logo" aria-label="Desenvolupament web en entorn de Servidor" data-md-component="logo">
+      
+  <img src="imagenes/logofp.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Desenvolupament web en entorn de Servidor
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              10laravelRestul
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="Teal"  aria-label="Canviar a mode nit"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Canviar a mode nit" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="light-blue" data-md-color-accent="Teal"  aria-label="Canviar a mode dia"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Canviar a mode dia" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Neteja" aria-label="Neteja" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicialitzant cerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navegació" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Desenvolupament web en entorn de Servidor" class="md-nav__button md-logo" aria-label="Desenvolupament web en entorn de Servidor" data-md-component="logo">
+      
+  <img src="imagenes/logofp.png" alt="logo">
+
+    </a>
+    Desenvolupament web en entorn de Servidor
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01arquitecturas.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.- Arquitectures Web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02php.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.- Programació web amb PHP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03MVC_Laravel.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.- Arquitectura MVC amb Laravel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="04dades_Laravel.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.- Accés segur i estructurat a bases de dades amb Laravel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="05seguretat_Laravel.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.- Aplicacions segures i reactives en Laravel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<style>
+    img { margin: 20px 0; border-radius: 8px; }
+
+    .alert { color: #BD1550; }
+    .warning { color: #E97F02; }
+    .success { color: #8A9B0F; }
+
+    .center { text-align: center; }
+    .right { text-align: right; }
+
+    .img-small { max-width: 200px; margin: auto; }
+    .img-medium { max-width: 400px; margin: auto; }
+    .img-large { max-width: 800px; margin: auto; }
+
+    .leyenda {
+        font-size: small;
+        margin: 10px 0;
+    }
+</style>
+
+<h1 id="servicios-rest">Servicios REST<a class="headerlink" href="#servicios-rest" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>Duración estimada: 16 sesiones</p>
+</blockquote>
+<h2 id="introduccio-als-serveis-rest">Introducció als serveis REST<a class="headerlink" href="#introduccio-als-serveis-rest" title="Permanent link">&para;</a></h2>
+<p><a href="https://youtu.be/ByJ804KuEas"><img alt="" src="imagenes/ull.png" />Video</a></p>
+<p>Una <strong>API</strong> (Application Programming Interface) és un conjunt de funcions i procediments pels quals, una aplicació externa accedeix a les dades, a manera de biblioteca com una capa d'abstracció i la API s'encarrega d'enviar la dada sol·licitada.</p>
+<p>Una de les característiques fonamentals de les API és que són <strong>Sateless</strong>, la qual cosa vol dir que les peticions es fan i desapareixen, no hi ha usuaris loguejats ni dades que es queden emmagatzemats.</p>
+<h3 id="caracteristiques-fonamentals-de-rest">Característiques fonamentals de REST:<a class="headerlink" href="#caracteristiques-fonamentals-de-rest" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Stateless</strong>: Cada petició HTTP conté tota la informació necessària per processar-la.</li>
+<li><strong>Mètodes HTTP</strong>: Utilitza mètodes com GET, POST, PUT i DELETE.</li>
+<li><strong>Formats d'intercanvi de dades</strong>: Habitualment JSON o XML.</li>
+</ul>
+<h2 id="els-serveis-rest">Els serveis REST<a class="headerlink" href="#els-serveis-rest" title="Permanent link">&para;</a></h2>
+<h3 id="consultar-una-api-externa">Consultar una API externa<a class="headerlink" href="#consultar-una-api-externa" title="Permanent link">&para;</a></h3>
+<p>Per consultar una API externa com https://swapi.dev/ des de Laravel, pots utilitzar la biblioteca HTTP client de Laravel, que proporciona una interfície senzilla per a realitzar peticions HTTP. Ací tens un exemple de com fer una petició GET per a obtenir informació sobre personatges de "Star Wars":</p>
+<p><strong>Instal·la la Biblioteca HTTP Client:</strong>
+Si no està ja instal·lat, pots afegir la biblioteca HTTP client de Laravel al teu projecte amb Composer:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>composer<span class="w"> </span>require<span class="w"> </span>guzzlehttp/guzzle
+</code></pre></div>
+<p><strong>Realitza una Petició GET:</strong>
+Després, pots utilitzar el facade Http per a realitzar una petició GET. Aquí tens un exemple de com consultar informació sobre personatges:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">use Illuminate\Support\Facades\Http;</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">public function getStarWarsCharacters()</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">{</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">$response = Http::get(&#39;https://swapi.dev/api/people/&#39;);</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">    if ($response-&gt;successful()) {</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">        $data = $response-&gt;json();</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">        // Manipula o mostra les dades com necessites</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">    } else {</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">        // Maneja l&#39;error</span>
+<span class="linenos" data-linenos="12 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="13 "></span><span class="x">}</span>
+</code></pre></div>
+<p>En aquest exemple, la petició GET a https://swapi.dev/api/people/ retorna informació sobre personatges de "Star Wars". La resposta es verifica per a comprovar si ha estat exitosa, i després es processen les dades JSON. Pots adaptar aquest codi per a fer altres tipus de consultes a l'API, depenent de la informació que necessites.</p>
+<h3 id="construint-una-apirest-basica-amb-laravel">Construïnt una API/REST bàsica amb Laravel<a class="headerlink" href="#construint-una-apirest-basica-amb-laravel" title="Permanent link">&para;</a></h3>
+<p>Amb aquesta metodologia anomenada <strong>REST</strong> podrem construir <em>APIs</em> perquè des d'un client extern es puguen consumir.</p>
+<p>Gràcies a aquest <strong>standard</strong> de l'arquitectura del programari podrem muntar una API que utilitze els mètodes standard GET, POST, PUT i DELETE.</p>
+<h4 id="installacio-laravel-sanctum">Instal·lació Laravel Sanctum<a class="headerlink" href="#installacio-laravel-sanctum" title="Permanent link">&para;</a></h4>
+<p>Laravel Sanctum proporciona un sistema lleuger d'autenticació dissenyat per a SPAs (Single Page Applications), aplicacions mòbils i APIs senzilles basades en tokens. Amb Sanctum, cada usuari de la teua aplicació pot generar diversos tokens d'API, cadascun amb habilitats o permisos específics que defineixen quines accions poden realitzar amb aquests tokens.</p>
+<p>Sanctum resol dues necessitats d'autenticació diferents. Vegem cadascuna abans d'entrar en detall.</p>
+<h5 id="1-tokens-dapi"><strong>1. Tokens d'API</strong><a class="headerlink" href="#1-tokens-dapi" title="Permanent link">&para;</a></h5>
+<p>Sanctum és un paquet senzill que et permet emetre tokens d'API als teus usuaris sense la complexitat d'OAuth. Aquesta funcionalitat està inspirada en plataformes com GitHub, que proporcionen "tokens d'accés personal". Per exemple, la pàgina de configuració del compte de la teua aplicació podria incloure una secció on els usuaris generen tokens d'API per als seus comptes. Aquests tokens solen tindre un temps d'expiració molt llarg (per exemple, anys), però poden ser revocats manualment pels usuaris en qualsevol moment.</p>
+<p>Sanctum implementa aquesta funcionalitat mitjançant:
+- L'emmagatzematge dels tokens d'API en una taula específica de la base de dades.
+- L'autenticació de les peticions HTTP entrants mitjançant l'encapçalament <code>Authorization</code>, que ha d'incloure un token d'API vàlid.</p>
+<h5 id="2-autenticacio-per-a-spas"><strong>2. Autenticació per a SPAs</strong><a class="headerlink" href="#2-autenticacio-per-a-spas" title="Permanent link">&para;</a></h5>
+<p>Sanctum també ofereix una forma senzilla d'autenticar aplicacions de pàgina única (SPAs) que necessiten comunicar-se amb una API desenvolupada amb Laravel. Aquestes SPAs poden formar part del mateix repositori que la teua aplicació Laravel o ser un repositori totalment separat, com una SPA desenvolupada amb Next.js o Nuxt.</p>
+<p>Per a aquesta funcionalitat:
+- Sanctum <strong>no utilitza tokens</strong>, sinó que empra els serveis d'autenticació de sessió basats en galetes (cookies) ja integrats en Laravel.
+- Normalment, utilitza el sistema d'autenticació web de Laravel per aconseguir-ho, oferint protecció contra CSRF, autenticació de sessió i prevenció de filtracions de credencials mitjançant XSS.</p>
+<p>Sanctum només intentarà autenticar-se amb galetes si la petició prové del frontend de la SPA de la teua pròpia aplicació. Quan Sanctum examina una petició HTTP, comprova primer si existeix una galeta d'autenticació. Si no n'hi ha cap, llavors examina l'encapçalament <code>Authorization</code> per a un token d'API vàlid.</p>
+<h5 id="installacio">Instal·lació<a class="headerlink" href="#installacio" title="Permanent link">&para;</a></h5>
+<p>Es pot instal·lar amb el comanament d'artisan</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>php<span class="w"> </span>artisan<span class="w"> </span>install:api
+</code></pre></div>
+<p>Vegem ara quins passos donar per a construir una API REST en Laravel que done suport a les operacions
+bàsiques sobre una o diverses entitats: consultes (GET), insercions (POST), modificacions (PUT) i esborrats (DELETE). Emprarem per a això els denominats controladors de API
+i que proporcionen un conjunt de funcions ja definides per a donar suport a cadascun d'aquests
+comandos.</p>
+<h4 id="definint-els-controlador-de-la-api">Definint els controlador de la API<a class="headerlink" href="#definint-els-controlador-de-la-api" title="Permanent link">&para;</a></h4>
+<p>Per a proporcionar una API REST als clients que ho requerisquen, necessitem definir un controlador (ocontroladors) orientats a oferir aquests serveis REST. Aquests controladors en Laravel es denominen de tipus <strong>api</strong>, com vam veure en sessions prèvies. Normalment es definirà un controlador API per cadascun dels models als quals necessitem accedir. </p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">php artisan make:controller Api/MovieController --api --model=Movie</span>
+</code></pre></div>
+<p>Això crearà el controlador en la carpeta <strong>App\Http\Controllers\Api</strong> amb una sèrie de funcions ja predefinides. No és obligatori situar-ho en aqueixa subcarpeta, òbviament, però això ens servirà per a separar els controladors de API de la resta. Aquesta serà l'aparença del controlador generat:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="k">namespace</span> <span class="nx">App\Http\Controllers\Api</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="k">use</span> <span class="nx">App\Http\Controllers\Controller</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="k">use</span> <span class="nx">App\Models\Movie</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="k">use</span> <span class="nx">Illuminate\Http\Request</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span><span class="k">class</span> <span class="nc">MovieController</span> <span class="k">extends</span> <span class="nx">Controller</span>
+<span class="linenos" data-linenos="10 "></span><span class="p">{</span>
+<span class="linenos" data-linenos="11 "></span>    <span class="sd">/**</span>
+<span class="linenos" data-linenos="12 "></span><span class="sd">     * Display a listing of the resource.</span>
+<span class="linenos" data-linenos="13 "></span><span class="sd">     *</span>
+<span class="linenos" data-linenos="14 "></span><span class="sd">     * @return \Illuminate\Http\Response</span>
+<span class="linenos" data-linenos="15 "></span><span class="sd">     */</span>
+<span class="linenos" data-linenos="16 "></span>    <span class="k">public</span> <span class="k">function</span> <span class="nf">index</span><span class="p">()</span>
+<span class="linenos" data-linenos="17 "></span>    <span class="p">{</span>
+<span class="linenos" data-linenos="18 "></span>        <span class="c1">//</span>
+<span class="linenos" data-linenos="19 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="20 "></span>
+<span class="linenos" data-linenos="21 "></span>    <span class="sd">/**</span>
+<span class="linenos" data-linenos="22 "></span><span class="sd">     * Store a newly created resource in storage.</span>
+<span class="linenos" data-linenos="23 "></span><span class="sd">     *</span>
+<span class="linenos" data-linenos="24 "></span><span class="sd">     * @param  \Illuminate\Http\Request  $request</span>
+<span class="linenos" data-linenos="25 "></span><span class="sd">     * @return \Illuminate\Http\Response</span>
+<span class="linenos" data-linenos="26 "></span><span class="sd">     */</span>
+<span class="linenos" data-linenos="27 "></span>    <span class="k">public</span> <span class="k">function</span> <span class="nf">store</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">)</span>
+<span class="linenos" data-linenos="28 "></span>    <span class="p">{</span>
+<span class="linenos" data-linenos="29 "></span>        <span class="c1">//</span>
+<span class="linenos" data-linenos="30 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="31 "></span>
+<span class="linenos" data-linenos="32 "></span>    <span class="sd">/**</span>
+<span class="linenos" data-linenos="33 "></span><span class="sd">     * Display the specified resource.</span>
+<span class="linenos" data-linenos="34 "></span><span class="sd">     *</span>
+<span class="linenos" data-linenos="35 "></span><span class="sd">     * @param  \App\Models\Movie  $movie</span>
+<span class="linenos" data-linenos="36 "></span><span class="sd">     * @return \Illuminate\Http\Response</span>
+<span class="linenos" data-linenos="37 "></span><span class="sd">     */</span>
+<span class="linenos" data-linenos="38 "></span>    <span class="k">public</span> <span class="k">function</span> <span class="nf">show</span><span class="p">(</span><span class="nx">Movie</span> <span class="nv">$movie</span><span class="p">)</span>
+<span class="linenos" data-linenos="39 "></span>    <span class="p">{</span>
+<span class="linenos" data-linenos="40 "></span>        <span class="c1">//</span>
+<span class="linenos" data-linenos="41 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="42 "></span>
+<span class="linenos" data-linenos="43 "></span>    <span class="sd">/**</span>
+<span class="linenos" data-linenos="44 "></span><span class="sd">     * Update the specified resource in storage.</span>
+<span class="linenos" data-linenos="45 "></span><span class="sd">     *</span>
+<span class="linenos" data-linenos="46 "></span><span class="sd">     * @param  \Illuminate\Http\Request  $request</span>
+<span class="linenos" data-linenos="47 "></span><span class="sd">     * @param  \App\Models\Movie  $movie</span>
+<span class="linenos" data-linenos="48 "></span><span class="sd">     * @return \Illuminate\Http\Response</span>
+<span class="linenos" data-linenos="49 "></span><span class="sd">     */</span>
+<span class="linenos" data-linenos="50 "></span>    <span class="k">public</span> <span class="k">function</span> <span class="nf">update</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">,</span> <span class="nx">Movie</span> <span class="nv">$movie</span><span class="p">)</span>
+<span class="linenos" data-linenos="51 "></span>    <span class="p">{</span>
+<span class="linenos" data-linenos="52 "></span>        <span class="c1">//</span>
+<span class="linenos" data-linenos="53 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="54 "></span>
+<span class="linenos" data-linenos="55 "></span>    <span class="sd">/**</span>
+<span class="linenos" data-linenos="56 "></span><span class="sd">     * Remove the specified resource from storage.</span>
+<span class="linenos" data-linenos="57 "></span><span class="sd">     *</span>
+<span class="linenos" data-linenos="58 "></span><span class="sd">     * @param  \App\Models\Movie  $movie</span>
+<span class="linenos" data-linenos="59 "></span><span class="sd">     * @return \Illuminate\Http\Response</span>
+<span class="linenos" data-linenos="60 "></span><span class="sd">     */</span>
+<span class="linenos" data-linenos="61 "></span>    <span class="k">public</span> <span class="k">function</span> <span class="nf">destroy</span><span class="p">(</span><span class="nx">Movie</span> <span class="nv">$movie</span><span class="p">)</span>
+<span class="linenos" data-linenos="62 "></span>    <span class="p">{</span>
+<span class="linenos" data-linenos="63 "></span>        <span class="c1">//</span>
+<span class="linenos" data-linenos="64 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="65 "></span><span class="p">}</span>
+</code></pre></div>
+<p>Observem que s'incorpora automàticament la clàusula use per a carregar el model associat, que hem indicat en el paràmetre <strong>--model</strong> . A més, els mètodes show , update i destroy ja vénen amb un paràmetre de tipus Llibre que facilitarà molt algunes tasques.</p>
+<h5 id="establint-les-rutes-endpoints">Establint les rutes (endPoints)<a class="headerlink" href="#establint-les-rutes-endpoints" title="Permanent link">&para;</a></h5>
+<p>Una vegada tenim el controlador API creat, definirem les rutes associades a cada mètode del controlador. Podem emprar el mètode <strong>Route::apiResource</strong> en l'arxiu
+<strong>routes/api.php</strong> per a establir automàticament totes les rutes d'un controlador de API. Afegim aquesta línia en aquest arxiu <strong>routes/api.php</strong> :</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>Route::apiResource(&#39;movies&#39;,Api\MovieController::class);
+</code></pre></div>
+<p>Les rutes de API (aquelles definides en l'arxiu <strong>routes/api.php</strong> ) per defecte tenen un prefix api , tal com s'estableix en el provider <strong>RouteServiceProvider</strong> . Per tant, hem definit una
+ruta general <strong>api/movies</strong> , de manera que totes les subrutes que es deriven d'ella portaran a l'un o l'altre mètode del controlador de API de video.
+Podem comprovar quines rutes hi ha actives amb aquest comando:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>php artisan route:list
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span>+--------+-----------+--------------------+----------------+--------------------------------------------------+------------+
+<span class="linenos" data-linenos=" 4 "></span>| Domain | Method    | URI                | Name           | Action                                           | Middleware |
+<span class="linenos" data-linenos=" 5 "></span>+--------+-----------+--------------------+----------------+--------------------------------------------------+------------+
+<span class="linenos" data-linenos=" 6 "></span>|        | GET|HEAD  | /                  |                | App\Http\Controllers\HomeController              | web        |
+<span class="linenos" data-linenos=" 7 "></span>|        | GET|HEAD  | api/movies         | movies.index   | App\Http\Controllers\Api\MovieController@index   | api        |
+<span class="linenos" data-linenos=" 8 "></span>|        | POST      | api/movies         | movies.store   | App\Http\Controllers\Api\MovieController@store   | api        |
+<span class="linenos" data-linenos=" 9 "></span>|        | GET|HEAD  | api/movies/{movie} | movies.show    | App\Http\Controllers\Api\MovieController@show    | api        |
+<span class="linenos" data-linenos="10 "></span>|        | PUT|PATCH | api/movies/{movie} | movies.update  | App\Http\Controllers\Api\MovieController@update  | api        |
+<span class="linenos" data-linenos="11 "></span>|        | DELETE    | api/movies/{movie} | movies.destroy | App\Http\Controllers\Api\MovieController@destroy | api        |
+<span class="linenos" data-linenos="12 "></span>|        | GET|HEAD  | api/user           |                | Closure                                          +--------------------------------------------------+------------+
+</code></pre></div>
+<h3 id="serveis-get">Serveis GET<a class="headerlink" href="#serveis-get" title="Permanent link">&para;</a></h3>
+<p>Començarem per definir el mètode index . En aquest cas, obtindrem el conjunt de videos de labase de dades i retornar-lo tal qual:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">public function index()</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">{</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">    $movies = Movie::get();</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">    return $movies;</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">}</span>
+</code></pre></div>
+<p>Si accedim a la ruta <strong>api/videos</strong> des del navegador, s'activarà el mètode index que acabem d'implementar, i rebrem els llibres de la base de dades, directament en format JSON.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;El padrino&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="nt">&quot;year&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1972&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="nt">&quot;director&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Francis Ford Coppola&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="nt">&quot;poster&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://ia.media-imdb.cimages/M/MV5BMjEyMjcyNDI4MF5BMl5BanBnXkFtZTcwMDA5Mzg3OA@@._V1_SX214_AL_.jpg&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="nt">&quot;rented&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="nt">&quot;synopsis&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Don Vito Corleone (Marlon Brando) es el respetado y temido jefe de una de las cinco familias de la mafia de Nueva York. Tiene cuatro hijos: Connie (Talia Shire), el impulsivo Sonny (James Caan), el pusilánime Freddie (John Cazale) y Michael (Al Pacino), que no quiere saber nada de los negocios de su padre. Cuando Corleone, en contra de los consejos de &#39;Il consigliere&#39; Tom Hagen (Robert Duvall), se niega a intervenir en el negocio de las drogas, el jefe de otra banda ordena su asesinato. Empieza entonces una violenta y cruenta guerra entre las familias mafiosas.&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2020-12-03T11:19:19.000000Z&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="10 "></span><span class="nt">&quot;updated_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2020-12-21T10:36:20.000000Z&quot;</span>
+<span class="linenos" data-linenos="11 "></span><span class="p">},</span>
+<span class="linenos" data-linenos="12 "></span><span class="p">{</span>
+<span class="linenos" data-linenos="13 "></span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="linenos" data-linenos="14 "></span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;El Padrino. Parte II&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="15 "></span><span class="nt">&quot;year&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1974&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="16 "></span><span class="nt">&quot;director&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Francis Ford Coppola&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="17 "></span><span class="nt">&quot;poster&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://ia.media-imdb.cimages/M/MV5BNDc2NTM3MzU1Nl5BMl5BanBnXkFtZTcwMTA5Mzg3OA@@._V1_SX214_AL_.jpg&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="18 "></span><span class="nt">&quot;rented&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="linenos" data-linenos="19 "></span><span class="nt">&quot;synopsis&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Continuación de la historia de los Corleone por medio de dos historias paralelas: la elección de Michael Corleone como jefe de los negocios familiares y los orígenes del patriarca, el ya fallecido Don Vito, primero en Sicilia y luego en Estados Unidos, donde, empezando desde abajo, llegó a ser un poderosísimo jefe de la mafia de Nueva York.&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="20 "></span><span class="nt">&quot;created_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2020-12-03T11:19:19.000000Z&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="21 "></span><span class="nt">&quot;updated_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2020-12-03T11:19:19.000000Z&quot;</span>
+<span class="linenos" data-linenos="22 "></span><span class="p">}}</span>
+</code></pre></div>
+<p>D'una forma similar, podríem implementar i provar el mètode show</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">public function show(Movie $movie)</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">{</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">    return $movie;</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">}</span>
+</code></pre></div>
+<p>En aquest cas, si accedim a la URI <strong>api/movies/1</strong> , obtindrem la informació del video amb id = 1. Notar que Laravel s'encarrega automàticament de buscar el llibre per nosaltres (fer la corresponent operació <strong>find</strong> per a l'id proporcionat). És el que es coneix com a enllaç implícit, i és alguna cosa que també està disponible en els controladors web normals, sempre que els associem correctament amb el model vinculat. Això es fa automàticament si creem el controlador juntament amb el model o si usem el paràmetre --model per a associar-ho, com hem fet ací.</p>
+<h4 id="maneig-de-respostes-json-en-laravel">Maneig de Respostes JSON en Laravel<a class="headerlink" href="#maneig-de-respostes-json-en-laravel" title="Permanent link">&para;</a></h4>
+<p>Laravel ofereix diverses eines per gestionar respostes JSON, ja siga directament o utilitzant API Resources. Aquesta guia mostra com personalitzar les respostes, controlar els camps visibles i gestionar la paginació.</p>
+<h5 id="1-us-de-response-json">1. Ús de <code>response()-&gt;json()</code><a class="headerlink" href="#1-us-de-response-json" title="Permanent link">&para;</a></h5>
+<p>Aquest mètode et permet retornar respostes JSON personalitzades amb un codi d'estat específic.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">public function show(Movie $movie)</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">{</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">    return response()-&gt;json($movie, 200); // JSON amb codi 200 (èxit)</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">}</span>
+</code></pre></div>
+<table>
+<thead>
+<tr>
+<th>Codi</th>
+<th>Significat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>200</td>
+<td>Operació correcta.</td>
+</tr>
+<tr>
+<td>201</td>
+<td>Recurs creat (ex. POST).</td>
+</tr>
+<tr>
+<td>204</td>
+<td>Sense contingut (ex. DELETE).</td>
+</tr>
+<tr>
+<td>400</td>
+<td>Petició incorrecta.</td>
+</tr>
+<tr>
+<td>404</td>
+<td>No trobat.</td>
+</tr>
+<tr>
+<td>500</td>
+<td>Error del servidor.</td>
+</tr>
+</tbody>
+</table>
+<h5 id="2-camps-ocults-o-visibles-en-models">2. Camps Ocults o Visibles en Models<a class="headerlink" href="#2-camps-ocults-o-visibles-en-models" title="Permanent link">&para;</a></h5>
+<p>Laravel permet configurar directament al model quins camps es mostraran o s'ocultaran a les respostes JSON.</p>
+<ul>
+<li><strong>Ocultar camps:</strong> Utilitza la propietat <code>hidden</code> en el model.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">protected $hidden = [&#39;password&#39;];</span>
+</code></pre></div>
+<ul>
+<li><strong>Mostrar només camps seleccionats:</strong> Utilitza la propietat <code>visible</code> en el model.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">protected $visible = [&#39;id&#39;, &#39;name&#39;, &#39;email&#39;];</span>
+</code></pre></div>
+<h5 id="3-personalitzacio-directa-a-controladors">3. Personalització Directa a Controladors<a class="headerlink" href="#3-personalitzacio-directa-a-controladors" title="Permanent link">&para;</a></h5>
+<p>Si necessites un control més gran sobre els camps retornats, pots definir manualment un array al controlador.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">public function show(Movie $movie)</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">{</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">    return [</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">        &#39;title&#39; =&gt; $movie-&gt;title,</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">        &#39;director&#39; =&gt; $movie-&gt;director,</span>
+<span class="linenos" data-linenos="6 "></span><span class="x">    ];</span>
+<span class="linenos" data-linenos="7 "></span><span class="x">}</span>
+</code></pre></div>
+<h5 id="4-us-de-recursos-api-resources">4. Ús de Recursos (API Resources)<a class="headerlink" href="#4-us-de-recursos-api-resources" title="Permanent link">&para;</a></h5>
+<p>Els <strong>API Resources</strong> permeten controlar millor el format de les respostes JSON, separant la lògica de transformació del model.</p>
+<p><strong>Generar un recurs:</strong>
+Es pot generar un recurs amb Artisan, i aquest recurs s'utilitza per personalitzar les dades que es retornen.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">php artisan make:resource MovieResource</span>
+</code></pre></div>
+<p><strong>Definir el format al reecurs</strong></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">namespace App\Http\Resources;</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">use Illuminate\Http\Resources\Json\JsonResource;</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">class MovieResource extends JsonResource</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">{</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">    public function toArray($request)</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">        return [</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">            &#39;id&#39; =&gt; $this-&gt;id,</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">            &#39;title&#39; =&gt; $this-&gt;title,</span>
+<span class="linenos" data-linenos="12 "></span><span class="x">            &#39;director&#39; =&gt; $this-&gt;director,</span>
+<span class="linenos" data-linenos="13 "></span><span class="x">            &#39;release_year&#39; =&gt; $this-&gt;year,</span>
+<span class="linenos" data-linenos="14 "></span><span class="x">        ];</span>
+<span class="linenos" data-linenos="15 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="16 "></span><span class="x">}</span>
+</code></pre></div>
+<p><strong>Ús al controlador:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">use App\Http\Resources\MovieResource;</span>
+<span class="linenos" data-linenos="2 "></span>
+<span class="linenos" data-linenos="3 "></span><span class="x">public function show(Movie $movie)</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">{</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">    return new MovieResource($movie);</span>
+<span class="linenos" data-linenos="6 "></span><span class="x">}</span>
+</code></pre></div>
+<h5 id="5-colleccions-i-paginacio">5. Col·leccions i Paginació<a class="headerlink" href="#5-colleccions-i-paginacio" title="Permanent link">&para;</a></h5>
+<p><strong>Generar un recurs per col·leccions:</strong>
+També es poden crear recursos per transformar col·leccions de dades, incloent-hi metadades i enllaços addicionals.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>php<span class="w"> </span>artisan<span class="w"> </span>make:resource<span class="w"> </span>MovieCollection
+</code></pre></div>
+<p><strong>Personalitzar les col·leccions:</strong></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">namespace App\Http\Resources;</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">use Illuminate\Http\Resources\Json\ResourceCollection;</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">class MovieCollection extends ResourceCollection</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">{</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">    public function toArray($request)</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">        return [</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">            &#39;data&#39; =&gt; $this-&gt;collection,</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">            &#39;meta&#39; =&gt; [</span>
+<span class="linenos" data-linenos="12 "></span><span class="x">                &#39;total_movies&#39; =&gt; $this-&gt;collection-&gt;total(),</span>
+<span class="linenos" data-linenos="13 "></span><span class="x">                &#39;per_page&#39; =&gt; $this-&gt;collection-&gt;perPage(),</span>
+<span class="linenos" data-linenos="14 "></span><span class="x">                &#39;current_page&#39; =&gt; $this-&gt;collection-&gt;currentPage(),</span>
+<span class="linenos" data-linenos="15 "></span><span class="x">                &#39;last_page&#39; =&gt; $this-&gt;collection-&gt;lastPage(),</span>
+<span class="linenos" data-linenos="16 "></span><span class="x">            ],</span>
+<span class="linenos" data-linenos="17 "></span><span class="x">            &#39;links&#39; =&gt; [</span>
+<span class="linenos" data-linenos="18 "></span><span class="x">                &#39;self&#39; =&gt; url(&#39;/api/movies&#39;),</span>
+<span class="linenos" data-linenos="19 "></span><span class="x">            ],</span>
+<span class="linenos" data-linenos="20 "></span><span class="x">        ];</span>
+<span class="linenos" data-linenos="21 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="22 "></span><span class="x">}</span>
+</code></pre></div>
+<h3 id="paginar-resultats"><strong>Paginar resultats:</strong><a class="headerlink" href="#paginar-resultats" title="Permanent link">&para;</a></h3>
+<p>Utilitza el mètode <code>paginate()</code> per retornar resultats paginats. Les respostes amb <code>paginate()</code> inclouen metadades com el nombre total de registres, la pàgina actual i els enllaços de navegació.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">use App\Http\Resources\MovieCollection;</span>
+<span class="linenos" data-linenos="2 "></span>
+<span class="linenos" data-linenos="3 "></span><span class="x">public function index()</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">{</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">    return new MovieCollection(Movie::paginate(10));</span>
+<span class="linenos" data-linenos="6 "></span><span class="x">}</span>
+</code></pre></div>
+<h3 id="respostes-json-amb-paginacio"><strong>Respostes JSON amb paginació:</strong><a class="headerlink" href="#respostes-json-amb-paginacio" title="Permanent link">&para;</a></h3>
+<p>Quan utilitzes <code>paginate()</code>, Laravel afegeix metadades útils a la resposta JSON, com ara el total de registres, el nombre per pàgina, la pàgina actual, etc.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">    </span><span class="nt">&quot;data&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">        </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">            </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;The Godfather&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">            </span><span class="nt">&quot;director&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Francis Ford Coppola&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">            </span><span class="nt">&quot;release_year&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1972</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w">        </span><span class="p">},</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">        </span><span class="p">{</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">            </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">            </span><span class="nt">&quot;title&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;The Godfather: Part II&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">            </span><span class="nt">&quot;director&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Francis Ford Coppola&quot;</span><span class="p">,</span>
+<span class="linenos" data-linenos="13 "></span><span class="w">            </span><span class="nt">&quot;release_year&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1974</span>
+<span class="linenos" data-linenos="14 "></span><span class="w">        </span><span class="p">}</span>
+<span class="linenos" data-linenos="15 "></span><span class="w">    </span><span class="p">],</span>
+<span class="linenos" data-linenos="16 "></span><span class="w">    </span><span class="nt">&quot;meta&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="17 "></span><span class="w">        </span><span class="nt">&quot;total_movies&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">50</span><span class="p">,</span>
+<span class="linenos" data-linenos="18 "></span><span class="w">        </span><span class="nt">&quot;per_page&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
+<span class="linenos" data-linenos="19 "></span><span class="w">        </span><span class="nt">&quot;current_page&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="linenos" data-linenos="20 "></span><span class="w">        </span><span class="nt">&quot;last_page&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span>
+<span class="linenos" data-linenos="21 "></span><span class="w">    </span><span class="p">},</span>
+<span class="linenos" data-linenos="22 "></span><span class="w">    </span><span class="nt">&quot;links&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="23 "></span><span class="w">        </span><span class="nt">&quot;self&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://example.com/api/movies&quot;</span>
+<span class="linenos" data-linenos="24 "></span><span class="w">    </span><span class="p">}</span>
+<span class="linenos" data-linenos="25 "></span><span class="p">}</span>
+</code></pre></div>
+<h2 id="6-personalitzacio-dels-recursos">6. Personalització dels Recursos<a class="headerlink" href="#6-personalitzacio-dels-recursos" title="Permanent link">&para;</a></h2>
+<p>Els recursos també poden incloure dades de relacions o camps calculats, com ara informació agregada o camps derivats.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">class MovieResource extends JsonResource</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="x">{</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">    public function toArray($request)</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">        return [</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">            &#39;id&#39; =&gt; $this-&gt;id,</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">            &#39;title&#39; =&gt; $this-&gt;title,</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">            &#39;director&#39; =&gt; $this-&gt;director,</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">            &#39;release_year&#39; =&gt; $this-&gt;year,</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">            &#39;genre&#39; =&gt; $this-&gt;genre-&gt;name ?? &#39;Unknown&#39;, // Relació amb gènere</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">            &#39;rating&#39; =&gt; $this-&gt;reviews-&gt;avg(&#39;rating&#39;), // Mitjana de valoracions</span>
+<span class="linenos" data-linenos="12 "></span><span class="x">        ];</span>
+<span class="linenos" data-linenos="13 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="14 "></span><span class="x">}</span>
+</code></pre></div>
+<h5 id="resum">Resum<a class="headerlink" href="#resum" title="Permanent link">&para;</a></h5>
+<ol>
+<li><strong><code>response()-&gt;json()</code></strong>: Útil per a respostes senzilles.</li>
+<li><strong>Camps ocults o visibles</strong>: Control directe al model.</li>
+<li><strong>API Resources</strong>: Separen la lògica de transformació i ofereixen flexibilitat.</li>
+<li><strong>Paginació</strong>: Facilita la navegació de dades grans amb <code>paginate()</code>.</li>
+</ol>
+<p>Laravel 11 fa que el maneig de respostes JSON siga flexible, escalable i fàcil d'implementar.</p>
+<h3 id="resta-dels-serveis">Resta dels serveis<a class="headerlink" href="#resta-dels-serveis" title="Permanent link">&para;</a></h3>
+<p>Vegem ara com implementar la resta de serveis (POST, PUT i DELETE). En el cas de la inserció (POST), haurem de rebre en la petició les dades de l'objecte a inserir (un llibre, en el nostre exemple). Igual que les dades del servidor al client s'envien en format JSON, és d'esperar en aplicacions que segueixen l'arquitectura REST que les dades del client al servidor també s'envien en format JSON.
+El nostre mètode <strong>store</strong> , associat al servei POST, podria quedar d'aquesta manera (retornem el codi d'estat 201, que s'utilitza quan s'han inserit elements nous):</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">public function store(MoviePost $request)</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="x">{</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">        $movie = new Movie();</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">        $movie-&gt;title = $request-&gt;title;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">        $movie-&gt;year = $request-&gt;year;</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">        $movie-&gt;director = $request-&gt;director;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">        $movie-&gt;poster = $request-&gt;poster;</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">        $movie-&gt;synopsis = $request-&gt;synopsis;</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">        $movie-&gt;save();</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">        return response()-&gt;json($movie, 201);</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">}</span>
+</code></pre></div>
+<p>De forma semblant tindriem el mètode <strong>update</strong> per al servei PUT. En est cas tornem un codi 200.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x"> public function update(MoviePost $request, Movie $movie)</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">        $movie-&gt;title = $request-&gt;title;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">        $movie-&gt;year = $request-&gt;year;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">        $movie-&gt;director = $request-&gt;director;</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">        $movie-&gt;poster = $request-&gt;poster;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">        $movie-&gt;synopsis = $request-&gt;synopsis;</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">        $movie-&gt;save();</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">        return response()-&gt;json($movie);</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">    }</span>
+</code></pre></div>
+<p>Finalment, pel servei DELETE, hem d'implementar el mètode <strong>destroy</strong> , que podria quedar així:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">public function destroy(Movie $movie)</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">{</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">    $movie-&gt;delete();</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">    return response()-&gt;json(null, 204);</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">}</span>
+</code></pre></div>
+<p>Notar que retornem un codi d'estat 204, que indica que no estem retornant contingut (és null). D'altra banda, és habitual en aquesta mena d'operacions d'esborrat retornar en format JSON l'objecte que s'ha eliminat, per si de cas es vol desfer l'operació en un pas posterior. En aquest cas, la resposta del mètode d'esborrat seria així:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">return response()-&gt;json($movie,204);</span>
+</code></pre></div>
+<p>Com podem començar a intuir, provar aquests serveis no és tan senzill com provar serveis de tipus GET, ja que no podem simplement teclejar una URL en el navegador. Necessitem un mecanisme per a passar-li les dades al servidor en format JSON, i també el mètode (POST, PUT o DELETE).</p>
+<h5 id="validacio-de-dades">Validació de dades<a class="headerlink" href="#validacio-de-dades" title="Permanent link">&para;</a></h5>
+<p>A l'hora de rebre dades en format JSON per a serveis REST, també podem establir mecanismes de validació similars als vistos per als formularis, a través dels corresponents <strong>requests</strong>, com ja hem fet en els exemples anteriors.</p>
+<h5 id="respostes-derror">Respostes d'error<a class="headerlink" href="#respostes-derror" title="Permanent link">&para;</a></h5>
+<p>D'altra banda, hem d'assegurar-nos que qualsevol error que es produïsca en la part del API retorne un contingut en format JSON, i no una pàgina web. Per exemple, si sol·licitem veure la fitxa d'un llibre que el seu id no existeix, no hauria de retornar-nos una pàgina d'error 404, sinó un codi d'estat 404 amb un missatge d'error en format JSON.
+Això no es compleix per defecte, ja que Laravel està configurat per a renderitzar una vista amb l'error produït.  Ho podem fer modificant el fitxer bootstrap/app.php.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">-&gt;withExceptions(function (Exceptions $exceptions) {</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="x">        // Gestionar excepcions en format JSON només per a rutes API</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">        $exceptions-&gt;shouldRenderJsonWhen(function (Request $request, Throwable $e) {</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">            // Només retornar JSON si la ruta comença amb &quot;api/*&quot;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">            return $request-&gt;is(&#39;api/*&#39;);</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">        });</span>
+<span class="linenos" data-linenos=" 7 "></span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">        // Renderitzar excepcions personalitzades</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">        $exceptions-&gt;render(function (Throwable $e, Request $request) {</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">            // Excepcions de validació</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">            if ($e instanceof \Illuminate\Validation\ValidationException) {</span>
+<span class="linenos" data-linenos="12 "></span><span class="x">                return response()-&gt;json([</span>
+<span class="linenos" data-linenos="13 "></span><span class="x">                    &#39;message&#39; =&gt; &#39;Dades no vàlides.&#39;,</span>
+<span class="linenos" data-linenos="14 "></span><span class="x">                    &#39;errors&#39; =&gt; $e-&gt;errors(),</span>
+<span class="linenos" data-linenos="15 "></span><span class="x">                ], 422);</span>
+<span class="linenos" data-linenos="16 "></span><span class="x">            }</span>
+<span class="linenos" data-linenos="17 "></span>
+<span class="linenos" data-linenos="18 "></span><span class="x">            // Excepcions d&#39;autenticació</span>
+<span class="linenos" data-linenos="19 "></span><span class="x">            if ($e instanceof \Illuminate\Auth\AuthenticationException) {</span>
+<span class="linenos" data-linenos="20 "></span><span class="x">                return response()-&gt;json([</span>
+<span class="linenos" data-linenos="21 "></span><span class="x">                    &#39;message&#39; =&gt; &#39;No autenticat.&#39;,</span>
+<span class="linenos" data-linenos="22 "></span><span class="x">                ], 401);</span>
+<span class="linenos" data-linenos="23 "></span><span class="x">            }</span>
+<span class="linenos" data-linenos="24 "></span>
+<span class="linenos" data-linenos="25 "></span><span class="x">            // Ruta no trobada</span>
+<span class="linenos" data-linenos="26 "></span><span class="x">            if ($e instanceof \Symfony\Component\HttpKernel\Exception\NotFoundHttpException) {</span>
+<span class="linenos" data-linenos="27 "></span><span class="x">                if ($request-&gt;is(&#39;api/*&#39;)) {</span>
+<span class="linenos" data-linenos="28 "></span><span class="x">                    return response()-&gt;json([</span>
+<span class="linenos" data-linenos="29 "></span><span class="x">                        &#39;message&#39; =&gt; &#39;Ruta no trobada.&#39;,</span>
+<span class="linenos" data-linenos="30 "></span><span class="x">                    ], 404);</span>
+<span class="linenos" data-linenos="31 "></span><span class="x">                }</span>
+<span class="linenos" data-linenos="32 "></span><span class="x">                // Comportament per defecte per a rutes no API (HTML)</span>
+<span class="linenos" data-linenos="33 "></span><span class="x">                return parent::render($request, $e);</span>
+<span class="linenos" data-linenos="34 "></span><span class="x">            }</span>
+<span class="linenos" data-linenos="35 "></span>
+<span class="linenos" data-linenos="36 "></span><span class="x">            // Recurs no trobat</span>
+<span class="linenos" data-linenos="37 "></span><span class="x">            if ($e instanceof \Illuminate\Database\Eloquent\ModelNotFoundException) {</span>
+<span class="linenos" data-linenos="38 "></span><span class="x">                if ($request-&gt;is(&#39;api/*&#39;)) {</span>
+<span class="linenos" data-linenos="39 "></span><span class="x">                    return response()-&gt;json([</span>
+<span class="linenos" data-linenos="40 "></span><span class="x">                        &#39;message&#39; =&gt; &#39;Recurs no trobat.&#39;,</span>
+<span class="linenos" data-linenos="41 "></span><span class="x">                    ], 404);</span>
+<span class="linenos" data-linenos="42 "></span><span class="x">                }</span>
+<span class="linenos" data-linenos="43 "></span><span class="x">                return parent::render($request, $e);</span>
+<span class="linenos" data-linenos="44 "></span><span class="x">            }</span>
+<span class="linenos" data-linenos="45 "></span>
+<span class="linenos" data-linenos="46 "></span><span class="x">            // Resposta genèrica per a errors del servidor</span>
+<span class="linenos" data-linenos="47 "></span><span class="x">            if ($request-&gt;is(&#39;api/*&#39;)) {</span>
+<span class="linenos" data-linenos="48 "></span><span class="x">                return response()-&gt;json([</span>
+<span class="linenos" data-linenos="49 "></span><span class="x">                    &#39;message&#39; =&gt; &#39;Error del servidor.&#39;,</span>
+<span class="linenos" data-linenos="50 "></span><span class="x">                ], 500);</span>
+<span class="linenos" data-linenos="51 "></span><span class="x">            }</span>
+<span class="linenos" data-linenos="52 "></span>
+<span class="linenos" data-linenos="53 "></span><span class="x">            // Comportament per defecte per a rutes no API</span>
+<span class="linenos" data-linenos="54 "></span><span class="x">            return parent::render($request, $e);</span>
+<span class="linenos" data-linenos="55 "></span><span class="x">        });</span>
+</code></pre></div>
+<h4 id="provant-els-serveis-amb-postman">Provant els serveis amb POSTMAN<a class="headerlink" href="#provant-els-serveis-amb-postman" title="Permanent link">&para;</a></h4>
+<p>Ja hem vist que provar uns serveis de llistat (GET) és senzill a través d'un navegador. Però els serveis d'inserció (POST), modificació (PUT) o esborrat (DELETE) exigeixen d'altres eines per a poder ser provats. Podríem definir formularis amb aquests mètodes encapsulats, però l'esforç de definir
+aqueixos formularis per a després no utilitzar-los més no mereix molt la pena. Veurem a continuació una eina molt útil per a provar tot tipus de serveis sense necessitat d'implementar gens addicional.</p>
+<p><strong>Postman</strong> és una aplicació gratuïta i multiplataforma que permet enviar tot tipus de peticions a un servidor determinat, i examinar la resposta que aquest produeix. D'aquesta forma, podem comprovar que els serveis ofereixen la informació adequada abans de ser usats per una aplicació client real.</p>
+<p>La primera vegada que l'executem ens preguntarà si volem registrar-nos, de manera que puguem compartir els projectes que fem entre els diferents equips en què estiguem registrats, però podem saltar aquest pas fent clic en l'enllaç inferior.</p>
+<p>Després d'iniciar l'aplicació, veurem la pantalla d'inici de Postman. Al principi apareixeran diverses opcions en la zona central, per a crear col·leccions o peticions, encara que també les podem crear des del
+botó <strong>New</strong> a la cantonada superior esquerra. Per exemple, podem crear una col·lecció "Movies", i apareixerà en el panell esquerre:</p>
+<p>Des del mateix botó*New a la cantonada superior esquerra podem crear noves peticions i associar-les a una col·lecció. Existeix una forma alternativa (potser més còmoda) de crear aqueixes peticions, a través del panell
+de pestanyes, afegint noves:</p>
+<h5 id="afegir-peticions-get">Afegir peticions GET<a class="headerlink" href="#afegir-peticions-get" title="Permanent link">&para;</a></h5>
+<p>Per a afegir una petició, habitualment triarem el tipus de comando sota les pestanyes (GET, POST, PUT, DELETE) i la URL associada a aquest comando. Per exemple:</p>
+<p><img alt="" src="imagenes/08/postman_1.png" /></p>
+<p>Llavors, podem fer clic en el botó "Save" en la part dreta, i guardar la petició per a poder-la reutilitzar. En guardar-la, ens demanarà que li assignem un nom (per exemple, "GET movies" en aquest cas), i la
+col·lecció en la qual s'emmagatzemarà (la nostra col·lecció de "Movies").</p>
+<p><img alt="" src="imagenes/08/postman_2.png" /></p>
+<p>Després, podrem veure la prova associada a la col·lecció, en el panell esquerre, i si seleccionem aquesta prova i premem en el botó blau de "*Send" (part dreta), podem veure la resposta emesa pel servidor en el panell inferior de resposta (si tenim, és clar, el servidor en marxa)</p>
+<p><img alt="" src="imagenes/08/postman_3.png" /></p>
+<p>Seguint aquests mateixos passos, podem també crear una nova petició per a obtindre un llibre a partir del seu id, per GET:</p>
+<p><img alt="" src="imagenes/08/postman_4.png" /></p>
+<p>Bastaria amb reemplaçar l'id de la URL pel qual vulguem consultar realment. Si provem aquesta petició, obtindrem la resposta corresponent:</p>
+<p><img alt="" src="imagenes/08/postman_5.png" /></p>
+<h5 id="afegir-altres-tipus-de-peticions">Afegir altres tipus de peticions<a class="headerlink" href="#afegir-altres-tipus-de-peticions" title="Permanent link">&para;</a></h5>
+<p>Les peticions POST difereixen de les peticions GET en què s'envia certa informació en el cos de la petició. Aquesta informació normalment són les dades que es volen afegir en el servidor. Com podem fer això amb Postman?
+En primer lloc, creem una nova petició, triem el comando POST i definim la URL (en el nostre cas, videoclub.my/api/movies o una cosa similar, depenent de com tinguem en marxa el servidor).
+Llavors, fem clic en la pestanya Body, sota la URL, i establim el tipus com <strong>raw</strong> perquè ens deixe escriure'l sense restriccions. També convé canviar la propietat <strong>Text</strong> perquè siga JSON, i que així el servidor reculla el tipus de dada adequada. S'afegirà automàticament una capçalera de petició (<strong>Header</strong>)
+que especificarà que el tipus de contingut que s'enviarà són dades JSON. Després, en el quadre de text sota aquestes opcions, especifiquem l'objecte JSON que volem enviar per a inserir:</p>
+<p><img alt="" src="imagenes/08/postman_6.png" /></p>
+<p>Després d'això, n'hi ha prou amb guardar la petició com hem fet amb les anteriors, i llançar-la per a veure el resultat.</p>
+<p>Quant a les peticions PUT, procedirem de manera similar a les peticions POST: hem de triar el comando (PUT en aquest cas), la URL, i completar el cos de la petició amb les dades que vulguem modificar del contacte. En aquest cas, a més, l'id del llibre l'enviarem també en la pròpia URL:</p>
+<p><img alt="" src="imagenes/08/postman_7.png" /></p>
+<p>Per a peticions DELETE, la mecànica és similar a la fitxa de l'element (operació GET), canviant el comando GET per DELETE, i sense necessitat d'establir res en el cos de la petició:</p>
+<p><img alt="" src="imagenes/08/postman_8.png" /></p>
+<h3 id="autenticacio-en-serveis-rest">Autenticació en serveis REST<a class="headerlink" href="#autenticacio-en-serveis-rest" title="Permanent link">&para;</a></h3>
+<p>En una API REST també pot ser necessari protegir certs serveis, de manera que només puguen accedir a ells els usuaris autenticats. No obstant això, en aquest cas no tenim disponible el mecanisme d'autenticació basat en sessions que vam veure en temes anteriors, ja que la parteix client que consula la API
+REST no té per què estar basada en un navegador. Podríem accedir des d'una aplicació d'escriptori feta a Java, per exemple, o des d'una aplicació mòbil, i en aquests casos no podríem disposar de les sessions, pròpies de clients web o navegadors. En el seu lloc, emprarem un mecanisme d'autenticació basat en tokens.</p>
+<h4 id="fonaments-de-lautenticacio-basada-en-tokens">Fonaments de l'autenticació basada en tokens<a class="headerlink" href="#fonaments-de-lautenticacio-basada-en-tokens" title="Permanent link">&para;</a></h4>
+<p>L'autenticació basada en tokens és un mecanisme de validació d'usuaris en aplicacions client/servidor que podríem dir que és més universal que l'autenticació basada en sessions, ja que permet autenticar usuaris provinents de diferents tipus de clients. El que es fa és el següent:</p>
+<ul>
+<li>L'usuari necessita enviar les seues credencials (login i password), de manera similar a com es fa en una aplicació web normal, encara que aquesta vegada les dades s'envien normalment en format JSON.</li>
+<li>El servidor valida aqueixes credencials i, si són correctes, genera una cadena de text anomenada <strong>token</strong>, d'una certa longitud, i que servirà per a identificar unívocament a l'usuari a partir d'aqueix moment. Dit token ha de ser enviat de tornada (també en format JSON) al client que es va validar.</li>
+<li>A partir d'aquest punt, el client ha d'adjuntar el token com a part de la informació en cada petició que realitza a una zona d'accés restringit, de manera que el servidor puga consultar el token i comprovar si correspon amb el d'algun usuari autoritzat. Aquest token normalment s'envia en una capçalera de la petició anomenada <strong>Authorization</strong>, com veurem després, i el servidor pot consultar el valor d'aquesta capçalera per a verificar l'accés del client.</li>
+</ul>
+<h4 id="generant-tokens">Generant tokens<a class="headerlink" href="#generant-tokens" title="Permanent link">&para;</a></h4>
+<p>Sanctum us permet emetre tokens API / tokens d'accés personal que es poden utilitzar per autenticar les peticions API a la vostra aplicació. Quan es fan sol·licituds utilitzant tokens API, el token s'ha d'incloure a la capçalera d'autorització com a token Bearer.</p>
+<p>Per començar a emetre tokens per als usuaris, el model d'usuari hauria d'utilitzar el trait Laravel\Sanctum\HasApiTokens:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">use Laravel\Sanctum\HasApiTokens;</span>
+<span class="linenos" data-linenos="2 "></span>
+<span class="linenos" data-linenos="3 "></span><span class="x">class User extends Authenticatable</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">{</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">use HasApiTokens, HasFactory, Notifiable;</span>
+<span class="linenos" data-linenos="6 "></span><span class="x">}</span>
+</code></pre></div>
+<p>Per a emetre un token, podeu utilitzar el mètode createToken. El mètode createToken retorna una instància Laravel\Sanctum\NewAccessToken. Els tokens de l'API es generen utilitzant el hash SHA-256 abans de ser emmagatzemats a la vostra base de dades, però podeu accedir al valor de text net del token utilitzant la propietat PlainTextToken de la instància NewAccessToken.
+Per a vincular la generació del token amb un procediment d'autenticació podem fer-ho definint un mètode login , per exemple, que validarà les credencials que li arriben (login i password). Si són correctes, cridarà al mètode <strong>createToken</strong> de Sanctum (incorporat a l'usuari a través del <strong>trait HasApiTokens</strong> ), associant-lo al login de l'usuari entrant, i li retornarà el token en
+format text pla, com un objecte JSON. En cas que hi haja un error en l'autenticació, enviarà de tornada un missatge d'error, amb el codi 401 d'accés no autoritzat.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="go">php artisan make:controller Api/AuthController</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">namespace App\Http\Controllers\Api;</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="x"> use App\Http\Controllers\Controller as Controller;</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">class BaseController extends Controller</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">{</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">    /**</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">     * success response method.</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">     *</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">     * @return \Illuminate\Http\JsonResponse</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">     */</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">    public function sendResponse($result, $message, $code = 200)</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="12 "></span><span class="x">        $response = [</span>
+<span class="linenos" data-linenos="13 "></span><span class="x">            &#39;success&#39; =&gt; true,</span>
+<span class="linenos" data-linenos="14 "></span><span class="x">            &#39;data&#39;    =&gt; $result,</span>
+<span class="linenos" data-linenos="15 "></span><span class="x">            &#39;message&#39; =&gt; $message,</span>
+<span class="linenos" data-linenos="16 "></span><span class="x">        ];</span>
+<span class="linenos" data-linenos="17 "></span><span class="x">        return response()-&gt;json($response, $code);</span>
+<span class="linenos" data-linenos="18 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="19 "></span><span class="x">    /**</span>
+<span class="linenos" data-linenos="20 "></span><span class="x">     * return error response.</span>
+<span class="linenos" data-linenos="21 "></span><span class="x">     *</span>
+<span class="linenos" data-linenos="22 "></span><span class="x">     * @return \Illuminate\Http\JsonResponse</span>
+<span class="linenos" data-linenos="23 "></span><span class="x">     */</span>
+<span class="linenos" data-linenos="24 "></span><span class="x">    public function sendError($error, $errorMessages = [], $code = 200)</span>
+<span class="linenos" data-linenos="25 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="26 "></span><span class="x">        $response = [</span>
+<span class="linenos" data-linenos="27 "></span><span class="x">            &#39;success&#39; =&gt; false,</span>
+<span class="linenos" data-linenos="28 "></span><span class="x">            &#39;message&#39; =&gt; $error,</span>
+<span class="linenos" data-linenos="29 "></span><span class="x">        ];</span>
+<span class="linenos" data-linenos="30 "></span><span class="x">        if(!empty($errorMessages)){</span>
+<span class="linenos" data-linenos="31 "></span><span class="x">            $response[&#39;info&#39;] = $errorMessages;</span>
+<span class="linenos" data-linenos="32 "></span><span class="x">        }</span>
+<span class="linenos" data-linenos="33 "></span><span class="x">        return response()-&gt;json($response, $code);</span>
+<span class="linenos" data-linenos="34 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="35 "></span><span class="x">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">namespace App\Http\Controllers\Api;</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">use Illuminate\Http\Request;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">use App\Http\Controllers\Api\BaseController as BaseController;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">use Illuminate\Support\Facades\Auth;</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">use Illuminate\Support\Facades\Validator;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">use App\Models\User;</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">class AuthController extends BaseController</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">{</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">    public function login(Request $request)</span>
+<span class="linenos" data-linenos="12 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="13 "></span><span class="x">        if (Auth::attempt([&#39;email&#39; =&gt; $request-&gt;email, &#39;password&#39; =&gt; $request-&gt;password])){</span>
+<span class="linenos" data-linenos="14 "></span><span class="x">            $authUser = Auth::user();</span>
+<span class="linenos" data-linenos="15 "></span><span class="x">            $result[&#39;token&#39;] =  $authUser-&gt;createToken(&#39;MyAuthApp&#39;)-&gt;plainTextToken;</span>
+<span class="linenos" data-linenos="16 "></span><span class="x">            $result[&#39;name&#39;] =  $authUser-&gt;name;</span>
+<span class="linenos" data-linenos="17 "></span>
+<span class="linenos" data-linenos="18 "></span><span class="x">            return $this-&gt;sendResponse($result, &#39;User signed in&#39;);</span>
+<span class="linenos" data-linenos="19 "></span><span class="x">        }</span>
+<span class="linenos" data-linenos="20 "></span><span class="x">        return $this-&gt;sendError(&#39;Unauthorised.&#39;, [&#39;error&#39;=&gt;&#39;incorrect Email/Password&#39;]);</span>
+<span class="linenos" data-linenos="21 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="22 "></span><span class="x">    public function register(Request $request)</span>
+<span class="linenos" data-linenos="23 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="24 "></span><span class="x">        $validator = Validator::make($request-&gt;all(), [</span>
+<span class="linenos" data-linenos="25 "></span><span class="x">            &#39;name&#39; =&gt; &#39;required&#39;,</span>
+<span class="linenos" data-linenos="26 "></span><span class="x">            &#39;email&#39; =&gt; &#39;required|email&#39;,</span>
+<span class="linenos" data-linenos="27 "></span><span class="x">            &#39;password&#39; =&gt; &#39;required&#39;,</span>
+<span class="linenos" data-linenos="28 "></span><span class="x">            &#39;confirm_password&#39; =&gt; &#39;required|same:password&#39;,</span>
+<span class="linenos" data-linenos="29 "></span><span class="x">        ]);</span>
+<span class="linenos" data-linenos="30 "></span>
+<span class="linenos" data-linenos="31 "></span><span class="x">        if ($validator-&gt;fails()){</span>
+<span class="linenos" data-linenos="32 "></span><span class="x">            return $this-&gt;sendError(&#39;Error validation&#39;, $validator-&gt;errors());</span>
+<span class="linenos" data-linenos="33 "></span><span class="x">        }</span>
+<span class="linenos" data-linenos="34 "></span>
+<span class="linenos" data-linenos="35 "></span><span class="x">        try {</span>
+<span class="linenos" data-linenos="36 "></span><span class="x">            $input = $request-&gt;all();</span>
+<span class="linenos" data-linenos="37 "></span><span class="x">            $input[&#39;password&#39;] = bcrypt($input[&#39;password&#39;]);</span>
+<span class="linenos" data-linenos="38 "></span><span class="x">            $user = User::create($input);</span>
+<span class="linenos" data-linenos="39 "></span><span class="x">            $result[&#39;token&#39;] =  $user-&gt;createToken(&#39;MyAuthApp&#39;)-&gt;plainTextToken;</span>
+<span class="linenos" data-linenos="40 "></span><span class="x">            $result[&#39;name&#39;] =  $user-&gt;name;</span>
+<span class="linenos" data-linenos="41 "></span>
+<span class="linenos" data-linenos="42 "></span><span class="x">            return $this-&gt;sendResponse($result, &#39;User created successfully.&#39;);</span>
+<span class="linenos" data-linenos="43 "></span><span class="x">        } catch (\Exception $e) {</span>
+<span class="linenos" data-linenos="44 "></span><span class="x">            return $this-&gt;sendError(&#39;Registration Error&#39; , $e-&gt;getMessage());</span>
+<span class="linenos" data-linenos="45 "></span><span class="x">        }</span>
+<span class="linenos" data-linenos="46 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="47 "></span><span class="x">    public function logout(Request $request)</span>
+<span class="linenos" data-linenos="48 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="49 "></span>
+<span class="linenos" data-linenos="50 "></span><span class="x">        $user = request()-&gt;user(); //or Auth::user()</span>
+<span class="linenos" data-linenos="51 "></span><span class="x">        $user-&gt;tokens()-&gt;where(&#39;id&#39;, $user-&gt;currentAccessToken()-&gt;id)-&gt;delete();</span>
+<span class="linenos" data-linenos="52 "></span><span class="x">        $success[&#39;name&#39;] =  $user-&gt;name;</span>
+<span class="linenos" data-linenos="53 "></span><span class="x">         return $this-&gt;sendResponse($success, &#39;User successfully signed out.&#39;);</span>
+<span class="linenos" data-linenos="54 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="55 "></span>
+<span class="linenos" data-linenos="56 "></span><span class="x">}</span>
+</code></pre></div>
+<p>Definim en l'arxiu <strong>routes/api.php</strong> una ruta que redirigisca a aquest mètode, per a quan l'usuari vulga autenticar-se (recorda afegir amb use la corresponent classe):</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">Route::post(&#39;login&#39;, [AuthController::class, &#39;login&#39;])-&gt;middleware(&#39;api&#39;);</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="x">Route::post(&#39;register&#39;, [AuthController::class, &#39;register&#39;])-&gt;middleware(&#39;api&#39;);</span>
+<span class="linenos" data-linenos=" 3 "></span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">Route::middleware([&#39;auth:sanctum&#39;,&#39;api&#39;])-&gt;group( function () {</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">    Route::post(&#39;logout&#39;, [AuthController::class, &#39;logout&#39;]);</span>
+<span class="linenos" data-linenos=" 7 "></span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">});</span>
+<span class="linenos" data-linenos=" 9 "></span>
+<span class="linenos" data-linenos="10 "></span><span class="x"> ```</span>
+<span class="linenos" data-linenos="11 "></span>
+<span class="linenos" data-linenos="12 "></span><span class="x">##### Protecció de rutes</span>
+<span class="linenos" data-linenos="13 "></span>
+<span class="linenos" data-linenos="14 "></span>
+<span class="linenos" data-linenos="15 "></span><span class="x">Per protegir rutes de manera que totes les sol·licituds entrants s&#39;hagin d&#39;autenticar, hauríeu d&#39;adjuntar el guard d&#39;autenticació sanctum a les rutes protegides dins dels vostres fitxers de rutes/api.php. Aquest guard assegurarà que les peticions entrants s&#39;autentiquen com a peticions d&#39;estat, galetes autenticades o continguin una capçalera vàlida de testimoni API si la petició és d&#39;un tercer.</span>
+<span class="linenos" data-linenos="16 "></span>
+<span class="linenos" data-linenos="17 "></span>
+<span class="linenos" data-linenos="18 "></span><span class="x"> ```php</span>
+<span class="linenos" data-linenos="19 "></span>
+<span class="linenos" data-linenos="20 "></span><span class="x">Route::get(&#39;/user&#39;,[userController::class,&#39;show&#39;])-&gt;middleware(&#39;auth:sanctum&#39;);</span>
+</code></pre></div>
+<h5 id="revocant-tokens">Revocant tokens<a class="headerlink" href="#revocant-tokens" title="Permanent link">&para;</a></h5>
+<p>Podeu "revocar" tokens suprimint-los de la base de dades utilitzant la relació tokens que proporciona el tret Laravel\Sanctum\HasApiTokens:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">// Revoke all tokens...</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">$user-&gt;tokens()-&gt;delete();</span>
+<span class="linenos" data-linenos="3 "></span>
+<span class="linenos" data-linenos="4 "></span><span class="x">// Revoke the token that was used to authenticate the current request...</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">$request-&gt;user()-&gt;currentAccessToken()-&gt;delete();</span>
+<span class="linenos" data-linenos="6 "></span>
+<span class="linenos" data-linenos="7 "></span><span class="x">// Revoke a specific token...</span>
+<span class="linenos" data-linenos="8 "></span><span class="x">$user-&gt;tokens()-&gt;where(&#39;id&#39;, $tokenId)-&gt;delete();</span>
+</code></pre></div>
+<h5 id="caducitat-del-tokens">Caducitat del tokens<a class="headerlink" href="#caducitat-del-tokens" title="Permanent link">&para;</a></h5>
+<p>Per defecte, els tokens de Sanctum no caduquen i només poden ser invalidats revocant el token. No obstant això, si voleu configurar un temps de venciment per als toekns API de la vostra aplicació, podeu fer-ho mitjançant l'opció de configuració de venciment definida al fitxer de configuració de sanctum de la vostra aplicació. Aquesta opció de configuració defineix el nombre de minuts fins que un token emès es consideri expirat:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>&#39;expiració&#39; =, 525600,
+</code></pre></div>
+<p>Si heu configurat un temps de venciment del token per a la vostra aplicació, també podeu programar una tasca per a eliminar els tokens caducats de la vostra aplicació. Afortunadament, Sanctum inclou un ordre sanctum:prune-expired Artisan que podeu utilitzar per aconseguir això. Per exemple, podeu configurar les tasques programades per a suprimir tots els registres de la base de dades de tokens caducats que hagin expirat almenys 24 hores:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="gp">$</span>schedule-&gt;command<span class="o">(</span><span class="s1">&#39;sanctum:prune-expired --hours=24&#39;</span><span class="o">)</span>-&gt;daily<span class="o">()</span><span class="p">;</span>
+</code></pre></div>
+<h5 id="prova-dautenticacio-amb-postman">Prova d'autenticació amb POSTMAN<a class="headerlink" href="#prova-dautenticacio-amb-postman" title="Permanent link">&para;</a></h5>
+<p>Vegem com provar l'autenticació per token en el projecte de videoclub, per qualsevol dels mètodes vistos abans.
+En primer lloc, i després de posar en marxa el projecte, ens assegurarem que podem accedir sense restriccions als dos serveis que no requereixen autorització ( index o show ), igual que abans.</p>
+<p>Si accedim a un recurs protegit obtenim </p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="p">{</span><span class="w"> </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Credenciales no válidas&quot;</span><span class="p">}</span>
+</code></pre></div>
+<p>Ara anem a loguejar-se</p>
+<p><img alt="" src="imagenes/08/postman_9.png" /></p>
+<p>Ara hem de copiar aquest token, i pegar-ho en la petició d'accés restringit. Haurem de pegar-ho en la capçalera Authorization (obrir aqueixa pestanya sota la URL de la petició en Postman), i el normal és enviar-ho com un <strong>Bearer token</strong>, segons els estàndards. Llavors sí que tindrem la resposta correcta de l'operació
+sol·licitada.</p>
+<p><img alt="" src="imagenes/08/postman_10.png" /></p>
+<p>A l'hora de traslladar aquestes proves a una aplicació "real", enviaríem les credencials per JSON al servidor, obtindríem el token de tornada i l'emmagatzemaríem localment en alguna variable o suport
+(per exemple, en l'element localStorage , si treballem amb algun framework Javascript). Després, davant cada petició JSON que férem al servidor, adjuntaríem aquest token en la capçalera Authorization perquè fóra validat pel servidor.</p>
+<h3 id="que-es-swagger"><a href="https://www.chakray.com/es/swagger-y-swagger-ui-por-que-es-imprescindible-para-tus-apis/">Què és swagger</a><a class="headerlink" href="#que-es-swagger" title="Permanent link">&para;</a></h3>
+<p><a href="https://youtu.be/3-gZqyhuFPY"><img alt="" src="../img/ull.png" />Video</a>
+<a href="https://youtu.be/thXuHLM54K4"><img alt="" src="../img/ull.png" />Video</a></p>
+<h3 id="documentacio">Documentació<a class="headerlink" href="#documentacio" title="Permanent link">&para;</a></h3>
+<p>Per a poder utilitzar swagger en Laravel podem instal·lar el següent paquet que utilitza Swagger-php i swagger-ui adaptat per treballar amb Laravel.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>composer require &quot;darkaonline/l5-swagger&quot;
+</code></pre></div>
+<p>i publicarem el fitxers de configuració i vistes</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>php artisan vendor:publish --provider &quot;L5Swagger\L5SwaggerServiceProvider&quot;
+</code></pre></div>
+<p>A continuació, obriu un fitxer <strong>config/l5-swagger.php</strong>.  Passem per les claus essencials:</p>
+<ul>
+<li>
+<p>routes.api - Aquest és una URL per accedir a la documentació d'interfície d'usuari.  El vostre equip de frontend l'utilitzarà per accedir a la documentació.  Per defecte és api/documentació.  Podeu canviar-ho a quelcom més petit com api/docs</p>
+</li>
+<li>
+<p>Generar_always — Es millor desactivar-ho ja que generarà documentació sobre la marxa.  No és útil amb l'API gran.  Sempre podeu executar manualment</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>    php artisan config:cache
+<span class="linenos" data-linenos="2 "></span>    php artisan l5-swagger:generate
+</code></pre></div>
+<p>Aquests són els més importants per a començar.  Ara si intenteu crear documents mitjançant aquesta ordre retornarà un error</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>Required @OA\Info() not found
+</code></pre></div>
+<p>Això vol dir que primer heu de crear aquesta notació.  Així que afegim-ho.  Prefereixo crear un controlador abstracte per a una API, però podeu afegir això a <strong>app/Http/Controllers/Controller.php</strong></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">/**</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="x"> * @OA\Info(</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x"> *    title=&quot;Futbol Femeni API Documentation&quot;,</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x"> *    version=&quot;1.0.0&quot;,</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x"> * )</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x"> * @OA\PathItem(path=&quot;/api&quot;)</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">*/  </span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">class Controller extends BaseController</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">{</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">    use AuthorizesRequests, DispatchesJobs, ValidatesRequests;</span>
+<span class="linenos" data-linenos="12 "></span><span class="x">}</span>
+</code></pre></div>
+<p>A continuació, hem d'afegir documents per a almenys una ruta, per exemple per per app/Http/Controllers/Api/LoginController.php:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">/**</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="x"> * @OA\Post(</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x"> * path=&quot;/login&quot;,</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x"> * summary=&quot;Sign in&quot;,</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x"> * description=&quot;Login by email, password&quot;,</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x"> * operationId=&quot;authLogin&quot;,</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x"> * tags={&quot;auth&quot;},</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x"> * @OA\RequestBody(</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x"> *    required=true,</span>
+<span class="linenos" data-linenos="10 "></span><span class="x"> *    description=&quot;Pass user credentials&quot;,</span>
+<span class="linenos" data-linenos="11 "></span><span class="x"> *    @OA\JsonContent(</span>
+<span class="linenos" data-linenos="12 "></span><span class="x"> *       required={&quot;email&quot;,&quot;password&quot;},</span>
+<span class="linenos" data-linenos="13 "></span><span class="x"> *       @OA\Property(property=&quot;email&quot;, type=&quot;string&quot;, format=&quot;email&quot;, example=&quot;user1@mail.com&quot;),</span>
+<span class="linenos" data-linenos="14 "></span><span class="x"> *       @OA\Property(property=&quot;password&quot;, type=&quot;string&quot;, format=&quot;password&quot;, example=&quot;PassWord12345&quot;),</span>
+<span class="linenos" data-linenos="15 "></span><span class="x"> *       @OA\Property(property=&quot;persistent&quot;, type=&quot;boolean&quot;, example=&quot;true&quot;),</span>
+<span class="linenos" data-linenos="16 "></span><span class="x"> *    ),</span>
+<span class="linenos" data-linenos="17 "></span><span class="x"> * ),</span>
+<span class="linenos" data-linenos="18 "></span><span class="x"> * @OA\Response(</span>
+<span class="linenos" data-linenos="19 "></span><span class="x"> *    response=422,</span>
+<span class="linenos" data-linenos="20 "></span><span class="x"> *    description=&quot;Wrong credentials response&quot;,</span>
+<span class="linenos" data-linenos="21 "></span><span class="x"> *    @OA\JsonContent(</span>
+<span class="linenos" data-linenos="22 "></span><span class="x"> *       @OA\Property(property=&quot;message&quot;, type=&quot;string&quot;, example=&quot;Sorry, wrong email address or password. Please try again&quot;)</span>
+<span class="linenos" data-linenos="23 "></span><span class="x"> *        )</span>
+<span class="linenos" data-linenos="24 "></span><span class="x"> *     )</span>
+<span class="linenos" data-linenos="25 "></span><span class="x"> * )</span>
+<span class="linenos" data-linenos="26 "></span><span class="x"> */</span>
+</code></pre></div>
+<p>Ara, estàs preparat per generar <strong>php artisan l5-swagger:generate</strong> i vés a l'URL que has proporcionat a la teva configuració.  En el meu cas, serà http://videoclub/api/docs.</p>
+<p>Veuràs una cosa així:</p>
+<p><img alt="" src="../img/swagger_1.png" /></p>
+<p>Ara mirarem les anotacions.  Intentaré explicar com utilitzar-les:</p>
+<ul>
+<li><strong>@OA</strong> — significa anotació d'Open API.  Podeu llegir més <a href="https://swagger.io/specification/">aquí</a></li>
+<li><strong>@OA/POST</strong>  — vol dir petició DE POST.  Hi ha GET, POST, DELETE, etc.</li>
+<li><strong>Path</strong> — és un URL</li>
+<li><strong>Tags</strong> — us agruparà API per seccions.</li>
+<li><strong>@OA\RequestBody</strong> — és obvi pel nom.  Hauria de tenir una anotació JsonContent dins amb propietats (és a dir, descripcions de camp).</li>
+<li><strong>OA\Response</strong> — podeu tenir tantes respostes com vulgueu.  Hauríeu de proporcionar totes les respostes possibles d'èxit i error.</li>
+</ul>
+<p>Anem a afegir un codi de resposta 200:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">*   @OA\Response(</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">*     response=200,</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">*     description=&quot;Success&quot;,</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">*     @OA\JsonContent(</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">*        @OA\Property(property=&quot;user&quot;, type=&quot;object&quot;, ref=&quot;#/components/schemas/User&quot;),</span>
+<span class="linenos" data-linenos="6 "></span><span class="x">*     )</span>
+<span class="linenos" data-linenos="7 "></span><span class="x">*  ),</span>
+</code></pre></div>
+<p>L'anotació <strong>@OA\Property</strong> té una clau de propietat(nom de camp) i un tipus.  El tipus pot tenir valors diferents: string, object, integer, array, boolean, etc.
+En aquesta resposta, vaig utilitzar el tipus objecte.  Podeu passar una referència a aquest objecte.  Crearem un objecte <strong>user</strong>.  Prefereixo afegir això a la classe Model.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">/**</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="x"> *</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x"> * @OA\Schema(</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x"> * required={&quot;password&quot;},</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x"> * @OA\Xml(name=&quot;User&quot;),</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x"> * @OA\Property(property=&quot;id&quot;, type=&quot;integer&quot;, readOnly=&quot;true&quot;, example=&quot;1&quot;),</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x"> * @OA\Property(property=&quot;role&quot;, type=&quot;string&quot;, readOnly=&quot;true&quot;, description=&quot;User role&quot;),</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x"> * @OA\Property(property=&quot;email&quot;, type=&quot;string&quot;, readOnly=&quot;true&quot;, format=&quot;email&quot;, description=&quot;User unique email address&quot;, example=&quot;user@gmail.com&quot;),</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x"> * @OA\Property(property=&quot;email_verified_at&quot;, type=&quot;string&quot;, readOnly=&quot;true&quot;, format=&quot;date-time&quot;, description=&quot;Datetime marker of verification status&quot;, example=&quot;2019-02-25 12:59:20&quot;),</span>
+<span class="linenos" data-linenos="10 "></span><span class="x"> * @OA\Property(property=&quot;first_name&quot;, type=&quot;string&quot;, maxLength=32, example=&quot;John&quot;),</span>
+<span class="linenos" data-linenos="11 "></span><span class="x"> * @OA\Property(property=&quot;last_name&quot;, type=&quot;string&quot;, maxLength=32, example=&quot;Doe&quot;),</span>
+<span class="linenos" data-linenos="12 "></span>
+<span class="linenos" data-linenos="13 "></span><span class="x"> * )</span>
+<span class="linenos" data-linenos="14 "></span><span class="x"> *</span>
+<span class="linenos" data-linenos="15 "></span><span class="x"> * Class User</span>
+<span class="linenos" data-linenos="16 "></span><span class="x"> *</span>
+<span class="linenos" data-linenos="17 "></span><span class="x"> */</span>
+</code></pre></div>
+<p>Mireu aquesta notació <strong>@OA\Xml(nom=” Usuari)</strong>.  Aquest nom s'utilitzarà en una clau ref de la <strong>@OA\Property</strong></p>
+<p>Ara veureu una icona de bloqueig prop de la ruta.  Quan feu clic sobre això, podreu afegir l'autenticació de Bearer.</p>
+<p><img alt="" src="../img/swagger_2.png" /></p>
+<h3 id="exemple"><a href="https://blog.quickadminpanel.com/laravel-api-documentation-with-openapiswagger/">Exemple</a><a class="headerlink" href="#exemple" title="Permanent link">&para;</a></h3>
+<p>El gran problema d'este component és que no està ben documentat. Partint del següent exemple he documentant el mètode get i post del videoclub i ha quedat així:</p>
+<p>Primer cal possar l'inici del swagger en el <strong>Controller.php</strong> de la següent manera:</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">/**</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="x"> * @OA\Info(</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x"> *     title=&quot;API de Jugadores&quot;,</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x"> *     version=&quot;1.0.0&quot;,</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x"> *     description=&quot;Documentació de l&#39;API per a gestionar jugadores&quot;</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x"> * )</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x"> * @OA\SecurityScheme(</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x"> *     securityScheme=&quot;bearerAuth&quot;,</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x"> *     type=&quot;http&quot;,</span>
+<span class="linenos" data-linenos="10 "></span><span class="x"> *     scheme=&quot;bearer&quot;,</span>
+<span class="linenos" data-linenos="11 "></span><span class="x"> *     bearerFormat=&quot;JWT&quot;</span>
+<span class="linenos" data-linenos="12 "></span><span class="x"> * )</span>
+<span class="linenos" data-linenos="13 "></span><span class="x"> */</span>
+</code></pre></div>
+La primera part serveix per a identificar el projecte i la segon per a l'autenticació de la API basada en tokens.</p>
+<p>Ara omplirem el <strong>model Movie.php</strong> per a generar el schema Movie.</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">/**</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="x"> *</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x"> * @OA\Schema(</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x"> * required={&quot;id,title&quot;},</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x"> * @OA\Xml(name=&quot;Movie&quot;),</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x"> * @OA\Property(property=&quot;id&quot;, type=&quot;integer&quot;, readOnly=&quot;true&quot;, example=&quot;1&quot;),</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x"> * @OA\Property(property=&quot;title&quot;, type=&quot;string&quot;, readOnly=&quot;true&quot;, description=&quot;User role&quot;),</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x"> * @OA\Property(property=&quot;year&quot;, type=&quot;integer&quot;, readOnly=&quot;true&quot;,  description=&quot;Year&quot;, example=&quot;1956&quot;),</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x"> * @OA\Property(property=&quot;director&quot;, type=&quot;string&quot;, readOnly=&quot;true&quot;,  description=&quot;Director&quot;, example=&quot;Copolla&quot;),</span>
+<span class="linenos" data-linenos="10 "></span><span class="x"> * @OA\Property(property=&quot;genre&quot;, type=&quot;string&quot;, readOnly=&quot;true&quot;,  description=&quot;Genre&quot;, example=&quot;Thriller&quot;),</span>
+<span class="linenos" data-linenos="11 "></span><span class="x"> * )</span>
+<span class="linenos" data-linenos="12 "></span><span class="x"> */</span>
+</code></pre></div>
+Observeu que en el genre retorne un string perquè serà el que voldrè retornar, en compte de la id de Genre.</p>
+<p>Ara generarè el schema de la petició request del post de movie. No és exactament igual que esta perquè ací voldré el genre amb ID i restriccions en alguns camps. Ho puc fer en el <strong>MoviePost.php</strong> dins de request.</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">/**</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="x"> * @OA\Schema(</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x"> *      title=&quot;Store Movie Request&quot;,</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x"> *      required={&quot;title,director,year&quot;},</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x"> *      description=&quot;Store Movie request body data&quot;,</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x"> *      @OA\Xml(name=&quot;MoviePost&quot;),</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x"> * )</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x"> */</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x"> /**</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">     * @OA\Property(</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">     *      property = &quot;title&quot;,</span>
+<span class="linenos" data-linenos="12 "></span><span class="x">     *      title=&quot;name&quot;,</span>
+<span class="linenos" data-linenos="13 "></span><span class="x">     *      description=&quot;Title&quot;,</span>
+<span class="linenos" data-linenos="14 "></span><span class="x">     *      example=&quot;Titanic&quot;</span>
+<span class="linenos" data-linenos="15 "></span><span class="x">     * )</span>
+<span class="linenos" data-linenos="16 "></span><span class="x">     *</span>
+<span class="linenos" data-linenos="17 "></span><span class="x">     * @var string</span>
+<span class="linenos" data-linenos="18 "></span><span class="x">     */</span>
+<span class="linenos" data-linenos="19 "></span><span class="x">  /**</span>
+<span class="linenos" data-linenos="20 "></span><span class="x">     * @OA\Property(</span>
+<span class="linenos" data-linenos="21 "></span><span class="x">     *      property = &quot;year&quot;,</span>
+<span class="linenos" data-linenos="22 "></span><span class="x">     *      title=&quot;year&quot;,</span>
+<span class="linenos" data-linenos="23 "></span><span class="x">     *      description=&quot;Year&quot;,</span>
+<span class="linenos" data-linenos="24 "></span><span class="x">     *      example=&quot;1998&quot;</span>
+<span class="linenos" data-linenos="25 "></span><span class="x">     * )</span>
+<span class="linenos" data-linenos="26 "></span><span class="x">     *</span>
+<span class="linenos" data-linenos="27 "></span><span class="x">     * @var integer</span>
+<span class="linenos" data-linenos="28 "></span><span class="x">     */</span>
+<span class="linenos" data-linenos="29 "></span><span class="x"> /**</span>
+<span class="linenos" data-linenos="30 "></span><span class="x">     * @OA\Property(</span>
+<span class="linenos" data-linenos="31 "></span><span class="x">     *      property = &quot;genre&quot;,</span>
+<span class="linenos" data-linenos="32 "></span><span class="x">     *      title=&quot;genre&quot;,</span>
+<span class="linenos" data-linenos="33 "></span><span class="x">     *      description=&quot;Genre&quot;,</span>
+<span class="linenos" data-linenos="34 "></span><span class="x">     *      example=&quot;1&quot;</span>
+<span class="linenos" data-linenos="35 "></span><span class="x">     * )</span>
+<span class="linenos" data-linenos="36 "></span><span class="x">     *</span>
+<span class="linenos" data-linenos="37 "></span><span class="x">     * @var integer</span>
+<span class="linenos" data-linenos="38 "></span><span class="x">     */</span>
+<span class="linenos" data-linenos="39 "></span><span class="x"> /**</span>
+<span class="linenos" data-linenos="40 "></span><span class="x">     * @OA\Property(</span>
+<span class="linenos" data-linenos="41 "></span><span class="x">     *      property = &quot;director&quot;,</span>
+<span class="linenos" data-linenos="42 "></span><span class="x">     *      title=&quot;director&quot;,</span>
+<span class="linenos" data-linenos="43 "></span><span class="x">     *      description=&quot;Director&quot;,</span>
+<span class="linenos" data-linenos="44 "></span><span class="x">     *      example=&quot;Steven Spilberg&quot;</span>
+<span class="linenos" data-linenos="45 "></span><span class="x">     * )</span>
+<span class="linenos" data-linenos="46 "></span><span class="x">     *</span>
+<span class="linenos" data-linenos="47 "></span><span class="x">     * @var string</span>
+<span class="linenos" data-linenos="48 "></span><span class="x">     */</span>
+<span class="linenos" data-linenos="49 "></span><span class="x">    /**</span>
+<span class="linenos" data-linenos="50 "></span><span class="x">     * @OA\Property(</span>
+<span class="linenos" data-linenos="51 "></span><span class="x">     *      property = &quot;synopsis&quot;,</span>
+<span class="linenos" data-linenos="52 "></span><span class="x">     *      title=&quot;synopsis&quot;,</span>
+<span class="linenos" data-linenos="53 "></span><span class="x">     *      description=&quot;Synopsis&quot;,</span>
+<span class="linenos" data-linenos="54 "></span><span class="x">     *      example=&quot;De que va la pelicula&quot;</span>
+<span class="linenos" data-linenos="55 "></span><span class="x">     * )</span>
+<span class="linenos" data-linenos="56 "></span><span class="x">     *</span>
+<span class="linenos" data-linenos="57 "></span><span class="x">     * @var string</span>
+<span class="linenos" data-linenos="58 "></span><span class="x">     */</span>
+<span class="linenos" data-linenos="59 "></span>
+<span class="linenos" data-linenos="60 "></span><span class="x">    /**</span>
+<span class="linenos" data-linenos="61 "></span><span class="x">     * @OA\Property(</span>
+<span class="linenos" data-linenos="62 "></span><span class="x">     *      property = &quot;poster&quot;,</span>
+<span class="linenos" data-linenos="63 "></span><span class="x">     *      title=&quot;poster&quot;,</span>
+<span class="linenos" data-linenos="64 "></span><span class="x">     *      description=&quot;Poster&quot;,</span>
+<span class="linenos" data-linenos="65 "></span><span class="x">     *      example=&quot;adreça del poster&quot;</span>
+<span class="linenos" data-linenos="66 "></span><span class="x">     * )</span>
+<span class="linenos" data-linenos="67 "></span><span class="x">     *</span>
+<span class="linenos" data-linenos="68 "></span><span class="x">     * @var string</span>
+<span class="linenos" data-linenos="69 "></span><span class="x">     */         </span>
+</code></pre></div>
+No he pogut fer-ho d'un altra manera. Diferix un poc de la que he utilitzat al model Movie, però si no ho feia així no funcionaba.</p>
+<p>Falta ara generar la resposta de totes les pelicules per al index. Per aço genere un Resource per a Movies, amb el següent codi.</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="k">namespace</span> <span class="nx">App\Http\Resources</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="k">use</span> <span class="nx">Illuminate\Http\Resources\Json\JsonResource</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="sd">/**</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="sd"> * @OA\Schema(</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="sd"> *     title=&quot;MovieResource&quot;,</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="sd"> *     description=&quot;Project resource&quot;,</span>
+<span class="linenos" data-linenos="10 "></span><span class="sd"> *     @OA\Xml(name=&quot;MovieResource&quot;),</span>
+<span class="linenos" data-linenos="11 "></span><span class="sd"> * )</span>
+<span class="linenos" data-linenos="12 "></span><span class="sd"> */</span>
+<span class="linenos" data-linenos="13 "></span><span class="k">class</span> <span class="nc">MovieResource</span> <span class="k">extends</span> <span class="nx">JsonResource</span>
+<span class="linenos" data-linenos="14 "></span><span class="p">{</span>
+<span class="linenos" data-linenos="15 "></span>    <span class="sd">/**</span>
+<span class="linenos" data-linenos="16 "></span><span class="sd">     * Transform the resource collection into an array.</span>
+<span class="linenos" data-linenos="17 "></span><span class="sd">     *</span>
+<span class="linenos" data-linenos="18 "></span><span class="sd">     * @param  \Illuminate\Http\Request  $request</span>
+<span class="linenos" data-linenos="19 "></span><span class="sd">     * @return array</span>
+<span class="linenos" data-linenos="20 "></span><span class="sd">     */</span>
+<span class="linenos" data-linenos="21 "></span>
+<span class="linenos" data-linenos="22 "></span>    <span class="sd">/**</span>
+<span class="linenos" data-linenos="23 "></span><span class="sd">     * @OA\Property(</span>
+<span class="linenos" data-linenos="24 "></span><span class="sd">     *     property=&quot;data&quot;,</span>
+<span class="linenos" data-linenos="25 "></span><span class="sd">     *     title=&quot;data&quot;,</span>
+<span class="linenos" data-linenos="26 "></span><span class="sd">     *     description=&quot;Data wrapper&quot;</span>
+<span class="linenos" data-linenos="27 "></span><span class="sd">     * )</span>
+<span class="linenos" data-linenos="28 "></span><span class="sd">     *</span>
+<span class="linenos" data-linenos="29 "></span><span class="sd">     * @var \App\Models\Movie[]</span>
+<span class="linenos" data-linenos="30 "></span><span class="sd">     */</span>
+<span class="linenos" data-linenos="31 "></span>    <span class="k">public</span> <span class="k">function</span> <span class="nf">toArray</span><span class="p">(</span><span class="nv">$request</span><span class="p">)</span>
+<span class="linenos" data-linenos="32 "></span>    <span class="p">{</span>
+<span class="linenos" data-linenos="33 "></span>        <span class="k">return</span> <span class="p">[</span> <span class="s1">&#39;id&#39;</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">id</span><span class="p">,</span>
+<span class="linenos" data-linenos="34 "></span>            <span class="s1">&#39;title&#39;</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">title</span><span class="p">,</span>
+<span class="linenos" data-linenos="35 "></span>            <span class="s1">&#39;director&#39;</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">director</span><span class="p">,</span>
+<span class="linenos" data-linenos="36 "></span>            <span class="s1">&#39;year&#39;</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">year</span><span class="p">,</span>
+<span class="linenos" data-linenos="37 "></span>            <span class="s1">&#39;genre&#39;</span> <span class="o">=&gt;</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">Genre</span><span class="o">-&gt;</span><span class="na">title</span><span class="o">??</span><span class="s1">&#39;Desconocido&#39;</span><span class="p">];</span>
+<span class="linenos" data-linenos="38 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="39 "></span><span class="p">}</span>
+</code></pre></div>
+Este resource farà que quan l'utilitze hem retornarà els camps que he possat en la funció toArray i no tots els camps. El puc utilitzar per tornar camps de relacions o canviar el nom dels camps. En quan al swagger, noteu que torne un array de Movies dins d'un camp data.</p>
+<p>Per últim el controlador de movies queda de la següent manera.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">  /**</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="x">     * Display a listing of the resource.</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">     *</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">     * @return \Illuminate\Http\Response</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">     */</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">    /**</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">     * @OA\Get(</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">     *      path=&quot;/api/movies&quot;,</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">     *      operationId=&quot;getMoviesList&quot;,</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">     *      tags={&quot;Movies&quot;},</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">     *      summary=&quot;Get list of movies&quot;,</span>
+<span class="linenos" data-linenos="12 "></span><span class="x">     *      description=&quot;Returns list of movies&quot;,</span>
+<span class="linenos" data-linenos="13 "></span><span class="x">     *      security={{&quot;bearerAuth&quot;:{}}},</span>
+<span class="linenos" data-linenos="14 "></span><span class="x">     *      @OA\Response(</span>
+<span class="linenos" data-linenos="15 "></span><span class="x">     *          response=200,</span>
+<span class="linenos" data-linenos="16 "></span><span class="x">     *          description=&quot;Successful operation&quot;,</span>
+<span class="linenos" data-linenos="17 "></span><span class="x">     *          @OA\JsonContent(ref=&quot;#/components/schemas/MovieResource&quot;)</span>
+<span class="linenos" data-linenos="18 "></span><span class="x">     *       ),</span>
+<span class="linenos" data-linenos="19 "></span><span class="x">     *      @OA\Response(</span>
+<span class="linenos" data-linenos="20 "></span><span class="x">     *          response=401,</span>
+<span class="linenos" data-linenos="21 "></span><span class="x">     *          description=&quot;Unauthenticated&quot;,</span>
+<span class="linenos" data-linenos="22 "></span><span class="x">     *      ),</span>
+<span class="linenos" data-linenos="23 "></span><span class="x">     *      @OA\Response(</span>
+<span class="linenos" data-linenos="24 "></span><span class="x">     *          response=403,</span>
+<span class="linenos" data-linenos="25 "></span><span class="x">     *          description=&quot;Forbidden&quot;</span>
+<span class="linenos" data-linenos="26 "></span><span class="x">     *      )</span>
+<span class="linenos" data-linenos="27 "></span><span class="x">     *     )</span>
+<span class="linenos" data-linenos="28 "></span><span class="x">     */</span>
+<span class="linenos" data-linenos="29 "></span><span class="x">    public function index()</span>
+<span class="linenos" data-linenos="30 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="31 "></span>
+<span class="linenos" data-linenos="32 "></span><span class="x">        return MovieResource::collection(Movie::get());</span>
+<span class="linenos" data-linenos="33 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="34 "></span>
+<span class="linenos" data-linenos="35 "></span><span class="x">    /**</span>
+<span class="linenos" data-linenos="36 "></span><span class="x">     * Store a newly created resource in storage.</span>
+<span class="linenos" data-linenos="37 "></span><span class="x">     *</span>
+<span class="linenos" data-linenos="38 "></span><span class="x">     * @param  \Illuminate\Http\Request  $request</span>
+<span class="linenos" data-linenos="39 "></span><span class="x">     * @return \Illuminate\Http\Response</span>
+<span class="linenos" data-linenos="40 "></span><span class="x">     */</span>
+<span class="linenos" data-linenos="41 "></span><span class="x">    /**</span>
+<span class="linenos" data-linenos="42 "></span><span class="x">     * @OA\Post(</span>
+<span class="linenos" data-linenos="43 "></span><span class="x">     *      path=&quot;/api/movies&quot;,</span>
+<span class="linenos" data-linenos="44 "></span><span class="x">     *      operationId=&quot;movieProject&quot;,</span>
+<span class="linenos" data-linenos="45 "></span><span class="x">     *      tags={&quot;Movies&quot;},</span>
+<span class="linenos" data-linenos="46 "></span><span class="x">     *      summary=&quot;Store new movie&quot;,</span>
+<span class="linenos" data-linenos="47 "></span><span class="x">     *      description=&quot;Returns movie data&quot;,</span>
+<span class="linenos" data-linenos="48 "></span><span class="x">     *      security={{&quot;bearerAuth&quot;:{}}},</span>
+<span class="linenos" data-linenos="49 "></span><span class="x">     *      @OA\RequestBody(</span>
+<span class="linenos" data-linenos="50 "></span><span class="x">     *          required=true,</span>
+<span class="linenos" data-linenos="51 "></span><span class="x">     *          @OA\JsonContent(ref=&quot;#/components/schemas/MoviePost&quot;)</span>
+<span class="linenos" data-linenos="52 "></span><span class="x">     *      ),</span>
+<span class="linenos" data-linenos="53 "></span><span class="x">     *      @OA\Response(</span>
+<span class="linenos" data-linenos="54 "></span><span class="x">     *          response=201,</span>
+<span class="linenos" data-linenos="55 "></span><span class="x">     *          description=&quot;Successful operation&quot;,</span>
+<span class="linenos" data-linenos="56 "></span><span class="x">     *          @OA\JsonContent(ref=&quot;#/components/schemas/Movie&quot;)</span>
+<span class="linenos" data-linenos="57 "></span><span class="x">     *       ),</span>
+<span class="linenos" data-linenos="58 "></span><span class="x">     *      @OA\Response(</span>
+<span class="linenos" data-linenos="59 "></span><span class="x">     *          response=400,</span>
+<span class="linenos" data-linenos="60 "></span><span class="x">     *          description=&quot;Bad Request&quot;</span>
+<span class="linenos" data-linenos="61 "></span><span class="x">     *      ),</span>
+<span class="linenos" data-linenos="62 "></span><span class="x">     *      @OA\Response(</span>
+<span class="linenos" data-linenos="63 "></span><span class="x">     *          response=401,</span>
+<span class="linenos" data-linenos="64 "></span><span class="x">     *          description=&quot;Unauthenticated&quot;,</span>
+<span class="linenos" data-linenos="65 "></span><span class="x">     *           @OA\JsonContent(</span>
+<span class="linenos" data-linenos="66 "></span><span class="x">     *              @OA\Property(</span>
+<span class="linenos" data-linenos="67 "></span><span class="x">     *                  property=&quot;error&quot;,</span>
+<span class="linenos" data-linenos="68 "></span><span class="x">     *                  type=&quot;string&quot;,</span>
+<span class="linenos" data-linenos="69 "></span><span class="x">     *                  example=&quot;Usuario no autenticado&quot;))</span>
+<span class="linenos" data-linenos="70 "></span><span class="x">     *      ),</span>
+<span class="linenos" data-linenos="71 "></span><span class="x">     *      @OA\Response(</span>
+<span class="linenos" data-linenos="72 "></span><span class="x">     *          response=403,</span>
+<span class="linenos" data-linenos="73 "></span><span class="x">     *          description=&quot;Forbidden&quot;</span>
+<span class="linenos" data-linenos="74 "></span><span class="x">     *      )</span>
+<span class="linenos" data-linenos="75 "></span><span class="x">     * )</span>
+<span class="linenos" data-linenos="76 "></span><span class="x">     */</span>
+<span class="linenos" data-linenos="77 "></span><span class="x">    public function store(MoviePost $request)</span>
+<span class="linenos" data-linenos="78 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="79 "></span><span class="x">        $movie = new Movie();</span>
+<span class="linenos" data-linenos="80 "></span><span class="x">        $movie-&gt;title = $request-&gt;title;</span>
+<span class="linenos" data-linenos="81 "></span><span class="x">        $movie-&gt;year = $request-&gt;year;</span>
+<span class="linenos" data-linenos="82 "></span><span class="x">        $movie-&gt;director = $request-&gt;director;</span>
+<span class="linenos" data-linenos="83 "></span><span class="x">        $movie-&gt;poster = $request-&gt;poster;</span>
+<span class="linenos" data-linenos="84 "></span><span class="x">        $movie-&gt;synopsis = $request-&gt;synopsis;</span>
+<span class="linenos" data-linenos="85 "></span><span class="x">        $movie-&gt;save();</span>
+<span class="linenos" data-linenos="86 "></span><span class="x">        response()-&gt;json($movie, 201);</span>
+<span class="linenos" data-linenos="87 "></span><span class="x">    }</span>
+</code></pre></div>
+<p>Mireu que per al post utilitze la seguretat que ja havia definit.
+Ara veureu una icona de bloqueig prop de la ruta.  Quan feu clic sobre això, podreu afegir l'autenticació de Bearer.</p>
+<p><img alt="" src="../img/swagger_2.png" /></p>
+<p>Us encomane a que vejau el video on està tot explicat perquè amb els apunt soles queda una mica difícil d'entendre.</p>
+<p><a href="http://zircote.github.io/swagger-php/Getting-started.html">Documentació de swagger-php</a></p>
+<h2 id="exercici-practic-api-per-a-la-guia-dequips-de-futbol-femeni">Exercici Pràctic: API per a la Guia d'Equips de Futbol Femení.<a class="headerlink" href="#exercici-practic-api-per-a-la-guia-dequips-de-futbol-femeni" title="Permanent link">&para;</a></h2>
+<p>L'objectiu de l'exercici consisteix a implementar una API REST completa per gestionar la lliga femenina, incloent-hi les operacions CRUD, autenticació, autorització, i documentació amb Swagger.</p>
+<h3 id="pas-1-configuracio-inicial-de-lapi-installacio-sanctum">Pas 1: Configuració inicial de l’API (instal·lació Sanctum)<a class="headerlink" href="#pas-1-configuracio-inicial-de-lapi-installacio-sanctum" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Instal·la Laravel Sanctum al projecte:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>composer<span class="w"> </span>require<span class="w"> </span>laravel/sanctum
+<span class="linenos" data-linenos="2 "></span>php<span class="w"> </span>artisan<span class="w"> </span>vendor:publish<span class="w"> </span>--provider<span class="o">=</span><span class="s2">&quot;Laravel\Sanctum\SanctumServiceProvider&quot;</span>
+<span class="linenos" data-linenos="3 "></span>php<span class="w"> </span>artisan<span class="w"> </span>migrate
+</code></pre></div>
+<ul>
+<li>Configura el fitxer bootstrap/app.php per tal que els missatges d'errada vinguen en format json:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">return Application::configure(basePath: dirname(__DIR__))</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="x">-&gt;withRouting(</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">    web: __DIR__.&#39;/../routes/web.php&#39;,</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">    api: __DIR__.&#39;/../routes/api.php&#39;,</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">    commands: __DIR__.&#39;/../routes/console.php&#39;,</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">    health: &#39;/up&#39;,</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">)</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">-&gt;withMiddleware(function (Middleware $middleware) {</span>
+<span class="linenos" data-linenos=" 9 "></span>
+<span class="linenos" data-linenos="10 "></span><span class="x">})</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">-&gt;withExceptions(function (Exceptions $exceptions) {</span>
+<span class="linenos" data-linenos="12 "></span><span class="x">    $exceptions-&gt;render(function (Exception $e, Request $request) {</span>
+<span class="linenos" data-linenos="13 "></span><span class="x">        if ($request-&gt;is(&#39;api/*&#39;)) {</span>
+<span class="linenos" data-linenos="14 "></span><span class="x">            $statusCode = method_exists($e, &#39;getStatusCode&#39;) ? $e-&gt;getStatusCode() : 500;</span>
+<span class="linenos" data-linenos="15 "></span><span class="x">            return response()-&gt;json([</span>
+<span class="linenos" data-linenos="16 "></span><span class="x">                &#39;success&#39; =&gt; false,</span>
+<span class="linenos" data-linenos="17 "></span><span class="x">                &#39;message&#39; =&gt; $e-&gt;getMessage(),</span>
+<span class="linenos" data-linenos="18 "></span><span class="x">            ], $statusCode);</span>
+<span class="linenos" data-linenos="19 "></span><span class="x">        }</span>
+<span class="linenos" data-linenos="20 "></span><span class="x">    });</span>
+<span class="linenos" data-linenos="21 "></span>
+<span class="linenos" data-linenos="22 "></span><span class="x">    $exceptions-&gt;render(function (Throwable $e, Request $request) {</span>
+<span class="linenos" data-linenos="23 "></span><span class="x">        if ($request-&gt;is(&#39;api/*&#39;)) {</span>
+<span class="linenos" data-linenos="24 "></span><span class="x">            return response()-&gt;json([</span>
+<span class="linenos" data-linenos="25 "></span><span class="x">                &#39;success&#39; =&gt; false,</span>
+<span class="linenos" data-linenos="26 "></span><span class="x">                &#39;message&#39; =&gt; $e-&gt;getMessage(),</span>
+<span class="linenos" data-linenos="27 "></span><span class="x">            ], 500);</span>
+<span class="linenos" data-linenos="28 "></span><span class="x">        }</span>
+<span class="linenos" data-linenos="29 "></span><span class="x">    });</span>
+<span class="linenos" data-linenos="30 "></span><span class="x">})-&gt;create();</span>
+</code></pre></div>
+<h3 id="pas-2-controladors-i-rutes">Pas 2: Controladors i Rutes<a class="headerlink" href="#pas-2-controladors-i-rutes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Genera controladors per als models utilitzant Artisan:</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w"> </span>php<span class="w"> </span>artisan<span class="w"> </span>make:controller<span class="w"> </span>Api/JugadoraController<span class="w"> </span>--api<span class="w"> </span>--model<span class="o">=</span>Jugadora
+</code></pre></div>
+-   Crea les rutes CRUD per als models:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">Route::apiResource(&#39;jugadores&#39;, Api\JugadoraController::class)-&gt;middleware(&#39;api&#39;);</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="x"> ```</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">- Crea un controller BaseController per a gestionar les respostes de l&#39;API:</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">```php</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">namespace App\Http\Controllers\Api;</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x"> use App\Http\Controllers\Controller as Controller;</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">class BaseController extends Controller</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">{</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">    /**</span>
+<span class="linenos" data-linenos="12 "></span><span class="x">     * success response method.</span>
+<span class="linenos" data-linenos="13 "></span><span class="x">     *</span>
+<span class="linenos" data-linenos="14 "></span><span class="x">     * @return \Illuminate\Http\JsonResponse</span>
+<span class="linenos" data-linenos="15 "></span><span class="x">     */</span>
+<span class="linenos" data-linenos="16 "></span><span class="x">    public function sendResponse($result, $message, $code = 200)</span>
+<span class="linenos" data-linenos="17 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="18 "></span><span class="x">        $response = [</span>
+<span class="linenos" data-linenos="19 "></span><span class="x">            &#39;success&#39; =&gt; true,</span>
+<span class="linenos" data-linenos="20 "></span><span class="x">            &#39;data&#39;    =&gt; $result,</span>
+<span class="linenos" data-linenos="21 "></span><span class="x">            &#39;message&#39; =&gt; $message,</span>
+<span class="linenos" data-linenos="22 "></span><span class="x">        ];</span>
+<span class="linenos" data-linenos="23 "></span><span class="x">        return response()-&gt;json($response, $code);</span>
+<span class="linenos" data-linenos="24 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="25 "></span><span class="x">    /**</span>
+<span class="linenos" data-linenos="26 "></span><span class="x">     * return error response.</span>
+<span class="linenos" data-linenos="27 "></span><span class="x">     *</span>
+<span class="linenos" data-linenos="28 "></span><span class="x">     * @return \Illuminate\Http\JsonResponse</span>
+<span class="linenos" data-linenos="29 "></span><span class="x">     */</span>
+<span class="linenos" data-linenos="30 "></span><span class="x">    public function sendError($error, $errorMessages = [], $code = 200)</span>
+<span class="linenos" data-linenos="31 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="32 "></span><span class="x">        $response = [</span>
+<span class="linenos" data-linenos="33 "></span><span class="x">            &#39;success&#39; =&gt; false,</span>
+<span class="linenos" data-linenos="34 "></span><span class="x">            &#39;message&#39; =&gt; $error,</span>
+<span class="linenos" data-linenos="35 "></span><span class="x">        ];</span>
+<span class="linenos" data-linenos="36 "></span><span class="x">        if(!empty($errorMessages)){</span>
+<span class="linenos" data-linenos="37 "></span><span class="x">            $response[&#39;info&#39;] = $errorMessages;</span>
+<span class="linenos" data-linenos="38 "></span><span class="x">        }</span>
+<span class="linenos" data-linenos="39 "></span><span class="x">        return response()-&gt;json($response, $code);</span>
+<span class="linenos" data-linenos="40 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="41 "></span><span class="x">}</span>
+</code></pre></div>
+<ul>
+<li>Completa els mètodes CRUD en el controlador utilitzant els models i Form Requests per validar les dades:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">namespace App\Http\Controllers\Api;</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">use App\Http\Requests\JugadoraRequest;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">use App\Models\Jugadora;</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">class JugadoraController extends BaseController</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">{</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">    /**</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">     * Display a listing of the resource.</span>
+<span class="linenos" data-linenos="12 "></span><span class="x">     */</span>
+<span class="linenos" data-linenos="13 "></span><span class="x">    public function index()</span>
+<span class="linenos" data-linenos="14 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="15 "></span><span class="x">        return Jugadora::paginate(10);</span>
+<span class="linenos" data-linenos="16 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="17 "></span>
+<span class="linenos" data-linenos="18 "></span><span class="x">    public function store(JugadoraRequest $request)</span>
+<span class="linenos" data-linenos="19 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="20 "></span><span class="x">        $jugadora = Jugadora::create($request-&gt;validated());</span>
+<span class="linenos" data-linenos="21 "></span><span class="x">        return $this-&gt;sendResponse($jugadora, &#39;Jugadora Creada amb exit&#39;,201);</span>
+<span class="linenos" data-linenos="22 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="23 "></span>
+<span class="linenos" data-linenos="24 "></span><span class="x">    public function show(Jugadora $jugadora)</span>
+<span class="linenos" data-linenos="25 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="26 "></span><span class="x">        return $this-&gt;sendResponse($jugadora, &#39;Jugadora Recuperada amb exit&#39;, 201);</span>
+<span class="linenos" data-linenos="27 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="28 "></span>
+<span class="linenos" data-linenos="29 "></span><span class="x">    public function update(JugadoraRequest $request, Jugadora $jugadore)</span>
+<span class="linenos" data-linenos="30 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="31 "></span><span class="x">        $jugadore-&gt;update($request-&gt;validated());</span>
+<span class="linenos" data-linenos="32 "></span><span class="x">        return $this-&gt;sendResponse($jugadore, &#39;Jugadora Actualitzada amb èxit&#39;, 201);</span>
+<span class="linenos" data-linenos="33 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="34 "></span>
+<span class="linenos" data-linenos="35 "></span><span class="x">    public function destroy(Jugadora $jugadore)</span>
+<span class="linenos" data-linenos="36 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="37 "></span><span class="x">        $jugadore-&gt;delete();</span>
+<span class="linenos" data-linenos="38 "></span><span class="x">        return $this-&gt;sendResponse(null, &#39;Jugadora Eliminada amb exit&#39;, 201);</span>
+<span class="linenos" data-linenos="39 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="40 "></span><span class="x">}</span>
+</code></pre></div>
+<h3 id="pas-3-resources">Pas 3: Resources<a class="headerlink" href="#pas-3-resources" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Genera un Recurso per a la Jugadora:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>php<span class="w"> </span>artisan<span class="w"> </span>make:resource<span class="w"> </span>JugadoraResource
+</code></pre></div>
+<ul>
+<li>Implementa el Recurs JugadoraResource:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">namespace App\Http\Resources;</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">use Illuminate\Http\Request;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">use Illuminate\Http\Resources\Json\JsonResource;</span>
+<span class="linenos" data-linenos=" 5 "></span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">class JugadoraResource extends JsonResource</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">{</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">    /**</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">     * Transform the resource into an array.</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">     *</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">     * @return array&lt;string, mixed&gt;</span>
+<span class="linenos" data-linenos="12 "></span><span class="x">     */</span>
+<span class="linenos" data-linenos="13 "></span><span class="x">    public function toArray(Request $request): array</span>
+<span class="linenos" data-linenos="14 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="15 "></span><span class="x">        return [</span>
+<span class="linenos" data-linenos="16 "></span><span class="x">            &#39;id&#39; =&gt; $this-&gt;id,</span>
+<span class="linenos" data-linenos="17 "></span><span class="x">            &#39;nom&#39; =&gt; $this-&gt;nom,</span>
+<span class="linenos" data-linenos="18 "></span><span class="x">            &#39;equip&#39; =&gt; $this-&gt;Equip-&gt;nom,</span>
+<span class="linenos" data-linenos="19 "></span><span class="x">            &#39;posicio&#39; =&gt; $this-&gt;posicio,</span>
+<span class="linenos" data-linenos="20 "></span><span class="x">            &#39;dorsal&#39; =&gt; $this-&gt;dorsal,</span>
+<span class="linenos" data-linenos="21 "></span><span class="x">            &#39;edat&#39; =&gt; $this-&gt;edat</span>
+<span class="linenos" data-linenos="22 "></span><span class="x">        ];</span>
+<span class="linenos" data-linenos="23 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="24 "></span><span class="x">}</span>
+</code></pre></div>
+<ul>
+<li>Modifica el controlador JugadoraController per a utilitzar el Recurs JugadoraResource:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">    public function index()</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">        return  JugadoraResource::collection(Jugadora::paginate());</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos=" 5 "></span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">    public function show(Jugadora $jugadore)</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">        return $this-&gt;sendResponse(new JugadoraResource($jugadore), &#39;Jugadora Recuperada amb èxit&#39;, 201);</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="10 "></span>
+<span class="linenos" data-linenos="11 "></span><span class="x">    public function update(JugadoraRequest $request, Jugadora $jugadore)</span>
+<span class="linenos" data-linenos="12 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="13 "></span><span class="x">        $jugadore-&gt;update($request-&gt;validated());</span>
+<span class="linenos" data-linenos="14 "></span><span class="x">        return $this-&gt;sendResponse($jugadore, &#39;Jugadora Actualitzada amb èxit&#39;, 201);</span>
+<span class="linenos" data-linenos="15 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="16 "></span>
+<span class="linenos" data-linenos="17 "></span><span class="x">    public function store(JugadoraRequest $request)</span>
+<span class="linenos" data-linenos="18 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="19 "></span><span class="x">        $jugadora = Jugadora::create($request-&gt;validated());</span>
+<span class="linenos" data-linenos="20 "></span><span class="x">        return $this-&gt;sendResponse(new JugadoraResource($jugadora), &#39;Jugadora Creada amb èxit&#39;, 201);</span>
+<span class="linenos" data-linenos="21 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="22 "></span>
+<span class="linenos" data-linenos="23 "></span><span class="x">    public function destroy(Jugadora $jugadore)</span>
+<span class="linenos" data-linenos="24 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="25 "></span><span class="x">        $jugadore-&gt;delete();</span>
+<span class="linenos" data-linenos="26 "></span><span class="x">        return $this-&gt;sendResponse(null, &#39;Jugadora Eliminada amb èxit&#39;, 201);</span>
+<span class="linenos" data-linenos="27 "></span><span class="x">    }</span>
+</code></pre></div>
+<h3 id="pas-4-autenticacio-i-autoritzacio">Pas 4: Autenticació i autorització<a class="headerlink" href="#pas-4-autenticacio-i-autoritzacio" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Afegir al model User el trait HasApiTokens:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">use Laravel\Sanctum\HasApiTokens;</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">class User extends Authenticatable</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">{</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">    use HasApiTokens, HasFactory, Notifiable;</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">}</span>
+</code></pre></div>
+<ul>
+<li>Afegir les rutes d'autenticació a <strong>routes/api.php</strong>:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">Route::post(&#39;login&#39;, [AuthController::class, &#39;login&#39;])-&gt;middleware(&#39;api&#39;);</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">Route::post(&#39;register&#39;, [AuthController::class, &#39;register&#39;])-&gt;middleware(&#39;api&#39;);</span>
+<span class="linenos" data-linenos="3 "></span>
+<span class="linenos" data-linenos="4 "></span>
+<span class="linenos" data-linenos="5 "></span><span class="x">Route::middleware([&#39;auth:sanctum&#39;,&#39;api&#39;])-&gt;group( function () {</span>
+<span class="linenos" data-linenos="6 "></span><span class="x">    Route::apiResource(&#39;jugadores&#39;,  JugadoraController::class);</span>
+<span class="linenos" data-linenos="7 "></span><span class="x">    Route::post(&#39;logout&#39;, [AuthController::class, &#39;logout&#39;]);</span>
+<span class="linenos" data-linenos="8 "></span>
+<span class="linenos" data-linenos="9 "></span><span class="x">});</span>
+</code></pre></div>
+<ul>
+<li>Implementar el controlador AuthController amb els mètodes login, register i logout:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">namespace App\Http\Controllers\Api;</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">use Illuminate\Http\Request;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">use App\Http\Controllers\Api\BaseController as BaseController;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">use Illuminate\Support\Facades\Auth;</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">use Illuminate\Support\Facades\Validator;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">use App\Models\User;</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">class AuthController extends BaseController</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">{</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">    public function login(Request $request)</span>
+<span class="linenos" data-linenos="12 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="13 "></span><span class="x">        if (Auth::attempt([&#39;email&#39; =&gt; $request-&gt;email, &#39;password&#39; =&gt; $request-&gt;password])){</span>
+<span class="linenos" data-linenos="14 "></span><span class="x">            $authUser = Auth::user();</span>
+<span class="linenos" data-linenos="15 "></span><span class="x">            $result[&#39;token&#39;] =  $authUser-&gt;createToken(&#39;MyAuthApp&#39;)-&gt;plainTextToken;</span>
+<span class="linenos" data-linenos="16 "></span><span class="x">            $result[&#39;name&#39;] =  $authUser-&gt;name;</span>
+<span class="linenos" data-linenos="17 "></span>
+<span class="linenos" data-linenos="18 "></span><span class="x">            return $this-&gt;sendResponse($result, &#39;User signed in&#39;);</span>
+<span class="linenos" data-linenos="19 "></span><span class="x">        }</span>
+<span class="linenos" data-linenos="20 "></span><span class="x">        return $this-&gt;sendError(&#39;Unauthorised.&#39;, [&#39;error&#39;=&gt;&#39;incorrect Email/Password&#39;]);</span>
+<span class="linenos" data-linenos="21 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="22 "></span><span class="x">    public function register(Request $request)</span>
+<span class="linenos" data-linenos="23 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="24 "></span><span class="x">        $validator = Validator::make($request-&gt;all(), [</span>
+<span class="linenos" data-linenos="25 "></span><span class="x">            &#39;name&#39; =&gt; &#39;required&#39;,</span>
+<span class="linenos" data-linenos="26 "></span><span class="x">            &#39;email&#39; =&gt; &#39;required|email&#39;,</span>
+<span class="linenos" data-linenos="27 "></span><span class="x">            &#39;password&#39; =&gt; &#39;required&#39;,</span>
+<span class="linenos" data-linenos="28 "></span><span class="x">            &#39;confirm_password&#39; =&gt; &#39;required|same:password&#39;,</span>
+<span class="linenos" data-linenos="29 "></span><span class="x">        ]);</span>
+<span class="linenos" data-linenos="30 "></span>
+<span class="linenos" data-linenos="31 "></span><span class="x">        if ($validator-&gt;fails()){</span>
+<span class="linenos" data-linenos="32 "></span><span class="x">            return $this-&gt;sendError(&#39;Error validation&#39;, $validator-&gt;errors());</span>
+<span class="linenos" data-linenos="33 "></span><span class="x">        }</span>
+<span class="linenos" data-linenos="34 "></span>
+<span class="linenos" data-linenos="35 "></span><span class="x">        try {</span>
+<span class="linenos" data-linenos="36 "></span><span class="x">            $input = $request-&gt;all();</span>
+<span class="linenos" data-linenos="37 "></span><span class="x">            $input[&#39;password&#39;] = bcrypt($input[&#39;password&#39;]);</span>
+<span class="linenos" data-linenos="38 "></span><span class="x">            $user = User::create($input);</span>
+<span class="linenos" data-linenos="39 "></span><span class="x">            $result[&#39;token&#39;] =  $user-&gt;createToken(&#39;MyAuthApp&#39;)-&gt;plainTextToken;</span>
+<span class="linenos" data-linenos="40 "></span><span class="x">            $result[&#39;name&#39;] =  $user-&gt;name;</span>
+<span class="linenos" data-linenos="41 "></span>
+<span class="linenos" data-linenos="42 "></span><span class="x">            return $this-&gt;sendResponse($result, &#39;User created successfully.&#39;);</span>
+<span class="linenos" data-linenos="43 "></span><span class="x">        } catch (\Exception $e) {</span>
+<span class="linenos" data-linenos="44 "></span><span class="x">            return $this-&gt;sendError(&#39;Registration Error&#39; , $e-&gt;getMessage());</span>
+<span class="linenos" data-linenos="45 "></span><span class="x">        }</span>
+<span class="linenos" data-linenos="46 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="47 "></span><span class="x">    public function logout(Request $request)</span>
+<span class="linenos" data-linenos="48 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="49 "></span>
+<span class="linenos" data-linenos="50 "></span><span class="x">        $user = request()-&gt;user(); //or Auth::user()</span>
+<span class="linenos" data-linenos="51 "></span><span class="x">        $user-&gt;tokens()-&gt;where(&#39;id&#39;, $user-&gt;currentAccessToken()-&gt;id)-&gt;delete();</span>
+<span class="linenos" data-linenos="52 "></span><span class="x">        $success[&#39;name&#39;] =  $user-&gt;name;</span>
+<span class="linenos" data-linenos="53 "></span><span class="x">         return $this-&gt;sendResponse($success, &#39;User successfully signed out.&#39;);</span>
+<span class="linenos" data-linenos="54 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="55 "></span>
+<span class="linenos" data-linenos="56 "></span><span class="x">}</span>
+</code></pre></div>
+<h3 id="pas-5-documentacio-amb-swagger">Pas 5: Documentació amb Swagger<a class="headerlink" href="#pas-5-documentacio-amb-swagger" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Instal·la el paquet l5-swagger:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>composer<span class="w"> </span>require<span class="w"> </span><span class="s2">&quot;darkaonline/l5-swagger&quot;</span>
+<span class="linenos" data-linenos="2 "></span>php<span class="w"> </span>artisan<span class="w"> </span>vendor:publish<span class="w"> </span>--provider<span class="w"> </span><span class="s2">&quot;L5Swagger\L5SwaggerServiceProvider&quot;</span>
+</code></pre></div>
+<ul>
+<li>Afegeix les anotacions OpenAPI als controladors, models i requests:</li>
+</ul>
+<p>app/Http/Controllers/Controller.php
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">/**</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="x"> * @OA\Info(</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x"> *    title=&quot;Futbol Femeni API Documentation&quot;,</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x"> *    version=&quot;1.0.0&quot;,</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x"> * )</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x"> * @OA\PathItem(path=&quot;/api&quot;)</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">**  </span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x"> * @OA\SecurityScheme(</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x"> *     securityScheme=&quot;bearerAuth&quot;,</span>
+<span class="linenos" data-linenos="10 "></span><span class="x"> *     type=&quot;http&quot;,</span>
+<span class="linenos" data-linenos="11 "></span><span class="x"> *     scheme=&quot;bearer&quot;,</span>
+<span class="linenos" data-linenos="12 "></span><span class="x"> *     bearerFormat=&quot;JWT&quot;</span>
+<span class="linenos" data-linenos="13 "></span><span class="x"> * )</span>
+<span class="linenos" data-linenos="14 "></span><span class="x"> */</span>
+</code></pre></div></p>
+<ul>
+<li>Genera les annotacions per al login:    </li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">/**</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="x">     * @OA\Post(</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">     *     path=&quot;/api/login&quot;,</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">     *     summary=&quot;Autenticació de l&#39;usuari&quot;,</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">     *     tags={&quot;Autenticació&quot;},</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">     *     @OA\RequestBody(</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">     *         required=true,</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">     *         @OA\JsonContent(</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">     *             required={&quot;email&quot;, &quot;password&quot;},</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">     *             @OA\Property(property=&quot;email&quot;, type=&quot;string&quot;, format=&quot;email&quot;, example=&quot;1@manager.com&quot;),</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">     *             @OA\Property(property=&quot;password&quot;, type=&quot;string&quot;, example=&quot;1234&quot;),</span>
+<span class="linenos" data-linenos="12 "></span><span class="x">     *         )</span>
+<span class="linenos" data-linenos="13 "></span><span class="x">     *     ),</span>
+<span class="linenos" data-linenos="14 "></span><span class="x">     *     @OA\Response(</span>
+<span class="linenos" data-linenos="15 "></span><span class="x">     *         response=200,</span>
+<span class="linenos" data-linenos="16 "></span><span class="x">     *         description=&quot;Login correcte&quot;,</span>
+<span class="linenos" data-linenos="17 "></span><span class="x">     *         @OA\JsonContent(</span>
+<span class="linenos" data-linenos="18 "></span><span class="x">     *             @OA\Property(property=&quot;success&quot;, type=&quot;boolean&quot;, example=true),</span>
+<span class="linenos" data-linenos="19 "></span><span class="x">     *             @OA\Property(property=&quot;data&quot;, type=&quot;object&quot;,</span>
+<span class="linenos" data-linenos="20 "></span><span class="x">     *                 @OA\Property(property=&quot;token&quot;, type=&quot;string&quot;, example=&quot;jwt-token&quot;),</span>
+<span class="linenos" data-linenos="21 "></span><span class="x">     *                 @OA\Property(property=&quot;name&quot;, type=&quot;string&quot;, example=&quot;John Doe&quot;)</span>
+<span class="linenos" data-linenos="22 "></span><span class="x">     *             ),</span>
+<span class="linenos" data-linenos="23 "></span><span class="x">     *             @OA\Property(property=&quot;message&quot;, type=&quot;string&quot;, example=&quot;User signed in&quot;)</span>
+<span class="linenos" data-linenos="24 "></span><span class="x">     *         )</span>
+<span class="linenos" data-linenos="25 "></span><span class="x">     *     ),</span>
+<span class="linenos" data-linenos="26 "></span><span class="x">     *     @OA\Response(</span>
+<span class="linenos" data-linenos="27 "></span><span class="x">     *         response=401,</span>
+<span class="linenos" data-linenos="28 "></span><span class="x">     *         description=&quot;No autoritzat&quot;,</span>
+<span class="linenos" data-linenos="29 "></span><span class="x">     *         @OA\JsonContent(</span>
+<span class="linenos" data-linenos="30 "></span><span class="x">     *             @OA\Property(property=&quot;success&quot;, type=&quot;boolean&quot;, example=false),</span>
+<span class="linenos" data-linenos="31 "></span><span class="x">     *             @OA\Property(property=&quot;message&quot;, type=&quot;string&quot;, example=&quot;Unauthorised.&quot;),</span>
+<span class="linenos" data-linenos="32 "></span><span class="x">     *             @OA\Property(property=&quot;info&quot;, type=&quot;object&quot;,</span>
+<span class="linenos" data-linenos="33 "></span><span class="x">     *                 @OA\Property(property=&quot;error&quot;, type=&quot;string&quot;, example=&quot;incorrect Email/Password&quot;)</span>
+<span class="linenos" data-linenos="34 "></span><span class="x">     *             )</span>
+<span class="linenos" data-linenos="35 "></span><span class="x">     *         )</span>
+<span class="linenos" data-linenos="36 "></span><span class="x">     *     )</span>
+<span class="linenos" data-linenos="37 "></span><span class="x">     * )</span>
+<span class="linenos" data-linenos="38 "></span><span class="x">     */</span>
+</code></pre></div>
+<ul>
+<li>Executa la comanda per generar la documentació:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>php<span class="w"> </span>artisan<span class="w"> </span>l5-swagger:generate
+</code></pre></div>
+<ul>
+<li>Accedeix a la documentació a través de la URL configurada en <strong>config/l5-swagger.php</strong> (per defecte /api/documentation).</li>
+<li>Genera les annotacions per al model de Jugadora.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">  /**</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="x">* @OA\Schema(</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">*     schema=&quot;Jugadora&quot;,</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">*     description=&quot;Esquema del model Jugadora&quot;,</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">*     @OA\Property(property=&quot;id&quot;, type=&quot;integer&quot;, description=&quot;ID de la jugadora&quot;),</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">*     @OA\Property(property=&quot;posicio&quot;, type=&quot;string&quot;, description=&quot;Posició de la jugadora&quot;),</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">*     @OA\Property(property=&quot;dorsal&quot;, type=&quot;integer&quot;, description=&quot;Dorsal de la jugadora&quot;),</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">*     @OA\Property(property=&quot;equip_id&quot;, type=&quot;integer&quot;, description=&quot;ID de l&#39;equip de la jugadora&quot;),</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">*     @OA\Property(property=&quot;nom&quot;, type=&quot;string&quot;, description=&quot;Nom de la jugadora&quot;),</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">*     @OA\Property(property=&quot;foto&quot;, type=&quot;string&quot;, description=&quot;URL de la foto de la jugadora&quot;),</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">*     @OA\Property(property=&quot;data_naixement&quot;, type=&quot;string&quot;, format=&quot;date&quot;, description=&quot;Data de naixement de la jugadora&quot;),</span>
+<span class="linenos" data-linenos="12 "></span><span class="x">*     @OA\Property(property=&quot;created_at&quot;, type=&quot;string&quot;, format=&quot;date-time&quot;, description=&quot;Data de creació del registre&quot;),</span>
+<span class="linenos" data-linenos="13 "></span><span class="x">*     @OA\Property(property=&quot;updated_at&quot;, type=&quot;string&quot;, format=&quot;date-time&quot;, description=&quot;Data d&#39;actualització del registre&quot;)</span>
+<span class="linenos" data-linenos="14 "></span><span class="x">* )</span>
+<span class="linenos" data-linenos="15 "></span><span class="x">  */</span>
+</code></pre></div>
+<ul>
+<li>Genera les annotacions per al request</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">/**</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="x"> * @OA\Schema(</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x"> *     schema=&quot;JugadoraRequest&quot;,</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x"> *     description=&quot;Validació per a la creació i actualització de jugadores&quot;,</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x"> *     required={&quot;nom&quot;, &quot;posicio&quot;, &quot;equip_id&quot;, &quot;data_naixement&quot;},</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x"> *     @OA\Property(property=&quot;nom&quot;, type=&quot;string&quot;, maxLength=255, description=&quot;Nom de la jugadora&quot;, example=&quot;Maria López&quot;),</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x"> *     @OA\Property(</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x"> *         property=&quot;posicio&quot;,</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x"> *         type=&quot;string&quot;,</span>
+<span class="linenos" data-linenos="10 "></span><span class="x"> *         enum={&quot;defensa&quot;, &quot;migcampista&quot;, &quot;davantera&quot;, &quot;porter&quot;},</span>
+<span class="linenos" data-linenos="11 "></span><span class="x"> *         description=&quot;Posició de la jugadora&quot;,</span>
+<span class="linenos" data-linenos="12 "></span><span class="x"> *         example=&quot;davantera&quot;</span>
+<span class="linenos" data-linenos="13 "></span><span class="x"> *     ),</span>
+<span class="linenos" data-linenos="14 "></span><span class="x"> *     @OA\Property(property=&quot;equip_id&quot;, type=&quot;integer&quot;, description=&quot;ID de l&#39;equip de la jugadora&quot;, example=1),</span>
+<span class="linenos" data-linenos="15 "></span><span class="x"> *     @OA\Property(</span>
+<span class="linenos" data-linenos="16 "></span><span class="x"> *         property=&quot;data_naixement&quot;,</span>
+<span class="linenos" data-linenos="17 "></span><span class="x"> *         type=&quot;string&quot;,</span>
+<span class="linenos" data-linenos="18 "></span><span class="x"> *         format=&quot;date&quot;,</span>
+<span class="linenos" data-linenos="19 "></span><span class="x"> *         description=&quot;Data de naixement de la jugadora (ha de tenir entre 16 i 100 anys)&quot;,</span>
+<span class="linenos" data-linenos="20 "></span><span class="x"> *         example=&quot;2002-05-15&quot;</span>
+<span class="linenos" data-linenos="21 "></span><span class="x"> *     ),</span>
+<span class="linenos" data-linenos="22 "></span><span class="x"> *     @OA\Property(</span>
+<span class="linenos" data-linenos="23 "></span><span class="x"> *         property=&quot;foto&quot;,</span>
+<span class="linenos" data-linenos="24 "></span><span class="x"> *         type=&quot;string&quot;,</span>
+<span class="linenos" data-linenos="25 "></span><span class="x"> *         format=&quot;binary&quot;,</span>
+<span class="linenos" data-linenos="26 "></span><span class="x"> *         description=&quot;Foto de la jugadora en format PNG (opcional, màxim 2MB)&quot;</span>
+<span class="linenos" data-linenos="27 "></span><span class="x"> *     )</span>
+<span class="linenos" data-linenos="28 "></span><span class="x"> * )</span>
+<span class="linenos" data-linenos="29 "></span><span class="x"> */</span>
+</code></pre></div>
+<ul>
+<li>Genera les annotacions per al json resource</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">  /**</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="x">* @OA\Schema(</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">*     schema=&quot;JugadoraResource&quot;,</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">*     description=&quot;Esquema del recurs Jugadora&quot;,</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">*     @OA\Property(property=&quot;id&quot;, type=&quot;integer&quot;, description=&quot;Identificador de la jugadora&quot;),</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">*     @OA\Property(property=&quot;nom&quot;, type=&quot;string&quot;, description=&quot;Nom de la jugadora&quot;),</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">*     @OA\Property(property=&quot;equip&quot;, type=&quot;string&quot;, description=&quot;Nom de l&#39;equip de la jugadora&quot;),</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">*     @OA\Property(property=&quot;posicio&quot;, type=&quot;string&quot;, enum={&quot;defensa&quot;, &quot;migcampista&quot;, &quot;davantera&quot;, &quot;porter&quot;}, description=&quot;Posició de la jugadora&quot;),</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">*     @OA\Property(property=&quot;dorsal&quot;, type=&quot;integer&quot;, description=&quot;Dorsal de la jugadora&quot;),</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">*     @OA\Property(property=&quot;edat&quot;, type=&quot;integer&quot;, description=&quot;Edat de la jugadora&quot;),</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">* )</span>
+<span class="linenos" data-linenos="12 "></span><span class="x">  */</span>
+</code></pre></div>
+<ul>
+<li>Genera les annotacions per a la resta de mètodes de l'API.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="  1 "></span><span class="x">namespace App\Http\Controllers\Api;</span>
+<span class="linenos" data-linenos="  2 "></span>
+<span class="linenos" data-linenos="  3 "></span><span class="x">use App\Http\Requests\JugadoraRequest;</span>
+<span class="linenos" data-linenos="  4 "></span><span class="x">use App\Models\Jugadora;</span>
+<span class="linenos" data-linenos="  5 "></span>
+<span class="linenos" data-linenos="  6 "></span><span class="x">class JugadoraController extends BaseController</span>
+<span class="linenos" data-linenos="  7 "></span><span class="x">{</span>
+<span class="linenos" data-linenos="  8 "></span>
+<span class="linenos" data-linenos="  9 "></span><span class="x">    /**</span>
+<span class="linenos" data-linenos=" 10 "></span><span class="x">     * @OA\Get(</span>
+<span class="linenos" data-linenos=" 11 "></span><span class="x">     *     path=&quot;/api/jugadores&quot;,</span>
+<span class="linenos" data-linenos=" 12 "></span><span class="x">     *     summary=&quot;Llista totes les jugadores amb paginació&quot;,</span>
+<span class="linenos" data-linenos=" 13 "></span><span class="x">     *     tags={&quot;Jugadores&quot;},</span>
+<span class="linenos" data-linenos=" 14 "></span><span class="x">     *     security={{&quot;bearerAuth&quot;:{}}},</span>
+<span class="linenos" data-linenos=" 15 "></span><span class="x">     *     @OA\Response(</span>
+<span class="linenos" data-linenos=" 16 "></span><span class="x">     *         response=200,</span>
+<span class="linenos" data-linenos=" 17 "></span><span class="x">     *         description=&quot;Llista de jugadores&quot;,</span>
+<span class="linenos" data-linenos=" 18 "></span><span class="x">     *         @OA\JsonContent(</span>
+<span class="linenos" data-linenos=" 19 "></span><span class="x">     *             @OA\Property(property=&quot;data&quot;, type=&quot;array&quot;,</span>
+<span class="linenos" data-linenos=" 20 "></span><span class="x">     *                 @OA\Items(ref=&quot;#/components/schemas/JugadoraResource&quot;)</span>
+<span class="linenos" data-linenos=" 21 "></span><span class="x">     *             ),</span>
+<span class="linenos" data-linenos=" 22 "></span><span class="x">     *             @OA\Property(property=&quot;links&quot;, type=&quot;object&quot;,</span>
+<span class="linenos" data-linenos=" 23 "></span><span class="x">     *                 @OA\Property(property=&quot;first&quot;, type=&quot;string&quot;, example=&quot;http://localhost/api/jugadores?page=1&quot;),</span>
+<span class="linenos" data-linenos=" 24 "></span><span class="x">     *                 @OA\Property(property=&quot;last&quot;, type=&quot;string&quot;, example=&quot;http://localhost/api/jugadores?page=3&quot;),</span>
+<span class="linenos" data-linenos=" 25 "></span><span class="x">     *                 @OA\Property(property=&quot;prev&quot;, type=&quot;string&quot;, example=&quot;null&quot;),</span>
+<span class="linenos" data-linenos=" 26 "></span><span class="x">     *                 @OA\Property(property=&quot;next&quot;, type=&quot;string&quot;, example=&quot;http://localhost/api/jugadores?page=2&quot;)</span>
+<span class="linenos" data-linenos=" 27 "></span><span class="x">     *             ),</span>
+<span class="linenos" data-linenos=" 28 "></span><span class="x">     *             @OA\Property(property=&quot;meta&quot;, type=&quot;object&quot;,</span>
+<span class="linenos" data-linenos=" 29 "></span><span class="x">     *                 @OA\Property(property=&quot;current_page&quot;, type=&quot;integer&quot;, example=1),</span>
+<span class="linenos" data-linenos=" 30 "></span><span class="x">     *                 @OA\Property(property=&quot;from&quot;, type=&quot;integer&quot;, example=1),</span>
+<span class="linenos" data-linenos=" 31 "></span><span class="x">     *                 @OA\Property(property=&quot;last_page&quot;, type=&quot;integer&quot;, example=3),</span>
+<span class="linenos" data-linenos=" 32 "></span><span class="x">     *                 @OA\Property(property=&quot;path&quot;, type=&quot;string&quot;, example=&quot;http://localhost/api/jugadores&quot;),</span>
+<span class="linenos" data-linenos=" 33 "></span><span class="x">     *                 @OA\Property(property=&quot;per_page&quot;, type=&quot;integer&quot;, example=15),</span>
+<span class="linenos" data-linenos=" 34 "></span><span class="x">     *                 @OA\Property(property=&quot;to&quot;, type=&quot;integer&quot;, example=15),</span>
+<span class="linenos" data-linenos=" 35 "></span><span class="x">     *                 @OA\Property(property=&quot;total&quot;, type=&quot;integer&quot;, example=45)</span>
+<span class="linenos" data-linenos=" 36 "></span><span class="x">     *             )</span>
+<span class="linenos" data-linenos=" 37 "></span><span class="x">     *         )</span>
+<span class="linenos" data-linenos=" 38 "></span><span class="x">     *     )</span>
+<span class="linenos" data-linenos=" 39 "></span><span class="x">     * )</span>
+<span class="linenos" data-linenos=" 40 "></span><span class="x">     */</span>
+<span class="linenos" data-linenos=" 41 "></span>
+<span class="linenos" data-linenos=" 42 "></span><span class="x">    public function index()</span>
+<span class="linenos" data-linenos=" 43 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos=" 44 "></span><span class="x">        return Jugadora::paginate(10);</span>
+<span class="linenos" data-linenos=" 45 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos=" 46 "></span>
+<span class="linenos" data-linenos=" 47 "></span><span class="x">    /**</span>
+<span class="linenos" data-linenos=" 48 "></span><span class="x">     * @OA\Post(</span>
+<span class="linenos" data-linenos=" 49 "></span><span class="x">     *     path=&quot;/api/jugadores&quot;,</span>
+<span class="linenos" data-linenos=" 50 "></span><span class="x">     *     summary=&quot;Crea una nova jugadora&quot;,</span>
+<span class="linenos" data-linenos=" 51 "></span><span class="x">     *     tags={&quot;Jugadores&quot;},</span>
+<span class="linenos" data-linenos=" 52 "></span><span class="x">     *     security={{&quot;bearerAuth&quot;:{}}},</span>
+<span class="linenos" data-linenos=" 53 "></span><span class="x">     *     @OA\RequestBody(</span>
+<span class="linenos" data-linenos=" 54 "></span><span class="x">     *         required=true,</span>
+<span class="linenos" data-linenos=" 55 "></span><span class="x">     *         @OA\JsonContent(ref=&quot;#/components/schemas/JugadoraRequest&quot;)</span>
+<span class="linenos" data-linenos=" 56 "></span><span class="x">     *     ),</span>
+<span class="linenos" data-linenos=" 57 "></span><span class="x">     *     @OA\Response(</span>
+<span class="linenos" data-linenos=" 58 "></span><span class="x">     *         response=201,</span>
+<span class="linenos" data-linenos=" 59 "></span><span class="x">     *         description=&quot;Jugadora creada amb èxit&quot;,</span>
+<span class="linenos" data-linenos=" 60 "></span><span class="x">     *         @OA\JsonContent(ref=&quot;#/components/schemas/JugadoraResource&quot;)</span>
+<span class="linenos" data-linenos=" 61 "></span><span class="x">     *     )</span>
+<span class="linenos" data-linenos=" 62 "></span><span class="x">     * )</span>
+<span class="linenos" data-linenos=" 63 "></span><span class="x">     */</span>
+<span class="linenos" data-linenos=" 64 "></span><span class="x">    public function store(JugadoraRequest $request)</span>
+<span class="linenos" data-linenos=" 65 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos=" 66 "></span><span class="x">        $jugadora = Jugadora::create($request-&gt;validated());</span>
+<span class="linenos" data-linenos=" 67 "></span><span class="x">        return $this-&gt;sendResponse($jugadora, &#39;Jugadora Creada amb èxit&#39;, 201);</span>
+<span class="linenos" data-linenos=" 68 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos=" 69 "></span>
+<span class="linenos" data-linenos=" 70 "></span><span class="x">    /**</span>
+<span class="linenos" data-linenos=" 71 "></span><span class="x">     * @OA\Get(</span>
+<span class="linenos" data-linenos=" 72 "></span><span class="x">     *     path=&quot;/api/jugadores/{id}&quot;,</span>
+<span class="linenos" data-linenos=" 73 "></span><span class="x">     *     summary=&quot;Mostra una jugadora&quot;,</span>
+<span class="linenos" data-linenos=" 74 "></span><span class="x">     *     tags={&quot;Jugadores&quot;},</span>
+<span class="linenos" data-linenos=" 75 "></span><span class="x">     *     security={{&quot;bearerAuth&quot;:{}}},</span>
+<span class="linenos" data-linenos=" 76 "></span><span class="x">     *     @OA\Parameter(</span>
+<span class="linenos" data-linenos=" 77 "></span><span class="x">     *         name=&quot;id&quot;,</span>
+<span class="linenos" data-linenos=" 78 "></span><span class="x">     *         in=&quot;path&quot;,</span>
+<span class="linenos" data-linenos=" 79 "></span><span class="x">     *         description=&quot;ID de la jugadora&quot;,</span>
+<span class="linenos" data-linenos=" 80 "></span><span class="x">     *         required=true,</span>
+<span class="linenos" data-linenos=" 81 "></span><span class="x">     *         @OA\Schema(type=&quot;integer&quot;)</span>
+<span class="linenos" data-linenos=" 82 "></span><span class="x">     *     ),</span>
+<span class="linenos" data-linenos=" 83 "></span><span class="x">     *     @OA\Response(</span>
+<span class="linenos" data-linenos=" 84 "></span><span class="x">     *         response=200,</span>
+<span class="linenos" data-linenos=" 85 "></span><span class="x">     *         description=&quot;Jugadora recuperada amb èxit&quot;,</span>
+<span class="linenos" data-linenos=" 86 "></span><span class="x">     *         @OA\JsonContent(ref=&quot;#/components/schemas/JugadoraResource&quot;)</span>
+<span class="linenos" data-linenos=" 87 "></span><span class="x">     *     )</span>
+<span class="linenos" data-linenos=" 88 "></span><span class="x">     * )</span>
+<span class="linenos" data-linenos=" 89 "></span><span class="x">     */</span>
+<span class="linenos" data-linenos=" 90 "></span>
+<span class="linenos" data-linenos=" 91 "></span><span class="x">    public function show(Jugadora $jugadora)</span>
+<span class="linenos" data-linenos=" 92 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos=" 93 "></span><span class="x">        return $this-&gt;sendResponse($jugadora, &#39;Jugadora Recuperada amb èxit&#39;, 201);</span>
+<span class="linenos" data-linenos=" 94 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos=" 95 "></span>
+<span class="linenos" data-linenos=" 96 "></span><span class="x">    /**</span>
+<span class="linenos" data-linenos=" 97 "></span><span class="x">     * @OA\Put(</span>
+<span class="linenos" data-linenos=" 98 "></span><span class="x">     *     path=&quot;/api/jugadores/{id}&quot;,</span>
+<span class="linenos" data-linenos=" 99 "></span><span class="x">     *     summary=&quot;Actualitza una jugadora&quot;,</span>
+<span class="linenos" data-linenos="100 "></span><span class="x">     *     tags={&quot;Jugadores&quot;},</span>
+<span class="linenos" data-linenos="101 "></span><span class="x">     *     security={{&quot;bearerAuth&quot;:{}}},</span>
+<span class="linenos" data-linenos="102 "></span><span class="x">     *     @OA\Parameter(</span>
+<span class="linenos" data-linenos="103 "></span><span class="x">     *         name=&quot;id&quot;,</span>
+<span class="linenos" data-linenos="104 "></span><span class="x">     *         in=&quot;path&quot;,</span>
+<span class="linenos" data-linenos="105 "></span><span class="x">     *         description=&quot;ID de la jugadora&quot;,</span>
+<span class="linenos" data-linenos="106 "></span><span class="x">     *         required=true,</span>
+<span class="linenos" data-linenos="107 "></span><span class="x">     *         @OA\Schema(type=&quot;integer&quot;)</span>
+<span class="linenos" data-linenos="108 "></span><span class="x">     *     ),</span>
+<span class="linenos" data-linenos="109 "></span><span class="x">     *     @OA\RequestBody(</span>
+<span class="linenos" data-linenos="110 "></span><span class="x">     *         required=true,</span>
+<span class="linenos" data-linenos="111 "></span><span class="x">     *         @OA\JsonContent(ref=&quot;#/components/schemas/JugadoraRequest&quot;)</span>
+<span class="linenos" data-linenos="112 "></span><span class="x">     *     ),</span>
+<span class="linenos" data-linenos="113 "></span><span class="x">     *     @OA\Response(</span>
+<span class="linenos" data-linenos="114 "></span><span class="x">     *         response=200,</span>
+<span class="linenos" data-linenos="115 "></span><span class="x">     *         description=&quot;Jugadora actualitzada amb èxit&quot;,</span>
+<span class="linenos" data-linenos="116 "></span><span class="x">     *         @OA\JsonContent(ref=&quot;#/components/schemas/JugadoraResource&quot;)</span>
+<span class="linenos" data-linenos="117 "></span><span class="x">     *     )</span>
+<span class="linenos" data-linenos="118 "></span><span class="x">     * )</span>
+<span class="linenos" data-linenos="119 "></span><span class="x">     */</span>
+<span class="linenos" data-linenos="120 "></span>
+<span class="linenos" data-linenos="121 "></span><span class="x">    public function update(JugadoraRequest $request, Jugadora $jugadora)</span>
+<span class="linenos" data-linenos="122 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="123 "></span><span class="x">        $jugadora-&gt;update($request-&gt;validated());</span>
+<span class="linenos" data-linenos="124 "></span><span class="x">        return $this-&gt;sendResponse($jugadora, &#39;Jugadora Actualitzada amb èxit&#39;, 201);</span>
+<span class="linenos" data-linenos="125 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="126 "></span>
+<span class="linenos" data-linenos="127 "></span><span class="x">    /**</span>
+<span class="linenos" data-linenos="128 "></span><span class="x">     * @OA\Delete(</span>
+<span class="linenos" data-linenos="129 "></span><span class="x">     *     path=&quot;/api/jugadores/{id}&quot;,</span>
+<span class="linenos" data-linenos="130 "></span><span class="x">     *     summary=&quot;Elimina una jugadora&quot;,</span>
+<span class="linenos" data-linenos="131 "></span><span class="x">     *     tags={&quot;Jugadores&quot;},</span>
+<span class="linenos" data-linenos="132 "></span><span class="x">     *     security={{&quot;bearerAuth&quot;:{}}}, </span>
+<span class="linenos" data-linenos="133 "></span><span class="x">     *     @OA\Parameter(</span>
+<span class="linenos" data-linenos="134 "></span><span class="x">     *         name=&quot;id&quot;,</span>
+<span class="linenos" data-linenos="135 "></span><span class="x">     *         in=&quot;path&quot;,</span>
+<span class="linenos" data-linenos="136 "></span><span class="x">     *         description=&quot;ID de la jugadora&quot;,</span>
+<span class="linenos" data-linenos="137 "></span><span class="x">     *         required=true,</span>
+<span class="linenos" data-linenos="138 "></span><span class="x">     *         @OA\Schema(type=&quot;integer&quot;)</span>
+<span class="linenos" data-linenos="139 "></span><span class="x">     *     ),</span>
+<span class="linenos" data-linenos="140 "></span><span class="x">     *     @OA\Response(</span>
+<span class="linenos" data-linenos="141 "></span><span class="x">     *         response=200,</span>
+<span class="linenos" data-linenos="142 "></span><span class="x">     *         description=&quot;Jugadora eliminada amb èxit&quot;</span>
+<span class="linenos" data-linenos="143 "></span><span class="x">     *     )</span>
+<span class="linenos" data-linenos="144 "></span><span class="x">     * )</span>
+<span class="linenos" data-linenos="145 "></span><span class="x">     */</span>
+<span class="linenos" data-linenos="146 "></span>
+<span class="linenos" data-linenos="147 "></span><span class="x">    public function destroy(Jugadora $jugadora)</span>
+<span class="linenos" data-linenos="148 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="149 "></span><span class="x">        $jugadora-&gt;delete();</span>
+<span class="linenos" data-linenos="150 "></span><span class="x">        return $this-&gt;sendResponse(null, &#39;Jugadora Eliminada amb èxit&#39;, 201);</span>
+<span class="linenos" data-linenos="151 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="152 "></span><span class="x">}</span>
+</code></pre></div>
+<h2 id="exercici">Exercici<a class="headerlink" href="#exercici" title="Permanent link">&para;</a></h2>
+<h1 id="enunciat-creacio-duna-api-i-la-seva-documentacio">Enunciat: Creació d'una API i la seva documentació<a class="headerlink" href="#enunciat-creacio-duna-api-i-la-seva-documentacio" title="Permanent link">&para;</a></h1>
+<p>Aquest exercici consisteix a crear una API per gestionar les taules que no són <code>jugadores</code> i documentar-la correctament utilitzant Swagger (<code>l5-swagger</code>). Segueix els passos indicats per implementar i documentar les operacions CRUD i altres funcionalitats específiques.</p>
+<h3 id="1-entitats-a-gestionar">1. <strong>Entitats a gestionar</strong><a class="headerlink" href="#1-entitats-a-gestionar" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Estadis</strong></li>
+<li><strong>Equips</strong></li>
+<li><strong>Partits</strong></li>
+</ul>
+<h3 id="2-endpoints">2. <strong>Endpoints</strong><a class="headerlink" href="#2-endpoints" title="Permanent link">&para;</a></h3>
+<p>Implementa els següents endpoints per a cada entitat, seguint els estàndards REST:</p>
+<ul>
+<li><code>GET /api/{resource}</code>: Retorna una llista paginada de recursos.</li>
+<li><code>POST /api/{resource}</code>: Crea un nou recurs.</li>
+<li><code>GET /api/{resource}/{id}</code>: Retorna un recurs específic.</li>
+<li><code>PUT /api/{resource}/{id}</code>: Actualitza un recurs específic.</li>
+<li><code>DELETE /api/{resource}/{id}</code>: Elimina un recurs específic.</li>
+</ul>
+<h3 id="3-documentacio-amb-swagger-l5-swagger">3. <strong>Documentació amb Swagger (<code>l5-swagger</code>)</strong><a class="headerlink" href="#3-documentacio-amb-swagger-l5-swagger" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Defineix els esquemes per a cada entitat a la documentació Swagger.</li>
+<li>Afegeix anotacions als controladors per documentar els endpoints creats.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2021-2025 Aitor Medrano, Luis Alemañ, Ignasi Gomis - Licencia CC BY-NC-SA
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/aitormedrano" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.2 4.2 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.52 8.52 0 0 1-5.33 1.84q-.51 0-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<a.medrano@edu.gva.es>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.13c-.15.01-.29.06-.39.17l-1 1 2.05 2 1-1c.22-.21.22-.56 0-.77l-1.24-1.23a.56.56 0 0 0-.38-.17m-2 1.75L13 19.94V22h2.06l6.06-6.07M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h7v-.89l8.24-8.22c.47-.49 1.12-.76 1.8-.76.34 0 .68.06 1 .19V6c0-1.12-.92-2-2.04-2m0 4-8 5-8-5V6l8 5 8-5"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": ".", "features": ["header.autohide", "toc.integrate", "content.tabs.link"], "search": "assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiat al porta-retalls", "clipboard.copy": "C\u00f2pia al porta-retalls", "search.result.more.one": "1 m\u00e9s en aquesta p\u00e0gina", "search.result.more.other": "# m\u00e9s en aquesta p\u00e0gina", "search.result.none": "Cap document coincideix", "search.result.one": "1 document coincident", "search.result.other": "# documents coincidents", "search.result.placeholder": "Escriu per a comen\u00e7ar a cercar", "search.result.term.missing": "Desaparegut", "select.version": "Selecciona la versi\u00f3"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+    
+  </body>
+</html>

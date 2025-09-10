@@ -1,0 +1,1994 @@
+
+<!doctype html>
+<html lang="ca" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://cipfpbatoi.github.io/dwes2223/03web.html">
+      
+      
+      
+      
+      <link rel="icon" href="imagenes/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.19">
+    
+    
+      
+        <title>Programació Web - Desenvolupament web en entorn de Servidor</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-X6D0LR7TC8"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-X6D0LR7TC8",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-X6D0LR7TC8",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="Teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#programacio-web" class="md-skip">
+          Salta el contingut
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Capçalera">
+    <a href="index.html" title="Desenvolupament web en entorn de Servidor" class="md-header__button md-logo" aria-label="Desenvolupament web en entorn de Servidor" data-md-component="logo">
+      
+  <img src="imagenes/logofp.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Desenvolupament web en entorn de Servidor
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Programació Web
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="Teal"  aria-label="Canviar a mode nit"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Canviar a mode nit" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="light-blue" data-md-color-accent="Teal"  aria-label="Canviar a mode dia"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Canviar a mode dia" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Neteja" aria-label="Neteja" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicialitzant cerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navegació" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Desenvolupament web en entorn de Servidor" class="md-nav__button md-logo" aria-label="Desenvolupament web en entorn de Servidor" data-md-component="logo">
+      
+  <img src="imagenes/logofp.png" alt="logo">
+
+    </a>
+    Desenvolupament web en entorn de Servidor
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01arquitecturas.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.- Arquitectures Web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02php.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.- Programació web amb PHP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03MVC_Laravel.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.- Arquitectura MVC amb Laravel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="04dades_Laravel.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.- Accés segur i estructurat a bases de dades amb Laravel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="05seguretat_Laravel.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.- Aplicacions segures i reactives en Laravel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="programacio-web">Programació Web<a class="headerlink" href="#programacio-web" title="Permanent link">&para;</a></h1>
+<details class="abstract">
+<summary>Duració i criteris d'evaluació</summary>
+<p>Duració estimada: 10 hores</p>
+<hr />
+<table>
+<thead>
+<tr>
+<th>Resultat d'aprenentatge</th>
+<th>Criteris d'avaluació</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4. Desenvolupa aplicacions Web embegudes en llenguatges de marques analitzant i incorporant funcionalitats segons especificacions</td>
+<td>a) S'han identificat els mecanismes disponibles per al manteniment de la informació que concerneix un client web concret i s'han assenyalat els seus avantatges.<br /> b) S'han utilitzat mecanismes per a mantindre l'estat de les aplicacions web.<br /> c) S'han utilitzat mecanismes per a emmagatzemar informació en el client web i per a recuperar el seu contingut.<br /> d) S'han identificat i caracteritzat els mecanismes disponibles per a l'autenticació d'usuaris.<br /> e) S'han escrit aplicacions que integren mecanismes d'autenticació d'usuaris.<br /> f) S'han utilitzat eines i entorns per a facilitar la programació, prova i depuració del codi.</td>
+</tr>
+</tbody>
+</table>
+</details>
+<h2 id="1-mecanismes-per-al-manteniment-de-la-informacio-en-aplicacions-web">1.  Mecanismes per al Manteniment de la Informació en Aplicacions Web<a class="headerlink" href="#1-mecanismes-per-al-manteniment-de-la-informacio-en-aplicacions-web" title="Permanent link">&para;</a></h2>
+<p>HTTP és un protocol <strong>stateless</strong>, sense estat. En les aplicacions web modernes, és essencial gestionar l'estat del client per proporcionar una experiència d'usuari fluida i personalitzada.
+Per això, se simula l'estat mitjançant l'ús de cookies, tokens o la sessió. L'estat és necessari per a processos com ara el carret de la compra, operacions associades a un usuari, etc... 
+A continuació es detallen diversos mecanismes per mantenir aquesta informació, així com els seus avantatges i desavantatges.</p>
+<h3 id="cookies">Cookies<a class="headerlink" href="#cookies" title="Permanent link">&para;</a></h3>
+<p>Les <strong>cookies</strong> són petits fitxers de text emmagatzemats al navegador de l'usuari. Són àmpliament utilitzades per mantenir l'estat del client entre sol·licituds HTTP, ja que HTTP és un protocol sense estat.</p>
+<h4 id="avantatges-de-les-cookies">Avantatges de les Cookies<a class="headerlink" href="#avantatges-de-les-cookies" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Persistència</strong>: Les cookies poden mantenir-se durant períodes llargs definits per l'atribut <code>expires</code> o <code>max-age</code>.</li>
+<li><strong>Accessibilitat</strong>: Es poden accedir des de qualsevol pàgina del mateix domini.</li>
+<li><strong>Simplicitat</strong>: Fàcils d'implementar i gestionar.</li>
+</ul>
+<h4 id="desavantatges-de-les-cookies">Desavantatges de les Cookies<a class="headerlink" href="#desavantatges-de-les-cookies" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Seguretat</strong>: Poden ser objectiu d'atacs com <strong>XSS (Cross-Site Scripting)</strong> si no es gestionen correctament.</li>
+<li><strong>Limitacions de mida</strong>: Les cookies estan limitades a 4KB de dades.</li>
+<li><strong>Privadesa</strong>: Les dades de l'usuari poden ser vulnerables si no es protegeixen adequadament.</li>
+</ul>
+<h4 id="millors-practiques">Millors Pràctiques<a class="headerlink" href="#millors-practiques" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Utilitzar l'atribut <code>HttpOnly</code> per evitar l'accés a les cookies des de JavaScript.</li>
+<li>Configurar <code>SameSite</code> per prevenir atacs CSRF.</li>
+<li>Emmagatzemar únicament informació essencial i no sensible.</li>
+</ul>
+<h3 id="sessions">Sessions<a class="headerlink" href="#sessions" title="Permanent link">&para;</a></h3>
+<p>Les <strong>sessions</strong> són un mecanisme que permet associar dades a un usuari durant una sessió específica. Aquestes dades s'emmagatzemen al servidor, mentre que el client només guarda un identificador de sessió.</p>
+<h4 id="avantatges-de-les-sessions">Avantatges de les Sessions<a class="headerlink" href="#avantatges-de-les-sessions" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Seguretat</strong>: Les dades sensibles es mantenen al servidor.</li>
+<li><strong>Capacitat d'emmagatzematge</strong>: No limitades per la mida de les cookies.</li>
+<li><strong>Compartició de dades</strong>: Facilita la compartició d'estat entre diferents components d'una aplicació web.</li>
+</ul>
+<h4 id="desavantatges-de-les-sessions">Desavantatges de les Sessions<a class="headerlink" href="#desavantatges-de-les-sessions" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Escalabilitat</strong>: Requereix memòria addicional al servidor, la qual cosa pot ser problemàtica amb molts usuaris.</li>
+<li><strong>Persistència limitada</strong>: Normalment només duren mentre el navegador està obert, tret que es configuri d'una altra manera.</li>
+</ul>
+<h4 id="millors-practiques_1">Millors Pràctiques<a class="headerlink" href="#millors-practiques_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Emmagatzemar únicament referències o identificadors a la sessió.</li>
+<li>Utilitzar eines com Redis per a una gestió eficient de sessions en entorns escalables.</li>
+</ul>
+<h3 id="web-storage">Web Storage<a class="headerlink" href="#web-storage" title="Permanent link">&para;</a></h3>
+<p>El <strong>Web Storage</strong> és una API del navegador que permet emmagatzemar dades al client de manera més senzilla i amb més capacitat que les cookies tradicionals. Inclou dos mecanismes principals: <code>localStorage</code> i <code>sessionStorage</code>.</p>
+<h4 id="caracteristiques-del-web-storage">Característiques del Web Storage<a class="headerlink" href="#caracteristiques-del-web-storage" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong><code>localStorage</code></strong>: Permet emmagatzemar dades que persisteixen fins que s'elimina explícitament, fins i tot després de tancar el navegador.</li>
+<li><strong><code>sessionStorage</code></strong>: Les dades es mantenen només durant la sessió del navegador i s'esborren quan es tanca la pestanya o finestra.</li>
+</ul>
+<h4 id="avantatges">Avantatges<a class="headerlink" href="#avantatges" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Capacitat d'Emmagatzematge</strong>: Ofereix més espai (fins a 5-10MB) que les cookies.</li>
+<li><strong>API Simple</strong>: Proporciona una interfície senzilla per emmagatzemar i recuperar dades.</li>
+</ul>
+<h4 id="usos-comuns">Usos Comuns<a class="headerlink" href="#usos-comuns" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Manteniment de l'Estat del Client</strong>: Pot guardar dades de sessió i preferències de l'usuari que no cal enviar al servidor.</li>
+<li><strong>Sincronització amb l'Entorn Servidor</strong>: Es pot utilitzar per emmagatzemar dades que després es sincronitzen amb el servidor, millorant el rendiment i l'experiència d'usuari.</li>
+</ul>
+<h4 id="consideracions-de-seguretat">Consideracions de Seguretat<a class="headerlink" href="#consideracions-de-seguretat" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Accessibilitat</strong>: Les dades són accessibles per JavaScript, per la qual cosa s'ha de tenir cura amb les vulnerabilitats XSS.</li>
+<li><strong>Dades Sensibles</strong>: Evita emmagatzemar dades sensibles o confidencials.</li>
+</ul>
+<p>Tot i que <strong>Web Storage</strong> s'executa al costat del client, entendre les seves funcionalitats pot ajudar els desenvolupadors del servidor a dissenyar sistemes més robustos i eficaços, on la cooperació entre client i servidor maximitza l'eficiència de l'aplicació web.</p>
+<h3 id="tokens-dautenticacio">Tokens d'Autenticació<a class="headerlink" href="#tokens-dautenticacio" title="Permanent link">&para;</a></h3>
+<p>Els <strong>JSON Web Tokens (JWT)</strong> són un estàndard obert que defineix una manera compacta i autònoma d'enviar informació entre dues parts de manera segura com a objecte JSON. S'utilitzen habitualment per a l'autenticació en aplicacions web.</p>
+<h4 id="avantatges-dels-jwt">Avantatges dels JWT<a class="headerlink" href="#avantatges-dels-jwt" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Estatut autònom</strong>: Porten tota la informació necessària, eliminant la necessitat de mantenir sessions al servidor.</li>
+<li><strong>Escalabilitat</strong>: Milloren l'escalabilitat en aplicacions distribuïdes.</li>
+<li><strong>Seguretat</strong>: Es poden signar digitalment per assegurar la seva autenticitat.</li>
+</ul>
+<h4 id="desavantatges-dels-jwt">Desavantatges dels JWT<a class="headerlink" href="#desavantatges-dels-jwt" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Revocació complexa</strong>: Una vegada emesos, és difícil revocar-los sense mantenir una llista negra.</li>
+<li><strong>Sobrecarrega de dades</strong>: Si els tokens són grans, poden afectar el rendiment, especialment en xarxes de baixa latència.</li>
+</ul>
+<h4 id="millors-practiques_2">Millors Pràctiques<a class="headerlink" href="#millors-practiques_2" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Utilitzar signatura HS256 o RS256 per garantir la integritat del token.</li>
+<li>No emmagatzemar dades sensibles directament al token.</li>
+</ul>
+<h3 id="cache-del-navegador">Cache del Navegador<a class="headerlink" href="#cache-del-navegador" title="Permanent link">&para;</a></h3>
+<p>El <strong>cache del navegador</strong> s'utilitza per emmagatzemar còpies temporals de recursos web per millorar el rendiment i reduir la càrrega del servidor.</p>
+<h4 id="avantatges-del-cache">Avantatges del Cache<a class="headerlink" href="#avantatges-del-cache" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Rendiment</strong>: Redueix el temps de càrrega dels recursos.</li>
+<li><strong>Optimització</strong>: Disminueix l'ample de banda requerit.</li>
+</ul>
+<h4 id="desavantatges-del-cache">Desavantatges del Cache<a class="headerlink" href="#desavantatges-del-cache" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Consistència</strong>: Pot servir dades obsoletes si no es gestiona correctament.</li>
+<li><strong>Control</strong>: Requereix configuració per evitar el caching indesitjat de dades dinàmiques.</li>
+</ul>
+<h4 id="millors-practiques_3">Millors Pràctiques<a class="headerlink" href="#millors-practiques_3" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Configurar els encapçalaments HTTP correctament (<code>Cache-Control</code>, <code>ETag</code>) per gestionar l'actualització de recursos.</li>
+</ul>
+<h3 id="sincronitzacio-offline">Sincronització Offline<a class="headerlink" href="#sincronitzacio-offline" title="Permanent link">&para;</a></h3>
+<p>La <strong>sincronització offline</strong> es refereix a la capacitat d'una aplicació web de funcionar sense connexió a Internet, sincronitzant dades quan es recupera la connexió.</p>
+<h4 id="tecniques-i-eines">Tècniques i Eines<a class="headerlink" href="#tecniques-i-eines" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>IndexedDB</strong>: Emmagatzema grans volums de dades estructurades dins del navegador.</li>
+<li><strong>Service Workers</strong>: Gestionen peticions de xarxa, proporcionant funcionalitats offline i cache avançat.</li>
+</ul>
+<h4 id="millors-practiques_4">Millors Pràctiques<a class="headerlink" href="#millors-practiques_4" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Gestionar conflictes de dades quan es torna a estar en línia.</li>
+<li>Utilitzar estratègies de sincronització optimitzades per minimitzar l'ample de banda i el temps de sincronització.</li>
+</ul>
+<h3 id="seguretat-de-les-cookies-i-sessions">Seguretat de les Cookies i Sessions<a class="headerlink" href="#seguretat-de-les-cookies-i-sessions" title="Permanent link">&para;</a></h3>
+<p>La <strong>seguretat</strong> és fonamental en la gestió de cookies i sessions per protegir les dades dels usuaris de possibles atacs.</p>
+<h4 id="practiques-de-seguretat">Pràctiques de Seguretat<a class="headerlink" href="#practiques-de-seguretat" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>CSRF</strong>: Utilitzar tokens CSRF per validar sol·licituds d'accions sensibles.</li>
+<li><strong>XSS</strong>: Sanear les dades d'entrada i utilitzar capçaleres de seguretat (<code>Content-Security-Policy</code>) per prevenir XSS.</li>
+<li><strong>Secure Flag</strong>: Marcar les cookies amb l'atribut <code>Secure</code> perquè només s'enviïn a través de connexions HTTPS.</li>
+</ul>
+<h4 id="conclusio">Conclusió<a class="headerlink" href="#conclusio" title="Permanent link">&para;</a></h4>
+<p>La selecció del mecanisme adequat per al manteniment de l'estat en una aplicació web depèn de les necessitats específiques de l'aplicació, el volum de dades, els requisits de seguretat i l'arquitectura del sistema. Avaluar cada tècnica pel que fa a avantatges i desavantatges ajudarà a prendre decisions informades i construir aplicacions web més segures i eficients.</p>
+<h2 id="2exemples-de-cookies-i-sessions-en-php">2.Exemples de Cookies i Sessions en PHP<a class="headerlink" href="#2exemples-de-cookies-i-sessions-en-php" title="Permanent link">&para;</a></h2>
+<h3 id="cookies_1">Cookies<a class="headerlink" href="#cookies_1" title="Permanent link">&para;</a></h3>
+<p>Les cookies s'emmagatzemen en el array global <code>$_COOKIE</code>. El que col·loquem dins del array, es guardarà en el client. Cal tindre present que el client pot no voler emmagatzemar-les.</p>
+<p>Existeix una limitació de 20 cookies per domini i 300 en total en el navegador.</p>
+<p>En PHP, per a crear una cookie s'utilitza la funció <code>setcookie</code>:</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="nb">setcookie</span><span class="p">(</span>
+<span class="linenos" data-linenos=" 3 "></span>    <span class="s1">&#39;nom_cookie&#39;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 4 "></span>    <span class="s1">&#39;valor_cookie&#39;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 5 "></span>    <span class="p">[</span>
+<span class="linenos" data-linenos=" 6 "></span>        <span class="s1">&#39;expires&#39;</span> <span class="o">=&gt;</span> <span class="nb">time</span><span class="p">()</span> <span class="o">+</span> <span class="mi">3600</span><span class="p">,</span> <span class="c1">// 1 hora</span>
+<span class="linenos" data-linenos=" 7 "></span>        <span class="s1">&#39;path&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;/&#39;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 8 "></span>        <span class="s1">&#39;domain&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="c1">// Domini actual</span>
+<span class="linenos" data-linenos=" 9 "></span>        <span class="s1">&#39;secure&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span> <span class="c1">// Només HTTPS</span>
+<span class="linenos" data-linenos="10 "></span>        <span class="s1">&#39;httponly&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span> <span class="c1">// Només accessible via HTTP</span>
+<span class="linenos" data-linenos="11 "></span>        <span class="s1">&#39;samesite&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Lax&#39;</span> <span class="c1">// o &#39;Strict&#39; o &#39;None&#39;</span>
+<span class="linenos" data-linenos="12 "></span>    <span class="p">]</span>
+<span class="linenos" data-linenos="13 "></span><span class="p">);</span>
+<span class="linenos" data-linenos="14 "></span><span class="cp">?&gt;</span>
+</code></pre></div>
+Destacar que el nom no pot contindre espais ni el caràcter <code>;</code>. Respecte al contingut de la cookie, no pot superar els 4 KB.</p>
+<h4 id="consideracions-de-seguretat-per-a-cookies">Consideracions de seguretat per a cookies:<a class="headerlink" href="#consideracions-de-seguretat-per-a-cookies" title="Permanent link">&para;</a></h4>
+<p><strong>HTTPOnly</strong>: Assegura't que les cookies que contenen informació sensible no siguin accessibles per JavaScript utilitzant l'atribut HttpOnly.</p>
+<p><strong>Secure</strong>: Utilitza l'atribut Secure per assegurar que les cookies només es transmeten en connexions HTTPS.</p>
+<p><strong>SameSite</strong>: Defineix correctament l'atribut SameSite per a prevenir atacs CSRF (Cross-Site Request Forgery).</p>
+<p>Per exemple, mitjançant <em>cookies</em> podem comprovar la quantitat de visites diferents que realitza un usuari:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
+<span class="linenos" data-linenos="2 "></span><span class="nv">$accesosPagina </span><span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+<span class="linenos" data-linenos="3 "></span><span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_COOKIE</span><span class="p">[</span><span class="s1">&#39;accesos&#39;</span><span class="p">]))</span> <span class="p">{</span> 
+<span class="linenos" data-linenos="4 "></span>    <span class="nv">$accesosPagina </span><span class="o">=</span> <span class="nv">$_COOKIE</span><span class="p">[</span><span class="s1">&#39;accesos&#39;</span><span class="p">];</span> <span class="c1">// recuperamos una cookie</span>
+<span class="linenos" data-linenos="5 "></span>    <span class="nb">setcookie</span><span class="p">(</span><span class="s1">&#39;accesos&#39;</span><span class="p">,</span> <span class="o">++</span><span class="nv">$accesosPagina</span><span class="p">);</span> <span class="c1">// le asignamos un valor</span>
+<span class="linenos" data-linenos="6 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="7 "></span><span class="cp">?&gt;</span>
+</code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Inspeccionant les cookies</p>
+<p>Si volem veure que contenen les cookies que tenim emmagatzemades en el navegador, es pot comprovar el seu valor en Dev Tools &rarr; Application &rarr; Storage</p>
+</div>
+<p>El temps de vida de les cookies pot ser tan llarg com el lloc web en el qual resideixen. Elles seguiran ací, fins i tot si el navegador està tancat o obert.</p>
+<p>Per a esborrar una cookie es pot posar que expiren en el passat:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
+<span class="linenos" data-linenos="2 "></span><span class="nb">setcookie</span><span class="p">(</span><span class="nx">nombre</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span> <span class="c1">// pasado</span>
+</code></pre></div>
+<p>O que caduquen dins d'un període de temps deteminado:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
+<span class="linenos" data-linenos="2 "></span><span class="nb">setcookie</span><span class="p">(</span><span class="nx">nombre</span><span class="p">,</span> <span class="nx">valor</span><span class="p">,</span> <span class="nb">time</span><span class="p">()</span> <span class="o">+</span> <span class="mi">3600</span><span class="p">)</span> <span class="c1">// Caducan dentro de una hora</span>
+</code></pre></div>
+<figure style="align: center;">
+    <img src="imagenes/04/04cookies.png" width="700">
+    <figcaption>Comunicació amb cookies</figcaption>
+</figure>
+
+<p>S'utilitzen per a:</p>
+<ul>
+<li>Recordar els inicis de sessió</li>
+<li>Emmagatzemar valors temporals d'usuari</li>
+<li>Si un usuari està navegant per una llista paginada d'articles, ordenats d'una certa manera, podem emmagatzemar l'ajust de la classificació.</li>
+</ul>
+<p>L'alternativa en el client per a emmagatzemar informació en el navegador és l'objecte <a href="https://developer.mozilla.org/es/docs/web/api/window/localstorage">LocalStorage</a>.</p>
+<h3 id="sessio">Sessió<a class="headerlink" href="#sessio" title="Permanent link">&para;</a></h3>
+<p>La sessió afig la gestió de l'estat a HTTP, emmagatzemant en aquest cas la informació en el servidor.
+Cada visitant té un ID de sessió únic, el qual per defecte s'emmagatzema en una cookie denominada <code>PHPSESSID</code>.
+Si el client no té les cookies actives, l'ID es propaga en cada URL dins del mateix domini.
+Cada sessió té associat un magatzem de dades mitjançant el array global <code>$_SESSION</code>, en el qual podem emmagatzemar i recuperar informació.</p>
+<p>La sessió comença en executar un script PHP. Es genera un nou ID i es carreguen les dades del magatzem:</p>
+<figure style="align: center;">
+    <img src="imagenes/04/04sesion.png" width="700">
+    <figcaption>Comunicació amb sessions</figcaption>
+</figure>
+
+<p>Les operacions que podem realitzar amb la sessió són:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
+<span class="linenos" data-linenos="2 "></span><span class="nb">session_start</span><span class="p">();</span> <span class="c1">// carga la sesión</span>
+<span class="linenos" data-linenos="3 "></span><span class="nb">session_regenerate_id</span><span class="p">(</span><span class="k">true</span><span class="p">);</span> <span class="c1">// regenera el id</span>
+<span class="linenos" data-linenos="4 "></span><span class="nb">session_id</span><span class="p">()</span> <span class="c1">// devuelve el id</span>
+<span class="linenos" data-linenos="5 "></span><span class="nv">$_SESSION</span><span class="p">[</span><span class="nx">clave</span><span class="p">]</span> <span class="o">=</span> <span class="nx">valor</span><span class="p">;</span> <span class="c1">// inserción</span>
+<span class="linenos" data-linenos="6 "></span><span class="nb">session_destroy</span><span class="p">();</span> <span class="c1">// destruye la sesión</span>
+<span class="linenos" data-linenos="7 "></span><span class="nb">unset</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="nx">clave</span><span class="p">];</span> <span class="c1">// borrado</span>
+</code></pre></div>
+<p>Veurem mitjançant un exemple com podem inserir en un pàgina dades en la sessió per a posteriorment en una altra pàgina accedir a aqueixes dades. Per exemple, en <code>sesion.php</code> tindríem</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="c1">// Iniciar sessió</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="nb">session_start</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="nb">session_regenerate_id</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 5 "></span>
+<span class="linenos" data-linenos=" 6 "></span><span class="c1">// Establir valors de sessió</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;usuari&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;JohnDoe&#39;</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;rol&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;admin&#39;</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 9 "></span>
+<span class="linenos" data-linenos="10 "></span><span class="cp">?&gt;</span>
+</code></pre></div>
+<p>I posteriorment podem accedir a la sessió en <code>sesion1.php</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="nb">session_start</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="c1">// Recuperar valors de sessió</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="k">echo</span> <span class="s1">&#39;Usuari: &#39;</span> <span class="o">.</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;usuari&#39;</span><span class="p">]</span> <span class="o">.</span> <span class="s1">&#39;&lt;br&gt;&#39;</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="k">echo</span> <span class="s1">&#39;Rol: &#39;</span> <span class="o">.</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;rol&#39;</span><span class="p">]</span> <span class="o">.</span> <span class="s1">&#39;&lt;br&gt;&#39;</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span><span class="c1">// Tancar sessió de forma segura</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="nb">session_unset</span><span class="p">();</span>  <span class="c1">// Eliminar totes les variables de sessió</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="nb">session_destroy</span><span class="p">();</span>  <span class="c1">// Destruir la sessió</span>
+<span class="linenos" data-linenos="10 "></span><span class="cp">?&gt;</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Configurant la sessió en <code>php.ini</code></p>
+<p>Les següent propietats de <code>php.ini</code> permeten configurar alguns aspectes de la sessió:</p>
+<ul>
+<li><code>session.save_handler</code>: controlador que gestiona com s'emmagatzema (<code>files</code>)</li>
+<li><code>session.save_path</code>: ruta on s'emmagatzemen els arxius amb les dades (si tenim un clúster, podríem usar <code>/mnt/sessions</code> en tots els servidor de manera que apunten a una carpeta compartida)</li>
+<li><code>session.name</code>: nom de la sessió (<code>PHSESSID</code>)</li>
+<li><code>session.acte_start</code>: Es pot fer que s'autocarregue amb cada script. Per defecte està deshabilitat</li>
+<li><code>session.cookie_lifetime</code>: temps de vida per defecte</li>
+</ul>
+</div>
+<p>Més informació en la <a href="https://www.php.net/manual/es/session.configuration.php">documentació oficial</a>.</p>
+<h3 id="serialitzacio-en-php">Serialització en PHP<a class="headerlink" href="#serialitzacio-en-php" title="Permanent link">&para;</a></h3>
+<p>La serialització és el procés de convertir una estructura de dades o un objecte en una seqüència de caràcters que pot ser fàcilment emmagatzemada o transmesa i després reconstruïda. PHP proporciona dos funcions principals per a això: serialize() i unserialize().</p>
+<ol>
+<li>serialize()
+   La funció serialize() en PHP s'utilitza per a convertir una estructura de dades o un objecte en una representació de cadena.</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">$data = array(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;);</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">$serialized_data = serialize($data);</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">echo $serialized_data;</span>
+</code></pre></div>
+Eixida </p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">a:3:{i:0;s:1:&quot;a&quot;;i:1;s:1:&quot;b&quot;;i:2;s:1:&quot;c&quot;;}</span>
+</code></pre></div>
+<ol start="2">
+<li>unserialize()
+   La funció unserialize() en PHP s'utilitza per a convertir la representació de cadena serialitzada de nou en una estructura de dades o un objecte.</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">$original_data = unserialize($serialized_data);</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">print_r($original_data);</span>
+</code></pre></div>
+<p>Eixida</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">Array</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">(</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">    [0] =&gt; a</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">    [1] =&gt; b</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">    [2] =&gt; c</span>
+<span class="linenos" data-linenos="6 "></span><span class="x">)</span>
+</code></pre></div>
+<h4 id="utilitzant-amb-sessions">Utilitzant amb Sessions<a class="headerlink" href="#utilitzant-amb-sessions" title="Permanent link">&para;</a></h4>
+<p>Les sessions en PHP permeten emmagatzemar informació d'usuari per ser utilitzada en diverses pàgines. Pot ser útil serialitzar dades per a emmagatzemar-les en una sessió:</p>
+<p>Iniciant una sessió i emmagatzemant dades serialitzades:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">session_start();</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">session_regenerate_id(true);</span>
+<span class="linenos" data-linenos="3 "></span>
+<span class="linenos" data-linenos="4 "></span><span class="x">$data = array(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;);</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">$_SESSION[&#39;data_serialitzada&#39;] = serialize($data);</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">session_start();</span>
+<span class="linenos" data-linenos="2 "></span>
+<span class="linenos" data-linenos="3 "></span><span class="x">if (isset($_SESSION[&#39;data_serialitzada&#39;])) {</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">$data = unserialize($_SESSION[&#39;data_serialitzada&#39;]);</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">print_r($data);</span>
+<span class="linenos" data-linenos="6 "></span><span class="x">}</span>
+</code></pre></div>
+<p>Consideracions de Seguretat:
+És crucial entendre que la funció unserialize() pot ser perillosa si s'usa amb dades que no són de confiança, ja que podria portar a l'execució de codi arbitrari. Per això, mai has de deserialitzar dades que vinguen d'una font desconeguda o no fiable sense validar-les prèviament.</p>
+<h2 id="3autenticacio-dusuaris">3.Autenticació d'usuaris<a class="headerlink" href="#3autenticacio-dusuaris" title="Permanent link">&para;</a></h2>
+<h3 id="mecanismes-dautenticacio-dusuaris">Mecanismes d'Autenticació d'Usuaris<a class="headerlink" href="#mecanismes-dautenticacio-dusuaris" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Mecanisme d'Autenticació</th>
+<th>Característiques</th>
+<th>Avantatges</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Bàsica (usuari/contrasenya)</strong></td>
+<td>Es requereix un nom d'usuari i una contrasenya per accedir.</td>
+<td>Fàcil d'implementar, àmpliament utilitzada.</td>
+</tr>
+<tr>
+<td><strong>Cookies</strong></td>
+<td>Emmagatzema informació d'autenticació en el navegador de l'usuari.</td>
+<td>Persistència d'inici de sessió, personalització d'experiència.</td>
+</tr>
+<tr>
+<td><strong>Sessions</strong></td>
+<td>Manté l'estat d'autenticació en el servidor amb una identificació de sessió única.</td>
+<td>Major seguretat, evita la necessitat d'emmagatzemar informació sensible al client.</td>
+</tr>
+<tr>
+<td><strong>OAuth</strong></td>
+<td>Permet als usuaris accedir a recursos sense compartir les seves credencials.</td>
+<td>Seguretat millorada, experiència d'usuari simplificada.</td>
+</tr>
+<tr>
+<td><strong>JWT (JSON Web Token)</strong></td>
+<td>Utilitza tokens basats en JSON per a l'autenticació.</td>
+<td>Lliure d'estat, fàcil de compartir entre diferents serveis.</td>
+</tr>
+<tr>
+<td><strong>SAML (Security Assertion Markup Language)</strong></td>
+<td>Utilitza XML per a intercanviar dades d'autenticació entre l'usuari i el servei.</td>
+<td>Integració amb sistemes d'autenticació empresarial, alt nivell de seguretat.</td>
+</tr>
+<tr>
+<td><strong>Autenticació multifactor (MFA)</strong></td>
+<td>Requereix múltiples formes de verificació (per exemple, contrasenya + codi SMS).</td>
+<td>Seguretat augmentada, redueix el risc de compromís de comptes.</td>
+</tr>
+</tbody>
+</table>
+<h4 id="exemple-amb-sessions">Exemple amb sessions<a class="headerlink" href="#exemple-amb-sessions" title="Permanent link">&para;</a></h4>
+<p>Una sessió estableix una relació anònima amb un usuari particular, de manera que podem saber si és el mateix usuari entre dues peticions diferents. Si preparem un sistema de login, podrem saber qui utilitza la nostra aplicació.</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="c1">// Llista d&#39;usuaris predefinits amb contrasenyes en text pla</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="nv">$users</span> <span class="o">=</span> <span class="p">[</span>
+<span class="linenos" data-linenos=" 4 "></span>    <span class="s1">&#39;user1@example.com&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;password1&#39;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 5 "></span>    <span class="s1">&#39;user2@example.com&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;password2&#39;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="p">];</span>
+<span class="linenos" data-linenos=" 7 "></span>
+<span class="linenos" data-linenos=" 8 "></span><span class="c1">// Convertir les contrasenyes a un format encriptat</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="k">foreach</span> <span class="p">(</span><span class="nv">$users</span> <span class="k">as</span> <span class="nv">$email</span> <span class="o">=&gt;</span> <span class="nv">$password</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos="10 "></span>    <span class="nv">$users</span><span class="p">[</span><span class="nv">$email</span><span class="p">]</span> <span class="o">=</span> <span class="nb">password_hash</span><span class="p">(</span><span class="nv">$password</span><span class="p">,</span> <span class="nx">PASSWORD_BCRYPT</span><span class="p">);</span>
+<span class="linenos" data-linenos="11 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="12 "></span>
+<span class="linenos" data-linenos="13 "></span><span class="c1">// Formulari d&#39;autenticació</span>
+<span class="linenos" data-linenos="14 "></span><span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;login&#39;</span><span class="p">]))</span> <span class="p">{</span>
+<span class="linenos" data-linenos="15 "></span>    <span class="nv">$email</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;email&#39;</span><span class="p">];</span>
+<span class="linenos" data-linenos="16 "></span>    <span class="nv">$password</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">];</span>
+<span class="linenos" data-linenos="17 "></span>
+<span class="linenos" data-linenos="18 "></span>    <span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$users</span><span class="p">[</span><span class="nv">$email</span><span class="p">])</span> <span class="o">&amp;&amp;</span> <span class="nb">password_verify</span><span class="p">(</span><span class="nv">$password</span><span class="p">,</span> <span class="nv">$users</span><span class="p">[</span><span class="nv">$email</span><span class="p">]))</span> <span class="p">{</span>
+<span class="linenos" data-linenos="19 "></span>        <span class="c1">// L&#39;usuari està autenticat</span>
+<span class="linenos" data-linenos="20 "></span>        <span class="nb">session_start</span><span class="p">();</span>
+<span class="linenos" data-linenos="21 "></span>        <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;user&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$email</span><span class="p">;</span>
+<span class="linenos" data-linenos="22 "></span>        <span class="k">echo</span> <span class="s2">&quot;Login successful. Welcome, &quot;</span> <span class="o">.</span> <span class="nv">$email</span><span class="p">;</span>
+<span class="linenos" data-linenos="23 "></span>    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<span class="linenos" data-linenos="24 "></span>        <span class="c1">// Credencials incorrectes</span>
+<span class="linenos" data-linenos="25 "></span>        <span class="k">echo</span> <span class="s2">&quot;Invalid email or password.&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos="26 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="27 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="28 "></span><span class="cp">?&gt;</span>
+<span class="linenos" data-linenos="29 "></span><span class="x">&lt;form method=&quot;post&quot;&gt;</span>
+<span class="linenos" data-linenos="30 "></span><span class="x">    Email: &lt;input type=&quot;email&quot; name=&quot;email&quot; required&gt;</span>
+<span class="linenos" data-linenos="31 "></span><span class="x">    Password: &lt;input type=&quot;password&quot; name=&quot;password&quot; required&gt;</span>
+<span class="linenos" data-linenos="32 "></span><span class="x">    &lt;button type=&quot;submit&quot; name=&quot;login&quot;&gt;Login&lt;/button&gt;</span>
+<span class="linenos" data-linenos="33 "></span><span class="x">&lt;/form&gt;</span>
+</code></pre></div>
+Aquest exemple mostra com mantenir l'estat de la sessió d'un usuari una vegada autenticat.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="nb">session_start</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 3 "></span>
+<span class="linenos" data-linenos=" 4 "></span><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;user&#39;</span><span class="p">]))</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 5 "></span>    <span class="nb">header</span><span class="p">(</span><span class="s2">&quot;Location: login.php&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="k">exit</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="p">}</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span><span class="c1">// Mostra la pàgina només si l&#39;usuari està autenticat</span>
+<span class="linenos" data-linenos="10 "></span><span class="k">echo</span> <span class="s2">&quot;Welcome, &quot;</span> <span class="o">.</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;user&#39;</span><span class="p">];</span>
+<span class="linenos" data-linenos="11 "></span><span class="cp">?&gt;</span>
+</code></pre></div>
+<p>Finalment, necessitem l'opció de tancar la sessió que col·loquem en <code>logout.php</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
+<span class="linenos" data-linenos="2 "></span><span class="c1">// Recuperamos la información de la sesión</span>
+<span class="linenos" data-linenos="3 "></span><span class="nb">session_start</span><span class="p">();</span>
+<span class="linenos" data-linenos="4 "></span>
+<span class="linenos" data-linenos="5 "></span><span class="c1">// Y la destruimos</span>
+<span class="linenos" data-linenos="6 "></span><span class="nb">session_destroy</span><span class="p">();</span>
+<span class="linenos" data-linenos="7 "></span><span class="nb">header</span><span class="p">(</span><span class="s2">&quot;Location: index.php&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="8 "></span><span class="cp">?&gt;</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Autenticació en producció</p>
+<p>En l'actualitat l'autenticació d'usuari no es realitza gestionant la sessió direcamente, sinó que es realitza mitjançant algun framekwork que abstrau tot el procés o la integració de mecanismes d'autenticació tipus <em>OAuth</em>, com estudiarem en l'última unitat mitjançant <em>Laravel</em>.</p>
+</div>
+<h4 id="exemple-amb-cookies">Exemple amb cookies<a class="headerlink" href="#exemple-amb-cookies" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="c1">// Llista d&#39;usuaris predefinits amb contrasenyes en text pla</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="nv">$users</span> <span class="o">=</span> <span class="p">[</span>
+<span class="linenos" data-linenos=" 4 "></span>    <span class="s1">&#39;user1@example.com&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;password1&#39;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 5 "></span>    <span class="s1">&#39;user2@example.com&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;password2&#39;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="p">];</span>
+<span class="linenos" data-linenos=" 7 "></span>
+<span class="linenos" data-linenos=" 8 "></span><span class="c1">// Convertir les contrasenyes a un format encriptat</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="k">foreach</span> <span class="p">(</span><span class="nv">$users</span> <span class="k">as</span> <span class="nv">$email</span> <span class="o">=&gt;</span> <span class="nv">$password</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos="10 "></span>    <span class="nv">$users</span><span class="p">[</span><span class="nv">$email</span><span class="p">]</span> <span class="o">=</span> <span class="nb">password_hash</span><span class="p">(</span><span class="nv">$password</span><span class="p">,</span> <span class="nx">PASSWORD_BCRYPT</span><span class="p">);</span>
+<span class="linenos" data-linenos="11 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="12 "></span>
+<span class="linenos" data-linenos="13 "></span><span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;login&#39;</span><span class="p">]))</span> <span class="p">{</span>
+<span class="linenos" data-linenos="14 "></span>    <span class="nv">$email</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;email&#39;</span><span class="p">];</span>
+<span class="linenos" data-linenos="15 "></span>    <span class="nv">$password</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;password&#39;</span><span class="p">];</span>
+<span class="linenos" data-linenos="16 "></span>
+<span class="linenos" data-linenos="17 "></span>    <span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$users</span><span class="p">[</span><span class="nv">$email</span><span class="p">])</span> <span class="o">&amp;&amp;</span> <span class="nb">password_verify</span><span class="p">(</span><span class="nv">$password</span><span class="p">,</span> <span class="nv">$users</span><span class="p">[</span><span class="nv">$email</span><span class="p">]))</span> <span class="p">{</span>
+<span class="linenos" data-linenos="18 "></span>        <span class="c1">// Establir una cookie d&#39;autenticació</span>
+<span class="linenos" data-linenos="19 "></span>        <span class="nb">setcookie</span><span class="p">(</span><span class="s2">&quot;user&quot;</span><span class="p">,</span> <span class="nv">$email</span><span class="p">,</span> <span class="nb">time</span><span class="p">()</span> <span class="o">+</span> <span class="p">(</span><span class="mi">86400</span> <span class="o">*</span> <span class="mi">30</span><span class="p">),</span> <span class="s2">&quot;/&quot;</span><span class="p">);</span> <span class="c1">// 86400 = 1 dia</span>
+<span class="linenos" data-linenos="20 "></span>        <span class="k">echo</span> <span class="s2">&quot;Login successful. Welcome, &quot;</span> <span class="o">.</span> <span class="nv">$email</span><span class="p">;</span>
+<span class="linenos" data-linenos="21 "></span>    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<span class="linenos" data-linenos="22 "></span>        <span class="c1">// Credencials incorrectes</span>
+<span class="linenos" data-linenos="23 "></span>        <span class="k">echo</span> <span class="s2">&quot;Invalid email or password.&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos="24 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="25 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="26 "></span>
+<span class="linenos" data-linenos="27 "></span><span class="c1">// Llegir la cookie</span>
+<span class="linenos" data-linenos="28 "></span><span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_COOKIE</span><span class="p">[</span><span class="s1">&#39;user&#39;</span><span class="p">]))</span> <span class="p">{</span>
+<span class="linenos" data-linenos="29 "></span>    <span class="k">echo</span> <span class="s2">&quot;Welcome back, &quot;</span> <span class="o">.</span> <span class="nv">$_COOKIE</span><span class="p">[</span><span class="s1">&#39;user&#39;</span><span class="p">];</span>
+<span class="linenos" data-linenos="30 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="31 "></span><span class="cp">?&gt;</span>
+<span class="linenos" data-linenos="32 "></span><span class="x">&lt;form method=&quot;post&quot;&gt;</span>
+<span class="linenos" data-linenos="33 "></span><span class="x">    Email: &lt;input type=&quot;email&quot; name=&quot;email&quot; required&gt;</span>
+<span class="linenos" data-linenos="34 "></span><span class="x">    Password: &lt;input type=&quot;password&quot; name=&quot;password&quot; required&gt;</span>
+<span class="linenos" data-linenos="35 "></span><span class="x">    &lt;button type=&quot;submit&quot; name=&quot;login&quot;&gt;Login&lt;/button&gt;</span>
+<span class="linenos" data-linenos="36 "></span><span class="x">&lt;/form&gt;</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Seguretat en cookies</p>
+<p>Les cookies són vulnerables a atacs com <em>Cross-Site Scripting (XSS)</em> i <em>Cross-Site Request Forgery (CSRF)</em>. Per a protegir-les, s'ha de configurar la cookie com a segura i només accessible a través de la web.</p>
+</div>
+<h4 id="exemple-amb-jwt">Exemple amb JWT<a class="headerlink" href="#exemple-amb-jwt" title="Permanent link">&para;</a></h4>
+<p>Aquest exemple mostra com generar i verificar un JWT per a l'autenticació.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="k">function</span> <span class="nf">base64UrlEncode</span><span class="p">(</span><span class="nv">$data</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 3 "></span>    <span class="k">return</span> <span class="nb">rtrim</span><span class="p">(</span><span class="nb">strtr</span><span class="p">(</span><span class="nb">base64_encode</span><span class="p">(</span><span class="nv">$data</span><span class="p">),</span> <span class="s1">&#39;+/&#39;</span><span class="p">,</span> <span class="s1">&#39;-_&#39;</span><span class="p">),</span> <span class="s1">&#39;=&#39;</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="p">}</span>
+<span class="linenos" data-linenos=" 5 "></span>
+<span class="linenos" data-linenos=" 6 "></span><span class="k">function</span> <span class="nf">base64UrlDecode</span><span class="p">(</span><span class="nv">$data</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 7 "></span>    <span class="k">return</span> <span class="nb">base64_decode</span><span class="p">(</span><span class="nb">strtr</span><span class="p">(</span><span class="nv">$data</span><span class="p">,</span> <span class="s1">&#39;-_&#39;</span><span class="p">,</span> <span class="s1">&#39;+/&#39;</span><span class="p">));</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="p">}</span>
+<span class="linenos" data-linenos=" 9 "></span>
+<span class="linenos" data-linenos="10 "></span><span class="k">function</span> <span class="nf">createJWT</span><span class="p">(</span><span class="nv">$header</span><span class="p">,</span> <span class="nv">$payload</span><span class="p">,</span> <span class="nv">$secret</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos="11 "></span>    <span class="nv">$headerEncoded</span> <span class="o">=</span> <span class="nx">base64UrlEncode</span><span class="p">(</span><span class="nb">json_encode</span><span class="p">(</span><span class="nv">$header</span><span class="p">));</span>
+<span class="linenos" data-linenos="12 "></span>    <span class="nv">$payloadEncoded</span> <span class="o">=</span> <span class="nx">base64UrlEncode</span><span class="p">(</span><span class="nb">json_encode</span><span class="p">(</span><span class="nv">$payload</span><span class="p">));</span>
+<span class="linenos" data-linenos="13 "></span>
+<span class="linenos" data-linenos="14 "></span>    <span class="nv">$signature</span> <span class="o">=</span> <span class="nb">hash_hmac</span><span class="p">(</span><span class="s1">&#39;sha256&#39;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">$headerEncoded</span><span class="s2">.</span><span class="si">$payloadEncoded</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nv">$secret</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
+<span class="linenos" data-linenos="15 "></span>    <span class="nv">$signatureEncoded</span> <span class="o">=</span> <span class="nx">base64UrlEncode</span><span class="p">(</span><span class="nv">$signature</span><span class="p">);</span>
+<span class="linenos" data-linenos="16 "></span>
+<span class="linenos" data-linenos="17 "></span>    <span class="k">return</span> <span class="s2">&quot;</span><span class="si">$headerEncoded</span><span class="s2">.</span><span class="si">$payloadEncoded</span><span class="s2">.</span><span class="si">$signatureEncoded</span><span class="s2">&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos="18 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="19 "></span>
+<span class="linenos" data-linenos="20 "></span><span class="k">function</span> <span class="nf">verifyJWT</span><span class="p">(</span><span class="nv">$jwt</span><span class="p">,</span> <span class="nv">$secret</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos="21 "></span>    <span class="k">list</span><span class="p">(</span><span class="nv">$headerEncoded</span><span class="p">,</span> <span class="nv">$payloadEncoded</span><span class="p">,</span> <span class="nv">$signatureEncoded</span><span class="p">)</span> <span class="o">=</span> <span class="nb">explode</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">,</span> <span class="nv">$jwt</span><span class="p">);</span>
+<span class="linenos" data-linenos="22 "></span>
+<span class="linenos" data-linenos="23 "></span>    <span class="nv">$signature</span> <span class="o">=</span> <span class="nx">base64UrlDecode</span><span class="p">(</span><span class="nv">$signatureEncoded</span><span class="p">);</span>
+<span class="linenos" data-linenos="24 "></span>    <span class="nv">$expectedSignature</span> <span class="o">=</span> <span class="nb">hash_hmac</span><span class="p">(</span><span class="s1">&#39;sha256&#39;</span><span class="p">,</span> <span class="s2">&quot;</span><span class="si">$headerEncoded</span><span class="s2">.</span><span class="si">$payloadEncoded</span><span class="s2">&quot;</span><span class="p">,</span> <span class="nv">$secret</span><span class="p">,</span> <span class="k">true</span><span class="p">);</span>
+<span class="linenos" data-linenos="25 "></span>
+<span class="linenos" data-linenos="26 "></span>    <span class="k">if</span> <span class="p">(</span><span class="nv">$signature</span> <span class="o">===</span> <span class="nv">$expectedSignature</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos="27 "></span>        <span class="k">return</span> <span class="nb">json_decode</span><span class="p">(</span><span class="nx">base64UrlDecode</span><span class="p">(</span><span class="nv">$payloadEncoded</span><span class="p">));</span>
+<span class="linenos" data-linenos="28 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="29 "></span>
+<span class="linenos" data-linenos="30 "></span>    <span class="k">return</span> <span class="k">false</span><span class="p">;</span>
+<span class="linenos" data-linenos="31 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="32 "></span>
+<span class="linenos" data-linenos="33 "></span><span class="c1">// Exemples d&#39;ús</span>
+<span class="linenos" data-linenos="34 "></span><span class="nv">$header</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;alg&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;HS256&#39;</span><span class="p">,</span> <span class="s1">&#39;typ&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;JWT&#39;</span><span class="p">];</span>
+<span class="linenos" data-linenos="35 "></span><span class="nv">$payload</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;email&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;user1@example.com&#39;</span><span class="p">,</span> <span class="s1">&#39;exp&#39;</span> <span class="o">=&gt;</span> <span class="nb">time</span><span class="p">()</span> <span class="o">+</span> <span class="mi">3600</span><span class="p">];</span>
+<span class="linenos" data-linenos="36 "></span><span class="nv">$secret</span> <span class="o">=</span> <span class="s1">&#39;your_secret_key&#39;</span><span class="p">;</span>
+<span class="linenos" data-linenos="37 "></span>
+<span class="linenos" data-linenos="38 "></span><span class="nv">$jwt</span> <span class="o">=</span> <span class="nx">createJWT</span><span class="p">(</span><span class="nv">$header</span><span class="p">,</span> <span class="nv">$payload</span><span class="p">,</span> <span class="nv">$secret</span><span class="p">);</span>
+<span class="linenos" data-linenos="39 "></span><span class="k">echo</span> <span class="s2">&quot;JWT: &quot;</span> <span class="o">.</span> <span class="nv">$jwt</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos="40 "></span>
+<span class="linenos" data-linenos="41 "></span><span class="nv">$decoded</span> <span class="o">=</span> <span class="nx">verifyJWT</span><span class="p">(</span><span class="nv">$jwt</span><span class="p">,</span> <span class="nv">$secret</span><span class="p">);</span>
+<span class="linenos" data-linenos="42 "></span><span class="k">if</span> <span class="p">(</span><span class="nv">$decoded</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos="43 "></span>    <span class="k">echo</span> <span class="s2">&quot;JWT valid: &quot;</span> <span class="o">.</span> <span class="nb">json_encode</span><span class="p">(</span><span class="nv">$decoded</span><span class="p">)</span> <span class="o">.</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos="44 "></span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<span class="linenos" data-linenos="45 "></span>    <span class="k">echo</span> <span class="s2">&quot;Invalid JWT.</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos="46 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="47 "></span><span class="cp">?&gt;</span>
+</code></pre></div>
+<h4 id="exemple-amb-mfa">Exemple amb MFA<a class="headerlink" href="#exemple-amb-mfa" title="Permanent link">&para;</a></h4>
+<p>Aquest exemple mostra com afegir una capa addicional d'autenticació amb un codi MFA.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="nb">session_start</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 3 "></span>
+<span class="linenos" data-linenos=" 4 "></span><span class="k">function</span> <span class="nf">sendMFACode</span><span class="p">()</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 5 "></span>    <span class="nv">$code</span> <span class="o">=</span> <span class="nb">rand</span><span class="p">(</span><span class="mi">100000</span><span class="p">,</span> <span class="mi">999999</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;mfa_code&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$code</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 7 "></span>
+<span class="linenos" data-linenos=" 8 "></span>    <span class="c1">// Simular enviament de codi via email o SMS</span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="k">echo</span> <span class="s2">&quot;Verification code: </span><span class="si">$code</span><span class="s2">&quot;</span><span class="p">;</span> <span class="c1">// En un entorn real, envia el codi per email o SMS.</span>
+<span class="linenos" data-linenos="10 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="11 "></span>
+<span class="linenos" data-linenos="12 "></span><span class="k">function</span> <span class="nf">verifyMFACode</span><span class="p">(</span><span class="nv">$inputCode</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos="13 "></span>    <span class="k">return</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;mfa_code&#39;</span><span class="p">])</span> <span class="o">&amp;&amp;</span> <span class="nv">$inputCode</span> <span class="o">==</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;mfa_code&#39;</span><span class="p">];</span>
+<span class="linenos" data-linenos="14 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="15 "></span>
+<span class="linenos" data-linenos="16 "></span><span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;send_code&#39;</span><span class="p">]))</span> <span class="p">{</span>
+<span class="linenos" data-linenos="17 "></span>    <span class="nx">sendMFACode</span><span class="p">();</span>
+<span class="linenos" data-linenos="18 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="19 "></span>
+<span class="linenos" data-linenos="20 "></span><span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;verify_code&#39;</span><span class="p">]))</span> <span class="p">{</span>
+<span class="linenos" data-linenos="21 "></span>    <span class="k">if</span> <span class="p">(</span><span class="nx">verifyMFACode</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;mfa_code&#39;</span><span class="p">]))</span> <span class="p">{</span>
+<span class="linenos" data-linenos="22 "></span>        <span class="k">echo</span> <span class="s2">&quot;MFA successful.&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos="23 "></span>    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<span class="linenos" data-linenos="24 "></span>        <span class="k">echo</span> <span class="s2">&quot;Invalid verification code.&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos="25 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="26 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="27 "></span><span class="cp">?&gt;</span>
+<span class="linenos" data-linenos="28 "></span><span class="x">&lt;form method=&quot;post&quot;&gt;</span>
+<span class="linenos" data-linenos="29 "></span><span class="x">    &lt;button type=&quot;submit&quot; name=&quot;send_code&quot;&gt;Send MFA Code&lt;/button&gt;</span>
+<span class="linenos" data-linenos="30 "></span><span class="x">&lt;/form&gt;</span>
+<span class="linenos" data-linenos="31 "></span><span class="x">&lt;form method=&quot;post&quot;&gt;</span>
+<span class="linenos" data-linenos="32 "></span><span class="x">    MFA Code: &lt;input type=&quot;text&quot; name=&quot;mfa_code&quot; required&gt;</span>
+<span class="linenos" data-linenos="33 "></span><span class="x">    &lt;button type=&quot;submit&quot; name=&quot;verify_code&quot;&gt;Verify MFA Code&lt;/button&gt;</span>
+<span class="linenos" data-linenos="34 "></span><span class="x">&lt;/form&gt;</span>
+</code></pre></div>
+<h4 id="exemple-amb-oauth">Exemple amb OAuth<a class="headerlink" href="#exemple-amb-oauth" title="Permanent link">&para;</a></h4>
+<p>Per a OAuth, es pot utilitzar un proveïdor extern com Google per autenticar els usuaris. Ho vorem més avant.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="k">require_once</span> <span class="s1">&#39;vendor/autoload.php&#39;</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 3 "></span>
+<span class="linenos" data-linenos=" 4 "></span><span class="nv">$provider</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">League\OAuth2\Client\Provider\Google</span><span class="p">([</span>
+<span class="linenos" data-linenos=" 5 "></span>    <span class="s1">&#39;clientId&#39;</span>     <span class="o">=&gt;</span> <span class="s1">&#39;your-client-id&#39;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="s1">&#39;clientSecret&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;your-client-secret&#39;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 7 "></span>    <span class="s1">&#39;redirectUri&#39;</span>  <span class="o">=&gt;</span> <span class="s1">&#39;your-redirect-url&#39;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="p">]);</span>
+<span class="linenos" data-linenos=" 9 "></span>
+<span class="linenos" data-linenos="10 "></span><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;code&#39;</span><span class="p">]))</span> <span class="p">{</span>
+<span class="linenos" data-linenos="11 "></span>    <span class="nv">$authUrl</span> <span class="o">=</span> <span class="nv">$provider</span><span class="o">-&gt;</span><span class="na">getAuthorizationUrl</span><span class="p">();</span>
+<span class="linenos" data-linenos="12 "></span>    <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;oauth2state&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$provider</span><span class="o">-&gt;</span><span class="na">getState</span><span class="p">();</span>
+<span class="linenos" data-linenos="13 "></span>    <span class="nb">header</span><span class="p">(</span><span class="s1">&#39;Location: &#39;</span> <span class="o">.</span> <span class="nv">$authUrl</span><span class="p">);</span>
+<span class="linenos" data-linenos="14 "></span>    <span class="k">exit</span><span class="p">;</span>
+<span class="linenos" data-linenos="15 "></span><span class="p">}</span> <span class="k">elseif</span> <span class="p">(</span><span class="k">empty</span><span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;state&#39;</span><span class="p">])</span> <span class="o">||</span> <span class="p">(</span><span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;state&#39;</span><span class="p">]</span> <span class="o">!==</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;oauth2state&#39;</span><span class="p">]))</span> <span class="p">{</span>
+<span class="linenos" data-linenos="16 "></span>    <span class="nb">unset</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;oauth2state&#39;</span><span class="p">]);</span>
+<span class="linenos" data-linenos="17 "></span>    <span class="k">exit</span><span class="p">(</span><span class="s1">&#39;Invalid state&#39;</span><span class="p">);</span>
+<span class="linenos" data-linenos="18 "></span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<span class="linenos" data-linenos="19 "></span>    <span class="nv">$token</span> <span class="o">=</span> <span class="nv">$provider</span><span class="o">-&gt;</span><span class="na">getAccessToken</span><span class="p">(</span><span class="s1">&#39;authorization_code&#39;</span><span class="p">,</span> <span class="p">[</span>
+<span class="linenos" data-linenos="20 "></span>        <span class="s1">&#39;code&#39;</span> <span class="o">=&gt;</span> <span class="nv">$_GET</span><span class="p">[</span><span class="s1">&#39;code&#39;</span><span class="p">]</span>
+<span class="linenos" data-linenos="21 "></span>    <span class="p">]);</span>
+<span class="linenos" data-linenos="22 "></span>
+<span class="linenos" data-linenos="23 "></span>    <span class="nv">$user</span> <span class="o">=</span> <span class="nv">$provider</span><span class="o">-&gt;</span><span class="na">getResourceOwner</span><span class="p">(</span><span class="nv">$token</span><span class="p">);</span>
+<span class="linenos" data-linenos="24 "></span>    <span class="nv">$userData</span> <span class="o">=</span> <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">toArray</span><span class="p">();</span>
+<span class="linenos" data-linenos="25 "></span>
+<span class="linenos" data-linenos="26 "></span>    <span class="c1">// Mostra la informació de l&#39;usuari</span>
+<span class="linenos" data-linenos="27 "></span>    <span class="k">echo</span> <span class="s1">&#39;Hello, &#39;</span> <span class="o">.</span> <span class="nv">$userData</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">];</span>
+<span class="linenos" data-linenos="28 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="29 "></span><span class="cp">?&gt;</span>
+</code></pre></div>
+<h2 id="4-referencies-addicionals">4. Referències Addicionals<a class="headerlink" href="#4-referencies-addicionals" title="Permanent link">&para;</a></h2>
+<p>A continuació es presenten diverses referències que poden ajudar-te a aprofundir en el tema de la gestió de sessions i cookies en PHP.</p>
+<h3 id="documentacio-oficial-de-php">Documentació Oficial de PHP<a class="headerlink" href="#documentacio-oficial-de-php" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Sessions a PHP</strong>: La documentació oficial de PHP proporciona informació detallada sobre l'ús de sessions, incloent-hi exemples pràctics i consells de millors pràctiques.</p>
+<ul>
+<li><a href="https://www.php.net/manual/es/book.session.php">Sessions a PHP</a></li>
+</ul>
+</li>
+<li>
+<p><strong>Cookies a PHP</strong>: Trobaràs informació oficial sobre com treballar amb cookies en PHP, amb descripcions d'atributs com <code>HttpOnly</code>, <code>Secure</code> i <code>SameSite</code>.</p>
+<ul>
+<li><a href="https://www.php.net/manual/es/function.setcookie.php">Cookies a PHP</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="articles-i-blocs-tecnics">Articles i Blocs Tècnics<a class="headerlink" href="#articles-i-blocs-tecnics" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>PHP Sessions: Tips &amp; Tricks</strong>: Aquest article discuteix tècniques avançades per gestionar sessions en PHP, amb exemples i millors pràctiques per a la seguretat.</p>
+<ul>
+<li><a href="https://www.php.net/manual/en/features.sessions.php">PHP Sessions: Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li>
+<p><strong>Handling Cookies Securely in PHP</strong>: Una guia sobre com manejar cookies de manera segura, destacant estratègies per protegir les dades de l'usuari.</p>
+<ul>
+<li><a href="https://paragonie.com/blog/2015/04/secure-authentication-php-with-long-term-persistence">Handling Cookies Securely in PHP</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="llibres-sobre-php">Llibres sobre PHP<a class="headerlink" href="#llibres-sobre-php" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>"Modern PHP: New Features and Good Practices"</strong> de Josh Lockhart: Aquest llibre cobreix les novetats de PHP i les millors pràctiques, incloent la seguretat de sessions i cookies.</p>
+</li>
+<li>
+<p><strong>"PHP Objects, Patterns, and Practice"</strong> de M. Zandstra: Proporciona una visió profunda sobre el disseny de programari amb PHP, incloent-hi aspectes de seguretat relacionats amb sessions i cookies.</p>
+</li>
+</ul>
+<h3 id="guies-de-seguretat-en-desenvolupament-web">Guies de Seguretat en Desenvolupament Web<a class="headerlink" href="#guies-de-seguretat-en-desenvolupament-web" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>OWASP Secure Coding Practices</strong>: Aquesta guia de OWASP ofereix una ràpida referència sobre les millors pràctiques de codificació segura, útils per a protegir les teves aplicacions web.</p>
+<ul>
+<li><a href="https://owasp.org/www-project-secure-coding-practices-quick-reference-guide/">OWASP Secure Coding Practices</a></li>
+</ul>
+</li>
+<li>
+<p><strong>OWASP Cheat Sheet on Session Management</strong>: Una fitxa de referència ràpida de OWASP sobre la gestió de sessions, proporcionant consells de seguretat essencials.</p>
+<ul>
+<li><a href="https://cheatsheetseries.owasp.org/cheatsheets/Session_Management_Cheat_Sheet.html">OWASP Cheat Sheet on Session Management</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="conferencies-i-videos-educatius">Conferències i Vídeos Educatius<a class="headerlink" href="#conferencies-i-videos-educatius" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>PHP Conference YouTube Channel</strong>: El canal de YouTube de PHP Conference ofereix vídeos de conferències i xerrades que cobreixen una varietat de temes, incloent sessions i seguretat.</p>
+<ul>
+<li><a href="https://www.youtube.com/user/phpvideos">PHP Conference YouTube Channel</a></li>
+</ul>
+</li>
+<li>
+<p><strong>Laracasts</strong>: Ofereix vídeos d'alta qualitat sobre desenvolupament en PHP i Laravel, amb temes rellevants per a sessions i cookies.</p>
+<ul>
+<li><a href="https://laracasts.com/">Laracasts</a></li>
+</ul>
+</li>
+</ul>
+<h3 id="tutorials-online-i-plataformes-educatives">Tutorials Online i Plataformes Educatives<a class="headerlink" href="#tutorials-online-i-plataformes-educatives" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Stack Overflow PHP Sessions Tag</strong>: Un lloc de consulta on trobar respostes a preguntes freqüents sobre la gestió de sessions en PHP.</p>
+<ul>
+<li><a href="https://stackoverflow.com/questions/tagged/php+session">Stack Overflow PHP Sessions Tag</a></li>
+</ul>
+</li>
+<li>
+<p><strong>Cursos a Udemy sobre PHP</strong>: Cursos que cobreixen des de conceptes bàsics fins a avançats de PHP, incloent-hi la gestió de sessions i cookies.</p>
+<ul>
+<li><a href="https://www.udemy.com/topic/php/">Cursos a Udemy sobre PHP</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="5exercicis">5.Exercicis<a class="headerlink" href="#5exercicis" title="Permanent link">&para;</a></h2>
+<h3 id="bateria-dexercicis-solucionats-per-a-la-unitat-de-programacio-web">Bateria d'Exercicis Solucionats per a la Unitat de Programació web<a class="headerlink" href="#bateria-dexercicis-solucionats-per-a-la-unitat-de-programacio-web" title="Permanent link">&para;</a></h3>
+<h4 id="exercici-1-crear-una-sessio">Exercici 1: Crear una sessió<a class="headerlink" href="#exercici-1-crear-una-sessio" title="Permanent link">&para;</a></h4>
+<p>1.Crea una pàgina PHP que inicialitze una sessió i emmagatzeme el nom i el rol d'un usuari en variables de sessió. Mostra aquests valors a la pàgina web.</p>
+<details>
+<summary>Solució</summary>
+
+    <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="c1">// Iniciar sessió</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="nb">session_start</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="c1">// Emmagatzemar informació de l&#39;usuari en la sessió</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;nom&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Joan&#39;</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;rol&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Administrador&#39;</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span><span class="k">echo</span> <span class="s1">&#39;Benvingut, &#39;</span> <span class="o">.</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;nom&#39;</span><span class="p">]</span> <span class="o">.</span> <span class="s1">&#39;&lt;br&gt;&#39;</span><span class="p">;</span>
+<span class="linenos" data-linenos="10 "></span><span class="k">echo</span> <span class="s1">&#39;Rol: &#39;</span> <span class="o">.</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;rol&#39;</span><span class="p">]</span> <span class="o">.</span> <span class="s1">&#39;&lt;br&gt;&#39;</span><span class="p">;</span>
+<span class="linenos" data-linenos="11 "></span><span class="cp">?&gt;</span>
+</code></pre></div>
+</details>
+
+<h4 id="exercici-2-regenerar-lid-de-sessio">Exercici 2: Regenerar l'ID de sessió<a class="headerlink" href="#exercici-2-regenerar-lid-de-sessio" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Modifica l'exercici anterior per regenerar l'ID de sessió just després d'emmagatzemar la informació de l'usuari.</li>
+</ol>
+<details>
+<summary>Solució</summary>
+
+    <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="c1">// Iniciar sessió</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="nb">session_start</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="c1">// Emmagatzemar informació de l&#39;usuari en la sessió</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;nom&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Joan&#39;</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;rol&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Administrador&#39;</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span><span class="c1">// Regenerar l&#39;ID de sessió</span>
+<span class="linenos" data-linenos="10 "></span><span class="nb">session_regenerate_id</span><span class="p">(</span><span class="k">true</span><span class="p">);</span>
+<span class="linenos" data-linenos="11 "></span>
+<span class="linenos" data-linenos="12 "></span><span class="k">echo</span> <span class="s1">&#39;Benvingut, &#39;</span> <span class="o">.</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;nom&#39;</span><span class="p">]</span> <span class="o">.</span> <span class="s1">&#39;&lt;br&gt;&#39;</span><span class="p">;</span>
+<span class="linenos" data-linenos="13 "></span><span class="k">echo</span> <span class="s1">&#39;Rol: &#39;</span> <span class="o">.</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;rol&#39;</span><span class="p">]</span> <span class="o">.</span> <span class="s1">&#39;&lt;br&gt;&#39;</span><span class="p">;</span>
+<span class="linenos" data-linenos="14 "></span><span class="cp">?&gt;</span>
+</code></pre></div>
+</details>
+
+<h4 id="exercici-3-tancar-la-sessio">Exercici 3: Tancar la sessió<a class="headerlink" href="#exercici-3-tancar-la-sessio" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Escriu un script PHP que elimine totes les variables de sessió i destrueixi la sessió quan l'usuari tanqui sessió.</li>
+</ol>
+<details>
+<summary>Solució</summary>
+
+    <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="c1">// Iniciar sessió</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="nb">session_start</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="c1">// Eliminar totes les variables de sessió</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="nb">session_unset</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 7 "></span>
+<span class="linenos" data-linenos=" 8 "></span><span class="c1">// Destruir la sessió</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="nb">session_destroy</span><span class="p">();</span>
+<span class="linenos" data-linenos="10 "></span><span class="cp">?&gt;</span>
+</code></pre></div>
+</details>
+
+<h4 id="exercici-4-crear-una-cookie-segura">Exercici 4: Crear una cookie segura<a class="headerlink" href="#exercici-4-crear-una-cookie-segura" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Escriu un script PHP per crear una cookie que emmagatzeme el nom d'usuari amb els atributs de seguretat <code>HttpOnly</code>, <code>Secure</code> i <code>SameSite</code>.</li>
+</ol>
+<details>
+<summary>Solució</summary>
+
+    <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="c1">// Crear una cookie segura</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="nb">setcookie</span><span class="p">(</span>
+<span class="linenos" data-linenos=" 4 "></span>    <span class="s1">&#39;nom_usuari&#39;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 5 "></span>    <span class="s1">&#39;Joan&#39;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="p">[</span>
+<span class="linenos" data-linenos=" 7 "></span>        <span class="s1">&#39;expires&#39;</span> <span class="o">=&gt;</span> <span class="nb">time</span><span class="p">()</span> <span class="o">+</span> <span class="mi">3600</span><span class="p">,</span> <span class="c1">// 1 hora</span>
+<span class="linenos" data-linenos=" 8 "></span>        <span class="s1">&#39;path&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;/&#39;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 9 "></span>        <span class="s1">&#39;domain&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="c1">// Domini actual</span>
+<span class="linenos" data-linenos="10 "></span>        <span class="s1">&#39;secure&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span> <span class="c1">// Només HTTPS</span>
+<span class="linenos" data-linenos="11 "></span>        <span class="s1">&#39;httponly&#39;</span> <span class="o">=&gt;</span> <span class="k">true</span><span class="p">,</span> <span class="c1">// Només accessible via HTTP</span>
+<span class="linenos" data-linenos="12 "></span>        <span class="s1">&#39;samesite&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Lax&#39;</span> <span class="c1">// o &#39;Strict&#39; o &#39;None&#39;</span>
+<span class="linenos" data-linenos="13 "></span>    <span class="p">]</span>
+<span class="linenos" data-linenos="14 "></span><span class="p">);</span>
+<span class="linenos" data-linenos="15 "></span><span class="cp">?&gt;</span>
+</code></pre></div>
+</details>
+
+<h4 id="exercici-5-llegir-i-modificar-una-cookie">Exercici 5: Llegir i modificar una cookie<a class="headerlink" href="#exercici-5-llegir-i-modificar-una-cookie" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Crea una pàgina PHP que llegeixca el valor d'una cookie anomenada <code>nom_usuari</code> i la modifique afegint un prefix de salutació.</li>
+</ol>
+<details>
+<summary>Solució</summary>
+
+    <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="c1">// Llegir el valor de la cookie</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_COOKIE</span><span class="p">[</span><span class="s1">&#39;nom_usuari&#39;</span><span class="p">]))</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 4 "></span>    <span class="nv">$nomUsuari</span> <span class="o">=</span> <span class="nv">$_COOKIE</span><span class="p">[</span><span class="s1">&#39;nom_usuari&#39;</span><span class="p">];</span>
+<span class="linenos" data-linenos=" 5 "></span>    <span class="k">echo</span> <span class="s1">&#39;Hola, &#39;</span> <span class="o">.</span> <span class="nv">$nomUsuari</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span>    <span class="c1">// Modificar el valor de la cookie</span>
+<span class="linenos" data-linenos=" 8 "></span>    <span class="nv">$salutacio</span> <span class="o">=</span> <span class="s1">&#39;Hola, &#39;</span> <span class="o">.</span> <span class="nv">$nomUsuari</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="nb">setcookie</span><span class="p">(</span><span class="s1">&#39;nom_usuari&#39;</span><span class="p">,</span> <span class="nv">$salutacio</span><span class="p">,</span> <span class="nb">time</span><span class="p">()</span> <span class="o">+</span> <span class="mi">3600</span><span class="p">,</span> <span class="s1">&#39;/&#39;</span><span class="p">);</span>
+<span class="linenos" data-linenos="10 "></span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<span class="linenos" data-linenos="11 "></span>    <span class="k">echo</span> <span class="s1">&#39;Cookie not found.&#39;</span><span class="p">;</span>
+<span class="linenos" data-linenos="12 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="13 "></span><span class="cp">?&gt;</span>
+</code></pre></div>
+</details>
+
+<h4 id="exercici-6-aplicacio-de-gestio-dusuaris-amb-sessions">Exercici 6: Aplicació de gestió d'usuaris amb sessions<a class="headerlink" href="#exercici-6-aplicacio-de-gestio-dusuaris-amb-sessions" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Desenvolupa una aplicació PHP amb dos scripts: un per iniciar sessió i un altre per tancar sessió. L'aplicació ha de permetre que l'usuari introdueixca el seu nom d'usuari i vega un missatge de benvinguda una vegada haja iniciat sessió.</li>
+</ol>
+<details>
+<summary>Solució</summary>
+
+    <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">&lt;!-- login.php --&gt;</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="cp">&lt;?php</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="nb">session_start</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="k">if</span> <span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">&#39;REQUEST_METHOD&#39;</span><span class="p">]</span> <span class="o">===</span> <span class="s1">&#39;POST&#39;</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="nv">$nomUsuari</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;nom_usuari&#39;</span><span class="p">];</span>
+<span class="linenos" data-linenos=" 7 "></span>
+<span class="linenos" data-linenos=" 8 "></span>    <span class="c1">// Emmagatzemar el nom d&#39;usuari en la sessió</span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;nom_usuari&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$nomUsuari</span><span class="p">;</span>
+<span class="linenos" data-linenos="10 "></span>
+<span class="linenos" data-linenos="11 "></span>    <span class="c1">// Redireccionar a la pàgina de benvinguda</span>
+<span class="linenos" data-linenos="12 "></span>    <span class="nb">header</span><span class="p">(</span><span class="s1">&#39;Location: welcome.php&#39;</span><span class="p">);</span>
+<span class="linenos" data-linenos="13 "></span>    <span class="k">exit</span><span class="p">();</span>
+<span class="linenos" data-linenos="14 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="15 "></span><span class="cp">?&gt;</span>
+<span class="linenos" data-linenos="16 "></span>
+<span class="linenos" data-linenos="17 "></span><span class="x">&lt;!DOCTYPE html&gt;</span>
+<span class="linenos" data-linenos="18 "></span><span class="x">&lt;html&gt;</span>
+<span class="linenos" data-linenos="19 "></span><span class="x">&lt;head&gt;</span>
+<span class="linenos" data-linenos="20 "></span><span class="x">    &lt;title&gt;Iniciar Sessió&lt;/title&gt;</span>
+<span class="linenos" data-linenos="21 "></span><span class="x">&lt;/head&gt;</span>
+<span class="linenos" data-linenos="22 "></span><span class="x">&lt;body&gt;</span>
+<span class="linenos" data-linenos="23 "></span><span class="x">    &lt;h2&gt;Iniciar Sessió&lt;/h2&gt;</span>
+<span class="linenos" data-linenos="24 "></span><span class="x">    &lt;form method=&quot;post&quot; action=&quot;login.php&quot;&gt;</span>
+<span class="linenos" data-linenos="25 "></span><span class="x">        &lt;label for=&quot;nom_usuari&quot;&gt;Nom d&#39;usuari:&lt;/label&gt;</span>
+<span class="linenos" data-linenos="26 "></span><span class="x">        &lt;input type=&quot;text&quot; id=&quot;nom_usuari&quot; name=&quot;nom_usuari&quot; required&gt;</span>
+<span class="linenos" data-linenos="27 "></span><span class="x">        &lt;button type=&quot;submit&quot;&gt;Iniciar Sessió&lt;/button&gt;</span>
+<span class="linenos" data-linenos="28 "></span><span class="x">    &lt;/form&gt;</span>
+<span class="linenos" data-linenos="29 "></span><span class="x">&lt;/body&gt;</span>
+<span class="linenos" data-linenos="30 "></span><span class="x">&lt;/html&gt;</span>
+</code></pre></div>
+
+    <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">&lt;!-- logout.php --&gt;</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="cp">&lt;?php</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="nb">session_start</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="c1">// Tancar sessió de forma segura</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="nb">session_unset</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="nb">session_destroy</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span><span class="c1">// Redireccionar a la pàgina de login</span>
+<span class="linenos" data-linenos="10 "></span><span class="nb">header</span><span class="p">(</span><span class="s1">&#39;Location: login.php&#39;</span><span class="p">);</span>
+<span class="linenos" data-linenos="11 "></span><span class="k">exit</span><span class="p">();</span>
+<span class="linenos" data-linenos="12 "></span><span class="cp">?&gt;</span>
+</code></pre></div>
+
+    <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">&lt;!-- wellcome.php --&gt;</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="cp">&lt;?php</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="nb">session_start</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;nom_usuari&#39;</span><span class="p">]))</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="c1">// Redireccionar a la pàgina de login si no s&#39;ha iniciat sessió</span>
+<span class="linenos" data-linenos=" 7 "></span>    <span class="nb">header</span><span class="p">(</span><span class="s1">&#39;Location: login.php&#39;</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 8 "></span>    <span class="k">exit</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="10 "></span>
+<span class="linenos" data-linenos="11 "></span><span class="nv">$nomUsuari</span> <span class="o">=</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;nom_usuari&#39;</span><span class="p">];</span>
+<span class="linenos" data-linenos="12 "></span><span class="cp">?&gt;</span>
+<span class="linenos" data-linenos="13 "></span>
+<span class="linenos" data-linenos="14 "></span><span class="x">&lt;!DOCTYPE html&gt;</span>
+<span class="linenos" data-linenos="15 "></span><span class="x">&lt;html&gt;</span>
+<span class="linenos" data-linenos="16 "></span><span class="x">&lt;head&gt;</span>
+<span class="linenos" data-linenos="17 "></span><span class="x">    &lt;title&gt;Benvingut&lt;/title&gt;</span>
+<span class="linenos" data-linenos="18 "></span><span class="x">&lt;/head&gt;</span>
+<span class="linenos" data-linenos="19 "></span><span class="x">&lt;body&gt;</span>
+<span class="linenos" data-linenos="20 "></span><span class="x">    &lt;h2&gt;Benvingut, </span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nb">htmlspecialchars</span><span class="p">(</span><span class="nv">$nomUsuari</span><span class="p">);</span> <span class="cp">?&gt;</span><span class="x">!&lt;/h2&gt;</span>
+<span class="linenos" data-linenos="21 "></span><span class="x">    &lt;p&gt;Aquesta és la teva pàgina de benvinguda.&lt;/p&gt;</span>
+<span class="linenos" data-linenos="22 "></span><span class="x">    &lt;a href=&quot;logout.php&quot;&gt;Tancar Sessió&lt;/a&gt;</span>
+<span class="linenos" data-linenos="23 "></span><span class="x">&lt;/body&gt;</span>
+<span class="linenos" data-linenos="24 "></span><span class="x">&lt;/html&gt;</span>
+</code></pre></div>
+
+</details>
+
+<h4 id="exercici-7-aplicacio-de-gestio-de-preferencies-amb-cookies">Exercici 7: Aplicació de gestió de preferències amb cookies<a class="headerlink" href="#exercici-7-aplicacio-de-gestio-de-preferencies-amb-cookies" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Crea una aplicació PHP que permeta als usuaris seleccionar el seu color preferit, emmagatzemant aquesta informació en una cookie. La pàgina hauria de mostrar el color preferit de l'usuari en futures visites.</li>
+</ol>
+<details>
+<summary>Solució</summary>
+
+    <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="c1">// Llegir el color preferit de la cookie</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="nv">$colorPreferit</span> <span class="o">=</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$_COOKIE</span><span class="p">[</span><span class="s1">&#39;color_preferit&#39;</span><span class="p">])</span> <span class="o">?</span> <span class="nv">$_COOKIE</span><span class="p">[</span><span class="s1">&#39;color_preferit&#39;</span><span class="p">]</span> <span class="o">:</span> <span class="s1">&#39;blau&#39;</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="k">if</span> <span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s1">&#39;REQUEST_METHOD&#39;</span><span class="p">]</span> <span class="o">===</span> <span class="s1">&#39;POST&#39;</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="nv">$colorPreferit</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;color_preferit&#39;</span><span class="p">];</span>
+<span class="linenos" data-linenos=" 7 "></span>
+<span class="linenos" data-linenos=" 8 "></span>    <span class="c1">// Emmagatzemar el color preferit en una cookie</span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="nb">setcookie</span><span class="p">(</span><span class="s1">&#39;color_preferit&#39;</span><span class="p">,</span> <span class="nv">$colorPreferit</span><span class="p">,</span> <span class="nb">time</span><span class="p">()</span> <span class="o">+</span> <span class="mi">3600</span><span class="p">,</span> <span class="s1">&#39;/&#39;</span><span class="p">);</span>
+<span class="linenos" data-linenos="10 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="11 "></span><span class="cp">?&gt;</span>
+<span class="linenos" data-linenos="12 "></span>
+<span class="linenos" data-linenos="13 "></span><span class="x">&lt;!DOCTYPE html&gt;</span>
+<span class="linenos" data-linenos="14 "></span><span class="x">&lt;html&gt;</span>
+<span class="linenos" data-linenos="15 "></span><span class="x">&lt;head&gt;</span>
+<span class="linenos" data-linenos="16 "></span><span class="x">    &lt;title&gt;Preferències de Color&lt;/title&gt;</span>
+<span class="linenos" data-linenos="17 "></span><span class="x">&lt;/head&gt;</span>
+<span class="linenos" data-linenos="18 "></span><span class="x">&lt;body style=&quot;background-color: </span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$colorPreferit</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="x">&quot;&gt;</span>
+<span class="linenos" data-linenos="19 "></span><span class="x">    &lt;h2&gt;Preferències de Color&lt;/h2&gt;</span>
+<span class="linenos" data-linenos="20 "></span><span class="x">    &lt;form method=&quot;post&quot;&gt;</span>
+<span class="linenos" data-linenos="21 "></span><span class="x">        &lt;label for=&quot;color_preferit&quot;&gt;Color preferit:&lt;/label&gt;</span>
+<span class="linenos" data-linenos="22 "></span><span class="x">        &lt;select id=&quot;color_preferit&quot; name=&quot;color_preferit&quot;&gt;</span>
+<span class="linenos" data-linenos="23 "></span><span class="x">            &lt;option value=&quot;blau&quot; </span><span class="cp">&lt;?php</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$colorPreferit</span> <span class="o">===</span> <span class="s1">&#39;blau&#39;</span><span class="p">)</span> <span class="k">echo</span> <span class="s1">&#39;selected&#39;</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="x">&gt;Blau&lt;/option&gt;</span>
+<span class="linenos" data-linenos="24 "></span><span class="x">            &lt;option value=&quot;vermell&quot; </span><span class="cp">&lt;?php</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$colorPreferit</span> <span class="o">===</span> <span class="s1">&#39;vermell&#39;</span><span class="p">)</span> <span class="k">echo</span> <span class="s1">&#39;selected&#39;</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="x">&gt;Vermell&lt;/option&gt;</span>
+<span class="linenos" data-linenos="25 "></span><span class="x">            &lt;option value=&quot;verd&quot; </span><span class="cp">&lt;?php</span> <span class="k">if</span> <span class="p">(</span><span class="nv">$colorPreferit</span> <span class="o">===</span> <span class="s1">&#39;verd&#39;</span><span class="p">)</span> <span class="k">echo</span> <span class="s1">&#39;selected&#39;</span><span class="p">;</span> <span class="cp">?&gt;</span><span class="x">&gt;Verd&lt;/option&gt;</span>
+<span class="linenos" data-linenos="26 "></span><span class="x">        &lt;/select&gt;</span>
+<span class="linenos" data-linenos="27 "></span><span class="x">        &lt;button type=&quot;submit&quot;&gt;Guardar&lt;/button&gt;</span>
+<span class="linenos" data-linenos="28 "></span><span class="x">    &lt;/form&gt;</span>
+<span class="linenos" data-linenos="29 "></span><span class="x">&lt;/body&gt;</span>
+<span class="linenos" data-linenos="30 "></span><span class="x">&lt;/html&gt;</span>
+</code></pre></div>
+</details>
+
+<h3 id="exercicis-proposats">Exercicis proposats<a class="headerlink" href="#exercicis-proposats" title="Permanent link">&para;</a></h3>
+<h4 id="exercici-1-sistema-de-carret-de-compres-sense-base-de-dades">Exercici 1: Sistema de Carret de Compres sense Base de Dades<a class="headerlink" href="#exercici-1-sistema-de-carret-de-compres-sense-base-de-dades" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>Descripció:</strong></li>
+</ol>
+<p>Desenvolupa una aplicació PHP que permeta als usuaris afegir productes a un carret de compres i mostrar el contingut del carret. Utilitza sessions per a mantindre l'estat del carret entre pàgines.</p>
+<ol start="2">
+<li><strong>Requisits:</strong><ul>
+<li>Crear una pàgina on l'usuari puga seleccionar productes.</li>
+<li>Afegir els productes seleccionats a un carret emmagatzemat en una sessió.</li>
+<li>Mostrar un resum del carret amb els productes afegits i les seues quantitats.</li>
+<li>Permetre que l'usuari elimine productes del carret.</li>
+</ul>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;ca&quot;</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 4 "></span>    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 5 "></span>    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Selecció de productes<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 8 "></span>    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Afegir productes al carret<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;carret.php&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&quot;POST&quot;</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="10 "></span>        <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;producte&quot;</span><span class="p">&gt;</span>Tria un producte:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="11 "></span>        <span class="p">&lt;</span><span class="nt">select</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;producte&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;producte&quot;</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="12 "></span>            <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Poma&quot;</span><span class="p">&gt;</span>Poma<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="13 "></span>            <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Plàtan&quot;</span><span class="p">&gt;</span>Plàtan<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="14 "></span>            <span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Taronja&quot;</span><span class="p">&gt;</span>Taronja<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="15 "></span>        <span class="p">&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="16 "></span>        <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;Afegir al carret&quot;</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="17 "></span>    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="18 "></span>    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;carret.php&quot;</span><span class="p">&gt;</span>Veure carret<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="19 "></span><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="20 "></span><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<h4 id="exercici-2-autenticacio-basica-dusuaris-amb-sessions">Exercici 2: Autenticació Bàsica d'Usuaris amb Sessions<a class="headerlink" href="#exercici-2-autenticacio-basica-dusuaris-amb-sessions" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>Descripció:</strong></li>
+</ol>
+<p>Crea una aplicació PHP que permeta als usuaris iniciar sessió mitjançant un formulari. Utilitza sessions per a mantindre l'estat d'autenticació de l'usuari i mostrar missatges personalitzats basats en aquest estat.</p>
+<ol start="2">
+<li><strong>Requisits:</strong><ul>
+<li>Crear un formulari d'inici de sessió que sol·licite el nom d'usuari i la contrasenya.</li>
+<li>Emmagatzemar l'estat d'autenticació en una sessió després de verificar les credencials.</li>
+<li>Mostrar una pàgina de benvinguda personalitzada per a l'usuari autenticat.</li>
+<li>Proporcionar un enllaç per a tancar sessió i destruir la sessió.</li>
+</ul>
+</li>
+</ol>
+<h4 id="exercici-3-recordatori-dusuari-amb-cookies">Exercici 3: Recordatori d'Usuari amb Cookies<a class="headerlink" href="#exercici-3-recordatori-dusuari-amb-cookies" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>Descripció:</strong></li>
+</ol>
+<p>Afig una funcionalitat de "recordar-me" a l'exercici anterior que emmagatzeme el nom d'usuari en una cookie i permeta a l'usuari ser recordat en futures visites al lloc web.</p>
+<ol start="2">
+<li><strong>Requisits:</strong><ul>
+<li>Afig una opció de "recordar-me" al formulari d'inici de sessió.</li>
+<li>Emmagatzemar el nom d'usuari en una cookie quan l'opció és seleccionada.</li>
+<li>Comprovar la cookie en futures visites i iniciar sessió automàticament si la cookie existeix.</li>
+<li>Assegurar que les cookies es configuren amb atributs de seguretat adequats (<code>HttpOnly</code>, <code>Secure</code>, <code>SameSite</code>).</li>
+</ul>
+</li>
+</ol>
+<h4 id="exercici-4-formulari-de-contacte-amb-proteccio-csrf">Exercici 4: Formulari de Contacte amb Protecció CSRF<a class="headerlink" href="#exercici-4-formulari-de-contacte-amb-proteccio-csrf" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>Descripció:</strong></li>
+</ol>
+<p>Desenvolupa un formulari de contacte que permeta als usuaris enviar missatges i implementa protecció CSRF per a assegurar que les sol·licituds siguen legítimes.</p>
+<ol start="2">
+<li><strong>Requisits:</strong><ul>
+<li>Crear un formulari de contacte amb camps per al nom, correu electrònic i missatge.</li>
+<li>Generar i emmagatzemar un token CSRF en una sessió quan es carrega el formulari.</li>
+<li>Incloure el token CSRF com a camp ocult en el formulari.</li>
+<li>Verificar el token CSRF quan s'envia el formulari i mostrar un missatge de confirmació si és vàlid.</li>
+<li>Mostrar un missatge d'error si el token CSRF no és vàlid o no existeix.</li>
+</ul>
+</li>
+</ol>
+<h4 id="exercici-5-seguiment-dactivitat-de-lusuari-amb-sessions">Exercici 5: Seguiment d'Activitat de l'Usuari amb Sessions<a class="headerlink" href="#exercici-5-seguiment-dactivitat-de-lusuari-amb-sessions" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>Descripció:</strong></li>
+</ol>
+<p>Crea un sistema que registre les pàgines visitades per l'usuari durant una sessió i mostre aquesta informació quan l'usuari visita una pàgina d'activitat.</p>
+<ol start="2">
+<li><strong>Requisits:</strong><ul>
+<li>Emmagatzemar una llista de pàgines visitades per l'usuari en una sessió.</li>
+<li>Actualitzar la llista de pàgines cada vegada que l'usuari visite una nova pàgina.</li>
+<li>Crear una pàgina que mostre l'historial de pàgines visitades durant la sessió actual.</li>
+<li>Assegurar que l'historial es restableix quan l'usuari tanca la sessió.</li>
+</ul>
+</li>
+</ol>
+<h3 id="solucions"><a href="10solucions.html#tema-3-programacio-web">Solucions</a><a class="headerlink" href="#solucions" title="Permanent link">&para;</a></h3>
+<h2 id="6-enunciats-dels-projectes">6. Enunciats dels projectes<a class="headerlink" href="#6-enunciats-dels-projectes" title="Permanent link">&para;</a></h2>
+<h3 id="per-als-dos-projectes">Per als dos projectes<a class="headerlink" href="#per-als-dos-projectes" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Autenticació de Jugadors:</strong><ul>
+<li>Implementa un sistema d'autenticació bàsic que permeta als jugadors iniciar sessió abans de començar el joc. Utilitza sessions per a mantindre l'estat d'autenticació.</li>
+<li>Ha de servir per als dos jocs, "Penjat" i "4 en Ratlla".</li>
+<li>Fes que una vegada autenticar l'usuari puga triar a quin joc vol jugar (en la mateix pàgina).</li>
+<li>Protegeix els jocs per tal que no es puga jugar en cas de no estar autenticat.</li>
+</ul>
+</li>
+</ol>
+<h3 id="projecte-penjat">Projecte Penjat<a class="headerlink" href="#projecte-penjat" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Manteniment de l'Estat del Joc amb Sessions:</strong></p>
+<ul>
+<li>Utilitza sessions per a emmagatzemar l'estat actual del joc, incloent la paraula a endevinar, lletres endevinades, i el nombre d'intents restants.</li>
+</ul>
+</li>
+<li>
+<p><strong>Gestió de la Sessió del Joc:</strong></p>
+<ul>
+<li>Afegeix funcionalitats per a reiniciar el joc en qualsevol moment, reinicialitzant les variables de sessió per a començar una nova partida.</li>
+<li>Afegeix una opció per a tancar sessió i finalitzar la partida actual.</li>
+<li>Afegeix un funció per a saver si el joc ha acabat, ja siga perquè s'han endevinat totes les lletres o s'haguen arribat al màxim número d'intents permesos.</li>
+<li>Controla el final del joc</li>
+</ul>
+</li>
+<li>
+<p><strong>Cookies per a Recordar Jugadors:</strong></p>
+<ul>
+<li>Implementa cookies per a recordar els jugadors entre visites, permetent que l'usuari siga recordat si selecciona una opció de "Recordar-me" durant l'inici de sessió.</li>
+</ul>
+</li>
+<li>
+<p><strong>Seguretat i Autenticació:</strong></p>
+<ul>
+<li>Implementa un sistema d'autenticació bàsic per a garantir que només els jugadors autenticats puguen accedir al joc.</li>
+<li>Utilitza sessions per a mantenir l'estat d'autenticació i controlar l'accés a les funcionalitats del joc.</li>
+</ul>
+</li>
+</ol>
+<h4 id="consideracions-addicionals">Consideracions Addicionals<a class="headerlink" href="#consideracions-addicionals" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Resiliència del Joc:</strong> Implementa la lògica necessària per a manejar intents invàlids i mostrar missatges d'error adequats.</li>
+<li><strong>Millores d'Interfície:</strong> Afegix un enllaç o botó per a tancar sessió i una opció per a reiniciar el joc.</li>
+</ul>
+<hr />
+<h3 id="projecte-4-en-ratlla">Projecte "4 en Ratlla"<a class="headerlink" href="#projecte-4-en-ratlla" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p><strong>Gestió de l'Estat de la Graella amb Sessions:</strong></p>
+<ul>
+<li>Utilitza sessions per a emmagatzemar l'estat actual de la graella i el torn del jugador. Això permet mantenir la partida entre sol·licituds.</li>
+</ul>
+</li>
+<li>
+<p><strong>Manteniment de la Sessió entre Jugadors:</strong></p>
+<ul>
+<li>Emmagatzema l'identificador de cada jugador en sessions per a assegurar que el torn actual siga persistent entre sol·licituds.</li>
+<li>Afegeix funcionalitats per a reiniciar el joc en qualsevol moment, reinicialitzant les variables de sessió per a començar una nova partida.</li>
+<li>Afegeix una opció per a tancar sessió i finalitzar la partida actual.</li>
+<li>Afegeix un funció per a saver si el joc ha acabat, ja siga perquè s'ha fet 4 en ratlla  o s'haja completat el tauler.</li>
+<li>Controla el final del joc.</li>
+</ul>
+</li>
+<li>
+<p><strong>Cookies per a la Persistència d'Usuaris:</strong></p>
+<ul>
+<li>Permet l'ús de cookies per a recordar els jugadors entre visites si han seleccionat "Recordar-me". Utilitza cookies per a emmagatzemar l'últim jugador autenticat.</li>
+</ul>
+</li>
+<li>
+<p><strong>Seguretat i Autenticació:</strong></p>
+<ul>
+<li>Implementa un sistema d'autenticació bàsic per a garantir que només els jugadors autenticats puguen accedir al joc.</li>
+<li>Utilitza sessions per a mantenir l'estat d'autenticació i controlar l'accés a les funcionalitats del joc.</li>
+</ul>
+</li>
+<li>
+<p><strong>Addicional</strong></p>
+<ul>
+<li>Implementa la lògica per tal que el segon jugador siga la màquina (pots adaptar i/o millorar l'algorisme de baix).</li>
+<li>Controla el joc per a que no es puga seguir jugant una vegada acabat.</li>
+<li>Implementa un sistema de puntuació que otorgue 2 punts al guanyador i 1 a cadascú en cas d'empat.</li>
+</ul>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">function jugar(&amp;$graella,$jugadorActual){</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">       $opponent = $jugadorActual === 1 ? 2 : 1;</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">       // Comprovar si pots guanyar</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">       for ($col = 1; $col &lt;= COLUMNES; $col++) {</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">           if (isValidMove($graella, $col)) {</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">               $tempBoard = $graella;</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">               $coord = ferMoviment($tempBoard, $col, $jugadorActual);</span>
+<span class="linenos" data-linenos="10 "></span>
+<span class="linenos" data-linenos="11 "></span><span class="x">               if (fi_joc($tempBoard, $coord)) {</span>
+<span class="linenos" data-linenos="12 "></span><span class="x">                   return ferMoviment($graella,$col,$jugadorActual); // Guanyar immediatament</span>
+<span class="linenos" data-linenos="13 "></span><span class="x">               }</span>
+<span class="linenos" data-linenos="14 "></span><span class="x">           }</span>
+<span class="linenos" data-linenos="15 "></span><span class="x">       }</span>
+<span class="linenos" data-linenos="16 "></span>
+<span class="linenos" data-linenos="17 "></span><span class="x">       // Comprovar si l&#39;oponent pot guanyar i bloquejar</span>
+<span class="linenos" data-linenos="18 "></span><span class="x">       for ($col = 1; $col &lt;= COLUMNES; $col++) {</span>
+<span class="linenos" data-linenos="19 "></span><span class="x">           if (isValidMove($graella, $col)) {</span>
+<span class="linenos" data-linenos="20 "></span><span class="x">               $tempBoard = $graella;</span>
+<span class="linenos" data-linenos="21 "></span><span class="x">               $coord = ferMoviment($tempBoard, $col, $opponent);</span>
+<span class="linenos" data-linenos="22 "></span><span class="x">               if (fi_joc($tempBoard, $coord )) {</span>
+<span class="linenos" data-linenos="23 "></span><span class="x">                   return ferMoviment($graella,$col,$jugadorActual); // Bloquejar</span>
+<span class="linenos" data-linenos="24 "></span><span class="x">               }</span>
+<span class="linenos" data-linenos="25 "></span><span class="x">           }</span>
+<span class="linenos" data-linenos="26 "></span><span class="x">       }</span>
+<span class="linenos" data-linenos="27 "></span>
+<span class="linenos" data-linenos="28 "></span><span class="x">       // Estratègia: buscar el millor moviment</span>
+<span class="linenos" data-linenos="29 "></span><span class="x">       // Podem afegir més lògica aquí per seleccionar el millor moviment</span>
+<span class="linenos" data-linenos="30 "></span><span class="x">       $possibles = array();</span>
+<span class="linenos" data-linenos="31 "></span><span class="x">       for ($col = 1; $col &lt;= COLUMNES; $col++) {</span>
+<span class="linenos" data-linenos="32 "></span><span class="x">           if (isValidMove($graella, $col)) {</span>
+<span class="linenos" data-linenos="33 "></span><span class="x">               $possibles[] = $col; </span>
+<span class="linenos" data-linenos="34 "></span><span class="x">           }</span>
+<span class="linenos" data-linenos="35 "></span><span class="x">       }</span>
+<span class="linenos" data-linenos="36 "></span><span class="x">       if (count($possibles)&gt;2) {</span>
+<span class="linenos" data-linenos="37 "></span><span class="x">           $random = rand(-1,1);</span>
+<span class="linenos" data-linenos="38 "></span><span class="x">       }</span>
+<span class="linenos" data-linenos="39 "></span><span class="x">       $middle = (int) (count($possibles) / 2)+$random;</span>
+<span class="linenos" data-linenos="40 "></span><span class="x">       $inthemiddle = $possibles[$middle];</span>
+<span class="linenos" data-linenos="41 "></span><span class="x">       return ferMoviment($graella, $inthemiddle, $jugadorActual); </span>
+<span class="linenos" data-linenos="42 "></span>
+<span class="linenos" data-linenos="43 "></span><span class="x">       return -1; // Totes les columnes estan plenes</span>
+<span class="linenos" data-linenos="44 "></span><span class="x">}</span>
+</code></pre></div>
+<h4 id="consideracions-addicionals_1">Consideracions Addicionals<a class="headerlink" href="#consideracions-addicionals_1" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Lògica de Torn de Jugadors:</strong> Implementa la lògica necessària per a canviar de torn entre els jugadors utilitzant sessions.</li>
+<li><strong>Reinici de Partida:</strong> Afegeix una opció per a reiniciar el joc, que ha de restablir les sessions i permetre començar de nou.</li>
+<li><strong>Interfície d'Usuari Amigable:</strong> Assegura't que la interfície d'usuari és clara i proporciona indicacions visuals dels moviments i torns dels jugadors.</li>
+</ul>
+<h3 id="rubrica-davaluacio">Rúbrica d'Avaluació<a class="headerlink" href="#rubrica-davaluacio" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Criteri</th>
+<th>Excel·lent (4)</th>
+<th>Bé (3)</th>
+<th>Adequat (2)</th>
+<th>Insuficient (1)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Funcionalitat del Joc</strong></td>
+<td>El joc està completament funcional i sense errors.</td>
+<td>El joc està majoritàriament funcional amb errors mínims.</td>
+<td>El joc és funcional, però conté errors significatius.</td>
+<td>El joc no és funcional o està incomplet.</td>
+</tr>
+<tr>
+<td><strong>Ús de Sessions</strong></td>
+<td>Sessions ben implementades per a mantenir l'estat del joc.</td>
+<td>Sessions utilitzades correctament amb alguns problemes menors.</td>
+<td>Sessions utilitzades, però amb deficiències importants.</td>
+<td>No s'han utilitzat sessions o són incorrectes.</td>
+</tr>
+<tr>
+<td><strong>Ús de Cookies</strong></td>
+<td>Cookies ben utilitzades per a recordar els jugadors.</td>
+<td>Cookies utilitzades adequadament amb algunes millores possibles.</td>
+<td>Cookies utilitzades amb limitacions evidents.</td>
+<td>No s'han utilitzat cookies o són incorrectes.</td>
+</tr>
+<tr>
+<td><strong>Autenticació d'Usuaris</strong></td>
+<td>Autenticació segura i efectiva implementada.</td>
+<td>Autenticació implementada amb alguns problemes.</td>
+<td>Autenticació present però amb deficiències notables.</td>
+<td>No s'ha implementat autenticació o és incorrecta.</td>
+</tr>
+<tr>
+<td><strong>Interfície d'Usuari</strong></td>
+<td>Interfície atractiva i fàcil d'utilitzar.</td>
+<td>Interfície clara amb algunes millores possibles.</td>
+<td>Interfície funcional però poc intuïtiva.</td>
+<td>Interfície confusa i difícil d'utilitzar.</td>
+</tr>
+<tr>
+<td><strong>Seguretat</strong></td>
+<td>Totes les mesures de seguretat implementades correctament.</td>
+<td>Seguretat adequada amb algunes millores possibles.</td>
+<td>Mesures de seguretat bàsiques implementades.</td>
+<td>No s'han tingut en compte mesures de seguretat.</td>
+</tr>
+<tr>
+<td><strong>Comentaris i Codi</strong></td>
+<td>Codi ben comentat i fàcilment llegible.</td>
+<td>Codi clar amb comentaris adequats.</td>
+<td>Codi llegible però amb pocs comentaris.</td>
+<td>Codi desordenat i sense comentaris.</td>
+</tr>
+<tr>
+<td><strong>Innovació i Creativitat</strong></td>
+<td>El projecte mostra innovació significativa.</td>
+<td>Algunes idees creatives han estat implementades.</td>
+<td>Alguna creativitat present, però limitada.</td>
+<td>Cap creativitat o innovació en el projecte.</td>
+</tr>
+<tr>
+<td><strong>Punts addicionals</strong></td>
+<td>1 punt per cadascúna aconseguida.</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="explicacio-dels-criteris">Explicació dels Criteris<a class="headerlink" href="#explicacio-dels-criteris" title="Permanent link">&para;</a></h3>
+<h4 id="funcionalitat-del-joc">Funcionalitat del Joc<a class="headerlink" href="#funcionalitat-del-joc" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><strong>Excel·lent (4):</strong> El joc funciona completament segons les especificacions, amb totes les funcionalitats implementades i sense errors. Els jugadors poden interaccionar amb el joc tal com s'esperava i totes les accions es realitzen correctament.</p>
+</li>
+<li>
+<p><strong>Insuficient (1):</strong> El joc no és funcional, falten parts importants del codi o el joc no es pot jugar correctament.</p>
+</li>
+</ul>
+<h4 id="us-de-sessions">Ús de Sessions<a class="headerlink" href="#us-de-sessions" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><strong>Excel·lent (4):</strong> Les sessions s'utilitzen eficaçment per a mantenir l'estat del joc i de l'usuari entre sol·licituds. Les dades de la sessió es gestionen de manera adequada per a preservar l'experiència de l'usuari.</p>
+</li>
+<li>
+<p><strong>Insuficient (1):</strong> No s'han utilitzat sessions o la seva implementació és incorrecta, la qual cosa afecta negativament l'experiència de l'usuari.</p>
+</li>
+</ul>
+<h4 id="us-de-cookies">Ús de Cookies<a class="headerlink" href="#us-de-cookies" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><strong>Excel·lent (4):</strong> Les cookies s'utilitzen de manera efectiva per a recordar els jugadors entre sessions, amb la configuració adequada d'atributs de seguretat (<code>HttpOnly</code>, <code>Secure</code>, <code>SameSite</code>).</p>
+</li>
+<li>
+<p><strong>Insuficient (1):</strong> No s'han utilitzat cookies o la seva implementació és incorrecta, amb una configuració de seguretat deficient.</p>
+</li>
+</ul>
+<h4 id="autenticacio-dusuaris">Autenticació d'Usuaris<a class="headerlink" href="#autenticacio-dusuaris" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><strong>Excel·lent (4):</strong> L'autenticació dels usuaris és segura i eficient, amb mecanismes adequats per a validar les credencials i protegir la informació dels usuaris.</p>
+</li>
+<li>
+<p><strong>Insuficient (1):</strong> No s'ha implementat un sistema d'autenticació o el sistema present és insegur i defectuós.</p>
+</li>
+</ul>
+<h4 id="interficie-dusuari">Interfície d'Usuari<a class="headerlink" href="#interficie-dusuari" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><strong>Excel·lent (4):</strong> La interfície d'usuari és atractiva, clara i fàcil de navegar, proporcionant una experiència d'usuari òptima.</p>
+</li>
+<li>
+<p><strong>Insuficient (1):</strong> La interfície és confusa, difícil d'utilitzar o inacabada.</p>
+</li>
+</ul>
+<h4 id="seguretat">Seguretat<a class="headerlink" href="#seguretat" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><strong>Excel·lent (4):</strong> Totes les mesures de seguretat necessàries han estat implementades, incloent-hi la validació de dades d'entrada, protecció CSRF i altres pràctiques de seguretat recomanades.</p>
+</li>
+<li>
+<p><strong>Insuficient (1):</strong> No s'han tingut en compte mesures de seguretat, deixant el projecte vulnerable a possibles atacs.</p>
+</li>
+</ul>
+<h4 id="comentaris-i-codi">Comentaris i Codi<a class="headerlink" href="#comentaris-i-codi" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><strong>Excel·lent (4):</strong> El codi està ben comentat, és llegible i segueix bones pràctiques de programació.</p>
+</li>
+<li>
+<p><strong>Insuficient (1):</strong> El codi està desordenat, difícil de llegir i manca de comentaris explicatius.</p>
+</li>
+</ul>
+<h4 id="innovacio-i-creativitat">Innovació i Creativitat<a class="headerlink" href="#innovacio-i-creativitat" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><strong>Excel·lent (4):</strong> El projecte mostra un alt grau d'innovació i creativitat, oferint característiques o enfocaments únics que milloren el joc.</p>
+</li>
+<li>
+<p><strong>Insuficient (1):</strong> El projecte manca de creativitat o innovació, seguint únicament les instruccions bàsiques sense cap valor afegit.</p>
+</li>
+</ul>
+<hr />
+<h4 id="notes-addicionals">Notes Addicionals<a class="headerlink" href="#notes-addicionals" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Consistència del Codi:</strong> S'espera que el codi sigui consistent, utilitzant convencions de noms adequades i estructures de codi clares.</li>
+<li><strong>Adaptació de les Necessitats:</strong> Els criteris poden ser adaptats segons les necessitats específiques del curs o dels projectes individuals.</li>
+</ul>
+<h2 id="7-autoavaluacio-gestio-de-sessions-i-cookies">7. Autoavaluació: Gestió de Sessions i Cookies<a class="headerlink" href="#7-autoavaluacio-gestio-de-sessions-i-cookies" title="Permanent link">&para;</a></h2>
+<h4 id="exercici-1-funcions-de-les-cookies">Exercici 1: Funcions de les Cookies<a class="headerlink" href="#exercici-1-funcions-de-les-cookies" title="Permanent link">&para;</a></h4>
+<h5 id="pregunta">Pregunta:<a class="headerlink" href="#pregunta" title="Permanent link">&para;</a></h5>
+<p>Quina és la funció principal de les cookies en el context del desenvolupament web?</p>
+<h5 id="opcions">Opcions:<a class="headerlink" href="#opcions" title="Permanent link">&para;</a></h5>
+<form>
+  <input type="radio" id="q1a" name="question1" value="a">
+  <label for="q1a">a) Guardar els fitxers de l'usuari al servidor.</label><br>
+  <input type="radio" id="q1b" name="question1" value="b">
+  <label for="q1b">b) Emmagatzemar informació del client per personalitzar l'experiència d'usuari.</label><br>
+  <input type="radio" id="q1c" name="question1" value="c">
+  <label for="q1c">c) Executar codi al servidor.</label><br>
+  <input type="radio" id="q1d" name="question1" value="d">
+  <label for="q1d">d) Controlar la velocitat de la connexió a Internet.</label><br><br>
+  <input type="button" value="Comprovar" onclick="checkAnswer1()">
+</form>
+
+<p id="result1"></p>
+
+<script>
+function checkAnswer1() {
+    var correctAnswer = "b";
+    var radios = document.getElementsByName('question1');
+    var userAnswer;
+    for (var i = 0; i < radios.length; i++) {
+        if (radios[i].checked) {
+            userAnswer = radios[i].value;
+            break;
+        }
+    }
+    var resultText = userAnswer === correctAnswer ? "Correcte!" : "Incorrecte. La resposta correcta és b) Emmagatzemar informació del client per personalitzar l'experiència d'usuari.";
+    document.getElementById('result1').innerText = resultText;
+}
+</script>
+
+<h4 id="exercici-2-seguretat-de-les-cookies">Exercici 2: Seguretat de les Cookies<a class="headerlink" href="#exercici-2-seguretat-de-les-cookies" title="Permanent link">&para;</a></h4>
+<h5 id="pregunta_1">Pregunta:<a class="headerlink" href="#pregunta_1" title="Permanent link">&para;</a></h5>
+<p>Quins atributs de seguretat haurien de tindre les cookies per protegir-les contra atacs?</p>
+<h5 id="opcions_1">Opcions:<a class="headerlink" href="#opcions_1" title="Permanent link">&para;</a></h5>
+<form>
+  <input type="checkbox" id="q2a" name="question2" value="a">
+  <label for="q2a">a) Secure</label><br>
+  <input type="checkbox" id="q2b" name="question2" value="b">
+  <label for="q2b">b) HttpOnly</label><br>
+  <input type="checkbox" id="q2c" name="question2" value="c">
+  <label for="q2c">c) SameSite</label><br>
+  <input type="checkbox" id="q2d" name="question2" value="d">
+  <label for="q2d">d) CrossSite</label><br><br>
+  <input type="button" value="Comprovar" onclick="checkAnswer2()">
+</form>
+
+<p id="result2"></p>
+
+<script>
+function checkAnswer2() {
+    var correctAnswers = ["a", "b", "c"];
+    var checkboxes = document.getElementsByName('question2');
+    var userAnswers = [];
+    for (var i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i].checked) {
+            userAnswers.push(checkboxes[i].value);
+        }
+    }
+    userAnswers.sort();
+    var resultText = (JSON.stringify(userAnswers) === JSON.stringify(correctAnswers))
+        ? "Correcte!"
+        : "Incorrecte. Les respostes correctes són a) Secure, b) HttpOnly, c) SameSite.";
+    document.getElementById('result2').innerText = resultText;
+}
+</script>
+
+<h4 id="exercici-3-creacio-de-sessions-en-php">Exercici 3: Creació de Sessions en PHP<a class="headerlink" href="#exercici-3-creacio-de-sessions-en-php" title="Permanent link">&para;</a></h4>
+<h5 id="pregunta_2">Pregunta:<a class="headerlink" href="#pregunta_2" title="Permanent link">&para;</a></h5>
+<p>Quin dels següents passos és necessari per iniciar una sessió en PHP?</p>
+<h5 id="opcions_2">Opcions:<a class="headerlink" href="#opcions_2" title="Permanent link">&para;</a></h5>
+<form>
+  <input type="radio" id="q3a" name="question3" value="a">
+  <label for="q3a">a) Cridar a la funció session_start().</label><br>
+  <input type="radio" id="q3b" name="question3" value="b">
+  <label for="q3b">b) Utilitzar la funció session_open().</label><br>
+  <input type="radio" id="q3c" name="question3" value="c">
+  <label for="q3c">c) Assignar un valor a la variable $_SESSION.</label><br>
+  <input type="radio" id="q3d" name="question3" value="d">
+  <label for="q3d">d) No es necessita cap funció especial.</label><br><br>
+  <input type="button" value="Comprovar" onclick="checkAnswer3()">
+</form>
+
+<p id="result3"></p>
+
+<script>
+function checkAnswer3() {
+    var correctAnswer = "a";
+    var radios = document.getElementsByName('question3');
+    var userAnswer;
+    for (var i = 0; i < radios.length; i++) {
+        if (radios[i].checked) {
+            userAnswer = radios[i].value;
+            break;
+        }
+    }
+    var resultText = userAnswer === correctAnswer ? "Correcte!" : "Incorrecte. La resposta correcta és a) Cridar a la funció session_start().";
+    document.getElementById('result3').innerText = resultText;
+}
+</script>
+
+<h4 id="exercici-4-manteniment-dinformacio-en-sessions">Exercici 4: Manteniment d'Informació en Sessions<a class="headerlink" href="#exercici-4-manteniment-dinformacio-en-sessions" title="Permanent link">&para;</a></h4>
+<h5 id="pregunta_3">Pregunta:<a class="headerlink" href="#pregunta_3" title="Permanent link">&para;</a></h5>
+<p>Com es pot mantindre la informació d'un usuari durant la sessió d'una aplicació web?</p>
+<h5 id="opcions_3">Opcions:<a class="headerlink" href="#opcions_3" title="Permanent link">&para;</a></h5>
+<form>
+  <input type="radio" id="q4a" name="question4" value="a">
+  <label for="q4a">a) Utilitzant la variable global $GLOBALS.</label><br>
+  <input type="radio" id="q4b" name="question4" value="b">
+  <label for="q4b">b) Utilitzant la variable $_SESSION.</label><br>
+  <input type="radio" id="q4c" name="question4" value="c">
+  <label for="q4c">c) Utilitzant la variable $_COOKIE.</label><br>
+  <input type="radio" id="q4d" name="question4" value="d">
+  <label for="q4d">d) Utilitzant arxius temporals al servidor.</label><br><br>
+  <input type="button" value="Comprovar" onclick="checkAnswer4()">
+</form>
+
+<p id="result4"></p>
+
+<script>
+function checkAnswer4() {
+    var correctAnswer = "b";
+    var radios = document.getElementsByName('question4');
+    var userAnswer;
+    for (var i = 0; i < radios.length; i++) {
+        if (radios[i].checked) {
+            userAnswer = radios[i].value;
+            break;
+        }
+    }
+    var resultText = userAnswer === correctAnswer ? "Correcte!" : "Incorrecte. La resposta correcta és b) Utilitzant la variable $_SESSION.";
+    document.getElementById('result4').innerText = resultText;
+}
+</script>
+
+<h4 id="exercici-5-funcions-de-php-per-a-sessions">Exercici 5: Funcions de PHP per a Sessions<a class="headerlink" href="#exercici-5-funcions-de-php-per-a-sessions" title="Permanent link">&para;</a></h4>
+<h5 id="pregunta_4">Pregunta:<a class="headerlink" href="#pregunta_4" title="Permanent link">&para;</a></h5>
+<p>Quina funció de PHP es fa servir per destruir una sessió?</p>
+<h5 id="opcions_4">Opcions:<a class="headerlink" href="#opcions_4" title="Permanent link">&para;</a></h5>
+<form>
+  <input type="radio" id="q5a" name="question5" value="a">
+  <label for="q5a">a) session_destroy()</label><br>
+  <input type="radio" id="q5b" name="question5" value="b">
+  <label for="q5b">b) session_unset()</label><br>
+  <input type="radio" id="q5c" name="question5" value="c">
+  <label for="q5c">c) session_delete()</label><br>
+  <input type="radio" id="q5d" name="question5" value="d">
+  <label for="q5d">d) session_end()</label><br><br>
+  <input type="button" value="Comprovar" onclick="checkAnswer5()">
+</form>
+
+<p id="result5"></p>
+
+<script>
+function checkAnswer5() {
+    var correctAnswer = "a";
+    var radios = document.getElementsByName('question5');
+    var userAnswer;
+    for (var i = 0; i < radios.length; i++) {
+        if (radios[i].checked) {
+            userAnswer = radios[i].value;
+            break;
+        }
+    }
+    var resultText = userAnswer === correctAnswer ? "Correcte!" : "Incorrecte. La resposta correcta és a) session_destroy().";
+    document.getElementById('result5').innerText = resultText;
+}
+</script>
+
+<h4 id="exercici-6-avantatges-de-les-sessions">Exercici 6: Avantatges de les Sessions<a class="headerlink" href="#exercici-6-avantatges-de-les-sessions" title="Permanent link">&para;</a></h4>
+<h5 id="pregunta_5">Pregunta:<a class="headerlink" href="#pregunta_5" title="Permanent link">&para;</a></h5>
+<p>Quins són els avantatges d'utilitzar sessions en lloc de cookies per a mantenir l'estat de l'usuari?</p>
+<h5 id="opcions_5">Opcions:<a class="headerlink" href="#opcions_5" title="Permanent link">&para;</a></h5>
+<form>
+  <input type="checkbox" id="q6a" name="question6" value="a">
+  <label for="q6a">a) Les sessions poden emmagatzemar més informació perquè es guarden al servidor.</label><br>
+  <input type="checkbox" id="q6b" name="question6" value="b">
+  <label for="q6b">b) Les sessions són més segures perquè no s'envien al client.</label><br>
+  <input type="checkbox" id="q6c" name="question6" value="c">
+  <label for="q6c">c) Les sessions redueixen la càrrega del servidor.</label><br>
+  <input type="checkbox" id="q6d" name="question6" value="d">
+  <label for="q6d">d) Les sessions no necessiten ser configurades amb atributs de seguretat.</label><br><br>
+  <input type="button" value="Comprovar" onclick="checkAnswer6()">
+</form>
+
+<p id="result6"></p>
+
+<script>
+function checkAnswer6() {
+    var correctAnswers = ["a", "b"];
+    var checkboxes = document.getElementsByName('question6');
+    var userAnswers = [];
+    for (var i = 0; i < checkboxes.length; i++) {
+        if (checkboxes[i].checked) {
+            userAnswers.push(checkboxes[i].value);
+        }
+    }
+    userAnswers.sort();
+    var resultText = (JSON.stringify(userAnswers) === JSON.stringify(correctAnswers))
+        ? "Correcte!"
+        : "Incorrecte. Les respostes correctes són a) Les sessions poden emmagatzemar més informació perquè es guarden al servidor, b) Les sessions són més segures perquè no s'envien al client.";
+    document.getElementById('result6').innerText = resultText;
+}
+</script>
+
+<h4 id="exercici-7-autenticacio-dusuaris">Exercici 7: Autenticació d'Usuaris<a class="headerlink" href="#exercici-7-autenticacio-dusuaris" title="Permanent link">&para;</a></h4>
+<h5 id="pregunta_6">Pregunta:<a class="headerlink" href="#pregunta_6" title="Permanent link">&para;</a></h5>
+<p>Quina és la pràctica recomanada per assegurar la identitat d'un usuari en una aplicació web?</p>
+<h5 id="opcions_6">Opcions:<a class="headerlink" href="#opcions_6" title="Permanent link">&para;</a></h5>
+<form>
+  <input type="radio" id="q7a" name="question7" value="a">
+  <label for="q7a">a) Utilitzar noms d'usuari i contrasenyes emmagatzemades com a cookies.</label><br>
+  <input type="radio" id="q7b" name="question7" value="b">
+  <label for="q7b">b) Utilitzar sessions per mantenir l'estat d'autenticació després d'iniciar sessió.</label><br>
+  <input type="radio" id="q7c" name="question7" value="c">
+  <label for="q7c">c) Emmagatzemar la contrasenya de l'usuari a la URL.</label><br>
+  <input type="radio" id="q7d" name="question7" value="d">
+  <label for="q7d">d) No utilitzar cap forma d'autenticació.</label><br><br>
+  <input type="button" value="Comprovar" onclick="checkAnswer7()">
+</form>
+
+<p id="result7"></p>
+
+<script>
+function checkAnswer7() {
+    var correctAnswer = "b";
+    var radios = document.getElementsByName('question7');
+    var userAnswer;
+    for (var i = 0; i < radios.length; i++) {
+        if (radios[i].checked) {
+            userAnswer = radios[i].value;
+            break;
+        }
+    }
+    var resultText = userAnswer === correctAnswer ? "Correcte!" : "Incorrecte. La resposta correcta és b) Utilitzar sessions per mantenir l'estat d'autenticació després d'iniciar sessió.";
+    document.getElementById('result7').innerText = resultText;
+}
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2021-2025 Aitor Medrano, Luis Alemañ, Ignasi Gomis - Licencia CC BY-NC-SA
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/aitormedrano" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.2 4.2 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.52 8.52 0 0 1-5.33 1.84q-.51 0-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<a.medrano@edu.gva.es>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.13c-.15.01-.29.06-.39.17l-1 1 2.05 2 1-1c.22-.21.22-.56 0-.77l-1.24-1.23a.56.56 0 0 0-.38-.17m-2 1.75L13 19.94V22h2.06l6.06-6.07M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h7v-.89l8.24-8.22c.47-.49 1.12-.76 1.8-.76.34 0 .68.06 1 .19V6c0-1.12-.92-2-2.04-2m0 4-8 5-8-5V6l8 5 8-5"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": ".", "features": ["header.autohide", "toc.integrate", "content.tabs.link"], "search": "assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiat al porta-retalls", "clipboard.copy": "C\u00f2pia al porta-retalls", "search.result.more.one": "1 m\u00e9s en aquesta p\u00e0gina", "search.result.more.other": "# m\u00e9s en aquesta p\u00e0gina", "search.result.none": "Cap document coincideix", "search.result.one": "1 document coincident", "search.result.other": "# documents coincidents", "search.result.placeholder": "Escriu per a comen\u00e7ar a cercar", "search.result.term.missing": "Desaparegut", "select.version": "Selecciona la versi\u00f3"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+    
+  </body>
+</html>

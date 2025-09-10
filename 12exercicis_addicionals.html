@@ -1,0 +1,827 @@
+
+<!doctype html>
+<html lang="ca" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://cipfpbatoi.github.io/dwes2223/12exercicis_addicionals.html">
+      
+      
+      
+      
+      <link rel="icon" href="imagenes/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.19">
+    
+    
+      
+        <title>Exercicis per treballar els resultats d'aprenentatge (RA3 - RA8) - Desenvolupament web en entorn de Servidor</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-X6D0LR7TC8"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-X6D0LR7TC8",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-X6D0LR7TC8",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="Teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#exercicis-per-treballar-els-resultats-daprenentatge-ra3-ra8" class="md-skip">
+          Salta el contingut
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Capçalera">
+    <a href="index.html" title="Desenvolupament web en entorn de Servidor" class="md-header__button md-logo" aria-label="Desenvolupament web en entorn de Servidor" data-md-component="logo">
+      
+  <img src="imagenes/logofp.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Desenvolupament web en entorn de Servidor
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Exercicis per treballar els resultats d'aprenentatge (RA3 - RA8)
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="Teal"  aria-label="Canviar a mode nit"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Canviar a mode nit" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="light-blue" data-md-color-accent="Teal"  aria-label="Canviar a mode dia"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Canviar a mode dia" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Neteja" aria-label="Neteja" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicialitzant cerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navegació" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Desenvolupament web en entorn de Servidor" class="md-nav__button md-logo" aria-label="Desenvolupament web en entorn de Servidor" data-md-component="logo">
+      
+  <img src="imagenes/logofp.png" alt="logo">
+
+    </a>
+    Desenvolupament web en entorn de Servidor
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01arquitecturas.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.- Arquitectures Web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02php.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.- Programació web amb PHP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03MVC_Laravel.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.- Arquitectura MVC amb Laravel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="04dades_Laravel.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.- Accés segur i estructurat a bases de dades amb Laravel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="05seguretat_Laravel.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.- Aplicacions segures i reactives en Laravel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="exercicis-per-treballar-els-resultats-daprenentatge-ra3-ra8">Exercicis per treballar els resultats d'aprenentatge (RA3 - RA8)<a class="headerlink" href="#exercicis-per-treballar-els-resultats-daprenentatge-ra3-ra8" title="Permanent link">&para;</a></h1>
+<h2 id="ra3-escriu-blocs-de-sentencies-embeguts-en-llenguatges-de-marques">📌 RA3 - Escriu blocs de sentències embeguts en llenguatges de marques<a class="headerlink" href="#ra3-escriu-blocs-de-sentencies-embeguts-en-llenguatges-de-marques" title="Permanent link">&para;</a></h2>
+<h3 id="1-formulari-de-registre-amb-validacio-basica">1️⃣ Formulari de registre amb validació bàsica<a class="headerlink" href="#1-formulari-de-registre-amb-validacio-basica" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Crea un formulari en HTML que demane: nom, email, contrasenya i data de naixement.</li>
+<li>Usa PHP per validar que tots els camps estan plens i que l'email té el format correcte.</li>
+<li>Mostra missatges d'error si la validació falla.</li>
+</ul>
+<h3 id="2-calculadora-basica-amb-php">2️⃣ Calculadora bàsica amb PHP<a class="headerlink" href="#2-calculadora-basica-amb-php" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Crea un formulari HTML amb dos camps numèrics i quatre botons (sumar, restar, multiplicar i dividir).</li>
+<li>Quan l'usuari prem un botó, mostra el resultat en la mateixa pàgina.</li>
+<li>Usa <code>$_POST</code> per processar les operacions.</li>
+</ul>
+<h3 id="3-simulacio-duna-botiga-amb-carret-de-compra">3️⃣ Simulació d’una botiga amb carret de compra<a class="headerlink" href="#3-simulacio-duna-botiga-amb-carret-de-compra" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Mostra una llista de productes amb un botó "Afegir al carret".</li>
+<li>Quan es polsa el botó, el producte s’afegeix a una sessió.</li>
+<li>Mostra el total de la compra i permet eliminar productes.</li>
+</ul>
+<hr />
+<h2 id="ra4-desenvolupa-aplicacions-web-embegudes-en-llenguatges-de-marques">📌 RA4 - Desenvolupa aplicacions web embegudes en llenguatges de marques<a class="headerlink" href="#ra4-desenvolupa-aplicacions-web-embegudes-en-llenguatges-de-marques" title="Permanent link">&para;</a></h2>
+<h3 id="4-sistema-de-sessio-dusuari">4️⃣ Sistema de sessió d’usuari<a class="headerlink" href="#4-sistema-de-sessio-dusuari" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Crea un sistema d’inici de sessió amb PHP on els usuaris puguen entrar amb un nom d'usuari i una contrasenya.</li>
+<li>Mostra un missatge de benvinguda si la sessió està activa.</li>
+<li>Afig un botó de tancament de sessió que esborre la sessió.</li>
+</ul>
+<h3 id="5-control-dacces-a-una-pagina-web">5️⃣ Control d'accés a una pàgina web<a class="headerlink" href="#5-control-dacces-a-una-pagina-web" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Crea dues pàgines: una pública i una privada.</li>
+<li>Els usuaris només poden accedir a la privada si estan autenticats.</li>
+<li>Redirigeix els usuaris no autenticats a la pàgina de login.</li>
+</ul>
+<h3 id="6-sistema-de-comentaris-amb-sessions">6️⃣ Sistema de comentaris amb sessions<a class="headerlink" href="#6-sistema-de-comentaris-amb-sessions" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Permet als usuaris afegir comentaris a una pàgina sense base de dades.</li>
+<li>Guarda els comentaris en <code>$_SESSION</code> i mostra’ls ordenats per ordre d'inserció.</li>
+<li>Afig la possibilitat d’eliminar comentaris.</li>
+</ul>
+<hr />
+<h2 id="ra5-desenvolupa-aplicacions-web-separant-el-codi-de-presentacio-de-la-logica-de-negoci">📌 RA5 - Desenvolupa aplicacions web separant el codi de presentació de la lògica de negoci<a class="headerlink" href="#ra5-desenvolupa-aplicacions-web-separant-el-codi-de-presentacio-de-la-logica-de-negoci" title="Permanent link">&para;</a></h2>
+<h3 id="7-refactoritzacio-duna-aplicacio-en-php-amb-mvc">7️⃣ Refactorització d’una aplicació en PHP amb MVC<a class="headerlink" href="#7-refactoritzacio-duna-aplicacio-en-php-amb-mvc" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Crea una aplicació PHP que gestione una llista de tasques (CRUD bàsic).</li>
+<li>Implementa la separació del codi en:<ul>
+<li>Model (<code>Task.php</code>): Gestiona les dades.</li>
+<li>Vista (<code>tasks.view.php</code>): Mostra les tasques.</li>
+<li>Controlador (<code>TaskController.php</code>): Gestiona les operacions (crear, eliminar, modificar).</li>
+</ul>
+</li>
+</ul>
+<h3 id="8-plantilles-amb-twig">8️⃣ Plantilles amb Twig<a class="headerlink" href="#8-plantilles-amb-twig" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Instal·la Twig i refés una aplicació existent per a utilitzar plantilles.</li>
+<li>Separa les dades del codi HTML usant <code>{{ variable }}</code> dins de les plantilles.</li>
+</ul>
+<h3 id="9-autenticacio-avancada-amb-laravel">9️⃣ Autenticació avançada amb Laravel<a class="headerlink" href="#9-autenticacio-avancada-amb-laravel" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Implementa un sistema d’autenticació amb Laravel <code>Auth</code>.</li>
+<li>Personalitza la vista de login i registre.</li>
+<li>Crea diferents rols d’usuari (administrador, usuari).</li>
+</ul>
+<hr />
+<h2 id="ra6-aplicacions-web-amb-acces-a-bases-de-dades">📌 RA6 - Aplicacions web amb accés a bases de dades<a class="headerlink" href="#ra6-aplicacions-web-amb-acces-a-bases-de-dades" title="Permanent link">&para;</a></h2>
+<h3 id="crud-de-gestio-dusuaris-en-php">🔟 CRUD de gestió d'usuaris en PHP<a class="headerlink" href="#crud-de-gestio-dusuaris-en-php" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Crea una aplicació que permeta afegir, modificar i eliminar usuaris en una base de dades MySQL.</li>
+<li>Utilitza <code>PDO</code> per fer consultes segures.</li>
+<li>Mostra un llistat d'usuaris en una taula HTML.</li>
+</ul>
+<h3 id="11-sistema-de-gestio-de-publicacions-en-laravel">1️⃣1️⃣ Sistema de gestió de publicacions en Laravel<a class="headerlink" href="#11-sistema-de-gestio-de-publicacions-en-laravel" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Crea un projecte Laravel amb autenticació.</li>
+<li>Genera un model <code>Post</code> amb camps <code>title</code>, <code>content</code>, <code>user_id</code>.</li>
+<li>Implementa el CRUD amb Eloquent i Blade.</li>
+</ul>
+<h3 id="12-autenticacio-dusuaris-amb-base-de-dades">1️⃣2️⃣ Autenticació d'usuaris amb base de dades<a class="headerlink" href="#12-autenticacio-dusuaris-amb-base-de-dades" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Adapta el sistema d’autenticació PHP per utilitzar una base de dades.</li>
+<li>Desa les credencials en MySQL i verifica els accessos fent consultes a la BD.</li>
+</ul>
+<hr />
+<h2 id="ra7-desenvolupament-de-serveis-web-reutilitzables">📌 RA7 - Desenvolupament de serveis web reutilitzables<a class="headerlink" href="#ra7-desenvolupament-de-serveis-web-reutilitzables" title="Permanent link">&para;</a></h2>
+<h3 id="13-creacio-duna-api-rest-amb-laravel">1️⃣3️⃣ Creació d'una API REST amb Laravel<a class="headerlink" href="#13-creacio-duna-api-rest-amb-laravel" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Implementa un controlador d'API per gestionar tasques (<code>TaskController</code>).</li>
+<li>Implementa endpoints:<ul>
+<li><code>GET /tasks</code> (llistat de tasques)</li>
+<li><code>POST /tasks</code> (crear una nova tasca)</li>
+<li><code>PUT /tasks/{id}</code> (actualitzar tasca)</li>
+<li><code>DELETE /tasks/{id}</code> (esborrar tasca)</li>
+</ul>
+</li>
+</ul>
+<h3 id="14-autenticacio-jwt-en-una-api">1️⃣4️⃣ Autenticació JWT en una API<a class="headerlink" href="#14-autenticacio-jwt-en-una-api" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Instal·la <code>laravel/passport</code> o <code>sanctum</code> per gestionar autenticació per tokens.</li>
+<li>Crea un endpoint <code>/login</code> que retorne un token JWT.</li>
+<li>Protegeix altres endpoints perquè només funcionen amb autenticació.</li>
+</ul>
+<h3 id="15-consumir-una-api-externa-amb-laravel">1️⃣5️⃣ Consumir una API externa amb Laravel<a class="headerlink" href="#15-consumir-una-api-externa-amb-laravel" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Utilitza <code>GuzzleHTTP</code> per consumir una API externa, per exemple, obtenir dades meteorològiques des d’una API com OpenWeather.</li>
+<li>Mostra la informació en una vista Laravel.</li>
+</ul>
+<hr />
+<h2 id="ra8-generacio-de-pagines-web-dinamiques-amb-frameworks">📌 RA8 - Generació de pàgines web dinàmiques amb frameworks<a class="headerlink" href="#ra8-generacio-de-pagines-web-dinamiques-amb-frameworks" title="Permanent link">&para;</a></h2>
+<h3 id="16-generacio-de-documents-pdf-amb-laravel">1️⃣6️⃣ Generació de documents PDF amb Laravel<a class="headerlink" href="#16-generacio-de-documents-pdf-amb-laravel" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Instal·la <code>barryvdh/laravel-dompdf</code>.</li>
+<li>Implementa una funcionalitat per generar un informe en PDF amb dades d’una base de dades.</li>
+<li>Exemple: Generar una factura en PDF amb la informació del client i els productes comprats.</li>
+</ul>
+<h3 id="17-gestio-de-permisos-amb-middleware">1️⃣7️⃣ Gestió de permisos amb Middleware<a class="headerlink" href="#17-gestio-de-permisos-amb-middleware" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Crea un middleware per restringir accés a certes rutes segons el rol de l’usuari.</li>
+<li>Exemple: <code>/admin</code> només pot ser accedit per administradors.</li>
+</ul>
+<h3 id="18-aplicacio-en-temps-real-amb-laravel-i-pusher">1️⃣8️⃣ Aplicació en temps real amb Laravel i Pusher<a class="headerlink" href="#18-aplicacio-en-temps-real-amb-laravel-i-pusher" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Implementa un xat en temps real amb Laravel, Pusher i WebSockets.</li>
+<li>Mostra missatges instantanis entre dos usuaris sense necessitat de recarregar la pàgina.</li>
+</ul>
+<h1 id="exercicis-per-treballar-els-resultats-daprenentatge-ra3-ra8_1">Exercicis per treballar els resultats d'aprenentatge (RA3 - RA8)<a class="headerlink" href="#exercicis-per-treballar-els-resultats-daprenentatge-ra3-ra8_1" title="Permanent link">&para;</a></h1>
+<h2 id="ra3-escriu-blocs-de-sentencies-embeguts-en-llenguatges-de-marques_1">📌 RA3 - Escriu blocs de sentències embeguts en llenguatges de marques<a class="headerlink" href="#ra3-escriu-blocs-de-sentencies-embeguts-en-llenguatges-de-marques_1" title="Permanent link">&para;</a></h2>
+<h3 id="1-formulari-de-registre-amb-validacio-basica_1">1️⃣ Formulari de registre amb validació bàsica<a class="headerlink" href="#1-formulari-de-registre-amb-validacio-basica_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Solució:</strong>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="k">if</span> <span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s2">&quot;REQUEST_METHOD&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;POST&quot;</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 3 "></span>    <span class="nv">$nom</span> <span class="o">=</span> <span class="nb">trim</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;nom&#39;</span><span class="p">]);</span>
+<span class="linenos" data-linenos=" 4 "></span>    <span class="nv">$email</span> <span class="o">=</span> <span class="nb">trim</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;email&#39;</span><span class="p">]);</span>
+<span class="linenos" data-linenos=" 5 "></span>    <span class="nv">$errors</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="k">if</span> <span class="p">(</span><span class="k">empty</span><span class="p">(</span><span class="nv">$nom</span><span class="p">))</span> <span class="nv">$errors</span><span class="p">[]</span> <span class="o">=</span> <span class="s2">&quot;El nom és obligatori.&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 7 "></span>    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">filter_var</span><span class="p">(</span><span class="nv">$email</span><span class="p">,</span> <span class="nx">FILTER_VALIDATE_EMAIL</span><span class="p">))</span> <span class="nv">$errors</span><span class="p">[]</span> <span class="o">=</span> <span class="s2">&quot;Email no vàlid.&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="p">}</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="cp">?&gt;</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">&lt;form method=&quot;post&quot;&gt;</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">    &lt;input type=&quot;text&quot; name=&quot;nom&quot; placeholder=&quot;Nom&quot;&gt;</span>
+<span class="linenos" data-linenos="12 "></span><span class="x">    &lt;input type=&quot;email&quot; name=&quot;email&quot; placeholder=&quot;Email&quot;&gt;</span>
+<span class="linenos" data-linenos="13 "></span><span class="x">    &lt;button type=&quot;submit&quot;&gt;Enviar&lt;/button&gt;</span>
+<span class="linenos" data-linenos="14 "></span><span class="x">&lt;/form&gt;</span>
+</code></pre></div></li>
+</ul>
+<h3 id="2-calculadora-basica-amb-php_1">2️⃣ Calculadora bàsica amb PHP<a class="headerlink" href="#2-calculadora-basica-amb-php_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Solució:</strong>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="k">if</span> <span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s2">&quot;REQUEST_METHOD&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;POST&quot;</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 3 "></span>    <span class="nv">$num1</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;num1&#39;</span><span class="p">];</span>
+<span class="linenos" data-linenos=" 4 "></span>    <span class="nv">$num2</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;num2&#39;</span><span class="p">];</span>
+<span class="linenos" data-linenos=" 5 "></span>    <span class="nv">$op</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;operacio&#39;</span><span class="p">];</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="k">switch</span> <span class="p">(</span><span class="nv">$op</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 7 "></span>        <span class="k">case</span> <span class="s1">&#39;sumar&#39;</span><span class="o">:</span> <span class="nv">$resultat</span> <span class="o">=</span> <span class="nv">$num1</span> <span class="o">+</span> <span class="nv">$num2</span><span class="p">;</span> <span class="k">break</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 8 "></span>        <span class="k">case</span> <span class="s1">&#39;restar&#39;</span><span class="o">:</span> <span class="nv">$resultat</span> <span class="o">=</span> <span class="nv">$num1</span> <span class="o">-</span> <span class="nv">$num2</span><span class="p">;</span> <span class="k">break</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="10 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="11 "></span><span class="cp">?&gt;</span>
+<span class="linenos" data-linenos="12 "></span><span class="x">&lt;form method=&quot;post&quot;&gt;</span>
+<span class="linenos" data-linenos="13 "></span><span class="x">    &lt;input type=&quot;number&quot; name=&quot;num1&quot;&gt;</span>
+<span class="linenos" data-linenos="14 "></span><span class="x">    &lt;input type=&quot;number&quot; name=&quot;num2&quot;&gt;</span>
+<span class="linenos" data-linenos="15 "></span><span class="x">    &lt;select name=&quot;operacio&quot;&gt;</span>
+<span class="linenos" data-linenos="16 "></span><span class="x">        &lt;option value=&quot;sumar&quot;&gt;Sumar&lt;/option&gt;</span>
+<span class="linenos" data-linenos="17 "></span><span class="x">        &lt;option value=&quot;restar&quot;&gt;Restar&lt;/option&gt;</span>
+<span class="linenos" data-linenos="18 "></span><span class="x">    &lt;/select&gt;</span>
+<span class="linenos" data-linenos="19 "></span><span class="x">    &lt;button type=&quot;submit&quot;&gt;Calcular&lt;/button&gt;</span>
+<span class="linenos" data-linenos="20 "></span><span class="x">&lt;/form&gt;</span>
+<span class="linenos" data-linenos="21 "></span><span class="cp">&lt;?php</span> <span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$resultat</span><span class="p">))</span> <span class="k">echo</span> <span class="s2">&quot;Resultat: </span><span class="si">$resultat</span><span class="s2">&quot;</span><span class="p">;</span> <span class="cp">?&gt;</span>
+</code></pre></div></li>
+</ul>
+<h3 id="3-simulacio-duna-botiga-amb-carret-de-compra_1">3️⃣ Simulació d’una botiga amb carret de compra<a class="headerlink" href="#3-simulacio-duna-botiga-amb-carret-de-compra_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Solució:</strong>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="nb">session_start</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;carret&#39;</span><span class="p">]))</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;carret&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;producte&#39;</span><span class="p">]))</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 5 "></span>    <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;carret&#39;</span><span class="p">][]</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;producte&#39;</span><span class="p">];</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="p">}</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="cp">?&gt;</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">&lt;form method=&quot;post&quot;&gt;</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">    &lt;input type=&quot;text&quot; name=&quot;producte&quot; placeholder=&quot;Nom del producte&quot;&gt;</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">    &lt;button type=&quot;submit&quot;&gt;Afegir&lt;/button&gt;</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">&lt;/form&gt;</span>
+<span class="linenos" data-linenos="12 "></span><span class="x">&lt;h2&gt;Carret:&lt;/h2&gt;</span>
+<span class="linenos" data-linenos="13 "></span><span class="x">&lt;ul&gt;</span>
+<span class="linenos" data-linenos="14 "></span><span class="x">    </span><span class="cp">&lt;?php</span> <span class="k">foreach</span> <span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;carret&#39;</span><span class="p">]</span> <span class="k">as</span> <span class="nv">$p</span><span class="p">)</span> <span class="k">echo</span> <span class="s2">&quot;&lt;li&gt;</span><span class="si">$p</span><span class="s2">&lt;/li&gt;&quot;</span><span class="p">;</span> <span class="cp">?&gt;</span>
+<span class="linenos" data-linenos="15 "></span><span class="x">&lt;/ul&gt;</span>
+</code></pre></div></li>
+</ul>
+<h2 id="ra4-desenvolupa-aplicacions-web-embegudes-en-llenguatges-de-marques_1">📌 RA4 - Desenvolupa aplicacions web embegudes en llenguatges de marques<a class="headerlink" href="#ra4-desenvolupa-aplicacions-web-embegudes-en-llenguatges-de-marques_1" title="Permanent link">&para;</a></h2>
+<h3 id="4-sistema-de-sessio-dusuari_1">4️⃣ Sistema de sessió d’usuari<a class="headerlink" href="#4-sistema-de-sessio-dusuari_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Solució:</strong>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="nb">session_start</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="k">if</span> <span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s2">&quot;REQUEST_METHOD&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;POST&quot;</span><span class="p">)</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 4 "></span>    <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;usuari&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;nom&#39;</span><span class="p">];</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="p">}</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="k">if</span> <span class="p">(</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;usuari&#39;</span><span class="p">]))</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 7 "></span>    <span class="k">echo</span> <span class="s2">&quot;Benvingut, &quot;</span><span class="o">.</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;usuari&#39;</span><span class="p">];</span>
+<span class="linenos" data-linenos=" 8 "></span>    <span class="k">echo</span> <span class="s2">&quot;&lt;a href=&#39;logout.php&#39;&gt;Tanca sessió&lt;/a&gt;&quot;</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+<span class="linenos" data-linenos="10 "></span><span class="cp">?&gt;</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">&lt;form method=&quot;post&quot;&gt;</span>
+<span class="linenos" data-linenos="12 "></span><span class="x">    &lt;input type=&quot;text&quot; name=&quot;nom&quot; placeholder=&quot;Nom d&#39;usuari&quot;&gt;</span>
+<span class="linenos" data-linenos="13 "></span><span class="x">    &lt;button type=&quot;submit&quot;&gt;Iniciar sessió&lt;/button&gt;</span>
+<span class="linenos" data-linenos="14 "></span><span class="x">&lt;/form&gt;</span>
+<span class="linenos" data-linenos="15 "></span><span class="cp">&lt;?php</span> <span class="p">}</span> <span class="cp">?&gt;</span>
+</code></pre></div></li>
+</ul>
+<h3 id="5-control-dacces-a-una-pagina-web_1">5️⃣ Control d'accés a una pàgina web<a class="headerlink" href="#5-control-dacces-a-una-pagina-web_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Solució:</strong>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span>
+<span class="linenos" data-linenos="2 "></span><span class="nb">session_start</span><span class="p">();</span>
+<span class="linenos" data-linenos="3 "></span><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;usuari&#39;</span><span class="p">]))</span> <span class="p">{</span>
+<span class="linenos" data-linenos="4 "></span>    <span class="nb">header</span><span class="p">(</span><span class="s2">&quot;Location: login.php&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos="5 "></span>    <span class="k">exit</span><span class="p">;</span>
+<span class="linenos" data-linenos="6 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="7 "></span><span class="k">echo</span> <span class="s2">&quot;Benvingut a la pàgina privada.&quot;</span><span class="p">;</span>
+</code></pre></div></li>
+</ul>
+<h3 id="6-sistema-de-comentaris-amb-sessions_1">6️⃣ Sistema de comentaris amb sessions<a class="headerlink" href="#6-sistema-de-comentaris-amb-sessions_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Solució:</strong>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="nb">session_start</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nb">isset</span><span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;comentaris&#39;</span><span class="p">]))</span> <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;comentaris&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[];</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="k">if</span> <span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s2">&quot;REQUEST_METHOD&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;POST&quot;</span> <span class="o">&amp;&amp;</span> <span class="o">!</span><span class="k">empty</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;comentari&#39;</span><span class="p">]))</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 5 "></span>    <span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;comentaris&#39;</span><span class="p">][]</span> <span class="o">=</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;comentari&#39;</span><span class="p">];</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="p">}</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="cp">?&gt;</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">&lt;form method=&quot;post&quot;&gt;</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">    &lt;textarea name=&quot;comentari&quot;&gt;&lt;/textarea&gt;</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">    &lt;button type=&quot;submit&quot;&gt;Enviar&lt;/button&gt;</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">&lt;/form&gt;</span>
+<span class="linenos" data-linenos="12 "></span><span class="x">&lt;ul&gt;</span>
+<span class="linenos" data-linenos="13 "></span><span class="x">    </span><span class="cp">&lt;?php</span> <span class="k">foreach</span> <span class="p">(</span><span class="nv">$_SESSION</span><span class="p">[</span><span class="s1">&#39;comentaris&#39;</span><span class="p">]</span> <span class="k">as</span> <span class="nv">$c</span><span class="p">)</span> <span class="k">echo</span> <span class="s2">&quot;&lt;li&gt;</span><span class="si">$c</span><span class="s2">&lt;/li&gt;&quot;</span><span class="p">;</span> <span class="cp">?&gt;</span>
+<span class="linenos" data-linenos="14 "></span><span class="x">&lt;/ul&gt;</span>
+</code></pre></div></li>
+</ul>
+<h2 id="ra5-desenvolupa-aplicacions-web-separant-el-codi-de-presentacio-de-la-logica-de-negoci_1">📌 RA5 - Desenvolupa aplicacions web separant el codi de presentació de la lògica de negoci<a class="headerlink" href="#ra5-desenvolupa-aplicacions-web-separant-el-codi-de-presentacio-de-la-logica-de-negoci_1" title="Permanent link">&para;</a></h2>
+<h3 id="7-refactoritzacio-duna-aplicacio-en-php-amb-mvc_1">7️⃣ Refactorització d’una aplicació en PHP amb MVC<a class="headerlink" href="#7-refactoritzacio-duna-aplicacio-en-php-amb-mvc_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p><strong>Solució:</strong></p>
+</li>
+<li>
+<p><strong>Model:</strong> <code>Task.php</code>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">class Task {</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">    public $id, $nom;</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">    public function __construct($id, $nom) {</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">        $this-&gt;id = $id;</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">        $this-&gt;nom = $nom;</span>
+<span class="linenos" data-linenos="6 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="7 "></span><span class="x">}</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Vista:</strong> <code>tasks.view.php</code>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="cp">&lt;?php</span> <span class="k">foreach</span> <span class="p">(</span><span class="nv">$tasks</span> <span class="k">as</span> <span class="nv">$task</span><span class="p">)</span> <span class="k">echo</span> <span class="s2">&quot;&lt;li&gt;</span><span class="si">$task-&gt;nom</span><span class="s2">&lt;/li&gt;&quot;</span><span class="p">;</span> <span class="cp">?&gt;</span>
+</code></pre></div></p>
+</li>
+<li>
+<p><strong>Controlador:</strong> <code>TaskController.php</code>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">require &#39;Task.php&#39;;</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">$tasks = [new Task(1, &quot;Estudiar&quot;), new Task(2, &quot;Treballar&quot;)];</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">require &#39;tasks.view.php&#39;;</span>
+</code></pre></div></p>
+</li>
+</ul>
+<hr />
+<h2 id="ra6-aplicacions-web-amb-acces-a-bases-de-dades_1">📌 RA6 - Aplicacions web amb accés a bases de dades<a class="headerlink" href="#ra6-aplicacions-web-amb-acces-a-bases-de-dades_1" title="Permanent link">&para;</a></h2>
+<h3 id="crud-de-gestio-dusuaris-en-php_1">🔟 CRUD de gestió d'usuaris en PHP<a class="headerlink" href="#crud-de-gestio-dusuaris-en-php_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Solució:</strong>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="nv">$pdo</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PDO</span><span class="p">(</span><span class="s2">&quot;mysql:host=localhost;dbname=test&quot;</span><span class="p">,</span> <span class="s2">&quot;root&quot;</span><span class="p">,</span> <span class="s2">&quot;&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="k">if</span> <span class="p">(</span><span class="nv">$_SERVER</span><span class="p">[</span><span class="s2">&quot;REQUEST_METHOD&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;POST&quot;</span> <span class="o">&amp;&amp;</span> <span class="nb">isset</span><span class="p">(</span><span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;nom&#39;</span><span class="p">]))</span> <span class="p">{</span>
+<span class="linenos" data-linenos=" 4 "></span>    <span class="nv">$stmt</span> <span class="o">=</span> <span class="nv">$pdo</span><span class="o">-&gt;</span><span class="na">prepare</span><span class="p">(</span><span class="s2">&quot;INSERT INTO usuaris (nom) VALUES (:nom)&quot;</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 5 "></span>    <span class="nv">$stmt</span><span class="o">-&gt;</span><span class="na">execute</span><span class="p">([</span><span class="s1">&#39;nom&#39;</span> <span class="o">=&gt;</span> <span class="nv">$_POST</span><span class="p">[</span><span class="s1">&#39;nom&#39;</span><span class="p">]]);</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="p">}</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="nv">$usuaris</span> <span class="o">=</span> <span class="nv">$pdo</span><span class="o">-&gt;</span><span class="na">query</span><span class="p">(</span><span class="s2">&quot;SELECT * FROM usuaris&quot;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">fetchAll</span><span class="p">();</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="cp">?&gt;</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">&lt;form method=&quot;post&quot;&gt;</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">    &lt;input type=&quot;text&quot; name=&quot;nom&quot; placeholder=&quot;Nom&quot;&gt;</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">    &lt;button type=&quot;submit&quot;&gt;Afegir Usuari&lt;/button&gt;</span>
+<span class="linenos" data-linenos="12 "></span><span class="x">&lt;/form&gt;</span>
+<span class="linenos" data-linenos="13 "></span><span class="x">&lt;ul&gt;</span>
+<span class="linenos" data-linenos="14 "></span><span class="x">    </span><span class="cp">&lt;?php</span> <span class="k">foreach</span> <span class="p">(</span><span class="nv">$usuaris</span> <span class="k">as</span> <span class="nv">$usuari</span><span class="p">)</span> <span class="k">echo</span> <span class="s2">&quot;&lt;li&gt;</span><span class="si">{</span><span class="nv">$usuari</span><span class="p">[</span><span class="s1">&#39;nom&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&lt;/li&gt;&quot;</span><span class="p">;</span> <span class="cp">?&gt;</span>
+<span class="linenos" data-linenos="15 "></span><span class="x">&lt;/ul&gt;</span>
+</code></pre></div></li>
+</ul>
+<h3 id="11-sistema-de-gestio-de-publicacions-en-laravel_1">1️⃣1️⃣ Sistema de gestió de publicacions en Laravel<a class="headerlink" href="#11-sistema-de-gestio-de-publicacions-en-laravel_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Solució:</strong>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">// Model</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="x">class Post extends Model {</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">    protected $fillable = [&#39;title&#39;, &#39;content&#39;];</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">}</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">// Controlador</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">class PostController extends Controller {</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">    public function store(Request $request) {</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">        Post::create($request-&gt;only([&#39;title&#39;, &#39;content&#39;]));</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">        return redirect()-&gt;route(&#39;posts.index&#39;);</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">}</span>
+<span class="linenos" data-linenos="12 "></span><span class="x">// Rutes</span>
+<span class="linenos" data-linenos="13 "></span><span class="x">Route::post(&#39;/posts&#39;, [PostController::class, &#39;store&#39;]);</span>
+</code></pre></div></li>
+</ul>
+<h2 id="ra7-desenvolupament-de-serveis-web-reutilitzables_1">📌 RA7 - Desenvolupament de serveis web reutilitzables<a class="headerlink" href="#ra7-desenvolupament-de-serveis-web-reutilitzables_1" title="Permanent link">&para;</a></h2>
+<h3 id="13-creacio-duna-api-rest-amb-laravel_1">1️⃣3️⃣ Creació d'una API REST amb Laravel<a class="headerlink" href="#13-creacio-duna-api-rest-amb-laravel_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Solució:</strong>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">Route::middleware(&#39;auth:sanctum&#39;)-&gt;group(function () {</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">    Route::get(&#39;/tasks&#39;, [TaskController::class, &#39;index&#39;]);</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">    Route::post(&#39;/tasks&#39;, [TaskController::class, &#39;store&#39;]);</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">});</span>
+</code></pre></div></li>
+</ul>
+<h2 id="ra8-generacio-de-pagines-web-dinamiques-amb-frameworks_1">📌 RA8 - Generació de pàgines web dinàmiques amb frameworks<a class="headerlink" href="#ra8-generacio-de-pagines-web-dinamiques-amb-frameworks_1" title="Permanent link">&para;</a></h2>
+<h3 id="16-generacio-de-documents-pdf-amb-laravel_1">1️⃣6️⃣ Generació de documents PDF amb Laravel<a class="headerlink" href="#16-generacio-de-documents-pdf-amb-laravel_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Solució:</strong>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">use Barryvdh\DomPDF\Facade as PDF;</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">class ReportController extends Controller {</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">    public function generate() {</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">        $data = [&#39;title&#39; =&gt; &#39;Informe PDF&#39;];</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">        $pdf = PDF::loadView(&#39;pdf_view&#39;, $data);</span>
+<span class="linenos" data-linenos="6 "></span><span class="x">        return $pdf-&gt;download(&#39;document.pdf&#39;);</span>
+<span class="linenos" data-linenos="7 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="8 "></span><span class="x">}</span>
+</code></pre></div></li>
+</ul>
+<h3 id="17-gestio-de-permisos-amb-middleware_1">1️⃣7️⃣ Gestió de permisos amb Middleware<a class="headerlink" href="#17-gestio-de-permisos-amb-middleware_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Solució:</strong>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">class AdminMiddleware {</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">    public function handle($request, Closure $next) {</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">        if (!auth()-&gt;user()-&gt;isAdmin()) {</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">            return redirect(&#39;/home&#39;);</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">        }</span>
+<span class="linenos" data-linenos="6 "></span><span class="x">        return $next($request);</span>
+<span class="linenos" data-linenos="7 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="8 "></span><span class="x">}</span>
+</code></pre></div></li>
+</ul>
+<h3 id="18-aplicacio-en-temps-real-amb-laravel-i-pusher_1">1️⃣8️⃣ Aplicació en temps real amb Laravel i Pusher<a class="headerlink" href="#18-aplicacio-en-temps-real-amb-laravel-i-pusher_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li><strong>Solució:</strong>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">use Pusher\Pusher;</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">$pusher = new Pusher(&#39;APP_KEY&#39;, &#39;APP_SECRET&#39;, &#39;APP_ID&#39;, [&#39;cluster&#39; =&gt; &#39;eu&#39;]);</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">$pusher-&gt;trigger(&#39;chat&#39;, &#39;message&#39;, [&#39;message&#39; =&gt; &#39;Hola món!&#39;]);</span>
+</code></pre></div></li>
+</ul>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2021-2025 Aitor Medrano, Luis Alemañ, Ignasi Gomis - Licencia CC BY-NC-SA
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/aitormedrano" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.2 4.2 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.52 8.52 0 0 1-5.33 1.84q-.51 0-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<a.medrano@edu.gva.es>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.13c-.15.01-.29.06-.39.17l-1 1 2.05 2 1-1c.22-.21.22-.56 0-.77l-1.24-1.23a.56.56 0 0 0-.38-.17m-2 1.75L13 19.94V22h2.06l6.06-6.07M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h7v-.89l8.24-8.22c.47-.49 1.12-.76 1.8-.76.34 0 .68.06 1 .19V6c0-1.12-.92-2-2.04-2m0 4-8 5-8-5V6l8 5 8-5"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": ".", "features": ["header.autohide", "toc.integrate", "content.tabs.link"], "search": "assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiat al porta-retalls", "clipboard.copy": "C\u00f2pia al porta-retalls", "search.result.more.one": "1 m\u00e9s en aquesta p\u00e0gina", "search.result.more.other": "# m\u00e9s en aquesta p\u00e0gina", "search.result.none": "Cap document coincideix", "search.result.one": "1 document coincident", "search.result.other": "# documents coincidents", "search.result.placeholder": "Escriu per a comen\u00e7ar a cercar", "search.result.term.missing": "Desaparegut", "select.version": "Selecciona la versi\u00f3"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+    
+  </body>
+</html>

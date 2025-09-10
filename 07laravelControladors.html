@@ -1,0 +1,759 @@
+
+<!doctype html>
+<html lang="ca" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://cipfpbatoi.github.io/dwes2223/07laravelControladors.html">
+      
+      
+      
+      
+      <link rel="icon" href="imagenes/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.19">
+    
+    
+      
+        <title>FRAMEWORK LARAVEL - Desenvolupament web en entorn de Servidor</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-X6D0LR7TC8"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-X6D0LR7TC8",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-X6D0LR7TC8",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="Teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#framework-laravel" class="md-skip">
+          Salta el contingut
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Capçalera">
+    <a href="index.html" title="Desenvolupament web en entorn de Servidor" class="md-header__button md-logo" aria-label="Desenvolupament web en entorn de Servidor" data-md-component="logo">
+      
+  <img src="imagenes/logofp.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Desenvolupament web en entorn de Servidor
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              FRAMEWORK LARAVEL
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="Teal"  aria-label="Canviar a mode nit"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Canviar a mode nit" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="light-blue" data-md-color-accent="Teal"  aria-label="Canviar a mode dia"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Canviar a mode dia" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Neteja" aria-label="Neteja" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicialitzant cerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navegació" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Desenvolupament web en entorn de Servidor" class="md-nav__button md-logo" aria-label="Desenvolupament web en entorn de Servidor" data-md-component="logo">
+      
+  <img src="imagenes/logofp.png" alt="logo">
+
+    </a>
+    Desenvolupament web en entorn de Servidor
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01arquitecturas.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.- Arquitectures Web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02php.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.- Programació web amb PHP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03MVC_Laravel.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.- Arquitectura MVC amb Laravel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="04dades_Laravel.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.- Accés segur i estructurat a bases de dades amb Laravel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="05seguretat_Laravel.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.- Aplicacions segures i reactives en Laravel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="framework-laravel">FRAMEWORK LARAVEL<a class="headerlink" href="#framework-laravel" title="Permanent link">&para;</a></h1>
+<ul>
+<li><a href="#controladors">Controladors</a></li>
+<li><a href="#injecció-de-dependències">Injecció de dependències</a></li>
+</ul>
+<h2 id="controladors">Controladors<a class="headerlink" href="#controladors" title="Permanent link">&para;</a></h2>
+<p><a href="https://www.youtube.com/watch?v=VwNTfrN8XTU&amp;t=629s">Video</a></p>
+<p>Fins al moment hem vist solament com retornar una cadena per a una ruta i com associar una vista a una ruta directament en el fitxer de rutes. Però en general la forma recomanable de treballar serà associar aquestes rutes a un mètode d'un controlador. Els controladors permeten estructurar millor el codi de la nostra aplicació. La seua principal utilitat radica
+a alliberar als arxius de rutes d'haver d'ocupar-se també de gestionar una certa lògica comuna de les
+peticions, com l'accés a les dades, validació de formularis, etc. </p>
+<p>Com ja vam veure en la secció d'introducció, els controladors són el punt d'entrada de les peticions dels usuaris i són els que han de contenir tota la lògica associada al processament d'una petició, encarregant-se de realitzar les consultes necessàries a la base de dades, de preparar les dades i de cridar a la vista corresponent amb aquestes dades.</p>
+<h3 id="definicio-de-controladors">Definició de controladors<a class="headerlink" href="#definicio-de-controladors" title="Permanent link">&para;</a></h3>
+<p>Per a definir un controlador en la nostra aplicació, hem de tirar mà de nou del comando <strong>php artisan</strong> vist prèviament. En concret, utilitzarem l'opció <strong>make:controller</strong> seguida del nom que li vulguem donar al controlador. Típicament, els noms de controladors acaben amb el sufix Controller, per la qual cosa podem crear un de prova així:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">php artisan make:controller PruebaController</span>
+</code></pre></div>
+<p>Això generarà una classe buida amb el nom del controlador. Per defecte, els controladors es guarden en la subcarpeta <strong>app/Http/Controllers</strong> del nostre projecte Laravel.</p>
+<h4 id="controladors-de-recursos">Controladors de recursos<a class="headerlink" href="#controladors-de-recursos" title="Permanent link">&para;</a></h4>
+<p>El comando anterior admet alguns paràmetres addicionals més. Si creem un controlador amb l'opció -r, crearà un controlador de recursos ( resources ), i predefinirà en ell una sèrie de mètodes d'utilitat per a les operacions principals que es poden realitzar sobre una entitat de la nostra aplicació:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">php artisan make:controller PruebaController -r</span>
+</code></pre></div>
+<ul>
+<li>index : mostra un llistat dels elements d'aqueixa entitat o recurs</li>
+<li>create : mostra el formulari per a donar d'alta nous elements</li>
+<li>store : emmagatzema en la base de dades el recurs creat amb el formulari anterior</li>
+<li>show : mostra les dades d'un recurs específic (a partir de la seua clau o id).</li>
+<li>edit : mostra el formulari per a editar un recurs existent</li>
+<li>update : actualitza en la base de dades el recurs editat amb el formulari anterior</li>
+<li>destroy : elimina un recurs pel seu identificador.</li>
+</ul>
+<p>Òbviament, el codi de tots aquests mètodes apareixerà buit al principi, i els haurem d'emplenar amb les operacions corresponents més endavant.
+Si volem utilitzar un controlador d'aquest tipus, i cridar a algun dels seus mètodes des d'alguna ruta, ja no n'hi ha prou amb posar el nom del controlador, com féiem abans amb els de tipus <strong>invoke</strong>, ja que ara hi ha més d'un mètode que triar. El que farem serà posar el nom del controlador, seguit d'una
+arrova @ i el nom del mètode a invocar. Per exemple:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">Route::get(&#39;prueba&#39;, &#39;PruebaController@index&#39;)-&gt;name(&#39;listado_prueba&#39;);</span>
+</code></pre></div>
+<p>!!! note Per a que esta definició de rutes funcione correctament hem d'afegir un linea al app/providers/RouteServiceProvider per afegir el espai de noms dels control·ladors:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">public function boot()</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">        $this-&gt;configureRateLimiting();</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">        $this-&gt;routes(function () {</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">            Route::middleware(&#39;api&#39;)</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">                -&gt;prefix(&#39;api&#39;)</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">                -&gt;group(base_path(&#39;routes/api.php&#39;));</span>
+<span class="linenos" data-linenos=" 9 "></span>
+<span class="linenos" data-linenos="10 "></span><span class="x">            Route::middleware(&#39;web&#39;)</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">                -&gt;namespace(&#39;App\Http\Controllers&#39;)</span>
+<span class="linenos" data-linenos="12 "></span><span class="x">                -&gt;group(base_path(&#39;routes/web.php&#39;));</span>
+<span class="linenos" data-linenos="13 "></span><span class="x">        });</span>
+<span class="linenos" data-linenos="14 "></span><span class="x">    }</span>
+</code></pre></div>
+<h4 id="unint-totes-les-rutes-dun-controlador">Unint totes les rutes d'un controlador<a class="headerlink" href="#unint-totes-les-rutes-dun-controlador" title="Permanent link">&para;</a></h4>
+<p>Al final de tot el procés d'implementació d'un controlador (de recursos o de API) tindrem en l'arxiude rutes una dedicada a cada mètode del controlador (una per a index , una altra per a show , etc.).
+Aquestes rutes poden agrupar-se en una sola usant el mètode resource de la classe Route , en lloc de get, indicant-li com a paràmetres el nom base de la ruta, i el controlador que s'encarregarà d'ella:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>Route::resource(&#39;catalog&#39;, CatalogController::class);
+</code></pre></div>
+<p>La ruta anterior definirà una ruta GET cap a /catalog , atesa pel mètode index del controlador,una altra ruta GET cap a /catalog/{id} atesa pel mètode show del controlador... etc.
+També podem utilitzar el mètode only per a indicar per a quins mètodes volem rutes:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>Route::resource(&#39;catalog&#39;, CatalogController::class)-&gt;only([&#39;index&#39;, &#39;show&#39;]);
+</code></pre></div>
+<p>Des del costat oposat, tenim disponible el mètode <strong>except</strong> per a indicar que es generen totes les rutes excepte aquelles per als mètodes indicats:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>Route::resource(&#39;catalog&#39;, CatalogController::class)-&gt;except([&#39;update&#39;, &#39;edit&#39;]);
+</code></pre></div>
+<h4 id="reanomenant-les-vistes">Reanomenant les vistes<a class="headerlink" href="#reanomenant-les-vistes" title="Permanent link">&para;</a></h4>
+<p>A mesura que el projecte creix, generarem un bon nombre de vistes associades a controladors, i és necessari estructurar aquestes vistes d'una forma adequada per a poder-les identificar ràpidament. Una convenció que podem seguir és nomenar les vistes a partir del controlador o model al qual fan referència, i a l'operació que realitzen. Per exemple, si tenim un controlador anomenat
+PruebaController , se suposa que actuarà sobre una taula anomenada prueba (ho veurem més endavant, en la sessió d'accés a dades). I, podem emmagatzemar les vistes en la subcarpeta <strong>resources/views/pruebas</strong> , i definir dins les vistes
+associades a cada operació del controlador que tinguem definida. Per exemple:
+index.blade.php
+show.blade.php
+...</p>
+<h5 id="renderitzant-les-vistes">Renderitzant les vistes<a class="headerlink" href="#renderitzant-les-vistes" title="Permanent link">&para;</a></h5>
+<p>Paral·lelament, cada vegada que anem a carregar una vista des d'algun controlador o ruta, farem referència a aquest nom.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>  public function index(){
+<span class="linenos" data-linenos="2 "></span>    return view(&#39;catalog.index&#39;);
+<span class="linenos" data-linenos="3 "></span>  }
+</code></pre></div>
+<h4 id="controladors-i-espais-de-noms">Controladors i espais de noms<a class="headerlink" href="#controladors-i-espais-de-noms" title="Permanent link">&para;</a></h4>
+<p>També podem crear sub-carpetes dins de la carpeta Controllers per a organitzar-nos millor. En aquest cas, l'estructura de carpetes que creem no tindrà res a veure amb la ruta associada a la petició i, de fet, a l'hora de fer referència al controlador únicament haurem de fer-ho a través del seu espai de noms.</p>
+<p>Com hem vist en referenciar el controlador en el fitxer de rutes únicament hem d'indicar el seu nom i no tota la ruta ni l'espai de noms App\Http\Controllers. Açò és perquè el servei encarregat de carregar les rutes afig automàticament l'espai de noms arrel per als controladors. 
+Si fiquem tots els nostres controladors dins del mateix espai de noms no haurem d'afegir res més. Però si decidim crear sub-carpetes i organitzar els nostres controladors en sub-espais de noms, llavors sí que haurem d'afegir aqueixa part.</p>
+<p>Per exemple, si vam crear un controlador en <strong>App\Http\Controllers\Photos\AdminController</strong>, llavors per a registrar una ruta fins a aquest controlador hauríem de fer:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>    Route::get(&#39;foo&#39;, &#39;Photos\Admincontroller@method&#39;);
+</code></pre></div>
+<h2 id="injeccio-de-dependencies">Injecció de dependències<a class="headerlink" href="#injeccio-de-dependencies" title="Permanent link">&para;</a></h2>
+<p>El concepte d'injecció de dependències és molt habitual en l'ús de frameworks. Consisteix en un mecanisme que facilita recursos als diferents components de l'aplicació, i és una cosa que ja hem utilitzat, sense saber-ho, en els mètodes que s'han generat per als controladors.
+Per exemple, quan definim un mètode en un controlador que necessita processar una petició, se li passa
+com a paràmetre un objecte de tipus <strong>Request</strong>. Automàticament, Laravel processa el tipus de dada i
+obté l'objecte associat (en aquest cas, la petició del client).</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>class PruebaController extends Controller
+<span class="linenos" data-linenos="2 "></span>{
+<span class="linenos" data-linenos="3 "></span>    ...
+<span class="linenos" data-linenos="4 "></span>    public function store(Request $request)
+<span class="linenos" data-linenos="5 "></span>    {
+<span class="linenos" data-linenos="6 "></span>        ...
+<span class="linenos" data-linenos="7 "></span>    }
+<span class="linenos" data-linenos="8 "></span>}
+</code></pre></div>
+<h4 id="controladors-api">Controladors API<a class="headerlink" href="#controladors-api" title="Permanent link">&para;</a></h4>
+<p>Com a alternativa als controladors de recursos vistos abans, podem crear els controladors amb l'opció --api. Crearà un controlador amb els mateixos mètodes que el de recursos, excepte els mètodes create i edit , encarregats de mostrar els formularis de creació i edició de recursos, ja que en les APIs aquests formularis no són necessaris, com veurem en sessions posteriors.</p>
+<p>Amb els controladors de tipus API també podem generar automàticament totes les rutes per als seus mètodes, utilitzant el mètode apiResource de la classe Route , en lloc del mètode resource empleat abans:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>Route::apiResource(&#39;prueba&#39;, &#39;PruebaController&#39;);
+</code></pre></div>
+<h3 id="exemple-la-resposta">Exemple: La resposta<a class="headerlink" href="#exemple-la-resposta" title="Permanent link">&para;</a></h3>
+<p>Igual que tenim un objecte Request per a obtindre dades de la petició, també existeix un <strong>Response</strong> per a gestionar la resposta. Laravel proporciona un mètode <strong>response</strong> al qual li podem passar diversos paràmetres:</p>
+<ol>
+<li>El contingut de la resposta</li>
+<li>El codi d'estat HTTP de resposta (si no s'especifica, per defecte és 200)</li>
+<li>Un array amb les capçaleres de resposta (per defecte està buit).</li>
+</ol>
+<p>Així, si per exemple volem emetre una resposta determinada amb el seu codi d'estat des d'un
+controlador, podem fer això (per exemple, per a un codi 201):</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>response(&quot;Mensaje de respuesta&quot;, 201);
+</code></pre></div>
+Les capçaleres poden especificar-se com un array, o enllaçant anomenades al mètode <strong>header</strong> (una per a cada capçalera):</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>response(&quot;Mensaje de respuesta&quot;, 201)
+<span class="linenos" data-linenos="2 "></span>-&gt;header(&#39;Cabecera1&#39;, &#39;Valor1&#39;)
+<span class="linenos" data-linenos="3 "></span>-&gt;header(&#39;Cabecera2&#39;, &#39;Valor2&#39;);
+</code></pre></div>
+En el cas de voler retornar un objecte com a resposta, podem emprar el mètode <strong>json</strong> de la resposta (més endavant veurem que tots els objectes emesos directament al client s'envien en
+format <strong>JSON</strong>), i així podrem adjuntar un codi d'estat diferent de 200:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>return response()-&gt;json([&#39;datos&#39; =&gt; datos], 201)
+<span class="linenos" data-linenos="2 "></span>-&gt;header(&#39;Cabecera1&#39;, &#39;Valor1&#39;)
+<span class="linenos" data-linenos="3 "></span>...;
+</code></pre></div>
+<h3 id="utilitzar-la-resposta-per-fer-redireccions">Utilitzar la resposta per fer redireccions<a class="headerlink" href="#utilitzar-la-resposta-per-fer-redireccions" title="Permanent link">&para;</a></h3>
+<p>Existeix també un mètode redirect que podem emprar per a redirigir a una ruta des d'una altra,bé especificant la ruta com a paràmetre...
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>redirect(&#39;/&#39;);
+</code></pre></div></p>
+<p>... o bé indicant una ruta amb nom:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>redirect()-&gt;route(&#39;inicio&#39;);
+</code></pre></div>
+<p>... O si volem tornar a la ruta anterior simplement podem usar el mètode back: </p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>    return back();
+</code></pre></div>
+<p>Podem passar valors a la següent redirecció, emmagatzemant-los en sessió amb el mètode <strong>with</strong> ,
+encara que aquests valors es perdran en la següent petició (no es queden emmagatzemats en sessió):</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>redirect()-&gt;route(&#39;inicio&#39;)
+<span class="linenos" data-linenos="2 "></span>-&gt;with(&#39;mensaje&#39;, &#39;Mensaje enviado correctamente&#39;);
+</code></pre></div>
+<p>Per a accedir a aquest missatge des de la vista afectada, hem d'utilitzar la funció session :</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>@if(session()-&gt;has(&#39;mensaje&#39;))
+<span class="linenos" data-linenos="2 "></span>    {{ session(&#39;mensaje&#39;) }}
+<span class="linenos" data-linenos="3 "></span>@endif
+</code></pre></div>
+<p>Finalment, notar que si fem la redirecció des de dins d'un mètode d'un controlador (per exemple, per a redigir a una ruta des d'una altra), haurem de retornar ( return ) el resultat d'aqueixa
+redirecció perquè faça efecte:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>class LibroController extends Controller
+<span class="linenos" data-linenos=" 2 "></span>{
+<span class="linenos" data-linenos=" 3 "></span>    public function index()
+<span class="linenos" data-linenos=" 4 "></span>    {
+<span class="linenos" data-linenos=" 5 "></span>        ...
+<span class="linenos" data-linenos=" 6 "></span>    }
+<span class="linenos" data-linenos=" 7 "></span>    public function store(...)
+<span class="linenos" data-linenos=" 8 "></span>    {
+<span class="linenos" data-linenos=" 9 "></span>        ...
+<span class="linenos" data-linenos="10 "></span>        return redirect()-&gt;route(&#39;libros.index&#39;);
+<span class="linenos" data-linenos="11 "></span>    }
+<span class="linenos" data-linenos="12 "></span>}
+</code></pre></div>
+<h4 id="redireccio-amb-els-valors-de-la-peticio">Redirecció amb els valors de la petició<a class="headerlink" href="#redireccio-amb-els-valors-de-la-peticio" title="Permanent link">&para;</a></h4>
+<p>Les redireccions se solen utilitzar després d'obtenir algun error en la validació d'un formulari o després de processar alguns paràmetres d'entrada. En aquest cas, perquè en mostrar el formulari amb els errors produïts puguem afegir les dades que havia escrit l'usuari haurem de tornar a enviar els valors enviats amb la petició usant el mètode withInput():</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>    return redirect(&#39;form&#39;)-&gt;withInput();
+<span class="linenos" data-linenos="2 "></span>    // O per a reexpedir les dades d&#39;entrada excepte alguns:
+<span class="linenos" data-linenos="3 "></span>    return redirect(&#39;form&#39;)-&gt;withInput($request-&gt;except(&#39;password&#39;));
+</code></pre></div>
+<h3 id="exemplehelpers">Exemple:Helpers<a class="headerlink" href="#exemplehelpers" title="Permanent link">&para;</a></h3>
+<p>Per a acabar aquesta introducció al que suposa la injecció de dependències en frameworks de desenvolupament, farem ús d'una eina que ens pot ser útil en algunes situacions: els <strong>helpers</strong>.
+Un helper és bàsicament una funció d'utilitat que podem voler utilitzar en diversos punts de la
+nostra web, i que necessitem tindre localitzada i compartida. Per exemple, imaginem que volem
+ressaltar en el nostre menú de navegació l'opció que tenim actualment visible.
+Per a això, podem definir una classe <strong>CSS</strong> amb l'estil que vulguem per a ressaltar (això ho farem a part, en els arxius <strong>CSS</strong> del projecte), i després utilitzar aqueixa classe <strong>CSS</strong> en una condició per a cada menú de navegació.</p>
+<p>Per exemple, suposem que la classe <strong>CSS</strong> per a identificar el menú actiu es diu actiu . En aquest cas,
+per a un menú de diverses opcions com aquest, n'hi ha prou amb utilitzar el mètode <strong>routeIs</strong> de la petició
+( <strong>request</strong> ) per a comprovar si la ruta coincideix amb cada menú, i mostrar-lo com a actiu o no, usant un
+operador ternari de comparació:</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="p">&lt;</span><span class="nt">nav</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 2 "></span>    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 3 "></span>        <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;{{  request()-&gt;routeIs(&#39;inicio&#39;) ? &#39;activo&#39; : &#39;&#39; &quot;</span> <span class="err">}}&quot;</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 4 "></span>            <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/&quot;</span><span class="p">&gt;</span>Inicio<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 5 "></span>        <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 6 "></span>        <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;{{   request()-&gt;routeIs(&#39;contacto&#39;) ? &#39;activo&#39; : &#39;&#39; &quot;</span> <span class="err">}}&quot;</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 7 "></span>            <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/contacto&quot;</span><span class="p">&gt;</span>Contacto<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 8 "></span>        <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 9 "></span>        ...
+<span class="linenos" data-linenos="10 "></span>    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="11 "></span><span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+</code></pre></div>
+Aquesta característica també funciona si les rutes tenen paràmetres.
+Podem, en canvi, traure fora de la vista la lògica d'establir un camp com a actiu o no. Per a això,
+creem un arxiu d'utilitat o <strong>helper</strong>. Ho podem cridar <strong>helpers.php</strong> , i situar-ho en la mateixa
+carpeta app, dins d'una carpeta <strong>Helpers</strong>. Dins, definim la funció que ens retornarà si una ruta està activa o no, a partir del seu nom:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">function setActivo($nombreRuta)</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">{</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">    return request()-&gt;routeIs($nombreRuta) ? &#39;activo&#39; : &#39;&#39;;</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">}</span>
+</code></pre></div>
+<p>I d'aquesta manera, la nostra vista simplement es dedica a cridar a aquesta funció per a cada element del menú:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="p">&lt;</span><span class="nt">nav</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 2 "></span>    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 3 "></span>        <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;{{  setActivo(&#39;inicio&#39;) }}&quot;</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 4 "></span>            <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/&quot;</span><span class="p">&gt;</span>Inicio<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 5 "></span>        <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 6 "></span>        <span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;{{  setActivo(&#39;contacto&#39;)}}&quot;</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 7 "></span>            <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/contacto&quot;</span><span class="p">&gt;</span>Contacto<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 8 "></span>        <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 9 "></span>        ...
+<span class="linenos" data-linenos="10 "></span>    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="11 "></span><span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>En el cas de voler mantindre l'enllaç actiu per a qualsevol subruta a partir de l'original (per exemple,
+quan estem veient la fitxa d'un registre a partir del llistat general, podem utilitzar el wildcard d'asterisc
+* ):</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="p">&lt;</span><span class="nt">li</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;{{  setActivo(&#39;peliculas.*&#39;) }}&quot;</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="2 "></span>    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{  route(&#39;peliculas&#39;)}}&quot;</span><span class="p">&gt;</span>Peliculas<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="3 "></span><span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>No obstant això, perquè Laravel carregue l'arxiu <strong>helpers.php</strong> que acabem de crear, com no és una classe, hem d'indicar-ho explícitament (Laravel càrrega automàticament totes les classes de la carpeta app , però no arxius solts que no siguen classes). Podem fer-ho amb l'autoloader del composer.json de l'arrel del nostre projecte. En la secció autoload cal afegir una secció <strong>files</strong> amb un <strong>array</strong> amb els
+arxius que vulguem que es carreguen també:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>    &quot;autoload&quot;: {
+<span class="linenos" data-linenos="2 "></span>    &quot;classmap&quot;: [ ... ],
+<span class="linenos" data-linenos="3 "></span>    &quot;psr-4&quot;: { ... },
+<span class="linenos" data-linenos="4 "></span>    &quot;files&quot;: [&quot;app/helpers.php&quot;]
+<span class="linenos" data-linenos="5 "></span>    },
+</code></pre></div>
+<p>Després d'efectuar el canvi, hem de dir-li a *composer que torne a compilar l'acte carregador. Des de la
+carpeta del projecte, executem aquest comando:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>composer dump-autoload
+</code></pre></div>
+<h5 id="helperserviceprovider">HelperServiceProvider<a class="headerlink" href="#helperserviceprovider" title="Permanent link">&para;</a></h5>
+<p><a href="https://www.youtube.com/watch?v=sFvxC6zXFjM">Video</a></p>
+<p>Però la millor forma de fer-ho per a que les funcions d'aquest fitxer siguen visibles en l'aplicació és a crear un ServiceProvider i a registrar-lo:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>php artisan make:provider HelperServiceProvider
+</code></pre></div>
+<p>Crearà un fitxer en la carpeta Providers.
+L'editem per afegir el nostre Helper.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">    /**</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">         * Register services.</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">         *</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">         * @return void</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">         */</span>
+<span class="linenos" data-linenos="6 "></span><span class="x">        public function register()</span>
+<span class="linenos" data-linenos="7 "></span><span class="x">        {</span>
+<span class="linenos" data-linenos="8 "></span><span class="x">            require_once base_path() . &#39;/app/Helpers/myHelpers.php&#39;;</span>
+<span class="linenos" data-linenos="9 "></span><span class="x">        }</span>
+</code></pre></div>
+<p>I ara registrem el ServiceProvider en el fitxer <strong>config/app.php</strong></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">&#39;providers&#39; =&gt; [</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">        /*</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">         * Laravel Framework Service Providers...</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">         */</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">        Illuminate\Auth\AuthServiceProvider::class,</span>
+<span class="linenos" data-linenos=" 7 "></span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">        .....</span>
+<span class="linenos" data-linenos=" 9 "></span>
+<span class="linenos" data-linenos="10 "></span><span class="x">        /*</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">         * Package Service Providers...</span>
+<span class="linenos" data-linenos="12 "></span><span class="x">         */</span>
+<span class="linenos" data-linenos="13 "></span>
+<span class="linenos" data-linenos="14 "></span><span class="x">        /*</span>
+<span class="linenos" data-linenos="15 "></span><span class="x">         * Application Service Providers...</span>
+<span class="linenos" data-linenos="16 "></span><span class="x">         */</span>
+<span class="linenos" data-linenos="17 "></span><span class="x">        App\Providers\AppServiceProvider::class,</span>
+<span class="linenos" data-linenos="18 "></span><span class="x">        App\Providers\AuthServiceProvider::class,</span>
+<span class="linenos" data-linenos="19 "></span><span class="x">        // App\Providers\BroadcastServiceProvider::class,</span>
+<span class="linenos" data-linenos="20 "></span><span class="x">        App\Providers\EventServiceProvider::class,</span>
+<span class="linenos" data-linenos="21 "></span><span class="x">        App\Providers\RouteServiceProvider::class,</span>
+<span class="linenos" data-linenos="22 "></span><span class="x">        App\Providers\HelperServiceProvider::class,</span>
+<span class="linenos" data-linenos="23 "></span>
+<span class="linenos" data-linenos="24 "></span><span class="x">    ],</span>
+</code></pre></div>
+<p>I com cada volta que toquen un fitxer de configuració executem</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>php artisan config:cache
+</code></pre></div>
+<h4 id="exercicis">Exercicis<a class="headerlink" href="#exercicis" title="Permanent link">&para;</a></h4>
+<h4 id="exercisi-711">Exercisi 711.<a class="headerlink" href="#exercisi-711" title="Permanent link">&para;</a></h4>
+<p>Sobre el projecte blog de la sessió anterior, afegirem aquests canvis:</p>
+<ul>
+<li>Crea un <a href="#controladors-de-recursos">controlador</a> de recursos (opció -r ) anomenat <strong>PostController</strong> , que ens servirà per a gestionar tota la lògica dels posts del blog.</li>
+<li><a href="#unint-totes-les-rutes-dun-controlador">Assigna automàticament</a> amb el mètode <strong>resource</strong> cada ruta a la seua funció corresponent del controlador, en l'arxiu <strong>routes/web.php</strong> . Limita amb <strong>only</strong> les accions només a les funcions de llistat (index), fitxa (show), creació (create) i edició (edit).</li>
+<li>Canvia de nom les <a href="#reanomenant-les-vistes">vistes</a> de <strong>llistat</strong> i <strong>fitxa</strong> d'un post a <strong>index.blade.php</strong> i show.blade.php, dins de la seua carpeta posts, i fes que els mètodes corresponents del controlador de posts <a href="#renderitzant-les-vistes">renderitzen</a> aquestes vistes.</li>
+<li>Per als mètodes create i, simplement retorna un text pla en una vista indicant "Nou post" , per exemple.</li>
+<li>Fes els canvis addicionals que siguen convenients (per exemple, en el menú de navegació) perquè els enllaços continuen funcionant, i prova que les quatre rutes (llistat, fitxa, creació i edició) funcionen adequadament.</li>
+<li>Afegix el nou post al menú de navegació</li>
+<li></li>
+</ul>
+<h4 id="exercisi-712">Exercisi 712<a class="headerlink" href="#exercisi-712" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Fes que la funció <strong>edit</strong> del controlador de posts, en lloc de mostrar un missatge de text pla indicant que ací va un formulari, redirigisquen a la pàgina d'inici, usant la instrucció <a href="#utilitzar-la-resposta-per-fer-redireccions"><strong>redirect</strong></a> .</li>
+<li>Afig un <a href="#helperserviceprovider">helper</a> al projecte que definisca una funció anomenada <strong>fechaActual</strong> . Rebrà com a paràmetre un format de data (per defecte, "d/m/Y") i traurà la data actual en aquest format. Utilitza-ho per a mostrar la data actual en format "d/m/Y" en la plantilla base alineada a la dreta de la barra de navegació.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2021-2025 Aitor Medrano, Luis Alemañ, Ignasi Gomis - Licencia CC BY-NC-SA
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/aitormedrano" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.2 4.2 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.52 8.52 0 0 1-5.33 1.84q-.51 0-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<a.medrano@edu.gva.es>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.13c-.15.01-.29.06-.39.17l-1 1 2.05 2 1-1c.22-.21.22-.56 0-.77l-1.24-1.23a.56.56 0 0 0-.38-.17m-2 1.75L13 19.94V22h2.06l6.06-6.07M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h7v-.89l8.24-8.22c.47-.49 1.12-.76 1.8-.76.34 0 .68.06 1 .19V6c0-1.12-.92-2-2.04-2m0 4-8 5-8-5V6l8 5 8-5"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": ".", "features": ["header.autohide", "toc.integrate", "content.tabs.link"], "search": "assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiat al porta-retalls", "clipboard.copy": "C\u00f2pia al porta-retalls", "search.result.more.one": "1 m\u00e9s en aquesta p\u00e0gina", "search.result.more.other": "# m\u00e9s en aquesta p\u00e0gina", "search.result.none": "Cap document coincideix", "search.result.one": "1 document coincident", "search.result.other": "# documents coincidents", "search.result.placeholder": "Escriu per a comen\u00e7ar a cercar", "search.result.term.missing": "Desaparegut", "select.version": "Selecciona la versi\u00f3"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+    
+  </body>
+</html>

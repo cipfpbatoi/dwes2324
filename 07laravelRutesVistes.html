@@ -1,0 +1,994 @@
+
+<!doctype html>
+<html lang="ca" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://cipfpbatoi.github.io/dwes2223/07laravelRutesVistes.html">
+      
+      
+      
+      
+      <link rel="icon" href="imagenes/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.19">
+    
+    
+      
+        <title>FRAMEWORK LARAVEL - Desenvolupament web en entorn de Servidor</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-X6D0LR7TC8"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-X6D0LR7TC8",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-X6D0LR7TC8",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="Teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#framework-laravel" class="md-skip">
+          Salta el contingut
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Capçalera">
+    <a href="index.html" title="Desenvolupament web en entorn de Servidor" class="md-header__button md-logo" aria-label="Desenvolupament web en entorn de Servidor" data-md-component="logo">
+      
+  <img src="imagenes/logofp.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Desenvolupament web en entorn de Servidor
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              FRAMEWORK LARAVEL
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="Teal"  aria-label="Canviar a mode nit"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Canviar a mode nit" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="light-blue" data-md-color-accent="Teal"  aria-label="Canviar a mode dia"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Canviar a mode dia" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Neteja" aria-label="Neteja" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicialitzant cerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navegació" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Desenvolupament web en entorn de Servidor" class="md-nav__button md-logo" aria-label="Desenvolupament web en entorn de Servidor" data-md-component="logo">
+      
+  <img src="imagenes/logofp.png" alt="logo">
+
+    </a>
+    Desenvolupament web en entorn de Servidor
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01arquitecturas.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.- Arquitectures Web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02php.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.- Programació web amb PHP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03MVC_Laravel.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.- Arquitectura MVC amb Laravel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="04dades_Laravel.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.- Accés segur i estructurat a bases de dades amb Laravel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="05seguretat_Laravel.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.- Aplicacions segures i reactives en Laravel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="framework-laravel">FRAMEWORK LARAVEL<a class="headerlink" href="#framework-laravel" title="Permanent link">&para;</a></h1>
+<h2 id="rutes">Rutes<a class="headerlink" href="#rutes" title="Permanent link">&para;</a></h2>
+<p><a href="https://youtu.be/oHJokaq0yeY"><img alt="" src="../img/ull.png" />Video</a></p>
+<p>Podríem dir que existeixen dos tipus principals de rutes:</p>
+<ul>
+<li>
+<p>Les rutes <strong>web</strong> (emmagatzemades a l'arxiu <strong>web.php</strong> de l'aplicació), que ens permetran carregar diferents vistes en funció de la URL que indique el client.</p>
+</li>
+<li>
+<p>Les rutes <strong>API</strong> (emmagatzemades en l'arxiu <strong>api.php</strong>), a través de les quals deﬁnirem
+diferents serveis <strong>REST</strong>, com veurem també més endavant.</p>
+</li>
+</ul>
+<p>Ens centrarem durant aquesta tema en el primer grup, per la qual cosa editarem el contingut de l'arxiu <strong>routes/web.php</strong>. Vegem quins tipus de rutes podem *deﬁnir, i quines característiques tenen.</p>
+<p>Este és el punt centralitzat per a la definició de rutes i qualsevol ruta no definida en aquest fitxer no serà vàlida, generat una excepció (el que retornarà un error 404).
+Les rutes, en la seua forma més senzilla, poden retornar directament un valor des del propi fitxer de rutes, però també podran generar la trucada a una vista o a un controlador.</p>
+<h4 id="rutes-simples">Rutes simples<a class="headerlink" href="#rutes-simples" title="Permanent link">&para;</a></h4>
+<p>Les rutes simples tenen un nom de ruta fix, i una funció que respon a aquest nom emetent una resposta.
+Les rutes, a més de definir la URL de la petició, també indiquen el mètode amb el qual s'ha de fer aquesta petició. Els dos mètodes més utilitzats i que començarem veient són les peticions tipus GET i tipus POST. Per exemple, per a definir una petició tipus GET hauríem d'afegir el següent codi al nostre fitxer routes.php:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">    Route::get(&#39;salut&#39;, function()</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">    { </span>
+<span class="linenos" data-linenos="3 "></span><span class="x">        return &#39;Hola món!&#39;; </span>
+<span class="linenos" data-linenos="4 "></span><span class="x">    });</span>
+</code></pre></div>
+<p>Aquest codi es llançaria quan es realitze una petició tipus GET a la ruta arrel de la nostra aplicació. Si estem treballant en local aquesta ruta seria http://localhost (en el notre cas <strong>intranet.my</strong>) però quan la web estiga en producció es referiria al domini principal, per exemple: http://www.dirección-de-tu-web.com. </p>
+<h4 id="afegir-parametres-a-les-rutes">Afegir paràmetres a les rutes<a class="headerlink" href="#afegir-parametres-a-les-rutes" title="Permanent link">&para;</a></h4>
+<p>Si volem afegir paràmetres a una ruta simplement els hem d'indicar entre claus {} a continuació de la ruta, de la forma:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">    Route::get(&#39;salut/{nom}&#39;, function($nom)</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">    return &#39;Bon dia, &#39;.$nom; });</span>
+</code></pre></div>
+<p>En aquest cas estem definint la ruta /salut/{nom}, on <strong>nom</strong> és requerit i pot ser qualsevol valor. En cas de no especificar cap <strong>nom</strong> ens redigirirà a una pàgina d'error 404. El paràmetre se li passarà a la funció, el qual es podrà utilitzar (com veurem més endavant) para per exemple obtenir dades de la base de dades, emmagatzemar valors, etc.</p>
+<p>També podem indicar que un paràmetre és opcional simplement afegint el símbol ? al final (i en aquest cas no donaria error si no es realitza la petició amb aquest paràmetre):</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">    Route::get(&#39;salut/{nom?}&#39;, function($nom = &#39;convidat&#39;)</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">        return &#39;Bon dia, &#39;.$nom; </span>
+<span class="linenos" data-linenos="4 "></span><span class="x">    });</span>
+</code></pre></div>
+<h4 id="validacio-de-parametres">Validació de paràmetres<a class="headerlink" href="#validacio-de-parametres" title="Permanent link">&para;</a></h4>
+<p>Alguns paràmetres caldrà que seguisquen un determinat patró. Per exemple, un identificador numèric
+només contindrà dígits. Per a assegurar-nos d'això, podem emprar el mètode *where en definir la ruta. A aquest mètode li passem dos paràmetres: el nom del paràmetre a validar, i l'expressió regular que
+ha de complir. En el cas del nom anterior, si volem que només continga lletres (majúscules o minúscules), podem fer una cosa així:    </p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">Route::get(&#39;salut/{nom?}&#39;, function($nom = &quot;Convidat&quot;) {</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">return &quot;Hola, &quot; . $nom;</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">})-&gt;where(&#39;nom&#39;, &quot;[A-Za-z]+&quot;);</span>
+</code></pre></div>
+En cas que la ruta no complisca el patró, s'obtindrà una pàgina d'error. Més endavant s'explicarà
+com podem personalitzar aquestes pàgines d'error.</p>
+<h4 id="named-routes">Named routes<a class="headerlink" href="#named-routes" title="Permanent link">&para;</a></h4>
+<p>A vegades pot ser convenient associar un nom a una ruta. Especialment, quan aqueixa ruta formarà part d'un enllaç en alguna pàgina del nostre lloc, ja que en un futur la ruta podria canviar, i d'aquesta manera evitem haver d'actualitzar els enllaços al nou nom.
+Per a això, en definir la ruta, li associem amb la funció <strong>name</strong> el nom que vulguem. Per exemple: </p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">Route::get(&#39;contacte&#39;, function() {</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">return &quot;Pàgina de contacte&quot;;</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">})-&gt;name(&#39;ruta_contacte&#39;);</span>
+</code></pre></div>
+Ara, si volem definir un enllaç a aquesta ruta en qualsevol part, n'hi ha prou amb emprar la funció <strong>route</strong> de Laravel, indicant el nom que li hem assignat a aquesta ruta. Per tant, en lloc de posar això:</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">echo &#39;&lt;a href=&quot;/contacte&quot;&gt;Contacte&lt;/a&gt;&#39;;</span>
+</code></pre></div>
+Podem fer alguna cosa com això un altre, tal com veurem a continuació quan usem el motor de plantilles <strong>Blade</strong>:</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">&lt;a href=&quot;{{ &quot;{{ route(&#39;ruta_contacte&#39;) &quot; }}}}&quot;&gt;Contacte&lt;/a&gt;</span>
+</code></pre></div>
+D'aquesta manera, davant futurs canvis en les rutes, només haurem de canviar la URL en <strong>Route::get</strong></p>
+<h4 id="combinacio-delements-en-rutes">Combinació d'elements en rutes<a class="headerlink" href="#combinacio-delements-en-rutes" title="Permanent link">&para;</a></h4>
+<p>Podem combinar diverses clàusules <strong>where</strong> en una ruta per a validar diferents paràmetres que puga
+tindre, i també enllaçar aquestes crides amb una a la funció <strong>name</strong> per a nomenar la ruta. Per exemple, la
+següent ruta espera rebre un nom amb caràcters, i un id numèric, tots dos amb valors per defecte:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">Route::get(&#39;salut/{nom?}/{id?}&#39;,</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">function($nom=&quot;Convidat&quot;, $id=0)</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">{</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">return &quot;Hola $nom, el teu codi és el $id&quot;;</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">})-&gt;where(&#39;nom&#39;, &quot;[A-Za-z]+&quot;)</span>
+<span class="linenos" data-linenos="6 "></span><span class="x">-&gt;where(&#39;id&#39;, &quot;[0-9]+&quot;)</span>
+<span class="linenos" data-linenos="7 "></span><span class="x">-&gt;name(&#39;salut&#39;);</span>
+</code></pre></div>
+<p>Si accedim a cadascuna de les següents URLs, obtindrem cadascuna de les respostes indicades:</p>
+<table>
+<thead>
+<tr>
+<th>URL</th>
+<th>Respuesta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>/salut</td>
+<td>Hola Convidat, el teu codi és el 0</td>
+</tr>
+<tr>
+<td>/salut/Ignasi</td>
+<td>Hola Ignasi, el teu codi és el 0</td>
+</tr>
+<tr>
+<td>/salut/Ignasi/3</td>
+<td>Hola Ignasi, el teu codi és el 3</td>
+</tr>
+<tr>
+<td>/salut/3</td>
+<td>Error 404 (URL incorrecta)</td>
+</tr>
+</tbody>
+</table>
+<p>Notar que l'últim cas és incorrecte. No podem especificar un id sense haver especificat un nom
+davant, perquè incompleix el patró de la URL. Es pot deixar un paràmetre omés, sempre que els
+posteriors també ho estiguen.</p>
+<h2 id="vistes">Vistes<a class="headerlink" href="#vistes" title="Permanent link">&para;</a></h2>
+<p><a href="https://youtu.be/D3uLYwkQ3C0"><img alt="" src="../img/ull.png" />Video</a></p>
+<p>Les vistes són la forma de presentar el resultat (una pantalla del nostre lloc web) de forma visual a l'usuari, el qual podrà interactuar amb ell i tornar a realitzar una petició. Les vistes a més ens permeten separar tota la part de presentació de resultats de la lògica (controladors) i de la base de dades (models).</p>
+<p>Per tant no hauran de realitzar cap tipus de consulta ni processament de dades, simplement rebran dades i els prepararan per a mostrar-los com HTML.</p>
+<p>Fins ara les rutes que hem definit retornen un text simple, excepte la qual ja estava creada per defecte
+en el projecte, que apuntava a la pàgina d'inici. Si volguérem retornar contingut HTML, una
+opció (costosa) seria retornar aquest contingut generat des del propi mètode de la ruta, a través de la
+instrucció <strong>return</strong> , però en lloc de fer això des de dins de la pròpia funció de resposta, el més
+habitual (i recomanable) és generar una vista amb el contingut HTML que es vol enviar al client.</p>
+<p>La forma general de mostrar vistes en <strong>Laravel</strong> és fer que les rutes retornen (return) una determinada vista. Per a això, es pot emprar la funció <strong>view</strong> de Laravel, indicant el nom de la vista a generar o mostrar.
+Per defecte, en la carpeta <strong>resources/views</strong> tenim disponible una vista d'exemple anomenada <strong>welcome.blade.php</strong> . És la que s'utilitza com a pàgina d'inici en la ruta arrel en <strong>routes/web.php</strong> :</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">Route::get(&#39;/&#39;, function() {</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">return view(&#39;welcome&#39;);</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">});</span>
+</code></pre></div>
+Notar que no és necessari indicar el path o ruta cap a l'arxiu de la vista, ni tampoc l'extensió, ja que
+ Laravel assumeix que per defecte les vistes es troben en la carpeta <strong>resources/views</strong> , amb l'extensió
+<strong>.blade.php</strong> (que fa referència al motor de plantilles <strong>Blade</strong> que veurem a continuació), o
+simplement amb extensió <strong>.php</strong> (en el cas de vistes simples que no utilitzen Blade).
+Podem, per exemple, crear una vista senzilla dins d'aquesta carpeta de vistes (anomenem-la
+<strong>inici.blade.php</strong> ), amb un contingut HTML bàsic:</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="2 "></span>    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="3 "></span>        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Inici<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="4 "></span>    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="5 "></span>    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="6 "></span>        <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Pàgina d&#39;inici<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="7 "></span>    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="8 "></span><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+I podem utilitzar esta vista com a pàgina d'inici:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">Route::get(&#39;/&#39;, function() {</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">return view(&#39;inicio&#39;);</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">});</span>
+</code></pre></div>
+<p>Les vistes contenen el codi HTML del nostre lloc web, barrejat amb els <strong>assets</strong> (CSS, imatges, Javascripts, etc. que estaran emmagatzemats en la carpeta public) i una <strong>mica de codi PHP (o codi Blade de plantilles, com veurem més endavant)</strong> per a presentar les dades d'entrada com un resultat HTML.</p>
+<h5 id="pasar-valor-a-les-vistes">Pasar valor a les vistes<a class="headerlink" href="#pasar-valor-a-les-vistes" title="Permanent link">&para;</a></h5>
+<p>És molt habitual passar una certa informació a unes certes vistes, com per exemple, llistats de dades a mostrar, o dades d'un element en concret. Per exemple, si volem donar un missatge de benvinguda a un nom
+(suposadament variable), hem d'emmagatzemar el nom en una variable en la ruta, i passar-s'ho a la vista en carregar-la. Això pot fer-se, per exemple, amb el mètode <strong>with</strong> després de generar la vista, indicant el nomamb què l'associarem a la vista, i el valor (variable) associat a aquest nom. En el nostre cas quedaria així:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">Route::get(&#39;/&#39;, function() {</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">$nombre = &quot;Nacho&quot;;</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">return view(&#39;inicio&#39;)-&gt;with(&#39;nombre&#39;, $nombre);</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">});</span>
+</code></pre></div>
+<p>Posteriorment, en la vista, haurem de mostrar el valor d'aquesta variable en algun lloc del codi HTML.
+Podem emprar PHP tradicional per a recollir aquesta variable:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="2 "></span>    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="3 "></span>        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Inicio<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="4 "></span>    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="5 "></span>    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="6 "></span>        <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Página de inicio<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="7 "></span>        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Bienvenido/a <span class="cp">&lt;?php echo $nombre; ?&gt;</span><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="8 "></span>    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="9 "></span><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Però és més habitual i net emprar una sintaxi específica de Blade, com veurem a continuació.
+Com a alternatives a l'ús de with comentat abans, també podem utilitzar un array associatiu (assignant així diversos noms a diversos valors):</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">return view(&#39;inicio&#39;)-&gt;with([&#39;nombre&#39; =&gt; $nombre, ...]);</span>
+</code></pre></div>
+<p>Així mateix, podem utilitzar aquest mateix array com segon paràmetre de la funció view , i prescindir
+així de with :</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">return view(&#39;inicio&#39;, [&#39;nombre&#39; =&gt; $nombre, ...]);</span>
+</code></pre></div>
+<p>I també podem utilitzar una funció anomenada compact com segon paràmetre de view . A aquesta funció li passem únicament el nom de la variable i, sempre que la variable associada es cride igual, estableix l'associació per nosaltres:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">return view(&#39;inicio&#39;, compact(&#39;nombre&#39;));</span>
+</code></pre></div>
+<p>La funció <strong>compact</strong> admet tants paràmetres com dades vulguem enviar a la vista per separat, cadascun amb el seu nom associat. Si simplement retornarem una vista amb poca informació associada, o poca lògica interna, també podem abreujar el codi anterior cridant directament a view , en lloc de route primer, en
+l'arxiu <strong>routes/web.php</strong> , i li passem així la informació associada a la vista:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">Route::view(&#39;/&#39;, &#39;inicio&#39;, [&#39;nombre&#39; =&gt; &#39;Nacho&#39;]);</span>
+</code></pre></div>
+<h2 id="plantilles-mitjancant-blade"><a href="https://laravel.com/docs/8.x/blade">Plantilles mitjançant Blade</a><a class="headerlink" href="#plantilles-mitjancant-blade" title="Permanent link">&para;</a></h2>
+<p>Laravel utilitza Blade per a la definició de plantilles en les vistes. Aquesta llibreria permet realitzar tot tipus d'operacions amb les dades, a més de la substitució de seccions de les plantilles per un altre contingut, herència entre plantilles, definició de layouts o plantilles base, etc.</p>
+<p>Els fitxers de vistes que utilitzen el sistema de plantilles Blade han de tenir l'extensió <strong>.blade.php</strong>. Aquesta extensió tampoc s'haurà d'incloure a l'hora de referenciar una vista des del fitxer de rutes o des d'un controlador. És a dir, utilitzarem view('home') tant si el fitxer es diu home.php com home.blade.php.</p>
+<p>En general el codi que inclou Blade en una vista començarà pels símbols <strong>@</strong> o <strong>{{ "{{</strong>, el qual posteriorment serà processat i preparat per a mostrar-se per pantalla. Blade no afig sobrecàrrega de processament, ja que totes les vistes són preprocesadas i cachejades, per contra ens brinda utilitats que ens ajudaran en el disseny i modularització de les vistes.</p>
+<h4 id="mostrar-dades">Mostrar dades<a class="headerlink" href="#mostrar-dades" title="Permanent link">&para;</a></h4>
+<p>El mètode més bàsic que tenim en Blade és el de mostrar dades, per a açò utilitzarem les claus dobles (<strong>{{ "{{ " }}}}</strong>) i dins d'elles escriurem la variable o funció amb el contingut a mostrar:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>    Hola {{  $name }}.
+</code></pre></div>
+<p>Cada vegada que es renderitza una vista en Laravel, s'emmagatzema el contingut PHP generat en
+<strong>storage/framework/views</strong> , i només es torna a re-generar davant un canvi en la vista, amb el que
+tornar a cridar a una vista ja renderitzada no afecta al rendiment de l'aplicació. Si donem una ullada
+ a la vista generada amb PHP pla i amb Blade, veurem que hi ha una subtil diferència entre
+ambdues, i és que amb Blade, en lloc de fer un simple echo per a mostrar el valor de la variable, s'utilitza
+una funció intermèdia anomenada e , que evita atacs <strong>XSS (Cross Site Scripting)</strong>, és a dir, que
+s'injecten scripts de Javascript amb la variable a mostrar. En altres paraules, el codi no s'interpreta,
+i es mostra tal qual. En alguns casos (especialment quan generem contingut HTML des de dins de l'expressió Blade) ens pot interessar que no protegisca contra aquestes injeccions de codi.
+En aqueix cas, se substitueix la segona clau per una doble exclamació:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>    Hola {!! $name !!}.
+</code></pre></div>
+<p>En general sempre haurem d'usar les claus dobles, especialment si anem a mostrar dades que són proporcionats pels usuaris de l'aplicació. Per tant, aquest últim mètode solament hem d'utilitzar-ho si estem segurs que no volem que s'escape el contingut.</p>
+<h5 id="mostrar-una-dada-sola-si-existeix">Mostrar una dada sola si existeix<a class="headerlink" href="#mostrar-una-dada-sola-si-existeix" title="Permanent link">&para;</a></h5>
+<p>Per a comprovar que una variable existeix o té un determinat valor podem utilitzar l'operador ternari de la forma:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">    {{  isset($name) ? $name : &#39;Valor per defecte&#39; }}</span>
+</code></pre></div>
+<p>O simplement usar la notació que inclou Blade per a aquesta fi: </p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>    {{  $name or &#39;Valor per defecte&#39; }}
+</code></pre></div>
+<h4 id="comentaris">Comentaris<a class="headerlink" href="#comentaris" title="Permanent link">&para;</a></h4>
+<p>Per a escriure comentaris en Blade s'utilitzen els símbols <strong>{{ "{{-- i --" }}}}</strong></p>
+<h4 id="estructures-de-control">Estructures de control<a class="headerlink" href="#estructures-de-control" title="Permanent link">&para;</a></h4>
+<p>Per a iterar sobre un conjunt de dades (array), podem emprar la directiva @foreach , amb una sintaxi similar al foreach de PHP, però sense necessitat de claus. N'hi ha prou amb finalitzar el bucle amb la directiva
+@endforeach , d'aquesta manera:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="2 "></span>    @foreach($elementos as $elemento)
+<span class="linenos" data-linenos="3 "></span>        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{  $elemento}}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="4 "></span>    @endforeach
+<span class="linenos" data-linenos="5 "></span><span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>En el cas de voler realitzar alguna comprovació (per exemple, si el array anterior està buit, per a mostrar
+un missatge pertinent), usem la directiva @if , tancada pel seu corresponent parella @endif .
+Opcionalment, es pot intercalar una directiva @else per al camí alternatiu, o també @elseif per a indicar una altra condició. L'exemple anterior podria quedar així:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>&lt;ul&gt;
+<span class="linenos" data-linenos="2 "></span>    @if($elementos)
+<span class="linenos" data-linenos="3 "></span>        @foreach($elementos as $elemento)
+<span class="linenos" data-linenos="4 "></span>            &lt;li&gt;{{  $elemento }}&lt;/li&gt;
+<span class="linenos" data-linenos="5 "></span>        @endforeach
+<span class="linenos" data-linenos="6 "></span>    @else
+<span class="linenos" data-linenos="7 "></span>            &lt;li&gt;No hay elementos que mostrar&lt;/li&gt;
+<span class="linenos" data-linenos="8 "></span>    @endif
+<span class="linenos" data-linenos="9 "></span>&lt;/ul&gt;
+</code></pre></div>
+<p>També podem comprovar si una variable està definida. En aquest cas, reemplacem la directiva @if per @isset, amb el seu corresponent tancament @endisset.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="2 "></span>    @isset($elementos)
+<span class="linenos" data-linenos="3 "></span>        @foreach($elementos as $elemento)
+<span class="linenos" data-linenos="4 "></span>            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{ $elemento }}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="5 "></span>        @endforeach
+<span class="linenos" data-linenos="6 "></span>    @else
+<span class="linenos" data-linenos="7 "></span>        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>No hay elementos que mostrar<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="8 "></span>    @endisset
+<span class="linenos" data-linenos="9 "></span><span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>No obstant això, amb qualsevol d'aquestes opcions tenim un problema: en el primer cas, si la variable <strong>\$elements</strong> no està definida, mostrarà un error de PHP. En el segon cas, si la variable sí que està definida però no conté elements, no es mostrarà res per pantalla. Una tercera estructura alternativa que agrupa aquests dos casos (controlar alhora que la variable estiga definida i tinga elements) és emprar la directiva @forelse en lloc de @foreach . Aquesta directiva permet una clàusula addicional @empty per a indicar què fer si la col·lecció no té elements o està sense definir. L'exemple anterior quedaria ara així d'abreujat:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>&lt;ul&gt;
+<span class="linenos" data-linenos="2 "></span>    @forelse($elementos as $elemento)
+<span class="linenos" data-linenos="3 "></span>        &lt;li&gt;{{  $elemento }}&lt;/li&gt;
+<span class="linenos" data-linenos="4 "></span>    @empty
+<span class="linenos" data-linenos="5 "></span>        &lt;li&gt;No hay elementos que mostrar&lt;/li&gt;
+<span class="linenos" data-linenos="6 "></span>    @endforelse
+<span class="linenos" data-linenos="7 "></span>&lt;/ul&gt;
+</code></pre></div>
+<p>En aquesta mena de iteradors ( @foreach o @forelse ), tenim disponible un objecte anomenat \$loop ,
+amb una sèrie de propietats sobre el bucle que estem iterant, com per exemple index (posició
+dins del array per la qual anem), o count (total d'elements), o first i last (booleans que
+determinen si és el primer o últim element, respectivament), entre altres. Podem veure totes les
+propietats disponibles en aquest objecte cridant a var_dump :</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="2 "></span>    @forelse($elementos as $elemento)
+<span class="linenos" data-linenos="3 "></span>        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{  $elemento }} {{  var_dump($loop) }} <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="4 "></span>    @empty
+<span class="linenos" data-linenos="5 "></span>        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>No hay elementos que mostrar<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="6 "></span>    @endforelse
+<span class="linenos" data-linenos="7 "></span><span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Si, per exemple, volem determinar si és l'últim element de la llista, i mostrar un missatge o estil especial, podem fer alguna cosa com això:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="2 "></span>    @forelse($elementos as $elemento)
+<span class="linenos" data-linenos="3 "></span>        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{  $elemento }}
+<span class="linenos" data-linenos="4 "></span>            {{  $loop-&gt;last ? &quot;Ultimo elemento&quot; : &quot;&quot; }}
+<span class="linenos" data-linenos="5 "></span>        <span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="6 "></span>    @empty
+<span class="linenos" data-linenos="7 "></span>        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>No hay elementos que mostrar<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="8 "></span>    @endforelse
+<span class="linenos" data-linenos="9 "></span><span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span> 
+</code></pre></div>
+<p>Aquesta són les estructures de control més utilitzades. Ademas d'aquestes Blade defineix algunes més que podem veure directament en la seua <a href="https://laravel.com/docs/8.x/blade#control-structures">documentació</a></p>
+<h5 id="sobre-els-enllacos-a-altres-rutes">Sobre els enllaços a altres rutes<a class="headerlink" href="#sobre-els-enllacos-a-altres-rutes" title="Permanent link">&para;</a></h5>
+<p>Hem comentat breument en punts anteriors que, gràcies a Blade i als noms en les rutes,podem enllaçar una vista amb una altra de dues formes: de manera tradicional...</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">echo &#39;&lt;a href=&quot;/contacto&quot;&gt;Contacte&lt;/a&gt;&#39;;</span>
+</code></pre></div>
+... o bé emprant la funció route seguida del nom que li hem donat a la ruta:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">&lt;a href=&quot;{{  route(&#39;ruta_contacto&#39;) }}&quot;&gt;Contacte&lt;/a&gt;</span>
+</code></pre></div>
+<p>A més, mitjançant Blade existeix una tercera manera d'enllaçar, emprant la funció url , que genera una
+URL completa fins a la ruta que indiquem:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">&lt;a href=&quot;{{  url(&#39;/contacto&#39;) &quot; }}&quot;&gt;Contacte&lt;/a&gt;</span>
+</code></pre></div>
+<h3 id="definir-plantilles-comunes">Definir Plantilles comunes<a class="headerlink" href="#definir-plantilles-comunes" title="Permanent link">&para;</a></h3>
+<p>A l'hora de donar homogeneïtat a una web, és habitual que la capçalera, el menú de navegació o el peu de pàgina formen part d'una plantilla que es repeteix en totes les pàgines del lloc, de manera que evitem
+haver d'actualitzar totes les pàgines davant qualsevol possible canvi en aquests elements.
+Per a crear una plantilla en Blade, creem un arxiu normal i corrent (per exemple,
+<strong>plantilla.blade.php</strong> ), en la carpeta de vistes, amb el contingut general de la plantilla. En aquelles zones del document on permetrem contingut variable depenent de la vista en si, afegim
+una secció anomenada <strong>@yield</strong> , amb un nom associat. La nostra plantilla podria ser aquesta (notar que es permeten varies <strong>@yield</strong> amb diferents noms):</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 2 "></span>    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 3 "></span>        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 4 "></span>            @yield(&#39;titulo&#39;)
+<span class="linenos" data-linenos=" 5 "></span>        <span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 7 "></span>    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 8 "></span>        <span class="p">&lt;</span><span class="nt">nav</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 9 "></span>            <span class="cm">&lt;!-- ... Menú de navegación --&gt;</span>
+<span class="linenos" data-linenos="10 "></span>        <span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="11 "></span>        @yield(&#39;contenido&#39;)
+<span class="linenos" data-linenos="12 "></span>    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="13 "></span><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+Després, en cada vista en què vulguem utilitzar aquesta plantilla, afegim la directiva @*extends de Blade,
+indicant el nom de plantilla que utilitzarem. Amb la directiva @section , seguida del nom de la
+secció, definim el contingut per a cadascun dels @yield que s'hagen indicat en la plantilla.
+Finalitzarem cada secció amb la directiva @endsection . Així, per a la nostra pàgina inicial
+( inici.blade.php ), el contingut pot ser ara aquest:</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>@extends(&#39;plantilla&#39;)
+<span class="linenos" data-linenos="2 "></span>@section(&#39;titulo&#39;, &#39;Inicio&#39;)
+<span class="linenos" data-linenos="3 "></span>@section(&#39;contenido&#39;)
+<span class="linenos" data-linenos="4 "></span>    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Página de inicio<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="5 "></span>    Bienvenido/a {{ $nombre }}
+<span class="linenos" data-linenos="6 "></span>@endsection
+</code></pre></div>
+Notar, a més, que a la directiva @section se li pot passar un segon paràmetre amb el contingut
+d'aqueixa secció, i en aquest cas no és necessari tancar-la amb @endsection . Aquesta opció és útil per a continguts on no interessen caràcters en blanc o salts de línia innecessaris al principi o al final,
+com ocorre en l'exemple anterior amb el títol (title) de la pàgina.
+De la mateixa manera, la nostra vista per al llistat de llibres quedaria d'aquesta manera:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>@extends(&#39;plantilla&#39;)
+<span class="linenos" data-linenos=" 2 "></span>@section(&#39;titulo&#39;, &#39;Listado de libros&#39;)
+<span class="linenos" data-linenos=" 3 "></span>@section(&#39;contenido&#39;)
+<span class="linenos" data-linenos=" 4 "></span>    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Listado de libros<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 5 "></span>        <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 6 "></span>        @forelse ($libros as $libro)
+<span class="linenos" data-linenos=" 7 "></span>            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{  $libro[&quot;titulo&quot;] }}({{  $libro[&quot;autor&quot;] }})<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 8 "></span>        @empty
+<span class="linenos" data-linenos=" 9 "></span>            <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>No se encontraron libros<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="10 "></span>        @endforelse
+<span class="linenos" data-linenos="11 "></span>        <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="12 "></span>@endsection
+</code></pre></div>
+<h5 id="incloure-vistes-dins-daltres">Incloure vistes dins daltres<a class="headerlink" href="#incloure-vistes-dins-daltres" title="Permanent link">&para;</a></h5>
+<p>També sol ser habitual definir continguts parcials (se solen definir en una subcarpeta <strong>partials</strong>
+dins de resources/views ), i incloure'ls en les vistes. Per a això, utilitzarem la directiva <strong>@include</strong>
+de Blade.
+Per exemple, definirem un menú de navegació. Suposem que aquest menú està en l'arxiu
+<strong>resources/views/partials/nav.blade.php</strong>.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="p">&lt;</span><span class="nt">nav</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="2 "></span>    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{  route(&#39;inici&#39;) }}&quot;</span><span class="p">&gt;</span>Inici<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{  route(&#39;libres_llistat&#39;) }}&quot;</span><span class="p">&gt;</span>Llistat de llibres<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="4 "></span><span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Per a incloure el menú en la plantilla anterior, podem fer això (i eliminaríem el menú <nav> de la
+plantilla):</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 2 "></span>    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 3 "></span>        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 4 "></span>            @yield(&#39;titulo&#39;)
+<span class="linenos" data-linenos=" 5 "></span>        <span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 7 "></span>    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 8 "></span>        @include(&#39;partials.nav&#39;)
+<span class="linenos" data-linenos=" 9 "></span>        @yield(&#39;contenido&#39;)
+<span class="linenos" data-linenos="10 "></span>    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="11 "></span><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<h5 id="estructuras-vistes-en-carpetes">Estructuras vistes en carpetes<a class="headerlink" href="#estructuras-vistes-en-carpetes" title="Permanent link">&para;</a></h5>
+<p>Quan l'aplicació és una mica complexa, poden ser necessàries diverses vistes, i tindre-les totes en una mateixa carpeta pot ser una cosa difícil de gestionar. És habitual, com anirem veient en sessions posteriors,
+estructurar les vistes de la carpeta <strong>resources/views</strong> en <strong>subcarpetas</strong>, de manera que, per exemple, cada carpeta es referisca a les vistes d'una entitat o model de l'aplicació, o a un controlador específic. Per renderitzar una vista que està dins d'una carpeta,  haurem d'indicar també el nom de la subcarpeta:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">Route::get(&#39;llistat&#39;, function() {</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">    ...</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">    return view(&#39;llibres.llistat&#39;, compact(&#39;llibres&#39;));</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">});</span>
+</code></pre></div>
+<p>Ací tindrem una vista llistat dins d'una carpeta llibres.</p>
+<h5 id="vistes-per-a-pagines-derror">Vistes per a pàgines d'error<a class="headerlink" href="#vistes-per-a-pagines-derror" title="Permanent link">&para;</a></h5>
+<p>Quan programem, algunes accions que fem provocaran pàgines d'error amb determinats
+codis, com per exemple 404 per a pàgines no trobades. Si volem definir l'aspecte i estructura d'aquestes
+pàgines, n'hi ha prou amb crear la vista corresponent en la carpeta <strong>resources/views/errors</strong> , per exemple
+, <strong>resources/views/errors/404.blade.php</strong> per a l'error 404 (anteposem el codi d'error
+al sufix de la vista).</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">@extends(&#39;plantilla&#39;)</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">@section(&#39;titulo&#39;, &#39;Error 404&#39;)</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">@section(&#39;contenido&#39;)</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">    &lt;h1&gt;Error&lt;/h1&gt;</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">    Documento no encontrado</span>
+<span class="linenos" data-linenos="6 "></span><span class="x">@endsection</span>
+</code></pre></div>
+<h2 id="us-de-components-blade-en-laravel">Ús de Components Blade en Laravel<a class="headerlink" href="#us-de-components-blade-en-laravel" title="Permanent link">&para;</a></h2>
+<p>Els components Blade són una funció poderosa en Laravel que permet als desenvolupadors crear elements d'interfície d'usuari reutilitzables. Aquests components poden ser personalitzats i inclosos en diverses vistes, oferint una manera eficient de gestionar elements comuns com formularis, botons, o panells d'informació.</p>
+<h3 id="creacio-dun-component-blade">Creació d'un Component Blade<a class="headerlink" href="#creacio-dun-component-blade" title="Permanent link">&para;</a></h3>
+<p>Per crear un component Blade, podeu utilitzar el comandament Artisan:</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">php artisan make:component NomDelComponent</span>
+</code></pre></div>
+Això crearà una nova classe de component en app/View/Components i una vista associada en resources/views/components.</p>
+<h3 id="definicio-del-component">Definició del Component<a class="headerlink" href="#definicio-del-component" title="Permanent link">&para;</a></h3>
+<p>Dins de la classe del component, podeu definir propietats i mètodes que el component utilitzarà. Per exemple:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">namespace App\View\Components;</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">use Illuminate\View\Component;</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">class Alert extends Component</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">{</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">    public $type;</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">    public function __construct($type)</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">        $this-&gt;type = $type;</span>
+<span class="linenos" data-linenos="12 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="13 "></span>
+<span class="linenos" data-linenos="14 "></span><span class="x">    public function render()</span>
+<span class="linenos" data-linenos="15 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="16 "></span><span class="x">        return view(&#39;components.alert&#39;);</span>
+<span class="linenos" data-linenos="17 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="18 "></span><span class="x">}</span>
+</code></pre></div>
+<h3 id="utilitzacio-del-component-en-vistes">Utilització del Component en Vistes<a class="headerlink" href="#utilitzacio-del-component-en-vistes" title="Permanent link">&para;</a></h3>
+<p>Per utilitzar el component, simplement afegiu-lo a la vostra vista Blade com si fos una etiqueta HTML:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">&lt;x-alert type=&quot;danger&quot;&gt;</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">    Aquest és un missatge d&#39;alerta!</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">&lt;/x-alert&gt;</span>
+</code></pre></div>
+<p>Aquest enfocament manté el codi organitzat i promou la reutilització del codi, facilitant el manteniment i la lectura dels teus projectes Laravel.</p>
+<h2 id="enllacant-amb-css-i-javascript-en-el-client">Enllaçant amb CSS i Javascript en el client<a class="headerlink" href="#enllacant-amb-css-i-javascript-en-el-client" title="Permanent link">&para;</a></h2>
+<p>Ara que ja tenim una visió bastant completa del que el motor de plantilles Blade pot oferir-nos, arriba el moment d'acabar de perfilar les nostres vistes. Fins ara no hem parlat res d'estils CSS, i això és una cosa que tota vista que es pree ha d'incloure. A més, també pot ser necessari en alguns casos incloure alguna llibreria Javascript en el costat del client per a uns certs processaments.
+Veurem com gestiona Laravel aquests recursos.  Per a poder afegir estils CSS o arxius Javascript al nostre projecte Laravel, el framework proporciona
+ja uns arxius on centralitzar aquestes opcions.</p>
+<h3 id="vite">Vite<a class="headerlink" href="#vite" title="Permanent link">&para;</a></h3>
+<p>Vite és una eina de construcció de frontend moderna que proporciona un entorn de desenvolupament extremadament ràpid i empaqueta el vostre codi per a la producció. En construir aplicacions amb Laravel, normalment utilitzareu Vite per empaquetar els fitxers CSS i JavaScript de la vostra aplicació en actius preparats per a la producció.
+Laravel s'integra perfectament amb Vite proporcionant una directiva oficial de connectors i de Blade per carregar els vostres actius per al desenvolupament i la producció.</p>
+<h4 id="installacio-del-connector-vite-i-laravel">Instal·lació del connector Vite i Laravel<a class="headerlink" href="#installacio-del-connector-vite-i-laravel" title="Permanent link">&para;</a></h4>
+<p>En una instal·lació nova del Laravel, trobareu un fitxer package.json a l'arrel de l'estructura de directoris de la vostra aplicació. El fitxer predeterminat package.json ja inclou tot el que necessiteu per començar utilitzant el connector Vite i Laravel. Podeu instal·lar les dependències del frontal de l'aplicació mitjançant NPM:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>npm install
+</code></pre></div>
+<h5 id="configuracio-de-vite">Configuració de Vite<a class="headerlink" href="#configuracio-de-vite" title="Permanent link">&para;</a></h5>
+<p>Vite està configurat a través d'un fitxer vite.config.js a l'arrel del projecte. Podeu personalitzar aquest fitxer segons les vostres necessitats, i també podeu instal·lar altres connectors que requereixi la vostra aplicació, com ara .vitejs/plugin-vue o .vitejs/plugin-react.</p>
+<p>El connector Laravel Vite requereix que especifiqueu els punts d'entrada per a la vostra aplicació. Aquests poden ser fitxers JavaScript o CSS, i inclouen llenguatges preprocessats com TypeScript, JSX, TSX, i Sass.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>import { defineConfig } from &#39;vite&#39;;
+<span class="linenos" data-linenos=" 2 "></span>import laravel from &#39;laravel-vite-plugin&#39;;
+<span class="linenos" data-linenos=" 3 "></span>
+<span class="linenos" data-linenos=" 4 "></span>export default defineConfig({
+<span class="linenos" data-linenos=" 5 "></span>   plugins: [
+<span class="linenos" data-linenos=" 6 "></span>      laravel([
+<span class="linenos" data-linenos=" 7 "></span>         &#39;resources/css/app.css&#39;,
+<span class="linenos" data-linenos=" 8 "></span>         &#39;resources/js/app.js&#39;,
+<span class="linenos" data-linenos=" 9 "></span>     ]),
+<span class="linenos" data-linenos="10 "></span>   ],
+<span class="linenos" data-linenos="11 "></span>});
+</code></pre></div>
+<h5 id="carregar-els-vostres-scripts-i-estils">Carregar els vostres scripts i estils<a class="headerlink" href="#carregar-els-vostres-scripts-i-estils" title="Permanent link">&para;</a></h5>
+<p>Amb els punts d'entrada de Vite configurats, només els necessiteu referències en una directiva .vite() Blade que afegiu a la <head> de la plantilla arrel de la vostra aplicació:.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>&lt;!doctype html&gt;
+<span class="linenos" data-linenos="2 "></span>&lt;head&gt;
+<span class="linenos" data-linenos="3 "></span>    {{-- ... --}}
+<span class="linenos" data-linenos="4 "></span>
+<span class="linenos" data-linenos="5 "></span>    @vite([&#39;resources/css/app.css&#39;, &#39;resources/js/app.js&#39;])
+<span class="linenos" data-linenos="6 "></span>&lt;/head&gt;
+</code></pre></div>
+<p>La directiva @vite detectarà automàticament el servidor de desenvolupament de Vite i injectarà el client de Vite per habilitar la substitució del mòdul Hot. En el mode de construcció, la directiva carregarà els vostres actius compilats i versionats, incloent-hi qualsevol CSS importat.</p>
+<h5 id="executar-vite">Executar Vite<a class="headerlink" href="#executar-vite" title="Permanent link">&para;</a></h5>
+<p>Hi ha dues maneres d'executar Vite. Podeu executar el servidor de desenvolupament mitjançant l'ordre dev, la qual és útil mentre es desenvolupa localment. El servidor de desenvolupament detectarà automàticament els canvis als vostres fitxers i els reflectirà instantàniament en qualsevol finestra del navegador oberta.</p>
+<p>O, executar l'ordre de construcció versionarà i empaquetarà els actius de la vostra aplicació i els prepararà per a desplegar-los en producció:</p>
+<h5 id="run-the-vite-development-server">Run the Vite development server...<a class="headerlink" href="#run-the-vite-development-server" title="Permanent link">&para;</a></h5>
+<p>npm run dev</p>
+<h5 id="build-and-version-the-assets-for-production">Build and version the assets for production...<a class="headerlink" href="#build-and-version-the-assets-for-production" title="Permanent link">&para;</a></h5>
+<p>npm run build</p>
+<h3 id="installar-tailwind-css-amb-laravel">Instal·lar tailwind CSS amb Laravel<a class="headerlink" href="#installar-tailwind-css-amb-laravel" title="Permanent link">&para;</a></h3>
+<p>Tailwind CSS és un framework CSS d'utilitat-primera per a la construcció ràpida d'interfícies d'usuari personalitzades. A diferència d'altres frameworks CSS com Bootstrap o Foundation, que ofereixen components pre-dissenyats, Tailwind proporciona classes d'utilitat a baix nivell que es poden compondre per crear dissenys únics i personalitzats.</p>
+<p>Cada classe en Tailwind té un propòsit específic (com ara marge, relleno, tipus de lletra, alineació, etc.), permetent als desenvolupadors construir ràpidament dissenys complexes sense escriure CSS des de zero. A més, Tailwind facilita la personalització i l'adaptació als requeriments específics del disseny, fent-lo una eina molt flexible per als desenvolupadors front-end.</p>
+<p><a href="https://tailwindcss.com/docs/guides/laravel">Instal·lacio</a></p>
+<h2 id="proves-amb-laravel">Proves amb laravel<a class="headerlink" href="#proves-amb-laravel" title="Permanent link">&para;</a></h2>
+<p>En les primeres rutes de la nostra aplicació, utilitzem el navegador per a provar aquestes rutes i URLs. El problema d'aquestes proves en el navegador és que no perduren en el temps ni poden executar-se de forma ràpida / automàtica. Així que avui veurem com podem provar el codi que desenvolupem de forma més intel·ligent, utilitzant el component de proves automatitzades que ve inclòs amb Laravel.</p>
+<h5 id="directori-de-proves">Directori de proves<a class="headerlink" href="#directori-de-proves" title="Permanent link">&para;</a></h5>
+<p>Laravel inclou en el directori principal del teu projecte un directori anomenat /tests. En aquest directori anem a escriure codi que es va a encarregar de provar el codi de la resta de l'aplicació. Aquest directori està separat en dos subdirectoris:</p>
+<ul>
+<li>El directori Feature on escrivim proves que emulen peticions HTTP al servidor.</li>
+<li>El directori Unit on escrivim proves que s'encarreguen de provar parts individuals de l'aplicació (com a classes i mètodes).</li>
+</ul>
+<h5 id="escrivint-una-prova">Escrivint una prova<a class="headerlink" href="#escrivint-una-prova" title="Permanent link">&para;</a></h5>
+<p>El comanament per a generar noves proves és <strong>php artisan make:test NombreDeLaPruebaTest</strong>
+En la prova simularem una petició HTTP GET a la URL del mòdul d'usuaris. Amb <strong>assertStatus</strong> comprovem que la URL carrega de forma correcta verificant que el status HTTP siga 200. Amb el mètode <strong>assertSee</strong>  comprovem que podem veure el text “Usuaris”:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">    / @test /</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">    function it_loads_the_users_lists_page(){</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">        $this-&gt;get(‘usuaris)-&gt;assertStatus(200)-&gt;assertSee(‘Usuaris’);</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">        }</span>
+</code></pre></div>
+<p>Perquè PHPUnit execute el mètode com una prova, has de col·locar l'anotació / @test / abans de la declaració
+del mètode o col·locar el prefix test_ en el nom del mètode com a tal: </p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">    function test_it_loads_the_users_lists_page(</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">        {   </span>
+<span class="linenos" data-linenos="3 "></span><span class="x">        $this-&gt;get(‘usuaris)-&gt;assertStatus(200)-&gt;assertSee(‘Usuaris’);</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">        }</span>
+</code></pre></div>
+<p>En cas contrari el mètode NO serà executat com una prova, la qual cosa és útil perquè ens permet agregar mètodes helpers dins de la nostra classe de proves.</p>
+<h5 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h5>
+<ul>
+<li>Pots executar les proves amb vendor/bin/phpunit o crear un àlies per a la consola (àlies t=vendor/bin/phpunit).</li>
+<li>Pots llegir sobre els mètodes d'assercions disponibles en la documentació de Laravel.</li>
+</ul>
+<h4 id="exercicis">Exercicis<a class="headerlink" href="#exercicis" title="Permanent link">&para;</a></h4>
+<p>En el repositori nou anem a crear un Blog:</p>
+<ol start="701">
+<li>
+<p>Edita el fitxer routes/web.php i afig una nova <a href="#rutes-simples">ruta</a> a la URL posts. En accedir a aquesta ruta (http://localhost/posts), haurem de veure un missatge amb el text “Llistat de posts”.</p>
+</li>
+<li>
+<p>Afig una nova <a href="#afegir-paràmetres-a-les-rutes">ruta parametritzada</a> a <strong>posts/{id}</strong> , de manera que el paràmetre id siga numèric (és a dir, només continga dígits del 0 al 9) i obligatori. Fes que la ruta retorne el missatge "Fitxa del post XXXX", sent XXXX l'id que haja rebut com a paràmetre.</p>
+</li>
+</ol>
+<p>Posa un <a href="#named-routes">nom</a> a les dos rutes que has definides fins ara:</p>
+<ul>
+<li>a la del llistat la direm "posts_llistat"</li>
+<li>a la de fitxa que acabes de crear, la direm "posts_fitxa".</li>
+</ul>
+<p>A més, a la ruta que carrega el wellcome l'anomenarem "inici".</p>
+<ol start="703">
+<li>
+<p>Definix una <a href="#definir-plantilles-comunes">plantilla</a> anomenada plantilla.blade.php en la carpeta de vistes del projecte ( resources/views/layouts ). Defineix una capçalera amb una secció yield per al títol, i una altra per al contingut de la pàgina, com la de l'exemple que hem vist anteriorment.
+Defineix en un arxiu a part en la subcarpeta <strong>partials</strong> , anomenat <strong>nav.blade.php</strong> , una barra de navegació que ens permeta accedir a aquestes direccions de moment:</p>
+<ul>
+<li>Pàgina d'inici</li>
+<li>Llistat de posts</li>
+</ul>
+</li>
+</ol>
+<p><a href="#incloure-vistes-dins-daltres">Inclou la barra de navegació en la plantilla base</a> que has definit abans
+A partir de la plantilla base, <a href="#definir-plantilles-comunes">defineix altres dues vistes</a> en una subcarpeta posts , anomenades posts/llistat.blade.php i posts/fitxa.blade.php . Com a títol de cada pàgina posa un breu text del que són (per exemple, "Llistat posts" i "Fitxa post"), i com a contingut de moment deixa un encapçalat <strong>h1</strong> que indique la pàgina en la qual estem: "Llistat de posts" o "Fitxa del post XXXX", on XXXX serà <a href="#pasar-valor-a-les-vistes">l'identificador del post</a> que haurem passat per la URL (i que deuràs passar a la vista).</p>
+<p>Fes que les rutes corresponents de routes/web.php que ja has definit <a href="#vistes">renderitzen</a> aquestes vistes en lloc de retornar text pla.</p>
+<p>Edita l'arxiu <strong>partials/nav.blade.php</strong> per a modificar la barra de navegació i deixar-la amb un estil particular de tailwindcss. Pots consultar aquesta <a href="https://tailwindcss.com/docs/installation">pàgina</a> per a prendre idees d'alguns dissenys que pots aplicar en la barra de navegació.
+Modificat l'arxiu welcome.blade.php  i canvia-ho perquè també herete de la plantilla base. Afig algun text introductori com a contingut. </p>
+<ol start="704">
+<li>Instal·la el tailwind CSS.</li>
+<li>Crea un components Alert per a vore les alertes de l'aplicació. Aquest component tindrà un atribut type que pot ser success, error o warning. El component mostrarà un missatge d'alerta amb el text que li passem com a contingut i el tipus d'alerta que li passem com a atribut. El component tindrà un estil diferent per a cada tipus d'alerta. Els estils els pots trobar en la documentació de tailwindcss.</li>
+<li>Fes una pàgina d'error 404.blade i mostra un missatge mitjançant Alert. Aquesta pàgina s'ha de mostrar quan l'usuari accedix a una ruta que no existeix.</li>
+</ol>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2021-2025 Aitor Medrano, Luis Alemañ, Ignasi Gomis - Licencia CC BY-NC-SA
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/aitormedrano" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.2 4.2 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.52 8.52 0 0 1-5.33 1.84q-.51 0-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<a.medrano@edu.gva.es>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.13c-.15.01-.29.06-.39.17l-1 1 2.05 2 1-1c.22-.21.22-.56 0-.77l-1.24-1.23a.56.56 0 0 0-.38-.17m-2 1.75L13 19.94V22h2.06l6.06-6.07M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h7v-.89l8.24-8.22c.47-.49 1.12-.76 1.8-.76.34 0 .68.06 1 .19V6c0-1.12-.92-2-2.04-2m0 4-8 5-8-5V6l8 5 8-5"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": ".", "features": ["header.autohide", "toc.integrate", "content.tabs.link"], "search": "assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiat al porta-retalls", "clipboard.copy": "C\u00f2pia al porta-retalls", "search.result.more.one": "1 m\u00e9s en aquesta p\u00e0gina", "search.result.more.other": "# m\u00e9s en aquesta p\u00e0gina", "search.result.none": "Cap document coincideix", "search.result.one": "1 document coincident", "search.result.other": "# documents coincidents", "search.result.placeholder": "Escriu per a comen\u00e7ar a cercar", "search.result.term.missing": "Desaparegut", "select.version": "Selecciona la versi\u00f3"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+    
+  </body>
+</html>

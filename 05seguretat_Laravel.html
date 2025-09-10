@@ -1,0 +1,2061 @@
+
+<!doctype html>
+<html lang="ca" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://cipfpbatoi.github.io/dwes2223/05seguretat_Laravel.html">
+      
+      
+        <link rel="prev" href="04dades_Laravel.html">
+      
+      
+      
+      <link rel="icon" href="imagenes/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.19">
+    
+    
+      
+        <title>5.- Aplicacions segures i reactives en Laravel - Desenvolupament web en entorn de Servidor</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-X6D0LR7TC8"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-X6D0LR7TC8",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-X6D0LR7TC8",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="Teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sa5-aplicacions-segures-i-reactives-en-laravel" class="md-skip">
+          Salta el contingut
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Capçalera">
+    <a href="index.html" title="Desenvolupament web en entorn de Servidor" class="md-header__button md-logo" aria-label="Desenvolupament web en entorn de Servidor" data-md-component="logo">
+      
+  <img src="imagenes/logofp.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Desenvolupament web en entorn de Servidor
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              5.- Aplicacions segures i reactives en Laravel
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="Teal"  aria-label="Canviar a mode nit"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Canviar a mode nit" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="light-blue" data-md-color-accent="Teal"  aria-label="Canviar a mode dia"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Canviar a mode dia" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Neteja" aria-label="Neteja" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicialitzant cerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navegació" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Desenvolupament web en entorn de Servidor" class="md-nav__button md-logo" aria-label="Desenvolupament web en entorn de Servidor" data-md-component="logo">
+      
+  <img src="imagenes/logofp.png" alt="logo">
+
+    </a>
+    Desenvolupament web en entorn de Servidor
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01arquitecturas.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.- Arquitectures Web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02php.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.- Programació web amb PHP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03MVC_Laravel.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.- Arquitectura MVC amb Laravel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="04dades_Laravel.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.- Accés segur i estructurat a bases de dades amb Laravel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    5.- Aplicacions segures i reactives en Laravel
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="05seguretat_Laravel.html" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.- Aplicacions segures i reactives en Laravel
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Taula de continguts">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Taula de continguts
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#sa-51-autenticacio-hashing-i-autoritzacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      SA 5.1 Autenticació, hashing i autorització
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SA 5.1 Autenticació, hashing i autorització">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#laravel-breeze-registre-login-logout" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌬️🍃 Laravel Breeze: registre, login, logout
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#proteccio" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔒 Protecció
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sa-52-seguretat-en-formularis-i-feedback" class="md-nav__link">
+    <span class="md-ellipsis">
+      SA 5.2 Seguretat en Formularis i feedback
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="SA 5.2 Seguretat en Formularis i feedback">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#personalitzar-missatges-derror" class="md-nav__link">
+    <span class="md-ellipsis">
+      ⚠️ Personalitzar Missatges d'Error
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autoritzacio-dins-de-formrequest-amb-policies" class="md-nav__link">
+    <span class="md-ellipsis">
+      🛡️ Autorització dins de FormRequest amb Policies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#elements-basics-en-vistes-amb-formularis" class="md-nav__link">
+    <span class="md-ellipsis">
+      🔄 Elements bàsics en vistes amb formularis
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#missatges-flash-amb-session-flash" class="md-nav__link">
+    <span class="md-ellipsis">
+      Missatges flash amb session()-&gt;flash()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#us-didiomes-en-laravel-internalitzacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌍 Ús d'idiomes en Laravel (Internalització)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enviament-de-correus-en-laravel-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      📬 Enviament de Correus en Laravel 12
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="📬 Enviament de Correus en Laravel 12">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#enviar-el-correu" class="md-nav__link">
+    <span class="md-ellipsis">
+      Enviar el Correu
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#gestio-de-fitxers-en-laravel-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      🗂️ Gestió de Fitxers en Laravel 12
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#testing-en-laravel-12" class="md-nav__link">
+    <span class="md-ellipsis">
+      ✅ Testing en Laravel 12
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#laravel-livewire-3-desenvolupament-dinterficies-reactives-amb-php" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌀 Laravel Livewire 3 – Desenvolupament d’interfícies reactives amb PHP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercicis" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercicis
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Exercicis">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#exercici-guiat-reestructurar-projecte-futbol-femeni-amb-bd-repository-service" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏟️ Exercici guiat: Reestructurar projecte Futbol Femení amb BD + Repository + Service
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-internacionalitzacio" class="md-nav__link">
+    <span class="md-ellipsis">
+      🌍 7. Internacionalització
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="🌍 7. Internacionalització">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#8-proves" class="md-nav__link">
+    <span class="md-ellipsis">
+      8. Proves
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pas-10-generar-un-correu-electronic-amb-la-jornada-actual-partits-programats-i-enviar-lo-als-managers-dels-equips" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pas 10. Generar un correu electrònic amb la jornada actual (partits programats) i enviar-lo als managers dels equips.
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#pas-11-crear-un-component-livewire-per-a-mostrar-un-historic-de-partits" class="md-nav__link">
+    <span class="md-ellipsis">
+      Pas 11. Crear un component livewire per a mostrar un històric de partits
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#exercici-final-guia-de-futbol-femeni-ii" class="md-nav__link">
+    <span class="md-ellipsis">
+      🏁 Exercici Final: Guia de Futbol Femení II
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="sa5-aplicacions-segures-i-reactives-en-laravel">SA5. Aplicacions segures i reactives en Laravel<a class="headerlink" href="#sa5-aplicacions-segures-i-reactives-en-laravel" title="Permanent link">&para;</a></h1>
+<details class="abstract">
+<summary>Duració i criteris d'avaluació</summary>
+<p>Duració estimada: 24 hores</p>
+<hr />
+<table>
+<thead>
+<tr>
+<th>Resultat d'aprenentatge</th>
+<th>Criteris d'avaluació</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>RA6.-Genera pàgines web dinàmiques analitzant i utilitzant tecnologies i frameworks del servidor web que afigen codi al llenguatge de marques.</td>
+<td>a) S'han identificat les diferències entre l'execució de codi en el servidor i en el client web. <br/>   b) S'han reconegut els avantatges d'unir totes dues tecnologies en el procés de desenvolupament de programes. <br/>   c) S'han identificat les tecnologies i frameworks relacionades amb la generació per part del servidor de pàgines web amb guions embeguts. <br/>d) S'han utilitzat aquestes tecnologies i frameworks per a generar pàgines web que incloguen interacció amb l'usuari.<br/> e) S'han utilitzat aquestes tecnologies i frameworks, per a generar pàgines web que incloguen verificació de formularis. <br/> f) S'han utilitzat aquestes tecnologies i frameworks per a generar pàgines web que incloguen modificació dinàmica del seu contingut i la seua estructura.<br/> g) S'han aplicat aquestes tecnologies i frameworks en la programació d'aplicacions web.</td>
+</tr>
+</tbody>
+</table>
+</details>
+<h2 id="sa-51-autenticacio-hashing-i-autoritzacio">SA 5.1 Autenticació, hashing i autorització<a class="headerlink" href="#sa-51-autenticacio-hashing-i-autoritzacio" title="Permanent link">&para;</a></h2>
+<h3 id="laravel-breeze-registre-login-logout">🌬️🍃 Laravel Breeze: registre, login, logout<a class="headerlink" href="#laravel-breeze-registre-login-logout" title="Permanent link">&para;</a></h3>
+<p>Laravel Breeze és el starter kit oficial més simple per implementar autenticació en Laravel. Inclou rutes, controladors i vistes per a registre, login i logout.</p>
+<p>Per <strong>instal·lar-lo</strong>, cal usar els comandos corresponents per a afegir el paquet, generar el frontend i aplicar les <strong>migracions</strong>.</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>./vendor/bin/sail<span class="w"> </span>shell
+<span class="linenos" data-linenos="2 "></span>composer<span class="w"> </span>require<span class="w"> </span>laravel/breeze<span class="w"> </span>--dev
+<span class="linenos" data-linenos="3 "></span>php<span class="w"> </span>artisan<span class="w"> </span>breeze:install<span class="w"> </span>blade
+<span class="linenos" data-linenos="4 "></span>npm<span class="w"> </span>install<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>npm<span class="w"> </span>run<span class="w"> </span>dev
+<span class="linenos" data-linenos="5 "></span>php<span class="w"> </span>artisan<span class="w"> </span>migrate
+</code></pre></div>
+<strong>Recuperació de l'usuari autenticat</strong>
+Un cop l'usuari ha fet login, podem accedir a les seues dades:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">use Illuminate\Support\Facades\Auth;</span>
+<span class="linenos" data-linenos="2 "></span>
+<span class="linenos" data-linenos="3 "></span><span class="x">// Usuari autenticat</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">$user = Auth::user();</span>
+<span class="linenos" data-linenos="5 "></span>
+<span class="linenos" data-linenos="6 "></span><span class="x">// ID de l&#39;usuari autenticat</span>
+<span class="linenos" data-linenos="7 "></span><span class="x">$id = Auth::id();</span>
+</code></pre></div></p>
+<p>També podem obtenir l’usuari des d'una <strong>petició injectada al controlador</strong>:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">public function dashboard(Request $request)</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">{</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">    $user = $request-&gt;user(); // Equivalent a Auth::user()</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">}</span>
+</code></pre></div></p>
+<p><strong>Logout</strong>
+Laravel Breeze inclou logout preconfigurat:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">&lt;form method=&quot;POST&quot; action=&quot;{{ route(&#39;logout&#39;) }}&quot;&gt;</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">    @csrf</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">    &lt;button type=&quot;submit&quot;&gt;Logout&lt;/button&gt;</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">&lt;/form&gt;</span>
+</code></pre></div></p>
+<p><strong>Restabliment de contrasenya</strong>
+Laravel Breeze genera automàticament els formularis i la lògica necessària, soles has de
+configurar el correu SMTP al <strong>fitxer <code>.env</code></strong>.
+- </p>
+<p><strong>Hashing automàtic de contrasenyes</strong></p>
+<p>Laravel utilitza el sistema <code>Hash</code> per a encriptar contrasenyes abans de guardar-les a la base de dades. Breeze ja ho implementa automàticament en el <strong>registre</strong>.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">use Illuminate\Support\Facades\Hash;</span>
+<span class="linenos" data-linenos="2 "></span>
+<span class="linenos" data-linenos="3 "></span><span class="x">$user = User::create([</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">    &#39;name&#39; =&gt; $request-&gt;name,</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">    &#39;email&#39; =&gt; $request-&gt;email,</span>
+<span class="linenos" data-linenos="6 "></span><span class="x">    &#39;password&#39; =&gt; Hash::make($request-&gt;password),</span>
+<span class="linenos" data-linenos="7 "></span><span class="x">]);</span>
+</code></pre></div>
+<h3 id="proteccio">🔒 Protecció<a class="headerlink" href="#proteccio" title="Permanent link">&para;</a></h3>
+<h4 id="proteccio-de-rutes-amb-auth">🛣️ Protecció de rutes amb <code>auth</code><a class="headerlink" href="#proteccio-de-rutes-amb-auth" title="Permanent link">&para;</a></h4>
+<p>Per a protegir rutes perquè només siguen accessibles per usuaris autenticats, es fa ús del middleware <code>auth</code>. Aquest es pot aplicar tant a <strong>grups de rutes</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">Route::middleware([&#39;auth&#39;])-&gt;group(function () {</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">    Route::resource(&#39;equips&#39;, EquipController::class);</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">});</span>
+</code></pre></div>
+<p>com a <strong>rutes individuals</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">Route::get(&#39;/dashboard&#39;, function () {</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">    return view(&#39;dashboard&#39;);</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">})-&gt;middleware(&#39;auth&#39;);</span>
+</code></pre></div>
+<h4 id="proteccio-amb-middlewares">🚦Protecció amb middlewares<a class="headerlink" href="#proteccio-amb-middlewares" title="Permanent link">&para;</a></h4>
+<h5 id="1que-es-un-middleware">🔍 1.Què és un middleware?<a class="headerlink" href="#1que-es-un-middleware" title="Permanent link">&para;</a></h5>
+<p>Un middleware és una classe que actua com a intermediari entre una sol·licitud HTTP i la seua resposta. Permet executar lògica abans o després d’arribar al controlador.</p>
+<p>S’usa per a:</p>
+<ul>
+<li>🔐 Autenticació d’usuaris</li>
+<li>🛡️ Validació de rols i permisos</li>
+<li>🧼 Neteja o modificació de peticions/respostes</li>
+</ul>
+<p>⚙️ Exemple senzill de <strong>middleware</strong></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">public function handle($request, Closure $next)</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">{</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">    if (Auth::check()) {</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">        return $next($request); // Continua amb la sol·licitud</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="6 "></span><span class="x">    return redirect(&#39;login&#39;); // Redirigeix si no està autenticat</span>
+<span class="linenos" data-linenos="7 "></span><span class="x">}</span>
+</code></pre></div>
+<h5 id="2-rols-i-permisos">🧩 2. Rols i permisos<a class="headerlink" href="#2-rols-i-permisos" title="Permanent link">&para;</a></h5>
+<p>Primer, hem d'afegir camp role a la taula users</p>
+<ol>
+<li>Crear una <strong>migració</strong>:
+   <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>php<span class="w"> </span>artisan<span class="w"> </span>make:migration<span class="w"> </span>add_role_to_users_table<span class="w"> </span>--table<span class="o">=</span>users
+</code></pre></div></li>
+<li>Afegir el <strong>camp <code>role</code></strong>:
+   <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">Schema::table(&#39;users&#39;, function (Blueprint $table) {</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">    $table-&gt;string(&#39;role&#39;)-&gt;default(&#39;user&#39;); // Opcions: &#39;user&#39;, &#39;admin&#39;, etc.</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">});</span>
+</code></pre></div></li>
+<li>Actualitzar el <strong>model <code>User</code></strong>:
+   <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">class User extends Authenticatable</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">{</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">    protected $fillable = [&#39;name&#39;, &#39;email&#39;, &#39;password&#39;, &#39;role&#39;];</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">}</span>
+</code></pre></div></li>
+</ol>
+<h5 id="3-middleware-personalitzat-per-a-rols">🛡️ 3. Middleware personalitzat per a rols<a class="headerlink" href="#3-middleware-personalitzat-per-a-rols" title="Permanent link">&para;</a></h5>
+<ol>
+<li>Crear el <strong>middleware</strong>:
+   <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>php<span class="w"> </span>artisan<span class="w"> </span>make:middleware<span class="w"> </span>RoleMiddleware
+</code></pre></div></li>
+<li>Definir la <strong>lògica</strong>:
+   <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">namespace App\Http\Middleware;</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x"> use Closure;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x"> use Illuminate\Support\Facades\Auth;</span>
+<span class="linenos" data-linenos=" 5 "></span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x"> class RoleMiddleware</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x"> {</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">     public function handle($request, Closure $next, $role)</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">     {</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">         if (Auth::check() &amp;&amp; Auth::user()-&gt;role === $role) {</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">             return $next($request);</span>
+<span class="linenos" data-linenos="12 "></span><span class="x">           }</span>
+<span class="linenos" data-linenos="13 "></span><span class="x">         abort(403, &#39;Accés no autoritzat&#39;);</span>
+<span class="linenos" data-linenos="14 "></span><span class="x">     }</span>
+<span class="linenos" data-linenos="15 "></span><span class="x"> }</span>
+</code></pre></div></li>
+<li>Registrar-lo a <strong><code>Kernel.php</code></strong>:
+   <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">protected $routeMiddleware = [</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">    &#39;role&#39; =&gt; \App\Http\Middleware\RoleMiddleware::class,</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">];</span>
+</code></pre></div></li>
+<li>Aplicar-lo a una <strong>ruta</strong>:</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">Route::get(&#39;/admin&#39;, function () {</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">    return view(&#39;admin.dashboard&#39;);</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">})-&gt;middleware(&#39;role:admin&#39;);</span>
+</code></pre></div>
+   o en <strong>laravel 12</strong>, directament al <strong>controlador</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">  use Illuminate\Routing\Attributes\Middleware;</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">  #[Middleware(&#39;role:admin&#39;)]</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">  class AdminController extends Controller</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">  {</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">    public function dashboard()</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">      return view(&#39;admin.dashboard&#39;);</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">  }</span>
+</code></pre></div>
+<h4 id="politiques-policy-per-autoritzacions">🛡️  Polítiques (<code>Policy</code>) per  autoritzacions<a class="headerlink" href="#politiques-policy-per-autoritzacions" title="Permanent link">&para;</a></h4>
+<p>Les <strong>policies</strong> en Laravel permeten controlar l’accés a recursos de manera precisa i reutilitzable. Es poden aplicar automàticament als models o explícitament mitjançant mètodes com <code>authorize()</code>.</p>
+<h5 id="1-crear-una-policy">🛠️ 1. Crear una Policy<a class="headerlink" href="#1-crear-una-policy" title="Permanent link">&para;</a></h5>
+<p>Es genera una <strong>política associada a un model</strong> per controlar qui pot realitzar accions sobre aquest recurs.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>./vendor/bin/sail<span class="w"> </span>artisan<span class="w"> </span>make:policy<span class="w"> </span>PostPolicy<span class="w"> </span>--model<span class="o">=</span>Post
+</code></pre></div>
+<p>Es crea a <strong>app/Policies/PostPolicy.php</strong>.</p>
+<h5 id="2-definir-les-regles-dautoritzacio">🧠 2. Definir les regles d’autorització<a class="headerlink" href="#2-definir-les-regles-dautoritzacio" title="Permanent link">&para;</a></h5>
+<p>Dins la policy es <strong>defineixen mètodes</strong> com <code>view</code>, <code>create</code>, <code>update</code> o <code>delete</code> que retornen si un usuari pot realitzar o no eixa acció.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">public function update(User $user, Post $post)</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">{</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">  return $user-&gt;id === $post-&gt;user_id;</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">}</span>
+</code></pre></div>
+<p>Cada mètode pot retornar:
+- true (permés)
+- false (denegat)
+- O fins i tot llançar excepcions o missatges personalitzats</p>
+<h5 id="3-registrar-la-policy">🧾 3. Registrar la Policy<a class="headerlink" href="#3-registrar-la-policy" title="Permanent link">&para;</a></h5>
+<p>Cal <strong>registrar la política</strong> al proveïdor d’autenticació <strong>(<code>AuthServiceProvider</code>)</strong> per vincular el model amb la seua policy corresponent.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">use App\Models\Post;</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">use App\Policies\PostPolicy;</span>
+<span class="linenos" data-linenos="3 "></span>
+<span class="linenos" data-linenos="4 "></span><span class="x">protected $policies = [</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">Post::class =&gt; PostPolicy::class,</span>
+<span class="linenos" data-linenos="6 "></span><span class="x">];</span>
+</code></pre></div>
+<h5 id="4-utilitzar-la-en-controladors">🧪 4. Utilitzar-la en controladors<a class="headerlink" href="#4-utilitzar-la-en-controladors" title="Permanent link">&para;</a></h5>
+<p>Dins dels controladors, s’utilitza la <strong>funció <code>authorize()</code></strong> per verificar si l’usuari pot executar una acció determinada sobre un recurs.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">public function edit(Post $post)</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">{</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">  $this-&gt;authorize(&#39;update&#39;, $post);</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">  return view(&#39;posts.edit&#39;, compact(&#39;post&#39;));</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">}</span>
+</code></pre></div>
+<h5 id="5-us-en-vistes-blade">✅ 5. Ús en vistes Blade<a class="headerlink" href="#5-us-en-vistes-blade" title="Permanent link">&para;</a></h5>
+<p>Amb la <strong>directiva <code>@can</code></strong>, podem controlar l’accés a botons o seccions visuals segons la política definida.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>@can(&#39;update&#39;, $post)
+<span class="linenos" data-linenos="2 "></span>&lt;a href=&quot;{{ route(&#39;posts.edit&#39;, $post) }}&quot;&gt;Editar&lt;/a&gt;
+<span class="linenos" data-linenos="3 "></span>@endcan
+</code></pre></div>
+<h5 id="6-regles-globals">🔁 6. Regles globals<a class="headerlink" href="#6-regles-globals" title="Permanent link">&para;</a></h5>
+<p>És possible definir regles generals dins la policy (com per exemple donar accés total als usuaris administradors) mitjançant el <strong>mètode <code>before()</code></strong>.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">public function before(User $user, $ability)</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">{</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">  if ($user-&gt;role === &#39;admin&#39;) {</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">    return true; // accés total</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">  }</span>
+<span class="linenos" data-linenos="6 "></span><span class="x">}</span>
+</code></pre></div>
+<h2 id="sa-52-seguretat-en-formularis-i-feedback">SA 5.2 Seguretat en Formularis  i feedback<a class="headerlink" href="#sa-52-seguretat-en-formularis-i-feedback" title="Permanent link">&para;</a></h2>
+<h3 id="personalitzar-missatges-derror">⚠️ Personalitzar Missatges d'Error<a class="headerlink" href="#personalitzar-missatges-derror" title="Permanent link">&para;</a></h3>
+<p>Podem personalitzar els missatges d'error sobreescrivint el mètode <strong>messages()</strong> dins del Form Request:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">public function messages()</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">{</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">    return [</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">        &#39;title.required&#39; =&gt; &#39;El camp títol és obligatori.&#39;,</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">        &#39;title.min&#39; =&gt; &#39;El camp títol ha de tindre almenys 3 caràcters.&#39;,</span>
+<span class="linenos" data-linenos="6 "></span><span class="x">        &#39;year.required&#39; =&gt; &#39;El camp any és obligatori.&#39;,</span>
+<span class="linenos" data-linenos="7 "></span><span class="x">    ];</span>
+<span class="linenos" data-linenos="8 "></span><span class="x">}</span>
+</code></pre></div></p>
+<h3 id="autoritzacio-dins-de-formrequest-amb-policies">🛡️ Autorització dins de FormRequest amb Policies<a class="headerlink" href="#autoritzacio-dins-de-formrequest-amb-policies" title="Permanent link">&para;</a></h3>
+<p>Cada FormRequest inclou un <strong>mètode  authorize()</strong> per controlar si l’usuari té permís per a executar l’acció abans de validar les dades. És el lloc idoni per invocar una policy.</p>
+<p><strong>Exemple amb policy:</strong>
+Si tenim una policy EquipPolicy@update, dins el FormRequest:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">public function authorize(): bool</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">{</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">    $equip = $this-&gt;route(&#39;equip&#39;); // Obtenim el model Equip des de la ruta</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">                                    // Només funcionarà si en la definició de rutes has fet binding del model com Route::put(&#39;/equips/{equip}&#39;, ...).</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">    return $this-&gt;user()-&gt;can(&#39;update&#39;, $equip); // Crida a la policy</span>
+<span class="linenos" data-linenos="6 "></span><span class="x">}</span>
+</code></pre></div>
+<ul>
+<li>Si no pot, Laravel llança automàticament un error <strong>403 Forbidden</strong>.</li>
+<li>Si pot, executa la validació.</li>
+</ul>
+<p><strong>Alternativa amb Gate::allows()</strong></p>
+<p>També pots usar:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">use Illuminate\Support\Facades\Gate;</span>
+<span class="linenos" data-linenos="2 "></span>
+<span class="linenos" data-linenos="3 "></span><span class="x">public function authorize(): bool</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">{</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">    return Gate::allows(&#39;update&#39;, $this-&gt;route(&#39;equip&#39;));</span>
+<span class="linenos" data-linenos="6 "></span><span class="x">}</span>
+</code></pre></div>
+<h3 id="elements-basics-en-vistes-amb-formularis">🔄  Elements bàsics en vistes amb formularis<a class="headerlink" href="#elements-basics-en-vistes-amb-formularis" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>@csrf</code>: Protecció contra atacs de tipus cross-site request forgery</li>
+<li><code>@method(´PUT´)</code>: Permet enviar formularis amb verbs PUT o DELETE</li>
+<li><code>old('camp')</code>: Manté les dades introduïdes en cas d’error de validació, després d'un error de validació.</li>
+<li><code>@error('camp')</code>: Mostra els errors de validació associats a cada camp després d'un error de validació.</li>
+</ul>
+<h3 id="missatges-flash-amb-session-flash">Missatges flash amb <code>session()-&gt;flash()</code><a class="headerlink" href="#missatges-flash-amb-session-flash" title="Permanent link">&para;</a></h3>
+<p>Permeten mostrar <strong>missatges temporals</strong> (èxit, error, etc.) després d’una acció, com una redirecció després de crear o modificar un recurs.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">return redirect()-&gt;route(&#39;equips.index&#39;)-&gt;with(&#39;ok&#39;, &#39;Equip creat correctament!&#39;);</span>
+</code></pre></div>
+<p>A la vista <strong>Blade</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>@if (session(&#39;ok&#39;))
+<span class="linenos" data-linenos="2 "></span>    &lt;div class=&quot;alert alert-success&quot;&gt;
+<span class="linenos" data-linenos="3 "></span>        {{ session(&#39;ok&#39;) }}
+<span class="linenos" data-linenos="4 "></span>    &lt;/div&gt;
+<span class="linenos" data-linenos="5 "></span>@endif
+</code></pre></div>
+<h4 id="ux-i-manteniment-destat">✨ UX i manteniment d'estat<a class="headerlink" href="#ux-i-manteniment-destat" title="Permanent link">&para;</a></h4>
+<p>L'ús combinat de <code>old()</code>, <code>@error</code>, missatges flash i bones pràctiques de disseny millora significativament l’experiència d’usuari (UX) en formularis.</p>
+<h4 id="mostrar-errors-de-validacio-a-la-vista">❗ Mostrar Errors de Validació a la Vista<a class="headerlink" href="#mostrar-errors-de-validacio-a-la-vista" title="Permanent link">&para;</a></h4>
+<p>Quan es produeixen errors de validació, Laravel redirigeix automàticament a la vista anterior amb la variable global <code>$errors</code>, que conté els errors de validació.</p>
+<p>Exemple de com mostrar un <strong>llistat d'errors</strong> al començament del formulari:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">@if ($errors-&gt;any())</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">    &lt;ul&gt;</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">        @foreach($errors-&gt;all() as $error)</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">            &lt;li&gt;{{ $error }}&lt;/li&gt;</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">        @endforeach</span>
+<span class="linenos" data-linenos="6 "></span><span class="x">    &lt;/ul&gt;</span>
+<span class="linenos" data-linenos="7 "></span><span class="x">@endif</span>
+</code></pre></div></p>
+<p>A <strong>sota de cada camp</strong>:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">&lt;div class=&quot;form-group&quot;&gt;</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">    &lt;label for=&quot;title&quot;&gt;Títol:&lt;/label&gt;</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">    &lt;input type=&quot;text&quot; name=&quot;title&quot; id=&quot;title&quot; class=&quot;form-control&quot; value=&quot;{{ old(&#39;title&#39;) }}&quot;&gt;</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">    @if ($errors-&gt;has(&#39;title&#39;))</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">        &lt;div class=&quot;text-danger&quot;&gt;{{ $errors-&gt;first(&#39;title&#39;) }}&lt;/div&gt;</span>
+<span class="linenos" data-linenos="6 "></span><span class="x">    @endif</span>
+<span class="linenos" data-linenos="7 "></span><span class="x">&lt;/div&gt;</span>
+</code></pre></div>
+<h2 id="us-didiomes-en-laravel-internalitzacio">🌍 Ús d'idiomes en Laravel (Internalització)<a class="headerlink" href="#us-didiomes-en-laravel-internalitzacio" title="Permanent link">&para;</a></h2>
+<p>Laravel proporciona eines senzilles i potents per a la <strong>localització d'aplicacions</strong>, permetent suportar múltiples idiomes. Aquesta funcionalitat és ideal per a desenvolupar aplicacions accessibles a usuaris de diferents regions i llengües.</p>
+<h4 id="1-configuracio-inicial">1️⃣ Configuració Inicial<a class="headerlink" href="#1-configuracio-inicial" title="Permanent link">&para;</a></h4>
+<p>L'idioma predeterminat s'estableix al fitxer <code>config/app.php</code> mitjançant el paràmetre <code>locale</code>:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">&#39;locale&#39; =&gt; &#39;ca&#39;, // o &#39;es&#39;, &#39;en&#39;, etc.</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">&#39;fallback_locale&#39; =&gt; &#39;en&#39;, //altenNATIU</span>
+</code></pre></div></p>
+<h4 id="2-fitxers-de-traduccio">2️⃣  Fitxers de Traducció<a class="headerlink" href="#2-fitxers-de-traduccio" title="Permanent link">&para;</a></h4>
+<p>Per defecte, Laravel no inclou el directori <code>lang</code>. Per personalitzar els fitxers de llenguatge o crear-ne de nous, executa:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>php<span class="w"> </span>artisan<span class="w"> </span>lang:publish
+<span class="linenos" data-linenos="2 "></span>composer<span class="w"> </span>require<span class="w"> </span>laravel-lang/lang<span class="w"> </span>--dev
+<span class="linenos" data-linenos="3 "></span>php<span class="w"> </span>artisan<span class="w"> </span>lang:add<span class="w"> </span>es
+<span class="linenos" data-linenos="4 "></span>php<span class="w"> </span>artisan<span class="w"> </span>lang:add<span class="w"> </span>ca
+</code></pre></div>
+<p>Els fitxers de traducció es guarden al directori <code>lang</code>. Cada idioma té la seua pròpia carpeta, amb fitxers <code>.php</code> que contenen arrays clau-valor per a les traduccions:</p>
+<p><strong>Exemple d'estructura:</strong>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>/lang
+<span class="linenos" data-linenos="2 "></span>    /en
+<span class="linenos" data-linenos="3 "></span>        messages.php
+<span class="linenos" data-linenos="4 "></span>    /es
+<span class="linenos" data-linenos="5 "></span>        messages.php
+</code></pre></div></p>
+<p><strong>Exemples de ftixer</strong>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">// lang/en/messages.php</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">return [</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">    &#39;welcome&#39; =&gt; &#39;Welcome to our application!&#39;,</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">];</span>
+</code></pre></div></p>
+<p>Per a altres idiomes:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">// lang/es/messages.php</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">return [</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">    &#39;welcome&#39; =&gt; &#39;¡Bienvenido a nuestra aplicación!&#39;,</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">];</span>
+</code></pre></div></p>
+<h4 id="3-traduccions-amb-fitxers-json">3️⃣ Traduccions amb Fitxers JSON<a class="headerlink" href="#3-traduccions-amb-fitxers-json" title="Permanent link">&para;</a></h4>
+<p>Laravel permet utilitzar fitxers JSON per a traduccions simples. Aquest enfocament és útil per a aplicacions amb cadenes de traducció úniques i desordenades.</p>
+<p><strong>Exemple de Fitxer JSON:</strong></p>
+<p>// lang/es.json</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="p">{</span>
+<span class="linenos" data-linenos="2 "></span><span class="w">    </span><span class="nt">&quot;I love programming.&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Me encanta programar.&quot;</span>
+<span class="linenos" data-linenos="3 "></span><span class="p">}</span>
+</code></pre></div>
+<p>Per accedir a aquestes cadenes:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">echo __(&#39;I love programming.&#39;);</span>
+</code></pre></div></p>
+<h4 id="4-us-de-traduccions-en-el-codi">4️⃣ Ús de Traduccions en el Codi<a class="headerlink" href="#4-us-de-traduccions-en-el-codi" title="Permanent link">&para;</a></h4>
+<p>Utilitza la funció auxiliar <code>__()</code> per obtenir les traduccions:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">echo __(&#39;messages.welcome&#39;); // Welcome to our application!</span>
+</code></pre></div>
+Amb paràmetres:</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">// lang/en/messages.php</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">return [</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">    &#39;greeting&#39; =&gt; &#39;Hello, :name!&#39;,</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">];</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">echo __(&#39;messages.greeting&#39;, [&#39;name&#39; =&gt; &#39;John&#39;]); // Hello, John!</span>
+</code></pre></div></p>
+<h4 id="5-canviar-lidioma-dinamicament">5️⃣ Canviar l'Idioma Dinàmicament<a class="headerlink" href="#5-canviar-lidioma-dinamicament" title="Permanent link">&para;</a></h4>
+<p>Per canviar l'idioma de l'aplicació en temps d'execució, utilitza el mètode <code>App::setLocale()</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">use Illuminate\Support\Facades\App;</span>
+<span class="linenos" data-linenos="2 "></span>
+<span class="linenos" data-linenos="3 "></span><span class="x">App::setLocale(&#39;es&#39;); // Canvia a espanyol</span>
+</code></pre></div>
+<p>Aquesta configuració només afecta la petició actual.</p>
+<h2 id="enviament-de-correus-en-laravel-12">📬 Enviament de Correus en Laravel 12<a class="headerlink" href="#enviament-de-correus-en-laravel-12" title="Permanent link">&para;</a></h2>
+<p>Laravel proporciona una API elegant per a l’enviament de correus electrònics a través de múltiples serveis (SMTP, Mailgun, Postmark, Amazon SES...).</p>
+<hr />
+<h4 id="1-configuracio-del-servei-de-correu">1️⃣ Configuració del Servei de Correu<a class="headerlink" href="#1-configuracio-del-servei-de-correu" title="Permanent link">&para;</a></h4>
+<p>Edita el fitxer <code>.env</code>:</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>MAIL_MAILER=smtp
+<span class="linenos" data-linenos="2 "></span>MAIL_HOST=smtp.gmail.com
+<span class="linenos" data-linenos="3 "></span>MAIL_PORT=587
+<span class="linenos" data-linenos="4 "></span>MAIL_USERNAME=el_teu_email@gmail.com
+<span class="linenos" data-linenos="5 "></span>MAIL_PASSWORD=la_teua_contrasenya
+<span class="linenos" data-linenos="6 "></span>MAIL_ENCRYPTION=tls
+<span class="linenos" data-linenos="7 "></span>MAIL_FROM_ADDRESS=el_teu_email@gmail.com
+<span class="linenos" data-linenos="8 "></span>MAIL_FROM_NAME=&quot;Nom del Projecte&quot;
+</code></pre></div>
+El fitxer config/mail.php carregarà automàticament aquests valors.</p>
+<h4 id="2-crear-una-classe-de-correu">2️⃣ Crear una Classe de Correu<a class="headerlink" href="#2-crear-una-classe-de-correu" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>php<span class="w"> </span>artisan<span class="w"> </span>make:mail<span class="w"> </span>WelcomeMail
+</code></pre></div>
+<p>Aquest comandament crea una classe al directori <code>App\Mail</code>. Aquesta classe és on es defineix el contingut i el disseny del correu.</p>
+<p><strong>Exemple</strong></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">namespace App\Mail;</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">use Illuminate\Bus\Queueable;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">use Illuminate\Mail\Mailable;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">use Illuminate\Queue\SerializesModels;</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">class WelcomeMail extends Mailable</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">{</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">    use Queueable, SerializesModels;</span>
+<span class="linenos" data-linenos="10 "></span>
+<span class="linenos" data-linenos="11 "></span><span class="x">    public $user;</span>
+<span class="linenos" data-linenos="12 "></span>
+<span class="linenos" data-linenos="13 "></span><span class="x">    public function __construct($user)</span>
+<span class="linenos" data-linenos="14 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="15 "></span><span class="x">        $this-&gt;user = $user;</span>
+<span class="linenos" data-linenos="16 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="17 "></span>
+<span class="linenos" data-linenos="18 "></span><span class="x">    public function build()</span>
+<span class="linenos" data-linenos="19 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="20 "></span><span class="x">        return $this-&gt;view(&#39;emails.welcome&#39;)</span>
+<span class="linenos" data-linenos="21 "></span><span class="x">                    -&gt;subject(&#39;Benvingut a la nostra aplicació&#39;);</span>
+<span class="linenos" data-linenos="22 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="23 "></span><span class="x">}</span>
+</code></pre></div>
+<h4 id="3-crear-la-vista-del-correu">3️⃣ Crear la Vista del Correu<a class="headerlink" href="#3-crear-la-vista-del-correu" title="Permanent link">&para;</a></h4>
+<p>resources/views/emails/benvinguda.blade.php</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>&lt;h1&gt;Hola, {{ $usuari-&gt;name }}!&lt;/h1&gt;
+<span class="linenos" data-linenos="2 "></span>&lt;p&gt;Gràcies per unir-te a la nostra aplicació.&lt;/p&gt;
+</code></pre></div>
+<h3 id="enviar-el-correu">Enviar el Correu<a class="headerlink" href="#enviar-el-correu" title="Permanent link">&para;</a></h3>
+<p>Des d’un controlador:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">use App\Mail\WelcomeMail;</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">use Illuminate\Support\Facades\Mail;</span>
+<span class="linenos" data-linenos="3 "></span>
+<span class="linenos" data-linenos="4 "></span><span class="x">Mail::to(&#39;usuari@example.com&#39;)-&gt;send(new WelcomeMail($user));</span>
+</code></pre></div>
+<p><strong>Enviar correus a múltiples destinataris</strong></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">Mail::to([&#39;user1@example.com&#39;, &#39;user2@example.com&#39;])-&gt;send(new WelcomeMail($user));</span>
+</code></pre></div>
+<h4 id="5-correus-amb-markdown">5️⃣ Correus amb Markdown<a class="headerlink" href="#5-correus-amb-markdown" title="Permanent link">&para;</a></h4>
+<p>Laravel permet crear correus amb components de Markdown. Generem un correu amb components:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>php<span class="w"> </span>artisan<span class="w"> </span>make:mail<span class="w"> </span>WelcomeMail<span class="w"> </span>--markdown<span class="o">=</span>emails.welcome
+</code></pre></div></p>
+<p>Aquest comandament crea una plantilla Markdown a <code>resources/views/emails</code>.</p>
+<p>Exemple de plantilla Markdown:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>@component(&#39;mail::message&#39;)
+<span class="linenos" data-linenos=" 2 "></span>    # Hola, {{ $usuari-&gt;name }}
+<span class="linenos" data-linenos=" 3 "></span>
+<span class="linenos" data-linenos=" 4 "></span>    Benvingut/da a la nostra aplicació!
+<span class="linenos" data-linenos=" 5 "></span>
+<span class="linenos" data-linenos=" 6 "></span>    @component(&#39;mail::button&#39;, [&#39;url&#39; =&gt; &#39;https://example.com&#39;])
+<span class="linenos" data-linenos=" 7 "></span>    Visita&#39;ns
+<span class="linenos" data-linenos=" 8 "></span>    @endcomponent
+<span class="linenos" data-linenos=" 9 "></span>
+<span class="linenos" data-linenos="10 "></span>    Gràcies,&lt;br&gt;
+<span class="linenos" data-linenos="11 "></span>    {{ config(&#39;app.name&#39;) }}
+<span class="linenos" data-linenos="12 "></span>@endcomponent
+</code></pre></div>
+<h4 id="6-correus-en-cua-asincrons">6️⃣ Correus en cua (asíncrons)<a class="headerlink" href="#6-correus-en-cua-asincrons" title="Permanent link">&para;</a></h4>
+<p>Per millorar el rendiment:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">Mail::to(&#39;usuari@example.com&#39;)-&gt;queue(new WelcomeMail($user));</span>
+</code></pre></div></p>
+<p>Assegura't que el sistema de cues estiga configurat al fitxer <code>.env</code>:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>QUEUE_CONNECTION=database
+</code></pre></div></p>
+<h2 id="gestio-de-fitxers-en-laravel-12">🗂️ Gestió de Fitxers en Laravel 12<a class="headerlink" href="#gestio-de-fitxers-en-laravel-12" title="Permanent link">&para;</a></h2>
+<p>Laravel proporciona una API senzilla per treballar amb fitxers i directoris a través del component <code>Storage</code>.</p>
+<h4 id="1-configuracio-del-sistema-de-fitxers">1️⃣ Configuració del Sistema de Fitxers<a class="headerlink" href="#1-configuracio-del-sistema-de-fitxers" title="Permanent link">&para;</a></h4>
+<p>Els “discs” es configuren al fitxer <code>config/filesystems.php</code>.</p>
+<h5 id="tipus-comuns">Tipus comuns:<a class="headerlink" href="#tipus-comuns" title="Permanent link">&para;</a></h5>
+<ul>
+<li><code>local</code>: emmagatzematge intern (no accessible públicament)</li>
+<li><code>public</code>: fitxers accessibles via navegador</li>
+<li><code>s3</code>: Amazon S3 o altres serveis compatibles</li>
+</ul>
+<h5 id="env"><code>.env</code>:<a class="headerlink" href="#env" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>FILESYSTEM_DISK=local
+<span class="linenos" data-linenos="2 "></span>AWS_ACCESS_KEY_ID=el_teu_access_key
+<span class="linenos" data-linenos="3 "></span>AWS_SECRET_ACCESS_KEY=el_teu_secret_key
+<span class="linenos" data-linenos="4 "></span>AWS_DEFAULT_REGION=us-east-1
+<span class="linenos" data-linenos="5 "></span>AWS_BUCKET=el_teu_bucket
+</code></pre></div>
+<h4 id="2-operacions-basiques">2️⃣ Operacions Bàsiques<a class="headerlink" href="#2-operacions-basiques" title="Permanent link">&para;</a></h4>
+<p><strong>Guardar fitxers</strong></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">use Illuminate\Support\Facades\Storage;</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">// Text</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">Storage::put(&#39;documents/info.txt&#39;, &#39;Contingut&#39;);</span>
+<span class="linenos" data-linenos=" 5 "></span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">// Arxiu pujat</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">Storage::putFile(&#39;uploads&#39;, $request-&gt;file(&#39;document&#39;));</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">// Amb nom personalitzat</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">Storage::putFileAs(&#39;uploads&#39;, $request-&gt;file(&#39;document&#39;), &#39;factura.pdf&#39;);</span>
+</code></pre></div>
+<p><strong>*Llegir i verificar fitxers</strong></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">// Obtenir el contingut d&#39;un fitxer</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">$content = Storage::get(&#39;documents/file.txt&#39;);</span>
+<span class="linenos" data-linenos="3 "></span>
+<span class="linenos" data-linenos="4 "></span><span class="x">// Verificar si un fitxer existeix</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">if (Storage::exists(&#39;documents/file.txt&#39;)) {</span>
+<span class="linenos" data-linenos="6 "></span><span class="x">    // Fitxer existeix</span>
+<span class="linenos" data-linenos="7 "></span><span class="x">}</span>
+</code></pre></div>
+<p><strong>Eliminar Fitxers</strong>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">// Eliminar un fitxer</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">Storage::delete(&#39;documents/file.txt&#39;);</span>
+<span class="linenos" data-linenos="3 "></span>
+<span class="linenos" data-linenos="4 "></span><span class="x">// Eliminar múltiples fitxers</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">Storage::delete([&#39;file1.txt&#39;, &#39;file2.txt&#39;]);</span>
+</code></pre></div></p>
+<p><strong>Llistar Fitxers i carpetes</strong></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">// Llistar tots els fitxers d&#39;un directori</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="x">$files = Storage::files(&#39;documents&#39;);</span>
+<span class="linenos" data-linenos=" 3 "></span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">// Llistar fitxers recursivament</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">$allFiles = Storage::allFiles(&#39;documents&#39;);</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">// Llistar carpetes</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">$directories = Storage::directories(&#39;documents&#39;);</span>
+<span class="linenos" data-linenos=" 9 "></span>
+<span class="linenos" data-linenos="10 "></span><span class="x">// Llistar carpetes recursivament</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">$allDirectories = Storage::allDirectories(&#39;documents&#39;);</span>
+</code></pre></div>
+<h4 id="3-fitxers-publics">3️⃣ Fitxers Públics<a class="headerlink" href="#3-fitxers-publics" title="Permanent link">&para;</a></h4>
+<p>Per servir fitxers públicament, utilitza el disc public i crea un enllaç simbòlic:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>php<span class="w"> </span>artisan<span class="w"> </span>storage:link
+</code></pre></div></p>
+<p><strong>Obtenir una URL Pública</strong></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">$url = Storage::url(&#39;documents/file.txt&#39;); // Genera una URL pública</span>
+</code></pre></div>
+<h4 id="4-amazon-s3">4️⃣ Amazon S3<a class="headerlink" href="#4-amazon-s3" title="Permanent link">&para;</a></h4>
+<p>Inclou les credencials d'Amazon S3 al fitxer <code>.env</code>:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>AWS_ACCESS_KEY_ID=el_teu_access_key
+<span class="linenos" data-linenos="2 "></span>AWS_SECRET_ACCESS_KEY=el_teu_secret_key
+<span class="linenos" data-linenos="3 "></span>AWS_DEFAULT_REGION=us-east-1
+<span class="linenos" data-linenos="4 "></span>AWS_BUCKET=el_teu_bucket
+</code></pre></div></p>
+<p><strong>Exemple</strong>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">use Illuminate\Support\Facades\Storage;</span>
+<span class="linenos" data-linenos="2 "></span>
+<span class="linenos" data-linenos="3 "></span><span class="x">// Guardar un fitxer a S3</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">Storage::disk(&#39;s3&#39;)-&gt;put(&#39;documents/file.txt&#39;, &#39;Contingut&#39;);</span>
+<span class="linenos" data-linenos="5 "></span>
+<span class="linenos" data-linenos="6 "></span><span class="x">// Obtenir una URL</span>
+<span class="linenos" data-linenos="7 "></span><span class="x">$url = Storage::disk(&#39;s3&#39;)-&gt;url(&#39;documents/file.txt&#39;);</span>
+</code></pre></div></p>
+<h2 id="testing-en-laravel-12">✅ Testing en Laravel 12<a class="headerlink" href="#testing-en-laravel-12" title="Permanent link">&para;</a></h2>
+<p>Laravel inclou una infraestructura de proves robusta basada en PHPUnit, que permet realitzar proves unitàries, d'integració i de funcionalitat HTTP.</p>
+<h4 id="tipus-de-proves">🧪 Tipus de proves<a class="headerlink" href="#tipus-de-proves" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p>Proves Unitàries : Validen la lògica d’un component aïllat (model, servei, etc.).</p>
+</li>
+<li>
+<p>Proves de Funcionalitat (Feature Tests) : Simulen sol·licituds HTTP completes i proven controladors, middleware, i rutes.</p>
+</li>
+<li>
+<p>Proves de Base de Dades: Verifiquen la persistència i integritat de les dades (amb <code>RefreshDatabase</code> o <code>DatabaseTransactions</code>).</p>
+</li>
+<li>
+<p>Proves de Navegació amb Dusk: Permeten interactuar amb l’aplicació mitjançant un navegador real o virtual.</p>
+</li>
+</ul>
+<hr />
+<h4 id="configuracio">⚙️ Configuració<a class="headerlink" href="#configuracio" title="Permanent link">&para;</a></h4>
+<h5 id="envtesting"><code>.env.testing</code><a class="headerlink" href="#envtesting" title="Permanent link">&para;</a></h5>
+<p>Defineix la configuració per a l’entorn de proves:</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>APP_ENV=testing
+<span class="linenos" data-linenos="2 "></span>DB_CONNECTION=sqlite
+<span class="linenos" data-linenos="3 "></span>DB_DATABASE=:memory:
+</code></pre></div>
+S’utilitza automàticament en executar <strong>php artisan test</strong>.</p>
+<h4 id="crear-proves">✏️ Crear proves<a class="headerlink" href="#crear-proves" title="Permanent link">&para;</a></h4>
+<p>Per generar una prova:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>php<span class="w"> </span>artisan<span class="w"> </span>make:test<span class="w"> </span>EquipServiceTest<span class="w">         </span><span class="c1"># Prova unitària</span>
+<span class="linenos" data-linenos="2 "></span>php<span class="w"> </span>artisan<span class="w"> </span>make:test<span class="w"> </span>EquipCrudTest<span class="w"> </span>--unit<span class="w">      </span><span class="c1"># Prova unitària (opció explícita)</span>
+<span class="linenos" data-linenos="3 "></span>php<span class="w"> </span>artisan<span class="w"> </span>make:test<span class="w"> </span>UserFeatureTest<span class="w">           </span><span class="c1"># Prova de feature</span>
+</code></pre></div></p>
+<p><strong>Exemple de Prova feature amb Validació i Autenticació</strong> </p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">namespace Tests\Feature;</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">use Tests\TestCase;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">use App\Models\User;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">use Illuminate\Foundation\Testing\RefreshDatabase;</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">class EquipFeatureTest extends TestCase</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">{</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">    use RefreshDatabase;</span>
+<span class="linenos" data-linenos="10 "></span>
+<span class="linenos" data-linenos="11 "></span><span class="x">    public function test_creacio_equip_requereix_autenticacio_i_valida()</span>
+<span class="linenos" data-linenos="12 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="13 "></span><span class="x">        $user = User::factory()-&gt;create();</span>
+<span class="linenos" data-linenos="14 "></span>
+<span class="linenos" data-linenos="15 "></span><span class="x">        // Prova redirecció sense login</span>
+<span class="linenos" data-linenos="16 "></span><span class="x">        $this-&gt;get(route(&#39;equips.create&#39;))</span>
+<span class="linenos" data-linenos="17 "></span><span class="x">             -&gt;assertRedirect(route(&#39;login&#39;));</span>
+<span class="linenos" data-linenos="18 "></span>
+<span class="linenos" data-linenos="19 "></span><span class="x">        // Prova validació invàlida</span>
+<span class="linenos" data-linenos="20 "></span><span class="x">        $this-&gt;actingAs($user)</span>
+<span class="linenos" data-linenos="21 "></span><span class="x">             -&gt;post(route(&#39;equips.store&#39;), [])</span>
+<span class="linenos" data-linenos="22 "></span><span class="x">             -&gt;assertSessionHasErrors([&#39;nom&#39;, &#39;categoria&#39;]);</span>
+<span class="linenos" data-linenos="23 "></span>
+<span class="linenos" data-linenos="24 "></span><span class="x">        // Prova validació vàlida</span>
+<span class="linenos" data-linenos="25 "></span><span class="x">        $data = [&#39;nom&#39; =&gt; &#39;Nou Equip&#39;, &#39;categoria&#39; =&gt; &#39;Base&#39;];</span>
+<span class="linenos" data-linenos="26 "></span><span class="x">        $this-&gt;actingAs($user)</span>
+<span class="linenos" data-linenos="27 "></span><span class="x">             -&gt;post(route(&#39;equips.store&#39;), $data)</span>
+<span class="linenos" data-linenos="28 "></span><span class="x">             -&gt;assertRedirect(route(&#39;equips.index&#39;))</span>
+<span class="linenos" data-linenos="29 "></span><span class="x">             -&gt;assertSessionHas(&#39;success&#39;); // si s’usa missatge flash</span>
+<span class="linenos" data-linenos="30 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="31 "></span><span class="x">}</span>
+</code></pre></div>
+<h4 id="proves-de-base-de-dades">Proves de Base de Dades<a class="headerlink" href="#proves-de-base-de-dades" title="Permanent link">&para;</a></h4>
+<h5 id="migracions">Migracions<a class="headerlink" href="#migracions" title="Permanent link">&para;</a></h5>
+<p>Utilitza el trait <code>RefreshDatabase</code> per executar les migracions abans de cada prova:</p>
+<p><strong>Exemple de CRUD complet amb Base de Dades</strong>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">namespace Tests\Feature;</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">use Tests\TestCase;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">use App\Models\User;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">use App\Models\Equip;</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">use Illuminate\Foundation\Testing\RefreshDatabase;</span>
+<span class="linenos" data-linenos=" 7 "></span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">class EquipCrudTest extends TestCase</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">{</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">    use RefreshDatabase;</span>
+<span class="linenos" data-linenos="11 "></span>
+<span class="linenos" data-linenos="12 "></span><span class="x">    public function test_crud_complet_d_equip()</span>
+<span class="linenos" data-linenos="13 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="14 "></span><span class="x">        $user = User::factory()-&gt;create();</span>
+<span class="linenos" data-linenos="15 "></span><span class="x">        $this-&gt;actingAs($user);</span>
+<span class="linenos" data-linenos="16 "></span>
+<span class="linenos" data-linenos="17 "></span><span class="x">        // CREATE</span>
+<span class="linenos" data-linenos="18 "></span><span class="x">        $equip = Equip::factory()-&gt;create([&#39;nom&#39; =&gt; &#39;Equip A&#39;]);</span>
+<span class="linenos" data-linenos="19 "></span><span class="x">        $this-&gt;assertDatabaseHas(&#39;equips&#39;, [&#39;nom&#39; =&gt; &#39;Equip A&#39;]);</span>
+<span class="linenos" data-linenos="20 "></span>
+<span class="linenos" data-linenos="21 "></span><span class="x">        // UPDATE</span>
+<span class="linenos" data-linenos="22 "></span><span class="x">        $equip-&gt;update([&#39;nom&#39; =&gt; &#39;Equip B&#39;]);</span>
+<span class="linenos" data-linenos="23 "></span><span class="x">        $this-&gt;assertDatabaseHas(&#39;equips&#39;, [&#39;nom&#39; =&gt; &#39;Equip B&#39;]);</span>
+<span class="linenos" data-linenos="24 "></span>
+<span class="linenos" data-linenos="25 "></span><span class="x">        // DELETE</span>
+<span class="linenos" data-linenos="26 "></span><span class="x">        $equip-&gt;delete();</span>
+<span class="linenos" data-linenos="27 "></span><span class="x">        $this-&gt;assertDatabaseMissing(&#39;equips&#39;, [&#39;nom&#39; =&gt; &#39;Equip B&#39;]);</span>
+<span class="linenos" data-linenos="28 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="29 "></span><span class="x">}</span>
+</code></pre></div></p>
+<p><strong>Exemple de prova unitària amb Service o Repository</strong>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">namespace Tests\Unit;</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">use Tests\TestCase;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">use App\Models\Estadi;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">use App\Services\EquipService;</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">use Illuminate\Foundation\Testing\RefreshDatabase;</span>
+<span class="linenos" data-linenos=" 7 "></span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">class EquipServiceTest extends TestCase</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">{</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">    use RefreshDatabase;</span>
+<span class="linenos" data-linenos="11 "></span>
+<span class="linenos" data-linenos="12 "></span><span class="x">    public function test_service_crea_equip_correctament()</span>
+<span class="linenos" data-linenos="13 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="14 "></span><span class="x">        $estadi = Estadi::factory()-&gt;create();</span>
+<span class="linenos" data-linenos="15 "></span><span class="x">        $service = new EquipService();</span>
+<span class="linenos" data-linenos="16 "></span><span class="x">        $equip = $service-&gt;create([</span>
+<span class="linenos" data-linenos="17 "></span><span class="x">            &#39;nom&#39; =&gt; &#39;València CF&#39;,</span>
+<span class="linenos" data-linenos="18 "></span><span class="x">            &#39;categoria&#39; =&gt; &#39;Pro&#39;,</span>
+<span class="linenos" data-linenos="19 "></span><span class="x">            &#39;estadi_id&#39; =&gt; $estadi-&gt;id,</span>
+<span class="linenos" data-linenos="20 "></span><span class="x">        ]);</span>
+<span class="linenos" data-linenos="21 "></span>
+<span class="linenos" data-linenos="22 "></span><span class="x">        $this-&gt;assertDatabaseHas(&#39;equips&#39;, [&#39;nom&#39; =&gt; &#39;València CF&#39;]);</span>
+<span class="linenos" data-linenos="23 "></span><span class="x">        $this-&gt;assertEquals(&#39;València CF&#39;, $equip-&gt;nom);</span>
+<span class="linenos" data-linenos="24 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="25 "></span><span class="x">}</span>
+</code></pre></div></p>
+<h4 id="bones-practiques">Bones pràctiques<a class="headerlink" href="#bones-practiques" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Refactoritzar el codi amb Service, Repository, etc.</li>
+<li>Usar factories per crear dades de prova.</li>
+<li>Fer proves independents i narratives (test-first sempre que siga possible).</li>
+<li>Provar estats de sessió, permisos i policies.</li>
+<li>Executar proves en paral·lel si ho permet la màquina (php artisan test --parallel).</li>
+</ul>
+<h2 id="laravel-livewire-3-desenvolupament-dinterficies-reactives-amb-php">🌀 Laravel Livewire 3 – Desenvolupament d’interfícies reactives amb PHP<a class="headerlink" href="#laravel-livewire-3-desenvolupament-dinterficies-reactives-amb-php" title="Permanent link">&para;</a></h2>
+<p><strong>Livewire 3</strong> és una llibreria per Laravel que permet desenvolupar components interactius i reactius directament amb PHP, sense necessitat d'escriure JavaScript.</p>
+<hr />
+<h4 id="1-installacio-i-configuracio-basica">✅ 1. Instal·lació i configuració bàsica<a class="headerlink" href="#1-installacio-i-configuracio-basica" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>composer<span class="w"> </span>require<span class="w"> </span>livewire/livewire
+</code></pre></div>
+<p>Inclou els scripts de Livewire en les teues vistes Blade:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>@livewireStyles
+<span class="linenos" data-linenos="2 "></span>@livewireScripts
+</code></pre></div></p>
+<p>Opcional per usar vite (Laravel 12):</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>php<span class="w"> </span>artisan<span class="w"> </span>livewire:configure-vite
+</code></pre></div>
+<h4 id="2-crear-components">🧱 2. Crear components<a class="headerlink" href="#2-crear-components" title="Permanent link">&para;</a></h4>
+<p><strong>Generar un Component</strong></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>php<span class="w"> </span>artisan<span class="w"> </span>make:livewire<span class="w"> </span>HelloWorld
+</code></pre></div>
+<p>Això genera:
+- Un fitxer de classe PHP: <code>app/Livewire/HelloWorld.php</code>
+- Una plantilla Blade: <code>resources/views/livewire/hello-world.blade.php</code></p>
+<p><strong>Exemple de Component</strong></p>
+<p>app/Livewire/HelloWorld.php
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">namespace App\Livewire;</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">use Livewire\Component;</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">class HelloWorld extends Component</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">{</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">    public $message = &quot;Hola, món!&quot;;</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">    public function render()</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">        return view(&#39;livewire.hello-world&#39;);</span>
+<span class="linenos" data-linenos="12 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="13 "></span><span class="x">}</span>
+</code></pre></div></p>
+<p>resources/views/livewire/hello-world.blade.php
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>&lt;div&gt;
+<span class="linenos" data-linenos="2 "></span>    &lt;h1&gt;{{ $message }}&lt;/h1&gt;
+<span class="linenos" data-linenos="3 "></span>&lt;/div&gt;
+</code></pre></div></p>
+<p><strong>Inserir component en una vista</strong>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="p">&lt;</span><span class="nt">livewire:hello-world</span> <span class="p">/&gt;</span>
+</code></pre></div></p>
+<h4 id="3-propietats-reactives-i-accions">🔁 3. Propietats reactives i accions<a class="headerlink" href="#3-propietats-reactives-i-accions" title="Permanent link">&para;</a></h4>
+<h5 id="propietats-i-bindings">Propietats i bindings<a class="headerlink" href="#propietats-i-bindings" title="Permanent link">&para;</a></h5>
+<p>Les propietats de la classe PHP es poden vincular directament als camps d'un formulari HTML:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">class Counter extends Component</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="x">{</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">    //propietat</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">    public $count = 0;</span>
+<span class="linenos" data-linenos=" 5 "></span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">    //mètode del component</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">    public function increment()</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">        $this-&gt;count++;</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="11 "></span>
+<span class="linenos" data-linenos="12 "></span><span class="x">    public function render()</span>
+<span class="linenos" data-linenos="13 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="14 "></span><span class="x">        return view(&#39;livewire.counter&#39;);</span>
+<span class="linenos" data-linenos="15 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="16 "></span><span class="x">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>&lt;div&gt;
+<span class="linenos" data-linenos="2 "></span>    &lt;button wire:click=&quot;increment&quot;&gt;+&lt;/button&gt;
+<span class="linenos" data-linenos="3 "></span>    &lt;h1&gt;{{ $count }}&lt;/h1&gt;
+<span class="linenos" data-linenos="4 "></span>&lt;/div&gt;
+</code></pre></div>
+<h4 id="4-validacio">💬 4. Validació<a class="headerlink" href="#4-validacio" title="Permanent link">&para;</a></h4>
+<p>Livewire permet validar dades a mesura que l'usuari interactua amb el formulari:</p>
+<p><strong>Tradicional</strong></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">protected $rules = [</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="x">&#39;nom&#39; =&gt; &#39;required|string|min:3&#39;,</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">];</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">public function guardar() {</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">$this-&gt;validate();</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">}</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">```php</span>
+<span class="linenos" data-linenos=" 9 "></span>
+<span class="linenos" data-linenos="10 "></span><span class="x">**En temps real**</span>
+<span class="linenos" data-linenos="11 "></span>
+<span class="linenos" data-linenos="12 "></span><span class="x">```php</span>
+<span class="linenos" data-linenos="13 "></span><span class="x">protected $rules = [&#39;nom&#39; =&gt; &#39;required|min:3&#39;];</span>
+<span class="linenos" data-linenos="14 "></span>
+<span class="linenos" data-linenos="15 "></span><span class="x">public function updated($propertyName)</span>
+<span class="linenos" data-linenos="16 "></span><span class="x">{</span>
+<span class="linenos" data-linenos="17 "></span><span class="x">    $this-&gt;validateOnly($propertyName);</span>
+<span class="linenos" data-linenos="18 "></span><span class="x">}</span>
+</code></pre></div>
+<h4 id="5-components-amb-formularis">📦 5. Components amb formularis<a class="headerlink" href="#5-components-amb-formularis" title="Permanent link">&para;</a></h4>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">public $nom, $email;</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">public function enviar()</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">{</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">$this-&gt;validate([</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">&#39;nom&#39; =&gt; &#39;required&#39;,</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">&#39;email&#39; =&gt; &#39;required|email&#39;,</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">]);</span>
+<span class="linenos" data-linenos=" 9 "></span>
+<span class="linenos" data-linenos="10 "></span><span class="x">// Guardar o enviar dades...</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">}</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>&lt;form wire:submit.prevent=&quot;enviar&quot;&gt;
+<span class="linenos" data-linenos="2 "></span>    &lt;input type=&quot;text&quot; wire:model=&quot;nom&quot;&gt;
+<span class="linenos" data-linenos="3 "></span>    @error(&#39;nom&#39;) &lt;span&gt;{{ $message }}&lt;/span&gt; @enderror
+<span class="linenos" data-linenos="4 "></span>
+<span class="linenos" data-linenos="5 "></span>    &lt;input type=&quot;email&quot; wire:model=&quot;email&quot;&gt;
+<span class="linenos" data-linenos="6 "></span>    @error(&#39;email&#39;) &lt;span&gt;{{ $message }}&lt;/span&gt; @enderror
+<span class="linenos" data-linenos="7 "></span>
+<span class="linenos" data-linenos="8 "></span>    &lt;button&gt;Enviar&lt;/button&gt;
+<span class="linenos" data-linenos="9 "></span>&lt;/form&gt;
+</code></pre></div></p>
+<h4 id="6-exemple-complet">🧠 6. Exemple complet<a class="headerlink" href="#6-exemple-complet" title="Permanent link">&para;</a></h4>
+<p>contador.php
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">namespace App\Livewire;</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">use Livewire\Component;</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">class Contador extends Component</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">{</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">    public $valor = 0;</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">    public function incrementar() { $this-&gt;valor++; }</span>
+<span class="linenos" data-linenos="10 "></span>
+<span class="linenos" data-linenos="11 "></span><span class="x">    public function render() {</span>
+<span class="linenos" data-linenos="12 "></span><span class="x">        return view(&#39;livewire.contador&#39;);</span>
+<span class="linenos" data-linenos="13 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="14 "></span><span class="x">}</span>
+</code></pre></div>
+contador.blade.php
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>&lt;div&gt;
+<span class="linenos" data-linenos="2 "></span>    &lt;button wire:click=&quot;incrementar&quot;&gt;+&lt;/button&gt;
+<span class="linenos" data-linenos="3 "></span>    &lt;span&gt;{{ $valor }}&lt;/span&gt;
+<span class="linenos" data-linenos="4 "></span>&lt;/div&gt;
+</code></pre></div></p>
+<h4 id="7-altres-funcionalitats-utils">7. Altres funcionalitats útils<a class="headerlink" href="#7-altres-funcionalitats-utils" title="Permanent link">&para;</a></h4>
+<p><strong>Hooks</strong></p>
+<ul>
+<li>mount(): s’executa en inicialitzar el component.</li>
+<li>hydrate(): després de cada request.</li>
+<li>dehydrate(): abans d’enviar al client.</li>
+</ul>
+<p><strong>Flash messages</strong></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">session()-&gt;flash(&#39;missatge&#39;, &#39;Guardat!&#39;);</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>@if (session()-&gt;has(&#39;missatge&#39;))
+<span class="linenos" data-linenos="2 "></span>&lt;div&gt;{{ session(&#39;missatge&#39;) }}&lt;/div&gt;
+<span class="linenos" data-linenos="3 "></span>@endif
+</code></pre></div>
+<h4 id="8-amb-autenticacio-i-autoritzacio">🔐 8. Amb autenticació i autorització<a class="headerlink" href="#8-amb-autenticacio-i-autoritzacio" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">public function mount()</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">{</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">    if (!auth()-&gt;check()) {</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">        abort(403);</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="6 "></span><span class="x">}</span>
+</code></pre></div>
+<h4 id="9-proves-de-components-livewire">🧪 9. Proves de components Livewire<a class="headerlink" href="#9-proves-de-components-livewire" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">namespace Tests\Feature\Livewire;</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">use Tests\TestCase;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">use Livewire\Livewire;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">use App\Livewire\HistorialPartits;</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">use App\Models\Partit;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">use Illuminate\Foundation\Testing\RefreshDatabase;</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">class HistorialPartitsTest extends TestCase</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">{</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">    use RefreshDatabase;</span>
+<span class="linenos" data-linenos="12 "></span>
+<span class="linenos" data-linenos="13 "></span><span class="x">    public function test_filtre_livewire_mostra_correctament()</span>
+<span class="linenos" data-linenos="14 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="15 "></span><span class="x">        Partit::factory()-&gt;create([&#39;equip_local&#39; =&gt; &#39;A&#39;]);</span>
+<span class="linenos" data-linenos="16 "></span><span class="x">        Partit::factory()-&gt;create([&#39;equip_local&#39; =&gt; &#39;B&#39;]);</span>
+<span class="linenos" data-linenos="17 "></span>
+<span class="linenos" data-linenos="18 "></span><span class="x">        Livewire::test(HistorialPartits::class)</span>
+<span class="linenos" data-linenos="19 "></span><span class="x">            -&gt;set(&#39;equip&#39;, &#39;A&#39;)</span>
+<span class="linenos" data-linenos="20 "></span><span class="x">            -&gt;call(&#39;filtrar&#39;)</span>
+<span class="linenos" data-linenos="21 "></span><span class="x">            -&gt;assertSee(&#39;A&#39;)</span>
+<span class="linenos" data-linenos="22 "></span><span class="x">            -&gt;assertDontSee(&#39;B&#39;);</span>
+<span class="linenos" data-linenos="23 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="24 "></span><span class="x">}</span>
+</code></pre></div>
+<h4 id="10-avantatges-de-livewire">🧩 10. Avantatges de Livewire<a class="headerlink" href="#10-avantatges-de-livewire" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Sense JavaScript</li>
+<li>Integració directa amb Laravel</li>
+<li>Ideal per a CRUD i components de UI dinàmics</li>
+<li>Compatible amb Alpine.js</li>
+</ul>
+<h2 id="exercicis">Exercicis<a class="headerlink" href="#exercicis" title="Permanent link">&para;</a></h2>
+<h3 id="exercici-guiat-reestructurar-projecte-futbol-femeni-amb-bd-repository-service">🏟️ Exercici guiat: Reestructurar projecte Futbol Femení amb BD + Repository + Service<a class="headerlink" href="#exercici-guiat-reestructurar-projecte-futbol-femeni-amb-bd-repository-service" title="Permanent link">&para;</a></h3>
+<h4 id="objectiu">🎯 Objectiu<a class="headerlink" href="#objectiu" title="Permanent link">&para;</a></h4>
+<p>Reestructurar l’aplicació de futbol femení (feta sense persistència) cap a una arquitectura escalable amb:</p>
+<ul>
+<li>Validació amb FormRequest</li>
+<li>Autenticació</li>
+</ul>
+<hr />
+<p>c</p>
+<h4 id="1-afegir-un-escut-a-lequip-branca-escut">1.  🛡️ Afegir un escut a l'equip  (Branca escut)<a class="headerlink" href="#1-afegir-un-escut-a-lequip-branca-escut" title="Permanent link">&para;</a></h4>
+<p><strong>Crear una migració per afegir un camp <code>escut</code> a la taula <code>equips</code></strong></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>./vendor/bin/sail<span class="w"> </span>artisan<span class="w"> </span>make:migration<span class="w"> </span>add_escut_to_equips_table
+</code></pre></div>
+<p>Modificar la migració <a href="https://github.com/Curs-2025-26/futbol-femeni/blob/bdd/database/migrations/2025_08_31_044414_add_escut_to_equips_table.php"><code>add_escut_to_equips_table</code></a></p>
+<p><strong>Aplicar la migració</strong></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>./vendor/bin/sail<span class="w"> </span>artisan<span class="w"> </span>migrate
+</code></pre></div>
+<p><strong>Modificar el model <code>Equip</code> per incloure el camp <code>escut</code></strong></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">protected $fillable = [&#39;nom&#39;, &#39;estadi_id&#39;, &#39;titols&#39;, &#39;escut&#39;];</span>
+</code></pre></div>
+<p><strong>Modificar la vista <code>equips.create</code> per incloure un camp d'arxiu per pujar l'escut de l'equip i incloure enctype="multipart/form-data" al  formulari</strong></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>&lt;form action=&quot;{{ route(&#39;equips.store&#39;) }}&quot; method=&quot;POST&quot; enctype=&quot;multipart/form-data&quot;&gt;
+<span class="linenos" data-linenos="2 "></span>
+<span class="linenos" data-linenos="3 "></span>&lt;div class=&quot;mb-4&quot;&gt;
+<span class="linenos" data-linenos="4 "></span>    &lt;label for=&quot;escut&quot; class=&quot;block text-sm font-medium text-gray-700 mb-1&quot;&gt;Escut:&lt;/label&gt;
+<span class="linenos" data-linenos="5 "></span>    &lt;input type=&quot;file&quot; name=&quot;escut&quot; id=&quot;escut&quot;
+<span class="linenos" data-linenos="6 "></span>        class=&quot;w-full border-gray-300 rounded-lg shadow-sm focus:ring-blue-500 focus:border-blue-500&quot;&gt;
+<span class="linenos" data-linenos="7 "></span>&lt;/div&gt;
+</code></pre></div>
+<p>**Crear la  vista <a href="https://github.com/Curs-2025-26/futbol-femeni/blob/escut/resources/views/equips/edit.blade.php"><code>equips.edit</code></a> **</p>
+<p><strong>Crear un enllaç simbòlic a la carpeta storage</strong></p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>./vendor/bin/sail<span class="w"> </span>artisan<span class="w"> </span>storage:link
+</code></pre></div>
+<strong>Modificar el <a href="https://github.com/Curs-2025-26/futbol-femeni/blob/escut/app/Http/Controllers/EquipController.php">controlador</a> per passar el fitxer al servei</strong></p>
+<p><strong>Actualitzar les <a href="https://github.com/Curs-2025-26/futbol-femeni/tree/escut/app/Http/Requests">validacions</a> per incorporar el camp escut</strong>
+<strong>Actualitzar el mètode store,update i destroy del <a href="https://github.com/Curs-2025-26/futbol-femeni/blob/escut/app/Services/EquipService.php">servei</a></strong></p>
+<p><strong>Modificat el <a href="https://github.com/Curs-2025-26/futbol-femeni/blob/escut/resources/views/components/equip.blade.php">component</a> de la vista <a href="https://github.com/Curs-2025-26/futbol-femeni/blob/escut/resources/views/equips/show.blade.php"><code>equips.show</code></a> per mostrar l'escut de l'equip</strong></p>
+<h4 id="2-configurar-lautenticacio-amb-laravel-breeze">🔑 2. Configurar l'autenticació amb Laravel Breeze<a class="headerlink" href="#2-configurar-lautenticacio-amb-laravel-breeze" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Canviar el nom del fitxer app.blade.php de la carpeta resources/views/layouts a equip.blade.php.</li>
+<li>Guarda les rutes de la Guia d'Equips de Futbol Femení en algun fitxer per utilitzar després.</li>
+<li>Instal·la Laravel Breeze:</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>composer<span class="w"> </span>require<span class="w"> </span>laravel/breeze<span class="w"> </span>--dev
+<span class="linenos" data-linenos="2 "></span>php<span class="w"> </span>artisan<span class="w"> </span>breeze:install
+<span class="linenos" data-linenos="3 "></span>npm<span class="w"> </span>install<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>npm<span class="w"> </span>run<span class="w"> </span>build
+<span class="linenos" data-linenos="4 "></span>php<span class="w"> </span>artisan<span class="w"> </span>migrate
+</code></pre></div>
+Triarem <strong>blade amb alpine</strong> i <strong>PHPUNIT</strong></p>
+<ol start="4">
+<li>Canviar totes les vistes per a que extenguen de layouts.equip</li>
+</ol>
+<h4 id="3-afegir-els-rols-al-sistema">👥 3.  Afegir els rols al sistema<a class="headerlink" href="#3-afegir-els-rols-al-sistema" title="Permanent link">&para;</a></h4>
+<p><strong>Crea una nova migració per afegir el camp <code>role</code> a usuaris</strong></p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>php<span class="w"> </span>artisan<span class="w"> </span>make:migration<span class="w"> </span>add_role_to_users_table<span class="w"> </span>--table<span class="o">=</span>users
+</code></pre></div>
+   Afegeix el <a href="https://github.com/Curs-2025-26/futbol-femeni/blob/escut/database/migrations/2025_09_03_171410_add_role_to_users_table.php">camp</a> i aplica-la:
+   <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">Schema::table(&#39;users&#39;, function (Blueprint $table) {</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">    $table-&gt;string(&#39;role&#39;)-&gt;default(&#39;arbitre&#39;);</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">});</span>
+</code></pre></div>
+   Aplica la migració:
+   <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>php<span class="w"> </span>artisan<span class="w"> </span>migrate
+</code></pre></div></p>
+<p><strong>Crea el seeders d'usuaris i crea un usuari administrador</strong></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w"> </span>php<span class="w"> </span>artisan<span class="w"> </span>make:seeder<span class="w"> </span>UserSeeder
+</code></pre></div>
+<p><strong>Executa el <a href="https://github.com/Curs-2025-26/futbol-femeni/blob/escut/database/seeders/UserSeeder.php">seeder</a> havent canviat <a href="https://github.com/Curs-2025-26/futbol-femeni/blob/escut/database/seeders/DatabaseSeeder.php">DatabaseSeeder</a></strong></p>
+<h4 id="3-middleware-per-a-permisos-de-rol-i-manager">🚪3. Middleware per a permisos de rol i manager<a class="headerlink" href="#3-middleware-per-a-permisos-de-rol-i-manager" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Genera el middleware</strong>
+   <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>php<span class="w"> </span>artisan<span class="w"> </span>make:middleware<span class="w"> </span>RoleMiddleware
+</code></pre></div></li>
+<li>
+<p><strong>Defineix el control dels rols en el metode <a href="https://github.com/Curs-2025-26/futbol-femeni/blob/escut/app/Http/Middleware/RoleMiddleware.php">handle</a></strong></p>
+</li>
+<li>
+<p><strong>Aplica  Middleware a <a href="https://github.com/Curs-2025-26/futbol-femeni/blob/escut/routes/web.php">rutes</a></strong> fent que  les rutes per tal que els equips,estadis soles puguen modificar-los els administradors. </p>
+</li>
+</ul>
+<h4 id="4-associar-managers-a-equips">🧑‍💼👥 4. Associar managers a equips<a class="headerlink" href="#4-associar-managers-a-equips" title="Permanent link">&para;</a></h4>
+<p><strong>Crea una migració nova</strong>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">   </span>php<span class="w"> </span>artisan<span class="w"> </span>make:migration<span class="w"> </span>add_team_id_to_users_table<span class="w"> </span>--table<span class="o">=</span>users
+</code></pre></div></p>
+<p><strong>Afegeix el camp <a href="https://github.com/Curs-2025-26/futbol-femeni/blob/escut/database/migrations/2025_09_03_174708_add_team_id_to_users_table.php"><code>team_id</code></a></strong>  i <strong>aplica la migració</strong>
+   <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>php<span class="w"> </span>artisan<span class="w"> </span>migrate
+</code></pre></div></p>
+<p><strong>Assigna equips als managers, creant u manager per equip i assigna-li</strong> </p>
+<p><a href="https://github.com/Curs-2025-26/futbol-femeni/blob/escut/database/seeders/EquipsSeeder.php">EquipsSeeder</a>   </p>
+<p><strong>Defineix la relació al model <a href="https://github.com/Curs-2025-26/futbol-femeni/blob/escut/app/Models/User.php"><code>User</code></a></strong></p>
+<p><strong>Defineix la relació inversa al model <a href="https://github.com/Curs-2025-26/futbol-femeni/blob/escut/app/Models/Equip.php"><code>Equip</code></a></strong></p>
+<h4 id="5-adaptar-les-vistes-al-component-layout-de-breeze">🧩🖼️ 5. Adaptar les vistes al component layout de Breeze<a class="headerlink" href="#5-adaptar-les-vistes-al-component-layout-de-breeze" title="Permanent link">&para;</a></h4>
+<ul>
+<li>
+<p><strong>Modificar <a href="https://github.com/Curs-2025-26/futbol-femeni/blob/escut/resources/views/layouts/equip.blade.php"><code>layouts/equip.blade.php</code></a> per a utilitzar el layout de Breeze</strong>.</p>
+</li>
+<li>
+<p><strong>Modificar el layout de Breeze per a incloure el menú de navegació en <a href="https://github.com/Curs-2025-26/futbol-femeni/blob/escut/resources/views/layouts/navigation.blade.php"><code>layouts\navigation.blade.php</code></a></strong> .</p>
+</li>
+<li>
+<p><strong>Modificar el menu de navegaciò <a href="https://github.com/Curs-2025-26/futbol-femeni/blob/escut/resources/views/partials/menu.blade.php"><code>partials/menu.blade.php</code></a> per acoplar-se</strong>. </p>
+</li>
+</ul>
+<h4 id="6-el-manager-soles-puga-editar-el-seu-equip">🧑‍💼✏️🔒👥 6. El manager soles puga editar el seu equip<a class="headerlink" href="#6-el-manager-soles-puga-editar-el-seu-equip" title="Permanent link">&para;</a></h4>
+<ul>
+<li><strong>Crea la Política</strong></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>php<span class="w"> </span>artisan<span class="w"> </span>make:policy<span class="w"> </span>EquipPolicy<span class="w"> </span>--model<span class="o">=</span>Equip
+</code></pre></div>
+<ul>
+<li>
+<p><strong>Defineix la Lògica a la Política</strong> al fitxer generat <a href="https://github.com/Curs-2025-26/futbol-femeni/blob/escut/app/Policies/EquipPolicy.php"><code>app/Policies/EquipPolicy.php</code></a> per tal d'afegir les regles i permisos.</p>
+</li>
+<li>
+<p><strong>Defineix les regles d'autorització' en <a href="https://github.com/Curs-2025-26/futbol-femeni/blob/escut/app/Http/Requests/StoreEquipRequest.php"><code>StoreEquipRequest.php</code></a></strong>.</p>
+</li>
+<li>
+<p><strong>Fes el mateix amb  <a href="https://github.com/Curs-2025-26/futbol-femeni/blob/escut/app/Http/Requests/UpdateEquipRequest.php"><code>UpdateEquipRequest.php</code></a></strong></p>
+</li>
+<li>
+<p><strong>Permet als manager accedir a les <a href="https://github.com/Curs-2025-26/futbol-femeni/blob/escut/routes/web.php">rutes</a></strong> per poder modificar.</p>
+</li>
+<li>
+<p><strong>Utilitza  la Política al Controlador  <a href="https://github.com/Curs-2025-26/futbol-femeni/blob/escut/app/Http/Controllers/EquipController.php"><code>EquipController</code></a></strong>, utilitzant el mètode <code>authorize</code> per aplicar la política abans de permetre accions.</p>
+</li>
+<li>
+<p><strong>Utilitza  les directives <code>@can</code> per verificar els permisos a les vistes <a href="https://github.com/Curs-2025-26/futbol-femeni/blob/escut/resources/views/equips/index.blade.php"><code>equis/index.blade.php</code></a></strong>.</p>
+</li>
+</ul>
+<h2 id="7-internacionalitzacio">🌍 7. Internacionalització<a class="headerlink" href="#7-internacionalitzacio" title="Permanent link">&para;</a></h2>
+<h4 id="publicar-els-fitxers-de-llenguatge">Publicar els Fitxers de Llenguatge<a class="headerlink" href="#publicar-els-fitxers-de-llenguatge" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>php<span class="w"> </span>artisan<span class="w"> </span>lang:publish
+<span class="linenos" data-linenos="2 "></span>composer<span class="w"> </span>require<span class="w"> </span>laravel-lang/lang<span class="w"> </span>--dev
+<span class="linenos" data-linenos="3 "></span>php<span class="w"> </span>artisan<span class="w"> </span>lang:add<span class="w"> </span>es
+<span class="linenos" data-linenos="4 "></span>php<span class="w"> </span>artisan<span class="w"> </span>lang:add<span class="w"> </span>ca
+</code></pre></div>
+<h4 id="configurar-lidioma-predeterminat">Configurar l'Idioma Predeterminat<a class="headerlink" href="#configurar-lidioma-predeterminat" title="Permanent link">&para;</a></h4>
+<p>Al fitxer <code>.env</code>, ajusta l'opcions <code>locale</code> per establir l'idioma predeterminat:</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">APP_LOCALE=ca</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">APP_FALLBACK_LOCALE=en</span>
+</code></pre></div>
+<strong>Definir les Traduccions</strong></p>
+<ul>
+<li><a href="https://github.com/Curs-2025-26/futbol-femeni/blob/escut/lang/ca.json">ca.json</a></li>
+<li><a href="https://github.com/Curs-2025-26/futbol-femeni/blob/escut/lang/es.json">es.json</a></li>
+<li><a href="https://github.com/Curs-2025-26/futbol-femeni/blob/escut/lang/en.json">en.json</a></li>
+</ul>
+<h4 id="recuperar-cadenes-de-traduccio">Recuperar Cadenes de Traducció<a class="headerlink" href="#recuperar-cadenes-de-traduccio" title="Permanent link">&para;</a></h4>
+<p>Utilitza la funció <code>__()</code> per obtenir les cadenes traduïdes en les vistes.</p>
+<p>Per exemple:  <a href="https://github.com/Curs-2025-26/futbol-femeni/blob/escut/resources/views/equips/index.blade.php">equips/index.blade.php</a></p>
+<h4 id="canviar-lidioma-dinamicament">Canviar l'Idioma Dinàmicament<a class="headerlink" href="#canviar-lidioma-dinamicament" title="Permanent link">&para;</a></h4>
+<p><strong>Crea  una <a href="https://github.com/Curs-2025-26/futbol-femeni/blob/escut/routes/web.php">ruta</a> per canviar idioma</strong></p>
+<p><strong>Crea  un Middleware per aplicar el idioma</strong></p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>./vendor/bin/sail<span class="w"> </span>artisan<span class="w"> </span>make:middleware<span class="w"> </span>SetLocale
+</code></pre></div>
+<strong>Defineix el <a href="https://github.com/Curs-2025-26/futbol-femeni/blob/escut/app/Http/Middleware/SetLocale.php">middleware</a></strong>
+<strong>Registra el middleware en <a href="https://github.com/Curs-2025-26/futbol-femeni/blob/escut/bootstrap/app.php">bootstrap/app.php</a></strong>
+<strong>Utilitza el layout <a href="https://github.com/Curs-2025-26/futbol-femeni/blob/escut/resources/views/layouts/navigation.blade.php">navigation.blade.php</a> per possar els enllaços de canviar d'idioma</strong></p>
+<h3 id="8-proves">8. Proves<a class="headerlink" href="#8-proves" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>Crea els fitxers de proves per al CRUD d'equips:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>php<span class="w"> </span>artisan<span class="w"> </span>make:test<span class="w"> </span>EquipServiceTest<span class="w"> </span>--unit
+<span class="linenos" data-linenos="2 "></span>php<span class="w"> </span>artisan<span class="w"> </span>make:test<span class="w"> </span>EquipCrudFeatureTest
+<span class="linenos" data-linenos="3 "></span>php<span class="w"> </span>artisan<span class="w"> </span>make:test<span class="w"> </span>EquipRepositoryTest<span class="w"> </span>--unit
+</code></pre></div></p>
+</li>
+<li>
+<p>Modifica  els fixer per tal d'incorporar les proves</p>
+</li>
+</ol>
+<ul>
+<li><a href="">EquipServiceTest</a></li>
+<li><a href="">EquipCrudFeatureTest</a></li>
+<li><a href="">EquipRepositoryTest</a></li>
+</ul>
+<h3 id="pas-10-generar-un-correu-electronic-amb-la-jornada-actual-partits-programats-i-enviar-lo-als-managers-dels-equips">Pas 10. Generar un correu electrònic amb la jornada actual (partits programats) i enviar-lo als managers dels equips.<a class="headerlink" href="#pas-10-generar-un-correu-electronic-amb-la-jornada-actual-partits-programats-i-enviar-lo-als-managers-dels-equips" title="Permanent link">&para;</a></h3>
+<h4 id="1-crear-una-comanda-artisan"><strong>1. Crear una Comanda Artisan</strong><a class="headerlink" href="#1-crear-una-comanda-artisan" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>php<span class="w"> </span>artisan<span class="w"> </span>make:command<span class="w"> </span>EnviarJornadaManagers
+</code></pre></div>
+<p>Al fitxer <code>app/Console/Commands/EnviarJornadaManagers.php</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">namespace App\Console\Commands;</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">use App\Models\User;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">use Carbon\Carbon;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">use Illuminate\Console\Command;</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">use Illuminate\Support\Facades\Mail;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">use App\Models\Partit;</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">use App\Mail\JornadaMail;</span>
+<span class="linenos" data-linenos=" 9 "></span>
+<span class="linenos" data-linenos="10 "></span><span class="x">class EnviarJornadaManagers extends Command</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">{</span>
+<span class="linenos" data-linenos="12 "></span><span class="x">    protected $signature = &#39;jornada:enviar&#39;;</span>
+<span class="linenos" data-linenos="13 "></span><span class="x">    protected $description = &#39;Envia la jornada actual als managers&#39;;</span>
+<span class="linenos" data-linenos="14 "></span>
+<span class="linenos" data-linenos="15 "></span><span class="x">    public function handle()</span>
+<span class="linenos" data-linenos="16 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="17 "></span><span class="x">        $partit = Partit::whereDate(&#39;data&#39;, &#39;&gt;&#39;, Carbon::now()) // Filtra partits posteriors a avui</span>
+<span class="linenos" data-linenos="18 "></span><span class="x">            -&gt;orderBy(&#39;data&#39;, &#39;asc&#39;) // Ordena per la data més propera</span>
+<span class="linenos" data-linenos="19 "></span><span class="x">            -&gt;first();</span>
+<span class="linenos" data-linenos="20 "></span><span class="x">        $partits = Partit::with([&#39;equipLocal&#39;, &#39;equipVisitant&#39;])-&gt;where(&#39;jornada&#39;,$partit-&gt;jornada)-&gt;get();</span>
+<span class="linenos" data-linenos="21 "></span>
+<span class="linenos" data-linenos="22 "></span><span class="x">        // Lògica per obtenir els correus dels managers</span>
+<span class="linenos" data-linenos="23 "></span><span class="x">        $managers = User::where(&#39;role&#39;,&#39;manager&#39;)-&gt;get();</span>
+<span class="linenos" data-linenos="24 "></span>
+<span class="linenos" data-linenos="25 "></span>
+<span class="linenos" data-linenos="26 "></span><span class="x">        foreach ($managers as $manager) {</span>
+<span class="linenos" data-linenos="27 "></span><span class="x">            Mail::to($manager-&gt;email)-&gt;send(new JornadaMail($partits));</span>
+<span class="linenos" data-linenos="28 "></span><span class="x">            $this-&gt;info($manager-&gt;name . &#39; ha rebut la jornada.&#39;);</span>
+<span class="linenos" data-linenos="29 "></span>
+<span class="linenos" data-linenos="30 "></span><span class="x">        }</span>
+<span class="linenos" data-linenos="31 "></span>
+<span class="linenos" data-linenos="32 "></span><span class="x">        $this-&gt;info(&#39;La jornada s\&#39;ha enviat correctament als managers.&#39;);</span>
+<span class="linenos" data-linenos="33 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="34 "></span><span class="x">}</span>
+<span class="linenos" data-linenos="35 "></span>
+<span class="linenos" data-linenos="36 "></span><span class="x">#### **2. Crear el Mail**</span>
+<span class="linenos" data-linenos="37 "></span><span class="x">```bash</span>
+<span class="linenos" data-linenos="38 "></span><span class="x">php artisan make:mail JornadaMail --markdown=emails.jornada</span>
+</code></pre></div>
+<p>Al fitxer <code>app/Mail/JornadaMail.php</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">namespace App\Mail;</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">use Illuminate\Bus\Queueable;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">use Illuminate\Contracts\Queue\ShouldQueue;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">use Illuminate\Mail\Mailable;</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">use Illuminate\Mail\Mailables\Content;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">use Illuminate\Queue\SerializesModels;</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">class JornadaMail extends Mailable</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">{</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">    use Queueable, SerializesModels;</span>
+<span class="linenos" data-linenos="12 "></span>
+<span class="linenos" data-linenos="13 "></span><span class="x">    public $partits;</span>
+<span class="linenos" data-linenos="14 "></span>
+<span class="linenos" data-linenos="15 "></span><span class="x">    public function __construct($partits)</span>
+<span class="linenos" data-linenos="16 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="17 "></span><span class="x">        $this-&gt;partits = $partits;</span>
+<span class="linenos" data-linenos="18 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="19 "></span>
+<span class="linenos" data-linenos="20 "></span>
+<span class="linenos" data-linenos="21 "></span>
+<span class="linenos" data-linenos="22 "></span><span class="x">    public function content(): Content</span>
+<span class="linenos" data-linenos="23 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="24 "></span><span class="x">        return new Content(</span>
+<span class="linenos" data-linenos="25 "></span><span class="x">            markdown: &#39;emails.jornada&#39;,</span>
+<span class="linenos" data-linenos="26 "></span><span class="x">            with: [</span>
+<span class="linenos" data-linenos="27 "></span><span class="x">                &#39;partits&#39; =&gt; $this-&gt;partits,</span>
+<span class="linenos" data-linenos="28 "></span><span class="x">            ],</span>
+<span class="linenos" data-linenos="29 "></span><span class="x">        );</span>
+<span class="linenos" data-linenos="30 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="31 "></span><span class="x">}</span>
+</code></pre></div>
+<h4 id="3-crear-la-vista-del-correu_1"><strong>3. Crear la Vista del Correu</strong><a class="headerlink" href="#3-crear-la-vista-del-correu_1" title="Permanent link">&para;</a></h4>
+<p>Al fitxer <code>resources/views/emails/jornada.blade.php</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>&lt;x-mail::message&gt;
+<span class="linenos" data-linenos=" 2 "></span>    # Jornada {{ $partits-&gt;first()-&gt;jornada }}
+<span class="linenos" data-linenos=" 3 "></span>
+<span class="linenos" data-linenos=" 4 "></span>    ## Partits Programats:
+<span class="linenos" data-linenos=" 5 "></span>    <span class="ni">@foreach</span>($partits as $partit)
+<span class="linenos" data-linenos=" 6 "></span><span class="w">        </span><span class="k">-</span><span class="w"> </span><span class="gs">**{{ $partit-&gt;equipLocal-&gt;nom }}**</span> vs <span class="gs">**{{ $partit-&gt;equipVisitant-&gt;nom }}**</span> ({{ $partit-&gt;data }})
+<span class="linenos" data-linenos=" 7 "></span>    <span class="ni">@endforeach</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span>    Gràcies,
+<span class="linenos" data-linenos="10 "></span>    <span class="gs">**{{ config(&#39;app.name&#39;) }}**</span>
+<span class="linenos" data-linenos="11 "></span>&lt;/x-mail::message&gt;
+</code></pre></div>
+<h4 id="4-efectuar-lenviament"><strong>4. Efectuar l'Enviament</strong><a class="headerlink" href="#4-efectuar-lenviament" title="Permanent link">&para;</a></h4>
+<p>Pots enviar els correus manualment executant la comanda:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>php<span class="w"> </span>artisan<span class="w"> </span>jornada:enviar
+</code></pre></div>
+<p>Pots programar la comanda al <code>Kernel.php</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">protected function schedule(Schedule $schedule)</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">{</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">    $schedule-&gt;command(&#39;jornada:enviar&#39;)-&gt;weeklyOn(1, &#39;8:00&#39;);</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">}</span>
+</code></pre></div>
+<h3 id="pas-11-crear-un-component-livewire-per-a-mostrar-un-historic-de-partits">Pas 11. Crear un component livewire per a mostrar un històric de partits<a class="headerlink" href="#pas-11-crear-un-component-livewire-per-a-mostrar-un-historic-de-partits" title="Permanent link">&para;</a></h3>
+<ol>
+<li>
+<p>Instal·la Livewire:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>composer<span class="w"> </span>require<span class="w"> </span>livewire/livewire
+<span class="linenos" data-linenos="2 "></span>php<span class="w"> </span>artisan<span class="w"> </span>livewire:publish
+</code></pre></div></p>
+</li>
+<li>
+<p>Afegeix els scripts de Livewire a la plantilla Blade:</p>
+</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;{{ str_replace(&#39;_&#39;, &#39;-&#39;, app()-&gt;getLocale()) }}&quot;</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 4 "></span>    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 5 "></span>    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1&quot;</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;csrf-token&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;{{ csrf_token() }}&quot;</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 7 "></span>
+<span class="linenos" data-linenos=" 8 "></span>    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>{{ config(&#39;app.name&#39;, &#39;Laravel&#39;) }}<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 9 "></span>
+<span class="linenos" data-linenos="10 "></span>    <span class="cm">&lt;!-- Fonts --&gt;</span>
+<span class="linenos" data-linenos="11 "></span>    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;preconnect&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://fonts.bunny.net&quot;</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="12 "></span>    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://fonts.bunny.net/css?family=figtree:400,500,600&amp;display=swap&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="p">/&gt;</span>
+<span class="linenos" data-linenos="13 "></span>
+<span class="linenos" data-linenos="14 "></span>    <span class="cm">&lt;!-- Scripts --&gt;</span>
+<span class="linenos" data-linenos="15 "></span>    @vite([&#39;resources/css/app.css&#39;, &#39;resources/js/app.js&#39;])
+<span class="linenos" data-linenos="16 "></span>    @livewireStyles
+<span class="linenos" data-linenos="17 "></span><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="18 "></span><span class="p">&lt;</span><span class="nt">body</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;font-sans antialiased&quot;</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="19 "></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;min-h-screen bg-gray-100 dark:bg-gray-900&quot;</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="20 "></span>    @include(&#39;layouts.navigation&#39;)
+<span class="linenos" data-linenos="21 "></span>
+<span class="linenos" data-linenos="22 "></span>    <span class="cm">&lt;!-- Page Heading --&gt;</span>
+<span class="linenos" data-linenos="23 "></span>    @isset($header)
+<span class="linenos" data-linenos="24 "></span>    <span class="p">&lt;</span><span class="nt">header</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;bg-white dark:bg-gray-800 shadow&quot;</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="25 "></span>        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8&quot;</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="26 "></span>            {{ $header }}
+<span class="linenos" data-linenos="27 "></span>        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="28 "></span>    <span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="29 "></span>    @endisset
+<span class="linenos" data-linenos="30 "></span>
+<span class="linenos" data-linenos="31 "></span>    <span class="cm">&lt;!-- Page Content --&gt;</span>
+<span class="linenos" data-linenos="32 "></span>    <span class="p">&lt;</span><span class="nt">main</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="33 "></span>        {{ $slot }}
+<span class="linenos" data-linenos="34 "></span>    <span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="35 "></span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="36 "></span>@livewireScripts
+<span class="linenos" data-linenos="37 "></span><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="38 "></span><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+3. Genera el component Livewire:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w"> </span>php<span class="w"> </span>artisan<span class="w"> </span>make:livewire<span class="w"> </span>HistorialPartits
+</code></pre></div></p>
+<ol start="4">
+<li>Modifica el component Livewire <code>app/Livewire/HistorialPartits.php</code>:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">namespace App\Livewire;</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">use App\Models\Partit;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">use Livewire\Component;</span>
+<span class="linenos" data-linenos=" 5 "></span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">class HistorialPartits extends Component</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">{</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">    public $partits;</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">    public $equip = &#39;&#39;;</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">    public $data = &#39;&#39;;</span>
+<span class="linenos" data-linenos="11 "></span>
+<span class="linenos" data-linenos="12 "></span><span class="x">    public function mount()</span>
+<span class="linenos" data-linenos="13 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="14 "></span><span class="x">        $this-&gt;partits = Partit::with([&#39;equipLocal&#39;, &#39;equipVisitant&#39;, &#39;estadi&#39;, &#39;arbitre&#39;])-&gt;get();</span>
+<span class="linenos" data-linenos="15 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="16 "></span>
+<span class="linenos" data-linenos="17 "></span>
+<span class="linenos" data-linenos="18 "></span><span class="x">    public function filtrar()</span>
+<span class="linenos" data-linenos="19 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="20 "></span><span class="x">        $this-&gt;partits = Partit::with([&#39;equipLocal&#39;, &#39;equipVisitant&#39;, &#39;estadi&#39;, &#39;arbitre&#39;])</span>
+<span class="linenos" data-linenos="21 "></span><span class="x">            -&gt;when($this-&gt;equip, function ($query) {</span>
+<span class="linenos" data-linenos="22 "></span><span class="x">                $query-&gt;whereHas(&#39;equipLocal&#39;, fn($q) =&gt; $q-&gt;where(&#39;nom&#39;, &#39;like&#39;, &quot;%{$this-&gt;equip}%&quot;))</span>
+<span class="linenos" data-linenos="23 "></span><span class="x">                    -&gt;orWhereHas(&#39;equipVisitant&#39;, fn($q) =&gt; $q-&gt;where(&#39;nom&#39;, &#39;like&#39;, &quot;%{$this-&gt;equip}%&quot;));</span>
+<span class="linenos" data-linenos="24 "></span><span class="x">            })</span>
+<span class="linenos" data-linenos="25 "></span><span class="x">            -&gt;when($this-&gt;data, function ($query) {</span>
+<span class="linenos" data-linenos="26 "></span><span class="x">                $query-&gt;whereDate(&#39;data&#39;, $this-&gt;data);</span>
+<span class="linenos" data-linenos="27 "></span><span class="x">            })</span>
+<span class="linenos" data-linenos="28 "></span><span class="x">            -&gt;get();</span>
+<span class="linenos" data-linenos="29 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="30 "></span>
+<span class="linenos" data-linenos="31 "></span><span class="x">    public function render()</span>
+<span class="linenos" data-linenos="32 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="33 "></span><span class="x">        return view(&#39;livewire.historial-partits&#39;, [&#39;partits&#39; =&gt; $this-&gt;partits]);</span>
+<span class="linenos" data-linenos="34 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="35 "></span><span class="x">}</span>
+</code></pre></div></li>
+<li>Modifica la vista del component Livewire <code>resources/views/livewire/historial-partits.blade.php</code>:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">&lt;div&gt;</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="x">    &lt;div class=&quot;flex space-x-4&quot;&gt;</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">        &lt;input wire:model=&quot;equip&quot; type=&quot;text&quot; placeholder=&quot;Cerca equip&quot; class=&quot;border px-4 py-2&quot;&gt;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">        &lt;input wire:model=&quot;data&quot; type=&quot;date&quot; class=&quot;border px-4 py-2&quot;&gt;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">        &lt;button wire:click=&quot;filtrar&quot; class=&quot;bg-blue-500 text-white px-4 py-2&quot;&gt;Filtrar&lt;/button&gt;</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">    &lt;/div&gt;</span>
+<span class="linenos" data-linenos=" 7 "></span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">    &lt;table class=&quot;table-auto w-full mt-4&quot;&gt;</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">        &lt;thead&gt;</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">        &lt;tr&gt;</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">            &lt;th&gt;Data&lt;/th&gt;</span>
+<span class="linenos" data-linenos="12 "></span><span class="x">            &lt;th&gt;Equip Local&lt;/th&gt;</span>
+<span class="linenos" data-linenos="13 "></span><span class="x">            &lt;th&gt;Equip Visitant&lt;/th&gt;</span>
+<span class="linenos" data-linenos="14 "></span><span class="x">            &lt;th&gt;Resultat&lt;/th&gt;</span>
+<span class="linenos" data-linenos="15 "></span><span class="x">            &lt;th&gt;Estadi&lt;/th&gt;</span>
+<span class="linenos" data-linenos="16 "></span><span class="x">            &lt;th&gt;Àrbitre&lt;/th&gt;</span>
+<span class="linenos" data-linenos="17 "></span><span class="x">        &lt;/tr&gt;</span>
+<span class="linenos" data-linenos="18 "></span><span class="x">        &lt;/thead&gt;</span>
+<span class="linenos" data-linenos="19 "></span><span class="x">        &lt;tbody&gt;</span>
+<span class="linenos" data-linenos="20 "></span><span class="x">        @foreach($partits as $partit)</span>
+<span class="linenos" data-linenos="21 "></span><span class="x">            &lt;tr&gt;</span>
+<span class="linenos" data-linenos="22 "></span><span class="x">                &lt;td&gt;{{ $partit-&gt;data }}&lt;/td&gt;</span>
+<span class="linenos" data-linenos="23 "></span><span class="x">                &lt;td&gt;{{ $partit-&gt;equipLocal-&gt;nom }}&lt;/td&gt;</span>
+<span class="linenos" data-linenos="24 "></span><span class="x">                &lt;td&gt;{{ $partit-&gt;equipVisitant-&gt;nom }}&lt;/td&gt;</span>
+<span class="linenos" data-linenos="25 "></span><span class="x">                &lt;td&gt;{{ $partit-&gt;resultat }}&lt;/td&gt;</span>
+<span class="linenos" data-linenos="26 "></span><span class="x">                &lt;td&gt;{{ $partit-&gt;estadi-&gt;nom }}&lt;/td&gt;</span>
+<span class="linenos" data-linenos="27 "></span><span class="x">                &lt;td&gt;{{ $partit-&gt;arbitre-&gt;name }}&lt;/td&gt;</span>
+<span class="linenos" data-linenos="28 "></span><span class="x">            &lt;/tr&gt;</span>
+<span class="linenos" data-linenos="29 "></span><span class="x">        @endforeach</span>
+<span class="linenos" data-linenos="30 "></span><span class="x">        &lt;/tbody&gt;</span>
+<span class="linenos" data-linenos="31 "></span><span class="x">    &lt;/table&gt;</span>
+<span class="linenos" data-linenos="32 "></span><span class="x">&lt;/div&gt;</span>
+</code></pre></div></li>
+<li>Crea la vista <code>resources/views/partits/historic.blade.php</code>:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">@extends(&#39;layouts.futbolFemeni&#39;)</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">@section(&#39;title&#39;, __(&#39;Històric de partits&#39; ))</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">@section(&#39;content&#39;)</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">    &lt;!-- Afegim el component Livewire aquí --&gt;</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">    &lt;div class=&quot;mt-8&quot;&gt;</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">        @livewire(&#39;historial-partits&#39;)</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">    &lt;/div&gt;</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">@endsection</span>
+</code></pre></div></li>
+<li>Modifica la ruta <code>routes/web.php</code>:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">Route::get(&#39;/historic&#39;, [PartitController::class, &#39;historic&#39;])-&gt;name(&#39;partits.historic&#39;);</span>
+</code></pre></div></li>
+<li>Modifica el controlador <code>app/Http/Controllers/PartitController.php</code>:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">public function historic()</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">{</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">    return view(&#39;partits.historic&#39;);</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">}</span>
+</code></pre></div></li>
+<li>Afegix entrada en el menú <code>resources/views/layouts/navigation.blade.php</code>:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">&lt;div class=&quot;hidden space-x-8 sm:-my-px sm:ms-10 sm:flex&quot;&gt;</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">    &lt;x-nav-link :href=&quot;route(&#39;partits.historic&#39;)&quot; :active=&quot;request()-&gt;routeIs(&#39;partits.historic&#39;)&quot;&gt;</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">        {{ __(&#39;Històric Partits&#39;) }}</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">    &lt;/x-nav-link&gt;</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">&lt;/div&gt;</span>
+</code></pre></div></li>
+</ol>
+<h3 id="exercici-final-guia-de-futbol-femeni-ii">🏁 Exercici Final: Guia de Futbol Femení II<a class="headerlink" href="#exercici-final-guia-de-futbol-femeni-ii" title="Permanent link">&para;</a></h3>
+<h4 id="objectiu_1">🎯 Objectiu<a class="headerlink" href="#objectiu_1" title="Permanent link">&para;</a></h4>
+<p>Transformar i ampliar l’aplicació del projecte anterior per a incorporar:</p>
+<ul>
+<li>Validació robusta amb FormRequest</li>
+<li>Autenticació i autorització amb Laravel Breeze i Policies</li>
+<li>Components visuals, relacions entre models i funcionalitats avançades</li>
+</ul>
+<hr />
+<h4 id="1-autenticacio-i-restriccions">1. Autenticació i restriccions<a class="headerlink" href="#1-autenticacio-i-restriccions" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Laravel Breeze per login, logout</li>
+<li>Protegeix rutes amb <code>auth</code> i <code>@auth</code> en vistes</li>
+<li>Policies per controlar:</li>
+<li>Jugadores: només el manager del seu equip</li>
+<li>Partits: només l’àrbitre assignat</li>
+<li>No es permet crear partits manualment</li>
+</ul>
+<hr />
+<h4 id="2-formularis-amb-formrequest">2. Formularis amb FormRequest<a class="headerlink" href="#2-formularis-amb-formrequest" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Crea <code>EstadiRequest</code>, <code>JugadoraRequest</code>, <code>PartitRequest</code></li>
+<li>Valida:</li>
+<li><code>data_naixement</code> mínima de 16 anys</li>
+<li><code>foto</code> (tipus .png i mida màxima)</li>
+<li><code>dorsal</code>, <code>capacitat</code>, <code>gols</code> (numèrics positius)</li>
+<li>Usa <code>authorize()</code> per controlar accés a modificació segons rol</li>
+</ul>
+<hr />
+<h4 id="3-classificacio-en-temps-real-amb-livewire">3. Classificació en temps real amb Livewire<a class="headerlink" href="#3-classificacio-en-temps-real-amb-livewire" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Taula amb:</li>
+<li>Nom de l’equip, punts, gols a favor/en contra, diferència, etc.</li>
+<li>Component Livewire que es refresca automàticament</li>
+<li>Ordenació per punts i diferència de gols</li>
+</ul>
+<hr />
+<h4 id="4-proves">4. Proves<a class="headerlink" href="#4-proves" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Crea proves per:</li>
+<li>EstadiController</li>
+<li>JugadoraController</li>
+<li>PartitController</li>
+<li>FormRequest i Policies</li>
+</ul>
+<hr />
+<h4 id="5-correu-a-arbitres">5. Correu a àrbitres<a class="headerlink" href="#5-correu-a-arbitres" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Enviar correu personalitzat a cada àrbitre amb:</li>
+<li>Llistat de partits en què arbitrarà</li>
+<li>Format HTML amigable</li>
+</ul>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2021-2025 Aitor Medrano, Luis Alemañ, Ignasi Gomis - Licencia CC BY-NC-SA
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/aitormedrano" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.2 4.2 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.52 8.52 0 0 1-5.33 1.84q-.51 0-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<a.medrano@edu.gva.es>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.13c-.15.01-.29.06-.39.17l-1 1 2.05 2 1-1c.22-.21.22-.56 0-.77l-1.24-1.23a.56.56 0 0 0-.38-.17m-2 1.75L13 19.94V22h2.06l6.06-6.07M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h7v-.89l8.24-8.22c.47-.49 1.12-.76 1.8-.76.34 0 .68.06 1 .19V6c0-1.12-.92-2-2.04-2m0 4-8 5-8-5V6l8 5 8-5"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": ".", "features": ["header.autohide", "toc.integrate", "content.tabs.link"], "search": "assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiat al porta-retalls", "clipboard.copy": "C\u00f2pia al porta-retalls", "search.result.more.one": "1 m\u00e9s en aquesta p\u00e0gina", "search.result.more.other": "# m\u00e9s en aquesta p\u00e0gina", "search.result.none": "Cap document coincideix", "search.result.one": "1 document coincident", "search.result.other": "# documents coincidents", "search.result.placeholder": "Escriu per a comen\u00e7ar a cercar", "search.result.term.missing": "Desaparegut", "select.version": "Selecciona la versi\u00f3"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+    
+  </body>
+</html>

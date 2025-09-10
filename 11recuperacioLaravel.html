@@ -1,0 +1,568 @@
+
+<!doctype html>
+<html lang="ca" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://cipfpbatoi.github.io/dwes2223/11recuperacioLaravel.html">
+      
+      
+      
+      
+      <link rel="icon" href="imagenes/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.19">
+    
+    
+      
+        <title>Sistema de Gestió Torns de Preguntes i Respostes per a l'Aula - Desenvolupament web en entorn de Servidor</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-X6D0LR7TC8"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-X6D0LR7TC8",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-X6D0LR7TC8",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="Teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#sistema-de-gestio-torns-de-preguntes-i-respostes-per-a-laula" class="md-skip">
+          Salta el contingut
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Capçalera">
+    <a href="index.html" title="Desenvolupament web en entorn de Servidor" class="md-header__button md-logo" aria-label="Desenvolupament web en entorn de Servidor" data-md-component="logo">
+      
+  <img src="imagenes/logofp.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Desenvolupament web en entorn de Servidor
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Sistema de Gestió Torns de Preguntes i Respostes per a l'Aula
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="Teal"  aria-label="Canviar a mode nit"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Canviar a mode nit" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="light-blue" data-md-color-accent="Teal"  aria-label="Canviar a mode dia"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Canviar a mode dia" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Neteja" aria-label="Neteja" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicialitzant cerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navegació" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Desenvolupament web en entorn de Servidor" class="md-nav__button md-logo" aria-label="Desenvolupament web en entorn de Servidor" data-md-component="logo">
+      
+  <img src="imagenes/logofp.png" alt="logo">
+
+    </a>
+    Desenvolupament web en entorn de Servidor
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01arquitecturas.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.- Arquitectures Web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02php.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.- Programació web amb PHP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03MVC_Laravel.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.- Arquitectura MVC amb Laravel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="04dades_Laravel.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.- Accés segur i estructurat a bases de dades amb Laravel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="05seguretat_Laravel.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.- Aplicacions segures i reactives en Laravel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="sistema-de-gestio-torns-de-preguntes-i-respostes-per-a-laula">Sistema de Gestió Torns de Preguntes i Respostes per a l'Aula<a class="headerlink" href="#sistema-de-gestio-torns-de-preguntes-i-respostes-per-a-laula" title="Permanent link">&para;</a></h1>
+<p>Per aquest exercici, proposem el desenvolupament d'un sistema de gestió de preguntes i respostes per a l'aula, utilitzant Laravel. Aquest sistema permetrà als alumnes llançar preguntes al professor, qui les podrà gestionar i respondre en ordre. Anem a detallar els passos a seguir per a la implementació d'aquest projecte.</p>
+<h2 id="objectius">Objectius<a class="headerlink" href="#objectius" title="Permanent link">&para;</a></h2>
+<p>Crear un sistema on els alumnes puguin registrar-se, iniciar sessió, i enviar preguntes al professor.
+El professor pot veure les preguntes ordenades per data de creació, respondre-les, i gestionar-les.
+Les respostes del professor es guardaran juntament amb les preguntes per a futures consultes.</p>
+<h2 id="requisits">Requisits<a class="headerlink" href="#requisits" title="Permanent link">&para;</a></h2>
+<h3 id="installacio-amb-docker-laravel-sail">Instal·lacio amb docker (laravel sail)<a class="headerlink" href="#installacio-amb-docker-laravel-sail" title="Permanent link">&para;</a></h3>
+<p>Si ja esteu desenvolupant Linux i Docker Compose està instal·lat, podeu utilitzar una senzilla ordre de terminal per a crear un nou projecte Laravel. Per exemple, per a crear una nova aplicació Laravel en un directori anomenat "exemple-app", podeu executar l'ordre següent al terminal:</p>
+<p>curl -s https://laravel.build/tornsAula | bash</p>
+<p>Cal modificar el .env inclou la configuració de la base de dades:</p>
+<p>Ara podeu navegar al directori de l'aplicació i iniciar Laravel Sail. Laravel Sail proporciona una interfície senzilla de línia d'ordres per a interactuar amb la configuració predeterminada de l'acoblador Laravel:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">cd tornsAula &amp;&amp; ./vendor/bin/sail up &amp;</span>
+</code></pre></div></p>
+<p>Un cop iniciats els contenidors Docker de l'aplicació, podeu accedir a l'aplicació al vostre navegador web a: http://localhost.</p>
+<p>Per a executar una terminal en el contenidor haurem d'executar:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">./vendor/bin/sail bash</span>
+</code></pre></div>
+<p>I per a inicialitzar la base de dades des de dins del contenidor:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">./vendor/bin/sail artisan migrate</span>
+</code></pre></div>
+<h4 id="phpmyadmin">phpmyadmin<a class="headerlink" href="#phpmyadmin" title="Permanent link">&para;</a></h4>
+<p>Si volem que funcione el phpmyadmin haurien d'afegir un altre contenidor docker, o farem incluint el següent codi en el docker-compose.yml</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">myadmin:</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="x">    image: &#39;phpmyadmin:latest&#39;</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">    ports:</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">      - 8080:80</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">    environment:</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">      MYSQL_ROOT_PASSWORD: &#39;${DB_PASSWORD}&#39;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">    links:</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">      - &quot;mysql:db&quot;</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">    depends_on:</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">      - mysql</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">    networks:</span>
+<span class="linenos" data-linenos="12 "></span><span class="x">      - sail</span>
+</code></pre></div>
+<h3 id="autenticacio">Autenticació<a class="headerlink" href="#autenticacio" title="Permanent link">&para;</a></h3>
+<p>Utilitza Laravel Breeze, per a generar la funcionalitat d'autenticació.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">composer require laravel/breeze --dev</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">php artisan breeze:install</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">php artisan migrate</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>npm install
+<span class="linenos" data-linenos="2 "></span>npm run dev
+</code></pre></div>
+<h4 id="model-de-dades-i-migracions">Model de Dades i migracions<a class="headerlink" href="#model-de-dades-i-migracions" title="Permanent link">&para;</a></h4>
+<h5 id="users">Users<a class="headerlink" href="#users" title="Permanent link">&para;</a></h5>
+<p>Ja tindrem la migració d'usuaris per defecte amb Laravel. Serà necessari afegir camps addicionals com rol per distingir entre alumnes (ROL_ALUMNO) i professors(ROL_PROFESOR).</p>
+<h5 id="moduls">Mòduls<a class="headerlink" href="#moduls" title="Permanent link">&para;</a></h5>
+<p>Crearem un nou model <strong>Module</strong> amb la seva migració per a representar els diferents mòduls del curs.</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>php artisan make:model Module -m
+</code></pre></div>
+Exemple de creació de la taula Moduls:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">Schema::create(&#39;modules&#39;, function (Blueprint $table) {</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">    $table-&gt;id();</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">    $table-&gt;string(&#39;name&#39;);</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">    $table-&gt;text(&#39;description&#39;)-&gt;nullable();</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">    $table-&gt;timestamps();</span>
+<span class="linenos" data-linenos="6 "></span><span class="x">});</span>
+</code></pre></div></p>
+<h5 id="preguntes">Preguntes<a class="headerlink" href="#preguntes" title="Permanent link">&para;</a></h5>
+<p>Crearem el model <strong>Question</strong> amb una migració que incloga una clau forània cap a users i una altra cap a moduls.</p>
+<h5 id="respostes">Respostes<a class="headerlink" href="#respostes" title="Permanent link">&para;</a></h5>
+<p>El model <strong>Answer</strong> necessitarà una migració amb una clau forània cap a preguntes.</p>
+<h4 id="seeders-i-factories">Seeders i Factories<a class="headerlink" href="#seeders-i-factories" title="Permanent link">&para;</a></h4>
+<p>Per a poblar la base de dades amb dades de prova, utilitzarem seeders i factories.</p>
+<p>Per a cada model (User, Module, Question, Answer), crea un factory amb dades fictícies.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">// Exemple de comanda per crear un factory</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">php artisan make:factory ModuleFactory --model=Modul</span>
+</code></pre></div>
+<p>Defineix les dades fictícies dins de cada factory utilitzant la llibreria Faker.</p>
+<p>Crea un seeder per a cada model. Aquests seeders utilitzaran els factories per a generar dades.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">php artisan make:seeder ModulesTableSeeder</span>
+</code></pre></div>
+<p>En el seeder, especifica quantes instàncies de cada model vols crear.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">// Exemple d&#39;ús d&#39;un factory dins d&#39;un seeder</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">Module::factory()-&gt;count(5)-&gt;create();</span>
+</code></pre></div>
+<p>Registra els Seeders en el fitxer DatabaseSeeder.php per a poder executar-los tots junts.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">// Exemple de crida a un seeder des de DatabaseSeeder.php</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">$this-&gt;call(ModulesTableSeeder::class);</span>
+</code></pre></div>
+<p>Executa els seeders per a poblar la base de dades amb dades fictícies.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">php artisan db:seed</span>
+</code></pre></div>
+<p>Crea els models necessaris per a l'aplicació: Pregunta i Resposta.
+Pregunta ha de tenir com a mínim els camps: id, titol, descripció, user_id (creador), creat_a, i actualitzat_a.
+Resposta ha de tenir com a mínim els camps: id, pregunta_id, contingut, creat_a, i actualitzat_a.</p>
+<h4 id="rutes-i-controladors">Rutes i Controladors<a class="headerlink" href="#rutes-i-controladors" title="Permanent link">&para;</a></h4>
+<p>Defineix les rutes necessàries per a gestionar les preguntes i respostes.
+Crea controladors per a gestionar la lògica d'usuari, preguntes i respostes.</p>
+<h4 id="vistes">Vistes<a class="headerlink" href="#vistes" title="Permanent link">&para;</a></h4>
+<p>Crea vistes per a: registrar-se, iniciar sessió, llistar preguntes, veure detalls de preguntes, i respondre preguntes.
+Utilitza Blade per a desenvolupar les teves vistes.</p>
+<h4 id="validacio">Validació<a class="headerlink" href="#validacio" title="Permanent link">&para;</a></h4>
+<p>Afegeix validació als formularis per a assegurar que les dades entrades són correctes.</p>
+<h5 id="funcionalitats-extra">Funcionalitats Extra<a class="headerlink" href="#funcionalitats-extra" title="Permanent link">&para;</a></h5>
+<p>Implementa un sistema de cua per a gestionar les preguntes que s'envien.
+Afegeix la possibilitat de notificar al alumne quan la seva pregunta ha estat responduda.</p>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2021-2025 Aitor Medrano, Luis Alemañ, Ignasi Gomis - Licencia CC BY-NC-SA
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/aitormedrano" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.2 4.2 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.52 8.52 0 0 1-5.33 1.84q-.51 0-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<a.medrano@edu.gva.es>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.13c-.15.01-.29.06-.39.17l-1 1 2.05 2 1-1c.22-.21.22-.56 0-.77l-1.24-1.23a.56.56 0 0 0-.38-.17m-2 1.75L13 19.94V22h2.06l6.06-6.07M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h7v-.89l8.24-8.22c.47-.49 1.12-.76 1.8-.76.34 0 .68.06 1 .19V6c0-1.12-.92-2-2.04-2m0 4-8 5-8-5V6l8 5 8-5"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": ".", "features": ["header.autohide", "toc.integrate", "content.tabs.link"], "search": "assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiat al porta-retalls", "clipboard.copy": "C\u00f2pia al porta-retalls", "search.result.more.one": "1 m\u00e9s en aquesta p\u00e0gina", "search.result.more.other": "# m\u00e9s en aquesta p\u00e0gina", "search.result.none": "Cap document coincideix", "search.result.one": "1 document coincident", "search.result.other": "# documents coincidents", "search.result.placeholder": "Escriu per a comen\u00e7ar a cercar", "search.result.term.missing": "Desaparegut", "select.version": "Selecciona la versi\u00f3"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+    
+  </body>
+</html>

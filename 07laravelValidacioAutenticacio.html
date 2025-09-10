@@ -1,0 +1,1010 @@
+
+<!doctype html>
+<html lang="ca" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://cipfpbatoi.github.io/dwes2223/07laravelValidacioAutenticacio.html">
+      
+      
+      
+      
+      <link rel="icon" href="imagenes/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.19">
+    
+    
+      
+        <title>Formularis i validació de dades - Desenvolupament web en entorn de Servidor</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-X6D0LR7TC8"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-X6D0LR7TC8",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-X6D0LR7TC8",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="Teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#formularis-i-validacio-de-dades" class="md-skip">
+          Salta el contingut
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Capçalera">
+    <a href="index.html" title="Desenvolupament web en entorn de Servidor" class="md-header__button md-logo" aria-label="Desenvolupament web en entorn de Servidor" data-md-component="logo">
+      
+  <img src="imagenes/logofp.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Desenvolupament web en entorn de Servidor
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Formularis i validació de dades
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="Teal"  aria-label="Canviar a mode nit"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Canviar a mode nit" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="light-blue" data-md-color-accent="Teal"  aria-label="Canviar a mode dia"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Canviar a mode dia" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Neteja" aria-label="Neteja" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicialitzant cerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navegació" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Desenvolupament web en entorn de Servidor" class="md-nav__button md-logo" aria-label="Desenvolupament web en entorn de Servidor" data-md-component="logo">
+      
+  <img src="imagenes/logofp.png" alt="logo">
+
+    </a>
+    Desenvolupament web en entorn de Servidor
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01arquitecturas.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.- Arquitectures Web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02php.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.- Programació web amb PHP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03MVC_Laravel.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.- Arquitectura MVC amb Laravel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="04dades_Laravel.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.- Accés segur i estructurat a bases de dades amb Laravel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="05seguretat_Laravel.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.- Aplicacions segures i reactives en Laravel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="formularis-i-validacio-de-dades">Formularis i validació de dades<a class="headerlink" href="#formularis-i-validacio-de-dades" title="Permanent link">&para;</a></h1>
+<p><a href="#validació-de-formularis">Validació de Formularis</a></p>
+<p><a href="#casos-especials">Casos Especials</a></p>
+<h2 id="dades-dentrada"><a href="https://laravel.com/docs/9.x/requests#retrieving-input">Dades d'entrada</a><a class="headerlink" href="#dades-dentrada" title="Permanent link">&para;</a></h2>
+<p>Laravel facilita l'accés a les dades d'entrada de l'usuari a través de solament uns pocs mètodes. No importa el tipus de petició que s'haja realitzat (POST, GET, PUT, DELETE), si les dades són d'un formulari o si s'han afegit a la query string, en tots els casos s'obtindran de la mateixa forma.</p>
+<p>Per a aconseguir accés a aquests mètodes Laravel utilitza <strong>injecció de dependències</strong>. Açò és simplement afegir la classe <strong>Request</strong> al constructor o mètode del controlador en el qual ho necessitem. Laravel s'encarregarà d'injectar aquesta dependència ja inicialitzada i directament podrem usar aquest paràmetre per a obtenir les dades d'entrada. </p>
+<h3 id="creacio-i-enviament-de-formularis">Creació i enviament de formularis<a class="headerlink" href="#creacio-i-enviament-de-formularis" title="Permanent link">&para;</a></h3>
+<p>Si definim un formulari en una vista, es defineix amb els conceptes que ja sabem d'HTML. Com a únic afegit, en el camp <strong>action</strong> del formulari podem utilitzar Blade i la funció <strong>route</strong> per a indicar el nom de ruta a la qual volem enviar el formulari.
+Vegem, per exemple, com definir un formulari per a donar d'alta noves pelicules.
+Creem una vista anomenada <strong>create.blade.php</strong> en la subcarpeta
+<strong>resources/views/catalog</strong> , amb un contingut com aquest:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>@extends(&#39;plantilla&#39;)
+<span class="linenos" data-linenos=" 2 "></span>@section(&#39;titulo&#39;, &#39;Nueva Pelicula&#39;)
+<span class="linenos" data-linenos=" 3 "></span>@section(&#39;contenido&#39;)
+<span class="linenos" data-linenos=" 4 "></span>    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Nueva pelicula<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 5 "></span>    <span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&quot;{{ route(&#39;catalog.store&#39;) }}&quot;</span> <span class="na">method</span><span class="o">=</span><span class="s">&#39;POST&#39;</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 6 "></span>        @csrf
+<span class="linenos" data-linenos=" 7 "></span>            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-group&quot;</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 8 "></span>                <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;title&quot;</span><span class="p">&gt;</span>Título<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 9 "></span>                <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;title&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;title&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-control&quot;</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="10 "></span>            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="11 "></span>            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-group&quot;</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="12 "></span>                <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&#39;year&#39;</span><span class="p">&gt;</span>Any:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="13 "></span>                <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#39;number&#39;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#39;year&#39;</span> <span class="p">/&gt;</span>
+<span class="linenos" data-linenos="14 "></span>            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="15 "></span>            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-group&quot;</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="16 "></span>                <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&#39;director&#39;</span><span class="p">&gt;</span>Director:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="17 "></span>                <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#39;text&#39;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#39;director&#39;</span> <span class="p">/&gt;</span>
+<span class="linenos" data-linenos="18 "></span>            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="19 "></span>           <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-group&quot;</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="20 "></span>                <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&#39;poster&#39;</span><span class="p">&gt;</span>Poster:<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="21 "></span>                <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#39;url&#39;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#39;poster&#39;</span> <span class="p">/&gt;</span>
+<span class="linenos" data-linenos="22 "></span>            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="23 "></span>            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-group&quot;</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="24 "></span>                <span class="p">&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&quot;synopsis&quot;</span><span class="p">&gt;</span>Resumen<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="25 "></span>                <span class="p">&lt;</span><span class="nt">textarea</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;synopsis&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;synopsis&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-control&quot;</span> <span class="na">rows</span><span class="o">=</span><span class="s">&quot;3&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">textarea</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="26 "></span>            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="27 "></span>             <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;form-group text-center&quot;</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="28 "></span>                <span class="p">&lt;</span><span class="nt">button</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;btn btn-primary&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;padding:8px 100px;margin-top:25px;&quot;</span><span class="p">&gt;</span>Afegir pel.lícula<span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="29 "></span>            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="30 "></span>    <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span> 
+<span class="linenos" data-linenos="31 "></span>@endsection
+</code></pre></div>
+<p>Un segon afegit més que hem de tindre en compte és que Laravel per defecte protegeix d'atacs XSS (Cross Site Scripting) de suplantació d'identitat, per la qual cosa obtindrem un error de tipus 419 si enviem un formulari no validat. Per a solucionar aquest problema, n'hi ha prou amb utilitzar la directiva <strong>@csrf</strong>
+en el formulari, que afig un camp ocult amb un <strong>token</strong> de validació de l'usuari.</p>
+<p>En qualsevol cas, aquest formulari s'enviarà a la ruta indicada, que serà el mètode store de catalog que s'encarregarà de recollir les dades de la petició a través del paràmetre <strong>Request</strong> d'aquest mètode. Disposem d'un mètode <strong>get</strong> per a accedir a cada camp del formulari a partir del seu nom:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">public function store(Request $request)</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="x">{</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">    $movie = new Movie();</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">    $movie-&gt;titulo = $request-&gt;get(&#39;titulo&#39;);</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">    $movie-&gt;director = $request-&gt;get(&#39;director&#39;);</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">    $movie-&gt;year = $request-&gt;get(&#39;year&#39;);</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">    ..</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">    $movie-&gt;save();</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">    return redirect()-&gt;route(&#39;movie.index&#39;);</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">}</span>
+</code></pre></div>
+<p>En aquest exemple com es pot veure s'ha afegit la classe Request com a paràmetre al mètode store. Laravel automàticament s'encarrega d'injectar aquestes dependències pel que directament podem usar la variable <strong>$request</strong> per a obtenir les dades d'entrada.</p>
+<p>Si el mètode del controlador tinguera més paràmetres simplement els haurem d'afegir a continuació de les dependències, per exemple:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">    public function edit(Request $request, $id) {</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">    //... }</span>
+</code></pre></div>
+<p>A continuació veurem els mètodes i dades que podem obtenir a partir de la variable $request.</p>
+<h4 id="obtenir-els-valors-dentrada">Obtenir els valors d'entrada<a class="headerlink" href="#obtenir-els-valors-dentrada" title="Permanent link">&para;</a></h4>
+<p>Per a obtenir el valor d'una variable d'entrada usem el mètode <strong>input</strong> indicant el nom de la variable: </p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">    $name = $request-&gt;input(&#39;nom&#39;);</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">    // O simplement....</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">    $name = $request-&gt;nom;</span>
+</code></pre></div>
+<p>També podem especificar un valor per defecte com a segon paràmetre: </p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">    $name = $request-&gt;input(&#39;nom&#39;, &#39;Pedro&#39;);</span>
+</code></pre></div>
+<h4 id="comprovar-si-una-variable-existeix">Comprovar si una variable existeix<a class="headerlink" href="#comprovar-si-una-variable-existeix" title="Permanent link">&para;</a></h4>
+<p>Si ho necessitem podem comprovar si un determinat valor existeix en les dades d'entrada: </p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">    if ($request-&gt;has(&#39;nom&#39;)) { //...}</span>
+</code></pre></div>
+<h3 id="actualitzacions-i-esborrats">Actualitzacions i esborrats<a class="headerlink" href="#actualitzacions-i-esborrats" title="Permanent link">&para;</a></h3>
+<p>Per defecte, l'atribut <strong>method</strong> d'un formulari només admet els valors GET o POST. Si volem enviar un formulari d'actualització o esborrat, aquest ha d'anar associat als mètodes <strong>PUT</strong> o <strong>DELETE</strong>,respectivament. Per a això, podem emprar dins del mateix formulari la directiva <strong>@method</strong> ,indicant el nom del mètode que volem usar:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">&lt;form ...&gt;</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">    @csrf</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">    @method(&#39;PUT&#39;)</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">    ...</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">&lt;/form&gt;</span>
+</code></pre></div>
+<h2 id="validacio-de-formularis">Validació de formularis<a class="headerlink" href="#validacio-de-formularis" title="Permanent link">&para;</a></h2>
+<p>A més d'aplicar una validació en el client a través d'HTML5, que també és recomanable, s'han de validar les dades en el servidor. Per a fer això, el propi objecte <strong>request</strong> proporciona un mètode anomenat <strong>validate</strong> , al qual li passem un array amb les regles de validació.
+Per exemple, així comprovaríem que el títol i l'editorial s'han enviat, i que el títol té una grandària mínima de 3 caràcters. A més, comprovem que el preu és un valor numèric real positiu.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">public function store()</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="x">{</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">    request()-&gt;validate(</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">    [</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">        &#39;title&#39; =&gt; &#39;required|min:3&#39;,</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">        &#39;director&#39; =&gt; &#39;required&#39;,</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">        &#39;year&#39; =&gt; &#39;required|numeric|min:1900&#39;</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">    ]</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">);</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">// ... Código para procesar el formulario</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">}</span>
+</code></pre></div>
+<h3 id="utilitzar-form-requests-per-a-validacions-mes-complexes">Utilitzar form requests per a validacions més complexes<a class="headerlink" href="#utilitzar-form-requests-per-a-validacions-mes-complexes" title="Permanent link">&para;</a></h3>
+<p>Si hem de validar uns pocs camps, pot ser adequat cridar al mètode <strong>validate</strong> des del propi mètode del controlador, però per a formularis més grans el codi pot créixer massa.
+Una alternativa que ofereix laravel és crear un <strong>form request</strong>, una classe addicional que conté la lògica de validació d'una petició. Es creen amb el comando php artisan , i l'opció make:request ,seguida del nom de la classe a crear:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">php artisan make:request MoviePost</span>
+</code></pre></div>
+<p>Aquesta classe s'emmagatzema per defecte en <strong>app/Http/Requests</strong> , i conté un parell de mètodes predefinits:
+<strong>authorize</strong> : retorna un booleà depenent de si l'usuari actual està autoritzat a enviar la petició o no. Per a molts formularis que no requerisquen autorització prèvia podem simplement retornar <strong>true</strong> . Serà el que farem de moment en aquest formulari.
+<strong>rules</strong> : aquest és el mètode que més ens interessa. Retorna un array de regles de validació com les que teníem en el controller, així que movem aqueix codi ací:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">public function rules()</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">{</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">return [</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">    &#39;title&#39; =&gt; &#39;required|min:3&#39;,</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">    &#39;director&#39; =&gt; &#39;required&#39;,</span>
+<span class="linenos" data-linenos="6 "></span><span class="x">    &#39;year&#39; =&gt; &#39;required|numeric|min:1900&#39;</span>
+<span class="linenos" data-linenos="7 "></span><span class="x">];</span>
+<span class="linenos" data-linenos="8 "></span><span class="x">}</span>
+</code></pre></div>
+<p>Ara, en el mètode del controlador simplement hem d'injectar aquest form request com a paràmetre (si observem la classe que s'ha creat, és un subtipus de Request ), i usar-lo per a validar. La validació és automàtica, és a dir, no hem d'afegir més codi al controlador que l'objecte injectat com a paràmetre,
+que s'encarregarà de validar la pròpia petició que conté a través del mètode rules .</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">public function store(MoviePost $request)</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">{</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">// Si entramos aquí, el formulario es válido</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">}</span>
+</code></pre></div>
+<h4 id="mostrar-missatges-derror">Mostrar missatges derror<a class="headerlink" href="#mostrar-missatges-derror" title="Permanent link">&para;</a></h4>
+<p>Si la validació és correcta, es retornarà la dada del final de la funció, però si falla algun camp, es tornarà a la pàgina del formulari, amb la informació de l'error que s'haja produït. Podem accedir des de qualsevol
+lloc de Laravel a la variable \$errors amb els errors que s'hagen produït en una
+operació determinada. Aquesta variable té un mètode booleà anomenat <strong>any</strong> que comprova si hi ha algun error, i un altre mètode anomenat <strong>all</strong> que retorna el array d'errors produïts. Combinant aquests dos mètodes amb Blade, podem mostrar el llistat d'errors de validació abans del formulari, d'aquesta manera:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">@if ($errors-&gt;any())</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="x">    &lt;ul&gt;</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">        @foreach($errors-&gt;all() as $error)</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">            &lt;li&gt;{{ $error }}&lt;/li&gt;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">        @endforeach</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">    &lt;/ul&gt;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">@endif</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">&lt;form ...&gt;</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">    @csrf</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">    ...</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">&lt;/form&gt;</span>
+</code></pre></div>
+<p>També podem emprar el mètode first del array d'errors per a obtindre el primer error associat a un camp, i mostrar-lo baix o sobre el camp en qüestió. Per exemple:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">&lt;form action=&quot;{{ route(&#39;movies.store&#39;) }}&quot; method=&quot;POST&quot;&gt;</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="x">    @csrf</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">    &lt;div class=&quot;form-group&quot;&gt;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">        &lt;label for=&quot;titulo&quot;&gt;Título:&lt;/label&gt;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">        &lt;input type=&quot;text&quot; class=&quot;form-control&quot; name=&quot;titulo&quot;</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">id=&quot;titulo&quot;&gt;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">        @if ($errors-&gt;has(&#39;titulo&#39;))</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">            &lt;div class=&quot;text-danger&quot;&gt;</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">                {{ $errors-&gt;first(&#39;titulo&#39;) }}</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">            &lt;/div&gt;</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">        @endif</span>
+<span class="linenos" data-linenos="12 "></span><span class="x">    &lt;/div&gt;</span>
+<span class="linenos" data-linenos="13 "></span><span class="x">...</span>
+</code></pre></div>
+<p>A més, podem personalitzar el missatge d'error a mostrar, redefinint en la classe del <em>form request el mètode </em><em>messages</em>* . En aquest mètode retornem un array amb el missatge a mostrar per a cada possible error de validació. Per exemple:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">public function messages()</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">{</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">    return [</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">        &#39;titulo.required&#39; =&gt; &#39;El título es obligatorio&#39;,</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">        ...</span>
+<span class="linenos" data-linenos="6 "></span><span class="x">    ];</span>
+<span class="linenos" data-linenos="7 "></span><span class="x">}</span>
+</code></pre></div>
+<p>De manera alternativa, si optem per validar el formulari en el propi controlador, aquest array de missatges
+és passa com a segon paràmetre en l'anomenada al mètode <strong>validate</strong> :</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">request()-&gt;validate(</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="x">[</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">    &#39;title&#39; =&gt; &#39;required|min:3&#39;,</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">    &#39;director&#39; =&gt; &#39;required&#39;,</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">    &#39;year&#39; =&gt; &#39;required|numeric|min:1900&#39;</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">], [</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">    &#39;titulo.required&#39; =&gt; &#39;El título es obligatorio&#39;,</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">    ...</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">]</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">);</span>
+</code></pre></div>
+<h4 id="recordar-valors-enviats">Recordar valors enviats<a class="headerlink" href="#recordar-valors-enviats" title="Permanent link">&para;</a></h4>
+<p>Un problema derivat de la validació de dades és que, en tornar a la pàgina del formulari després d'un error, els camps que ja s'han examinat fins a l'error, encara que foren correctes, han perdut el valor que tenien, i pot resultar enutjós haver-los de que emplenar una altra vegada. Per a mantindre el seu antic valor, podem afegir l'atribut <strong>value</strong> en cada camp del formulari, i utilitzar amb Blade una funció anomenada <strong>old</strong> , que permet accedir a l'anterior valor d'un determinat camp, referenciat pel seu nom:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>&lt;form action=&quot;{{ route(&#39;movies.store&#39;) }}&quot; method=&quot;POST&quot;&gt;
+<span class="linenos" data-linenos=" 2 "></span>    @csrf
+<span class="linenos" data-linenos=" 3 "></span>    &lt;div class=&quot;form-group&quot;&gt;
+<span class="linenos" data-linenos=" 4 "></span>        &lt;label for=&quot;titulo&quot;&gt;Título:&lt;/label&gt;
+<span class="linenos" data-linenos=" 5 "></span>        &lt;input type=&quot;text&quot; class=&quot;form-control&quot; name=&quot;titulo&quot;
+<span class="linenos" data-linenos=" 6 "></span>            id=&quot;titulo&quot; value=&quot;{!! old(&#39;titulo&#39;) !!}&quot;&gt;
+<span class="linenos" data-linenos=" 7 "></span>        @if ($errors-&gt;has(&#39;titulo&#39;))
+<span class="linenos" data-linenos=" 8 "></span>            &lt;div class=&quot;text-danger&quot;&gt;
+<span class="linenos" data-linenos=" 9 "></span>                {{ $errors-&gt;first(&#39;titulo&#39;) }}
+<span class="linenos" data-linenos="10 "></span>            &lt;/div&gt;
+<span class="linenos" data-linenos="11 "></span>        @endif
+<span class="linenos" data-linenos="12 "></span>    &lt;/div&gt;
+<span class="linenos" data-linenos="13 "></span>...
+</code></pre></div>
+<h2 id="casos-especials">Casos especials<a class="headerlink" href="#casos-especials" title="Permanent link">&para;</a></h2>
+<h4 id="obtenir-dades-agrupades">Obtenir dades agrupades<a class="headerlink" href="#obtenir-dades-agrupades" title="Permanent link">&para;</a></h4>
+<p>O també podem obtenir totes les dades d'entrada alhora (en un array) o solament alguns d'ells:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">    // Obtenir tots:</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">        $input = $request-&gt;all();</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">    // Obtenir solament els camps indicats:</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">        $input = $request-&gt;only(&#39;username&#39;, &#39;password&#39;);</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">    // Obtenir tots excepte els indicats: </span>
+<span class="linenos" data-linenos="6 "></span><span class="x">        $input = $request-&gt;except(&#39;credit_card&#39;);</span>
+</code></pre></div>
+<h4 id="assignacio-massiva">Assignació Massiva<a class="headerlink" href="#assignacio-massiva" title="Permanent link">&para;</a></h4>
+<p>També es pot utilitzar el mètode <strong>create</strong> per a emmagatzemar un model en una única línia. Des del mètode es retornarà la instància del model inserit. No obstant açò, abans d'açò, cal especificar la propietat <strong>fillable</strong> o <strong>guarded</strong> del model, doncs tots els models Eloquent posseeixen protecció contra l'assignació en massa.</p>
+<p>Una vulnerabilitat d'assignació massiva té lloc quan un usuari passa un paràmetre HTTP inesperat a través de la sol·licitud, i aquest paràmetre canvia una columna de la base de dades que no s'esperava. Per exemple, un usuari malintencionat podria enviar un paràmetre <strong>is_admin</strong> a través d'una petició HTTP, el qual es marejaria dins del mètode <strong>create</strong> del model, permetent a l'usuari postular-se com un administrador.</p>
+<p>Així que, per a començar, cal definir a quins atributs se'ls permet l'assignació massiva. Açò s'estableix en la propietat <strong>fillable</strong> del model. Per exemple, anem a permetre l'assignació massiva sobre l'atribut <strong>name</strong> d'un model Flight:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>&lt;?php
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span>namespace App;
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span>use Illuminate\Database\Eloquent\Model;
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span>class Flight extends Model
+<span class="linenos" data-linenos=" 8 "></span>{
+<span class="linenos" data-linenos=" 9 "></span>    /**
+<span class="linenos" data-linenos="10 "></span>     * The attributes that are mass assignable.
+<span class="linenos" data-linenos="11 "></span>     *
+<span class="linenos" data-linenos="12 "></span>     * @var array
+<span class="linenos" data-linenos="13 "></span>     */
+<span class="linenos" data-linenos="14 "></span>    protected $fillable = [&#39;name&#39;];
+<span class="linenos" data-linenos="15 "></span>}
+</code></pre></div>
+<h5 id="atributes-guarding">Atributes Guarding<a class="headerlink" href="#atributes-guarding" title="Permanent link">&para;</a></h5>
+<p>Mentre que \$fillable serveix com una "llista blanca" d'atributs que poden ser assignats massivament, també es pot optar per \$guarded. La propietat guarded conté un array d'atributs que no poden ser assignats de forma massiva. 
+La resta d'atributs que no es troben en el array si podran. Pel que, \$guarded actua com una "llista negra". Per descomptat, s'ha d'establir \$fillable o \$guarded - mai tots dos. En l'exemple que segueix, tots els atributs excepte <strong>price</strong> comptaran amb assignació massiva:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>&lt;?php
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span>namespace App;
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span>use Illuminate\Database\Eloquent\Model;
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span>class Flight extends Model
+<span class="linenos" data-linenos=" 8 "></span>{
+<span class="linenos" data-linenos=" 9 "></span>    /**
+<span class="linenos" data-linenos="10 "></span>     * The attributes that aren&#39;t mass assignable.
+<span class="linenos" data-linenos="11 "></span>     *
+<span class="linenos" data-linenos="12 "></span>     * @var array
+<span class="linenos" data-linenos="13 "></span>     */
+<span class="linenos" data-linenos="14 "></span>    protected $guarded = [&#39;price&#39;];
+<span class="linenos" data-linenos="15 "></span>}
+</code></pre></div>
+<p>Si es desitja que tots els atributs es puguen assignar en massa, es pot definir la propietat $guarded com un array buit:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>/*
+<span class="linenos" data-linenos="2 "></span>* The attributes that llauren&#39;t mass assignable.
+<span class="linenos" data-linenos="3 "></span>*
+<span class="linenos" data-linenos="4 "></span>* @var array
+<span class="linenos" data-linenos="5 "></span>/
+<span class="linenos" data-linenos="6 "></span>protected $guarded = [];
+</code></pre></div>
+<h4 id="fitxers-dentrada">Fitxers d'entrada<a class="headerlink" href="#fitxers-dentrada" title="Permanent link">&para;</a></h4>
+<p>Laravel facilita una sèrie de classes per a treballar amb els fitxers d'entrada. Per exemple per a obtenir un fitxer que s'ha enviat en el camp amb nom photo i guardar-ho en una variable, hem de fer:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>$file = $request-&gt;file(&#39;photo&#39;);
+<span class="linenos" data-linenos="2 "></span>// O simplement... 
+<span class="linenos" data-linenos="3 "></span>$file = $request-&gt;photo;
+</code></pre></div>
+<p>Si volem podem comprovar si un determinat camp té un fitxer assignat:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>if ($request-&gt;hasFile(&#39;photo&#39;)) { //...}
+</code></pre></div>
+<p>El Symfony\Component\HttpFoundation\File\UploadedFile estén de la classe de PHP <a href="http://php.net/manual/es/class.splfileinfo.php">SplFileInfo</a>, per tant, tindrem molts mètodes que podem utilitzar per a obtenir dades del fitxer o per a gestionar-ho.</p>
+<p>Per exemple, per a comprovar si el fitxer que s'ha pujat és vàlid:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>if ($request-&gt;file(&#39;photo&#39;)-&gt;isValid()) { //...}
+</code></pre></div>
+<p>O per a moure el fitxer d'entrada a una ruta determinada: </p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>// Moure el fitxer a la ruta conservant el nom original
+<span class="linenos" data-linenos="2 "></span>    $request-&gt;file(&#39;photo&#39;)-&gt;move($destinationPath);
+<span class="linenos" data-linenos="3 "></span>// Moure el fitxer a la ruta amb un nou nom: 
+<span class="linenos" data-linenos="4 "></span>    $request-&gt;file(&#39;photo&#39;)-&gt;move($destinationPath, $fileName);
+</code></pre></div>
+<p>Laravel incorpora una llibreria que ens permet gestionar l'accés i escriptura de fitxers en un <a href="https://laravel.com/docs/8.x/filesystem">emmagatzematge</a>. L'interessant d'açò és que ens permet manejar de la mateixa forma l'emmagatzematge en local, en Amazon S3 i en Rackspace Cloud Storage, simplement ho hem de configurar en config/filesystems.php i posteriorment els podrem usar de la mateixa forma. </p>
+<p>Per exemple, per a emmagatzemar un fitxer pujat mitjançant un formulari hem d'usar el mètode store indicant com a paràmetre la ruta on volem emmagatzemar el fitxer (sense el nom del fitxer):</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">$path = $request-&gt;photo-&gt;store(&#39;images&#39;);</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">$path = $request-&gt;photo-&gt;store(&#39;images&#39;, &#39;s3&#39;); // Especificar un emmagatzematge</span>
+</code></pre></div>
+<p>Aquests mètodes retornaran el path fins al fitxer emmagatzemat de forma relativa a l'arrel de disc configurada. Per al nom del fitxer es generarà automàticament un UUID (identificador únic universal). Si volem especificar nosaltres el nom hauríem d'usar el mètode storeAs:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>$path = $request-&gt;photo-&gt;storeAs(&#39;images&#39;, &#39;filename.jpg&#39;); 
+<span class="linenos" data-linenos="2 "></span>$path = $request-&gt;photo-&gt;storeAs(&#39;images&#39;, &#39;filename.jpg&#39;, &#39;s3&#39;);
+</code></pre></div>
+<p>Altres mètodes que podem utilitzar per a recuperar informació del fitxer són:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">    // Obtenir la ruta:</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="x">    $path = $request-&gt;file(&#39;photo&#39;)-&gt;getRealPath();</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">    // Obtenir el nom original:</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">    $name = $request-&gt;file(&#39;photo&#39;)-&gt;getClientOriginalName();</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">    // Obtenir l&#39;extensió:</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">    $extension = $request-&gt;file(&#39;photo&#39;)-&gt;getClientOriginalExtension();</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">    // Obtenir la grandària:</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">    $size = $request-&gt;file(&#39;photo&#39;)-&gt;getSize();</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">    // Obtenir el Type:</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">    $acarone = $request-&gt;file(&#39;photo&#39;)-&gt;getMimeType();</span>
+</code></pre></div>
+<h2 id="control-dusuaris"><a href="https://laravel.com/docs/9.x/authentication">Control d'usuaris</a><a class="headerlink" href="#control-dusuaris" title="Permanent link">&para;</a></h2>
+<p>Primer, hauríeu d'instal·lar un kit d'iniciador d'aplicacions Laravel. Els kits d'inici actuals, Laravel Breeze i Laravel Jetstream, ofereixen punts de partida molt ben dissenyats per incorporar l'autenticació a l'aplicació Laravel.</p>
+<p>Laravel Breeze és una implementació mínima i simple de totes les funcions d'autenticació de Laravel, incloent-hi l'inici de sessió, registre, restabliment de contrasenya, verificació de correu electrònic i confirmació de contrasenya. La capa de visió de Laravel Breeze està formada per plantilles simples de Blade amb CSS de Tailwind. Breeze també ofereix una opció de bastida basada en Inertia utilitzant Vue o React.</p>
+<p>El Laravel Jetstream és un kit d'inici d'aplicació més robust que inclou suport per a bastides de la vostra aplicació amb Livewire o Inertia i Vue. A més, Jetstream ofereix suport opcional per a l'autenticació de dos factors, equips, gestió de perfils, gestió de sessions del navegador, suport d'API via Laravel Sanctum, supressió de comptes, i més.</p>
+<h3 id="recuperancio-lusuari-autenticat">Recuperanció l'usuari autenticat<a class="headerlink" href="#recuperancio-lusuari-autenticat" title="Permanent link">&para;</a></h3>
+<p>Després d'instal·lar un kit d'inici d'autenticació i permetre als usuaris registrar-se i autenticar-se amb la vostra aplicació, sovint haureu d'interactuar amb l'usuari actualment autenticat. Mentre gestioneu una sol·licitud entrant, podeu accedir a l'usuari autenticat mitjançant el mètode d'usuari de la façana Auth:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">use Illuminate\Support\Facades\Auth;</span>
+<span class="linenos" data-linenos="2 "></span>
+<span class="linenos" data-linenos="3 "></span><span class="x">// Retrieve the currently authenticated user...</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">$user = Auth::user();</span>
+<span class="linenos" data-linenos="5 "></span>
+<span class="linenos" data-linenos="6 "></span><span class="x">// Retrieve the currently authenticated user&#39;s ID...</span>
+<span class="linenos" data-linenos="7 "></span><span class="x">$id = Auth::id();</span>
+</code></pre></div>
+<p>Alternativament, un cop un usuari estiga autenticat, podeu accedir a l'usuari autenticat mitjançant una instància d'<strong>Illuminate\Http\Request</strong>. Recordeu, les classes amb tipus s'injectaran automàticament als vostres mètodes de control. 
+Per escriure l'objecte Illuminate\Http\Request, podeu accedir convenientment a l'usuari autenticat des de qualsevol mètode de control de la vostra aplicació mitjançant el mètode d'usuari de la sol·licitud:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;?php</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="k">namespace</span> <span class="nx">App\Http\Controllers</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="k">use</span> <span class="nx">Illuminate\Http\Request</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span><span class="k">class</span> <span class="nc">FlightController</span> <span class="k">extends</span> <span class="nx">Controller</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="p">{</span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="sd">/**</span>
+<span class="linenos" data-linenos="10 "></span><span class="sd">     * Update the flight information for an existing flight.</span>
+<span class="linenos" data-linenos="11 "></span><span class="sd">     *</span>
+<span class="linenos" data-linenos="12 "></span><span class="sd">     * @param  \Illuminate\Http\Request  $request</span>
+<span class="linenos" data-linenos="13 "></span><span class="sd">     * @return \Illuminate\Http\Response</span>
+<span class="linenos" data-linenos="14 "></span><span class="sd">     */</span>
+<span class="linenos" data-linenos="15 "></span>    <span class="k">public</span> <span class="k">function</span> <span class="nf">update</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">)</span>
+<span class="linenos" data-linenos="16 "></span>    <span class="p">{</span>
+<span class="linenos" data-linenos="17 "></span>        <span class="c1">// $request-&gt;user()</span>
+<span class="linenos" data-linenos="18 "></span>    <span class="p">}</span>
+<span class="linenos" data-linenos="19 "></span><span class="p">}</span>
+</code></pre></div>
+<h3 id="determinar-si-lusuari-actual-esta-autenticat">Determinar si l'usuari actual està autenticat<a class="headerlink" href="#determinar-si-lusuari-actual-esta-autenticat" title="Permanent link">&para;</a></h3>
+<p>Per determinar si l'usuari que fa la petició HTTP entrant està autenticat, podeu utilitzar el mètode de comprovació a la façana d'Auth. Aquest mètode retornarà cert si l'usuari està autenticat:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">use Illuminate\Support\Facades\Auth;</span>
+<span class="linenos" data-linenos="2 "></span>
+<span class="linenos" data-linenos="3 "></span><span class="x">if (Auth::check()) {</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">// The user is logged in...</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">}</span>
+</code></pre></div>
+<h3 id="protegir-les-rutes-dacces-restringit">Protegir les rutes d'accés restringit<a class="headerlink" href="#protegir-les-rutes-dacces-restringit" title="Permanent link">&para;</a></h3>
+<p>Ara que ja tenim definit el mecanisme de login (controlador amb mètode d'autenticació,
+formulari de login i ruta associada), podem protegir aquelles rutes o enllaços que vulguem que siguen d'accés restringit. Per exemple, podem fer que les operacions de creació, esborrat i edició de videos
+(funcions create , store , edit , update i destroy ) només estiguen disponibles per a usuaris
+autenticats. Això pot fer-se de diverses formes.</p>
+<p>Si tenim una ruta de recursos ( Route::resource ) en l'arxiu routes/web.php , llavors l'opció més còmoda és definir un constructor en el controlador associat (en aquest cas,MovieController ), i especificar quines funcions volem protegir, bé amb <strong>only</strong> o amb
+<strong>except</strong> (en aquest últim cas, es protegiran totes les rutes excepte les indicades en la llista):</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">class LibroController extends Controller</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">{</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">    public function __construct()</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">    {</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">        $this-&gt;middleware(&#39;auth&#39;,[&#39;only&#39; =&gt; [&#39;create&#39;, &#39;store&#39;, &#39;edit&#39;, &#39;update&#39;, &#39;destroy&#39;]]);</span>
+<span class="linenos" data-linenos="6 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="7 "></span><span class="x">...</span>
+</code></pre></div>
+<p>Si definim les rutes soltes, podem emprar el mètode middleware per a indicar en cadascuna si
+volem que s'aplique el middleware d'autenticació:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">Route::get(&#39;prueba&#39;, [PruebaController::class, &#39;create&#39;])-&gt;middleware(&#39;auth&#39;);</span>
+</code></pre></div>
+<h4 id="redirigir-els-usuaris-no-autenticats">Redirigir els usuaris no autenticats<a class="headerlink" href="#redirigir-els-usuaris-no-autenticats" title="Permanent link">&para;</a></h4>
+<p>Quan el middleware auth detecta un usuari no autenticat, redirigirà l'usuari a la ruta amb nom d'inici de sessió. Podeu modificar aquest comportament actualitzant la funció redirectTo al fitxer app/Http/Middleware/Authenticate de la vostra aplicació:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">/**</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="x">* Get the path the user should be redirected to.</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">*</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">* @param  \Illuminate\Http\Request  $request</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">* @return string</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">  */</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">  protected function redirectTo($request)</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">  {</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">  return route(&#39;login&#39;);</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">  }</span>
+</code></pre></div>
+<h2 id="configurar-la-configuracio-regional">Configurar la configuració regional<a class="headerlink" href="#configurar-la-configuracio-regional" title="Permanent link">&para;</a></h2>
+<p>L'idioma predeterminat per a l'aplicació s'emmagatzema a l'opció de configuració regional del fitxer de configuració config/app.php. 
+Es pot modificar aquest valor per adaptar-lo a les necessitats de l'aplicació.</p>
+<p>Podeu modificar la llengua per defecte per a una sol·licitud HTTP única en temps d'execució utilitzant el mètode setLocale proporcionat per la façana de l'aplicació:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">use Il·lumina\Support\Facades\App;</span>
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">Route::get(&#39;/greeting/{locale}&#39;, funció ($locale) {</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">if (! in,array($locale, [&#39;en&#39;, &#39;es&#39;, &#39;ca&#39;])) {</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">    abort(400);</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">}</span>
+<span class="linenos" data-linenos=" 7 "></span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">    App::setLocale($locale);</span>
+<span class="linenos" data-linenos=" 9 "></span>
+<span class="linenos" data-linenos="10 "></span><span class="x">    //</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">});</span>
+</code></pre></div>
+<p>Es pot configurar una "llengua alternativa", que s'utilitzarà quan la llengua activa no contingui una cadena de traducció donada. Igual que la llengua per defecte, la llengua alternativa també està configurada al fitxer de configuració config/app.php:</p>
+<p>'fallback =locale' =&gt; 'en',</p>
+<h3 id="definicio-de-cadenes-de-traduccio">Definició de cadenes de traducció<a class="headerlink" href="#definicio-de-cadenes-de-traduccio" title="Permanent link">&para;</a></h3>
+<p>#### Ús de tecles curtes
+Normalment, les cadenes de traducció s'emmagatzemen en fitxers dins del directori de lang. Dins d'aquest directori, hi ha d'haver un subdirectori per a cada llengua compatible amb l'aplicació. Aquesta és l'aproximació que Laravel utilitza per gestionar les cadenes de traducció per a les característiques integrades de Laravel, com ara missatges d'error de validació:</p>
+<p>/lang
+/en
+message.php
+/es
+message.php</p>
+<p>Tots els fitxers d'idioma retornen una matriu de cadenes clau. Per exemple:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">// lang/en/messages.php</span>
+<span class="linenos" data-linenos="2 "></span>
+<span class="linenos" data-linenos="3 "></span><span class="x">return [</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">&quot;Benvinguts&quot; =&gt; &quot;Benvinguts a la nostra aplicació!&quot;,</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">];</span>
+</code></pre></div>
+<h4 id="us-de-les-cadenes-de-traduccio-com-a-claus">Ús de les cadenes de traducció com a claus<a class="headerlink" href="#us-de-les-cadenes-de-traduccio-com-a-claus" title="Permanent link">&para;</a></h4>
+<p>Per a aplicacions amb un gran nombre de cadenes traduïbles, definir cada cadena amb una "tecla curta" pot resultar confús quan es fa referència a les claus en les vistes i és complicat inventar contínuament claus per a cada cadena de traducció admesa per la vostra aplicació.</p>
+<p>Per aquesta raó, Laravel també proporciona suport per definir cadenes de traducció utilitzant la traducció "per defecte" de la cadena com a clau. Els fitxers de traducció que utilitzen cadenes de traducció com a claus s'emmagatzemen com a fitxers JSON al directori de lang. Per exemple, si la vostra aplicació té una traducció al castellà, hauríeu de crear un fitxer lang/es.json:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">{</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">&quot;I love programming.&quot;: &quot;Me encanta programar.&quot;</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">}</span>
+</code></pre></div>
+<h3 id="recuperant-les-cadenes-de-traduccio">Recuperant les cadenes de traducció<a class="headerlink" href="#recuperant-les-cadenes-de-traduccio" title="Permanent link">&para;</a></h3>
+<p>Podeu recuperar les cadenes de traducció dels vostres fitxers de llengua utilitzant la funció auxiliar .. Si esteu utilitzant «tecles curtes» per a definir les cadenes de traducció, haureu de passar el fitxer que conté la clau i la clau mateixa a la funció . utilitzant la sintaxi «punt». Per exemple, recuperarem la cadena de traducció benvinguda del fitxer de llengua lang/en/messages.php:</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">echo __(&#39;messages.welcome&#39;);</span>
+</code></pre></div>
+Si la cadena de traducció especificada no existeix, la funció __ retornarà la clau de la cadena de traducció. Per tant, utilitzant l'exemple anterior, la funció . retornaria messages.wellcome amb satisfacció si la cadena de traducció no existeix.</p>
+<p>Si esteu utilitzant les cadenes de traducció predeterminades com a claus de traducció, haureu de passar la traducció predeterminada de la cadena a la __funció</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">echo __(&#39;I love programming.&#39;);</span>
+</code></pre></div>
+De nou, si la cadena de traducció no existeix, la funció __ retornarà la clau de la cadena de traducció que s'ha donat.</p>
+<p>Si utilitzeu el motor de templating Blade, podeu utilitzar la {{ }} sintaxi d'eco per mostrar la cadena de traducció:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">{{ __(&#39;missages.welcome&#39;) }}</span>
+</code></pre></div>
+<h3 id="substitucio-de-parametres-a-les-cadenes-de-traduccio">Substitució de paràmetres a les cadenes de traducció<a class="headerlink" href="#substitucio-de-parametres-a-les-cadenes-de-traduccio" title="Permanent link">&para;</a></h3>
+<p>Si ho desitgeu, podeu definir paràmetres a les cadenes de traducció. Tots els paràmetres estan prefixats amb un :. Per exemple, podeu definir un missatge de benvinguda amb un paràmetre:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">&#39;benvingut&#39; =&gt; &#39;Benvingut, :name&#39;,</span>
+</code></pre></div>
+<p>Per a reemplaçar els paràmetre en recuperar una cadena de traducció, podeu passar una matriu de reemplaçaments com a segon argument a la funció __</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">echo __(&#39;missages.welcome&#39;, [&#39;name&#39; =&gt; &#39;dayle&#39;]);</span>
+</code></pre></div>
+Si el paràmetres conté totes les lletres majúscules, o només té la primera lletra en majúscula, el valor traduït es posarà en majúscula en conseqüència:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">&#39;wellcome&#39; =&gt; &#39;Benvingut, :NAME&#39;, // Benvingut, DAYLE</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">&#39;goodbye&#39; =&gt; &#39;Adéu, :Nom&#39;, // Adéu, Dayle</span>
+</code></pre></div>
+<h3 id="altres-consideracions">Altres consideracions<a class="headerlink" href="#altres-consideracions" title="Permanent link">&para;</a></h3>
+<p>La incorporació del scaffolding d'autenticació, com podem comprovar, estalvia molta faena a l'hora
+de definir els mecanismes de registre i login d'usuaris en el sistema. No obstant això, queden algunes
+tasques pendents que poden requerir una configuració addicional, i que no veurem en aquest curs per falta
+de temps.</p>
+<p>Una d'elles, per exemple, és l'opció de recuperar contrasenya quan punxem en l'enllaç de Vas
+oblidar la teua contrasenya?. En principi, i atés que ens registrem amb un e-mail com login, ens demana que
+facilitem aquest e-mail per a enviar-nos un enllaç per a restablir la contrasenya. No obstant això, hem de configurar apropiadament el correu SMTP per a poder enviar el missatge. Per a això, necessitem un
+compte origen, i depenent del servidor de correu on el tinguem creat (Gmail, Outlook, etc), la
+configuració és diferent. <a href="https://medium.com/@agavitalis/how-to-send-an-email-in-laravel-using-gmail-smtp-server-53d962f01a0c">Ací</a>, per exemple, explica els passos a seguir per a configurar com a compte
+emissora una de Gmail.</p>
+<h2 id="definir-roles-us-de-middleware">Definir roles. Ús de middleware<a class="headerlink" href="#definir-roles-us-de-middleware" title="Permanent link">&para;</a></h2>
+<p>Per a poder definir rols per als diferents usuaris de la nostra aplicació, òbviament hem de començar
+per definir un nou camp en la taula d'usuaris per a emmagatzemar aquest rol.</p>
+<p>Després, per a protegir certes rutes en funció dels rols, podem ocultar l'enllaç en les vistes amb
+una simple comprovació. Per exemple, assumint que el camp dels rols es diu rol:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>@if (Auth::user()-&gt;rol === &#39;admin&#39;)
+<span class="linenos" data-linenos="2 "></span>    // Mostrar contenido
+<span class="linenos" data-linenos="3 "></span>@endif
+</code></pre></div>
+<p>No obstant això, si accedim a la URL sense passar per l'enllaç, podrem veure el contingut. Devem
+novament incorporar el middleware auth al controlador que corresponga (si no ho està ja), per a protegir
+l'accés general per a usuaris autenticats.
+A més, hem de definir un middleware propi que verifique el rol de l'usuari logueado. Podem crear-ho
+amb aquest comando:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>php artisan make:middleware RolCheck
+</code></pre></div>
+<p>En aquest cas hem anomenat al <strong>middleware RolCheck</strong> , però el nom pot ser el que vulguem. Aquest
+middleware es crearà en la carpeta <strong>App\Http\Middleware</strong> . Hem d'editar el seu mètode <strong>handle</strong> per a verificar que els usuaris són de tipus "admin":</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">public function handle($request, Closure $next, $rol)</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">{</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">    if (Auth::user()-&gt;rol === $rol)</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">        return $next($request);</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">    else</span>
+<span class="linenos" data-linenos="6 "></span><span class="x">        return redirect(&#39;/&#39;);</span>
+<span class="linenos" data-linenos="7 "></span><span class="x">}</span>
+</code></pre></div>
+<p>Després de definir el middleware, ho registrem en l'arxiu <strong>App/Http/Kernel.php</strong> (en l'apartat de <strong>routeMiddleware</strong>):</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">protected $routeMiddleware = [</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">...</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">&#39;roles&#39; =&gt; \App\Http\Middleware\RolCheck::class</span>
+</code></pre></div>
+<p>Finalment, ho carreguem en el constructor del nostre controlador. Podem incloure amb <strong>except</strong> i
+<strong>only</strong> restriccions sobre quins mètodes del controlador es veuran afectats o no pel middleware.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>public function __construct()
+<span class="linenos" data-linenos="2 "></span>{
+<span class="linenos" data-linenos="3 "></span>    $this-&gt;middleware([&#39;auth&#39;, &#39;roles:admin&#39;]);
+<span class="linenos" data-linenos="4 "></span>}
+</code></pre></div>
+<p>En aquest exemple, hem mapatge el middleware amb l'àlies rols en l'arxiu <strong>Kernel.php</strong> , i el que hi ha
+després dels dos punts és el paràmetre extra que té el mètode <strong>handle</strong> del middleware (el rol a comprovar).
+En el cas de voler passar més paràmetres, es pot fer separats per comes.</p>
+<h4 id="sobre-el-concepte-de-middleware">Sobre el concepte de middleware<a class="headerlink" href="#sobre-el-concepte-de-middleware" title="Permanent link">&para;</a></h4>
+<p>Hem comentat breument el concepte de middleware associat tant al mecanisme d'autenticació
+com a la classe "extra" que podem crear per a comprovar rols. En general, un middleware és un
+fragment de codi (normalment una funció) que s'executa enmig d'un procés. En aquest cas, s'executa
+des que es rep la petició fins que s'emet la resposta, i permet alterar aqueix flux normal,
+fent certes comprovacions sobre la petició. Per exemple, com és el cas, verificar que l'usuari
+té els permisos adequats abans d'emetre una resposta o una altra.</p>
+<h2 id="exercicis">Exercicis<a class="headerlink" href="#exercicis" title="Permanent link">&para;</a></h2>
+<p>Sobre el projecte blog, afegirem aquests canvis:</p>
+<ol start="721">
+<li>Crea un <a href="#creació-i-enviament-de-formularis">formulari</a> per a donar d'alta nous posts, en la vista
+  <strong>resources/views/posts/create.blade.php</strong> . <ul>
+<li>Afig un parell de camps (un text curt i un text llarg) per a emplenar el títol i el contingut, i com a autor o usuari del post de moment deixa un predefinit; per exemple, l'autor amb id = 1, o el primer autor que trobes en la base de dades ( Autor::get()-&gt;first() ). Més endavant ja ho farem dependent de l'usuari que s'haja autenticat. Recorda definir el mètode store en el controlador de posts per a donar d'alta el post, i redirigir després al llistat principal de posts. Per a carregar el formulari, afig una nova opció en el menú principal de navegació. </li>
+<li>En la fitxa d'un post, afig un botó amb un formulari per a esborrar el post. Hauràs de definir el codi del mètode <strong>destroy</strong> per a eliminar el post i redirigir de nou al llistat. Deuràs eliminar tots els comentaris associats a aqueix post, i després esborrar el post. Per a filtrar els comentaris d'un post i esborrar-los, utilitza la clàusula <strong>where</strong>.</li>
+</ul>
+</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>Comentario::where(&#39;post_id&#39;, $id)-&gt;delete();
+</code></pre></div>
+<ol start="722">
+<li>
+<p>Ara afegirem el <a href="#actualitzacions-i-esborrats">formulari d'edició</a> d'un post, també des de la vista de la fitxa del post. El formulari haurà de mostrar les dades ja farcides del post. Aquestformulari es carrega a partir del mètode <strong>edit</strong> (que haurà de renderitzar la vista amb el formulari d'edició,
+<strong>resources/views/posts/edit.blade.php</strong> ), i el formulari s'enviarà al mètode <strong>update</strong> del controlador, passant-li com a paràmetre l'id del post a modificar.</p>
+</li>
+<li>
+<p>Crea un <strong>form request</strong> anomenat <strong>PostRequest</strong> , que <a href="#utilitzar-form-requests-per-a-validacions-més-complexes">valide</a> les
+dades del post. En concret, han de complir-se aquests requisits:</p>
+<ul>
+<li>El títol del post ha de ser obligatori, i d'almenys 5 caràcters de longitud</li>
+<li>El contingut del post ha de ser obligatori, i d'almenys 50 caràcters de longitud</li>
+</ul>
+</li>
+</ol>
+<p>Defineix <a href="#mostrar-missatges-derror">missatges d'error</a> personalitzats per a cada possible error de validació, i mostra'ls al costat de cada camp afectat. A més, utilitza la <a href="#recordar-valors-enviats">funció <strong>old</strong></a> per a recordar el valor antic correcte, en el cas que un camp passe la validació però un altre(s) no.</p>
+<ol start="724">
+<li>Fes els següents canvis:</li>
+</ol>
+<ul>
+<li>
+<p>En el controlador de posts, <a href="#protegir-les-rutes-daccés-restringit">protegeix</a> totes les opcions menys les de index i show .</p>
+</li>
+<li>
+<p>Fes que només es mostren els enllaços i botons de crear, editar o esborrar posts quan l'usuari estiga
+  autenticat. En aqueix mateix cas, fes que també es mostre una opció de logout en el menú
+  superior, que hauràs d'implementar.</p>
+</li>
+<li>
+<p>Finalment, afig la funcionalitat que l'usuari autenticat només pot editar i esborrar els seus
+  propis posts, però no els dels altres usuaris.</p>
+</li>
+<li>
+<p>Crea un nou <a href="#definir-roles-ús-de-middleware">middleware</a> anomenat <strong>EnsureUserIsAuthor</strong> per fer-ho</p>
+</li>
+</ul>
+<ol start="725">
+<li>Idioma</li>
+</ol>
+<ul>
+<li>Cerca el paquet de castellà o valencia i possa'l en la carpeta corresponent.</li>
+<li>Canvia l'idioma de l'aplicació al paquet baixat.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2021-2025 Aitor Medrano, Luis Alemañ, Ignasi Gomis - Licencia CC BY-NC-SA
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/aitormedrano" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.2 4.2 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.52 8.52 0 0 1-5.33 1.84q-.51 0-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<a.medrano@edu.gva.es>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.13c-.15.01-.29.06-.39.17l-1 1 2.05 2 1-1c.22-.21.22-.56 0-.77l-1.24-1.23a.56.56 0 0 0-.38-.17m-2 1.75L13 19.94V22h2.06l6.06-6.07M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h7v-.89l8.24-8.22c.47-.49 1.12-.76 1.8-.76.34 0 .68.06 1 .19V6c0-1.12-.92-2-2.04-2m0 4-8 5-8-5V6l8 5 8-5"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": ".", "features": ["header.autohide", "toc.integrate", "content.tabs.link"], "search": "assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiat al porta-retalls", "clipboard.copy": "C\u00f2pia al porta-retalls", "search.result.more.one": "1 m\u00e9s en aquesta p\u00e0gina", "search.result.more.other": "# m\u00e9s en aquesta p\u00e0gina", "search.result.none": "Cap document coincideix", "search.result.one": "1 document coincident", "search.result.other": "# documents coincidents", "search.result.placeholder": "Escriu per a comen\u00e7ar a cercar", "search.result.term.missing": "Desaparegut", "select.version": "Selecciona la versi\u00f3"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+    
+  </body>
+</html>

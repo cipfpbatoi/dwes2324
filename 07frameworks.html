@@ -1,0 +1,1749 @@
+
+<!doctype html>
+<html lang="ca" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://cipfpbatoi.github.io/dwes2223/07frameworks.html">
+      
+      
+      
+      
+      <link rel="icon" href="imagenes/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.19">
+    
+    
+      
+        <title>Frameworks PHP. Laravel - Desenvolupament web en entorn de Servidor</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-X6D0LR7TC8"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-X6D0LR7TC8",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-X6D0LR7TC8",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="Teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#frameworks-php-laravel" class="md-skip">
+          Salta el contingut
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Capçalera">
+    <a href="index.html" title="Desenvolupament web en entorn de Servidor" class="md-header__button md-logo" aria-label="Desenvolupament web en entorn de Servidor" data-md-component="logo">
+      
+  <img src="imagenes/logofp.png" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Desenvolupament web en entorn de Servidor
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Frameworks PHP. Laravel
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="light-blue" data-md-color-accent="Teal"  aria-label="Canviar a mode nit"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Canviar a mode nit" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="light-blue" data-md-color-accent="Teal"  aria-label="Canviar a mode dia"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Canviar a mode dia" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Cerca" placeholder="Cerca" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Cerca">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Neteja" aria-label="Neteja" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Inicialitzant cerca
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--integrated" aria-label="Navegació" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="index.html" title="Desenvolupament web en entorn de Servidor" class="md-nav__button md-logo" aria-label="Desenvolupament web en entorn de Servidor" data-md-component="logo">
+      
+  <img src="imagenes/logofp.png" alt="logo">
+
+    </a>
+    Desenvolupament web en entorn de Servidor
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="index.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Inicio
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="01arquitecturas.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1.- Arquitectures Web
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="02php.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2.- Programació web amb PHP
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="03MVC_Laravel.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3.- Arquitectura MVC amb Laravel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="04dades_Laravel.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4.- Accés segur i estructurat a bases de dades amb Laravel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="05seguretat_Laravel.html" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5.- Aplicacions segures i reactives en Laravel
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="frameworks-php-laravel">Frameworks PHP. Laravel<a class="headerlink" href="#frameworks-php-laravel" title="Permanent link">&para;</a></h1>
+<h2 id="introduccio-als-frameworks-php-i-laravel">Introducció als Frameworks PHP i Laravel<a class="headerlink" href="#introduccio-als-frameworks-php-i-laravel" title="Permanent link">&para;</a></h2>
+<h3 id="que-es-un-framework">Què és un framework?<a class="headerlink" href="#que-es-un-framework" title="Permanent link">&para;</a></h3>
+<p>Un <strong>framework</strong> proporciona una estructura base per al desenvolupament d'aplicacions, facilitant tasques com:</p>
+<ul>
+<li>Connexió a bases de dades.</li>
+<li>Organització del codi.</li>
+<li>Gestió de rutes i validacions.</li>
+</ul>
+<p>La majoria de frameworks PHP segueixen el patró <strong>MVC</strong> (Model-Vista-Controlador), que permet separar clarament la lògica de negoci, la interfície d'usuari i les dades.</p>
+<h3 id="per-que-utilitzar-un-framework">Per què utilitzar un framework?<a class="headerlink" href="#per-que-utilitzar-un-framework" title="Permanent link">&para;</a></h3>
+<p>Els frameworks ofereixen:</p>
+<ul>
+<li><strong>Estandardització:</strong> Promouen bones pràctiques de desenvolupament.</li>
+<li><strong>Eficàcia:</strong> Acceleració del desenvolupament amb eines preconstruïdes.</li>
+<li><strong>Mantenibilitat:</strong> Faciliten l'escalabilitat i el manteniment del codi.</li>
+</ul>
+<p>Exemples de frameworks PHP populars:</p>
+<ul>
+<li><strong>Laravel:</strong> Sintaxi clara, funcionalitats modernes, ideal per a projectes de qualsevol mida.</li>
+<li><strong>Symfony:</strong> Robust i altament modular, enfocat en aplicacions complexes.</li>
+<li><strong>Slim:</strong> Lleuger i ideal per APIs RESTful.</li>
+</ul>
+<hr />
+<h2 id="laravel-el-framework-de-referencia">Laravel: El framework de referència<a class="headerlink" href="#laravel-el-framework-de-referencia" title="Permanent link">&para;</a></h2>
+<h3 id="per-que-triar-laravel">Per què triar Laravel?<a class="headerlink" href="#per-que-triar-laravel" title="Permanent link">&para;</a></h3>
+<p>Laravel és un dels frameworks més populars gràcies a:</p>
+<ul>
+<li><strong>Facilitat d'ús:</strong> Sintaxi expressiva i intuïtiva.</li>
+<li><strong>Patró MVC:</strong> Clarament implementat per separar lògica, vistes i dades.</li>
+<li><strong>ORM Eloquent:</strong> Gestió intuïtiva de bases de dades.</li>
+<li><strong>Artisan CLI:</strong> Automatització de tasques habituals com migracions o generació de models.</li>
+<li><strong>Blade:</strong> Motor de plantilles per modularitzar vistes amb herència i layouts.</li>
+</ul>
+<h3 id="caracteristiques-clau">Característiques clau<a class="headerlink" href="#caracteristiques-clau" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Eloquent ORM:</strong> Treballar amb bases de dades de manera intuïtiva, suportant relacions complexes.</li>
+<li><strong>Migracions:</strong> Control de versions per a estructures de bases de dades.</li>
+<li><strong>Artisan:</strong> Línia de comandaments per accelerar tasques rutinàries.</li>
+<li><strong>Blade:</strong> Motor de plantilles amb sintaxi simplificada.</li>
+<li><strong>Seguretat integrada:</strong> Protecció contra atacs com CSRF i XSS.</li>
+<li><strong>Ecosistema extens:</strong> Suport per autenticació (Sanctum, Passport), gestió de dependències, i més.</li>
+</ol>
+<hr />
+<h3 id="installacio-de-laravel">Instal·lació de Laravel<a class="headerlink" href="#installacio-de-laravel" title="Permanent link">&para;</a></h3>
+<h4 id="installacio-amb-docker-laravel-sail">Instal·lacio amb docker (laravel sail)<a class="headerlink" href="#installacio-amb-docker-laravel-sail" title="Permanent link">&para;</a></h4>
+<p>Si ja esteu desenvolupant Linux i Docker Compose està instal·lat, podeu utilitzar una senzilla ordre de terminal per a crear un nou projecte Laravel. Per exemple, per a crear una nova aplicació Laravel en un directori anomenat "exemple-app", podeu executar l'ordre següent al terminal:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>curl<span class="w"> </span>-s<span class="w"> </span>https://laravel.build/example-app<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash
+</code></pre></div>
+<p>Per descomptat, podeu canviar "exemple-app" en aquest URL a qualsevol cosa que vulgueu - només assegureu-vos que el nom de l'aplicació només conté caràcters alfanumèrics, guions i guions baixos. El directori de l'aplicació Laravel es crearà dins del directori des del qual executeu l'ordre.</p>
+<p>La instal·lació del <strong>Sail</strong> pot trigar diversos minuts mentre els contenidors de l'aplicació del <strong>sail</strong> es construeixen a la vostra màquina local.</p>
+<p>Ara podeu navegar al directori de l'aplicació i iniciar Laravel Sail. Laravel Sail proporciona una interfície senzilla de línia d'ordres per a interactuar amb la configuració predeterminada de l'acoblador Laravel:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">cd exemple-app &amp;&amp; ./vendor/bin/sail up &amp;</span>
+</code></pre></div></p>
+<p>Un cop iniciats els contenidors Docker de l'aplicació, podeu accedir a l'aplicació al vostre navegador web a: http://localhost.</p>
+<p>I per a inicialitzar la base de dades des de dins del contenidor:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">./vendor/bin/sail artisan migrate</span>
+</code></pre></div>
+<h5 id="phpmyadmin">phpmyadmin<a class="headerlink" href="#phpmyadmin" title="Permanent link">&para;</a></h5>
+<p>Si volem que funcione el phpmyadmin haurien d'afegir un altre contenidor docker, o farem incluint el següent codi en el docker-compose.yml</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">myadmin:</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="x"> image: &#39;phpmyadmin:latest&#39;</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x"> ports:</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x"> - 8080:80</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x"> environment:</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x"> MYSQL_ROOT_PASSWORD: &#39;${DB_PASSWORD}&#39;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x"> links:</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x"> - &quot;mysql:db&quot;</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x"> depends_on:</span>
+<span class="linenos" data-linenos="10 "></span><span class="x"> - mysql</span>
+<span class="linenos" data-linenos="11 "></span><span class="x"> networks:</span>
+<span class="linenos" data-linenos="12 "></span><span class="x"> - sail</span>
+</code></pre></div>
+<h3 id="configuracio-de-laravel">Configuració de Laravel<a class="headerlink" href="#configuracio-de-laravel" title="Permanent link">&para;</a></h3>
+<p>La configuració en Laravel està centralitzada i organitzada en fitxers dins del directori <strong>config/</strong>. Aquests fitxers permeten ajustar el comportament de diferents aspectes de l'aplicació.</p>
+<h4 id="fitxer-env">Fitxer .env<a class="headerlink" href="#fitxer-env" title="Permanent link">&para;</a></h4>
+<p>Laravel utilitza el fitxer <code>.env</code> per gestionar configuracions específiques de l'entorn. Aquest fitxer permet canviar paràmetres sense modificar el codi base.</p>
+<h5 id="exemple-de-env">Exemple de <code>.env</code>:<a class="headerlink" href="#exemple-de-env" title="Permanent link">&para;</a></h5>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>APP_NAME=&quot;LaravelApp&quot;
+<span class="linenos" data-linenos=" 2 "></span>APP_ENV=local
+<span class="linenos" data-linenos=" 3 "></span>APP_KEY=base64:...
+<span class="linenos" data-linenos=" 4 "></span>APP_DEBUG=true
+<span class="linenos" data-linenos=" 5 "></span>APP_URL=http://localhost
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span>DB_CONNECTION=mysql
+<span class="linenos" data-linenos=" 8 "></span>DB_HOST=127.0.0.1
+<span class="linenos" data-linenos=" 9 "></span>DB_PORT=3306
+<span class="linenos" data-linenos="10 "></span>DB_DATABASE=laravel
+<span class="linenos" data-linenos="11 "></span>DB_USERNAME=root
+<span class="linenos" data-linenos="12 "></span>DB_PASSWORD=
+</code></pre></div>
+<h3 id="configuracio-predeterminada">Configuració predeterminada<a class="headerlink" href="#configuracio-predeterminada" title="Permanent link">&para;</a></h3>
+<p>Els fitxers de configuració es troben al directori <code>config/</code>. A continuació es descriuen alguns dels més importants:</p>
+<h4 id="1-configappphp"><strong>1. config/app.php</strong><a class="headerlink" href="#1-configappphp" title="Permanent link">&para;</a></h4>
+<p>Conté configuracions globals de l'aplicació.</p>
+<ul>
+<li><strong><code>name</code></strong>: Nom de l'aplicació.</li>
+<li><strong><code>env</code></strong>: Entorn d'execució (<code>local</code>, <code>production</code>, <code>testing</code>).</li>
+<li><strong><code>debug</code></strong>: Habilita o deshabilita el mode depuració (<code>true</code> o <code>false</code>).</li>
+<li><strong><code>timezone</code></strong>: Zona horària de l'aplicació (per defecte <code>UTC</code>).</li>
+<li><strong><code>locale</code></strong>: Idioma predeterminat.</li>
+<li><strong><code>providers</code></strong>: Llista de proveïdors de serveis.</li>
+<li><strong><code>aliases</code></strong>: Aliases per a facades.</li>
+</ul>
+<h4 id="2-configdatabasephp"><strong>2. config/database.php</strong><a class="headerlink" href="#2-configdatabasephp" title="Permanent link">&para;</a></h4>
+<p>Configura les bases de dades de l'aplicació.</p>
+<ul>
+<li><strong><code>default</code></strong>: Connexió predeterminada (<code>mysql</code>, <code>sqlite</code>, <code>pgsql</code>, etc.).</li>
+<li><strong>Configuracions per a cada connexió</strong>:</li>
+<li><strong><code>mysql</code></strong>: Exemple:
+ <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">&#39;mysql&#39; =&gt; [</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">&#39;driver&#39; =&gt; &#39;mysql&#39;,</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">&#39;host&#39; =&gt; env(&#39;DB\_HOST&#39;, &#39;127.0.0.1&#39;),</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">&#39;port&#39; =&gt; env(&#39;DB\_PORT&#39;, &#39;3306&#39;),</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">&#39;database&#39; =&gt; env(&#39;DB\_DATABASE&#39;, &#39;laravel&#39;),</span>
+<span class="linenos" data-linenos="6 "></span><span class="x">&#39;username&#39; =&gt; env(&#39;DB\_USERNAME&#39;, &#39;root&#39;),</span>
+<span class="linenos" data-linenos="7 "></span><span class="x">&#39;password&#39; =&gt; env(&#39;DB\_PASSWORD&#39;, &#39;&#39;),</span>
+<span class="linenos" data-linenos="8 "></span><span class="x">],</span>
+</code></pre></div></li>
+</ul>
+<h4 id="3-configmailphp"><strong>3. config/mail.php</strong><a class="headerlink" href="#3-configmailphp" title="Permanent link">&para;</a></h4>
+<p>Configura el sistema d'enviament de correus electrònics.</p>
+<ul>
+<li><strong><code>default</code></strong>: Transport predeterminat (<code>smtp</code>, <code>mailgun</code>, <code>sendmail</code>, etc.).</li>
+<li><strong>Configuracions SMTP</strong>:
+ <div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">&#39;mailers&#39; =&gt; [</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="x">&#39;smtp&#39; =&gt; [</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">&#39;transport&#39; =&gt; &#39;smtp&#39;,</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">&#39;host&#39; =&gt; env(&#39;MAIL\_HOST&#39;, &#39;smtp.mailtrap.io&#39;),</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">&#39;port&#39; =&gt; env(&#39;MAIL\_PORT&#39;, 2525),</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">&#39;username&#39; =&gt; env(&#39;MAIL\_USERNAME&#39;),</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">&#39;password&#39; =&gt; env(&#39;MAIL\_PASSWORD&#39;),</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">&#39;encryption&#39; =&gt; env(&#39;MAIL\_ENCRYPTION&#39;, &#39;tls&#39;),</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">],</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">],</span>
+</code></pre></div></li>
+</ul>
+<h4 id="4-configfilesystemsphp"><strong>4. config/filesystems.php</strong><a class="headerlink" href="#4-configfilesystemsphp" title="Permanent link">&para;</a></h4>
+<p>Gestiona els sistemes d'arxius.</p>
+<ul>
+<li><strong><code>default</code></strong>: Sistema predeterminat (local, s3, etc.).</li>
+<li><strong>Configuració de discos</strong>:
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x"> &#39;disks&#39; =&gt; [</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="x"> &#39;local&#39; =&gt; [</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x"> &#39;driver&#39; =&gt; &#39;local&#39;,</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x"> &#39;root&#39; =&gt; storage_path(&#39;app&#39;),</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x"> ],</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x"> &#39;s3&#39; =&gt; [</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x"> &#39;driver&#39; =&gt; &#39;s3&#39;,</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x"> &#39;key&#39; =&gt; env(&#39;AWS_ACCESS_KEY_ID&#39;),</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x"> &#39;secret&#39; =&gt; env(&#39;AWS_SECRET_ACCESS_KEY&#39;),</span>
+<span class="linenos" data-linenos="10 "></span><span class="x"> &#39;region&#39; =&gt; env(&#39;AWS_DEFAULT_REGION&#39;),</span>
+<span class="linenos" data-linenos="11 "></span><span class="x"> &#39;bucket&#39; =&gt; env(&#39;AWS_BUCKET&#39;),</span>
+<span class="linenos" data-linenos="12 "></span><span class="x"> ],</span>
+<span class="linenos" data-linenos="13 "></span><span class="x"> ],</span>
+</code></pre></div></li>
+</ul>
+<h3 id="funcions-dajuda">Funcions d'ajuda<a class="headerlink" href="#funcions-dajuda" title="Permanent link">&para;</a></h3>
+<p>Laravel proporciona <strong>helpers</strong> per treballar amb configuracions de manera senzilla i dinàmica.</p>
+<h4 id="accedir-a-configuracions"><strong>Accedir a configuracions</strong><a class="headerlink" href="#accedir-a-configuracions" title="Permanent link">&para;</a></h4>
+<p>Utilitza la funció <code>config()</code> per obtenir valors de configuració des de qualsevol lloc de l'aplicació:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">config(&#39;app.name&#39;); // Retorna el nom de l&#39;aplicació</span>
+</code></pre></div>
+<h4 id="canviar-configuracions-en-temps-dexecucio">Canviar configuracions en temps d'execució<a class="headerlink" href="#canviar-configuracions-en-temps-dexecucio" title="Permanent link">&para;</a></h4>
+<p>Pots modificar configuracions de forma temporal durant l'execució de l'aplicació:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">config([&#39;app.debug&#39; =&gt; false]); // Desactiva el mode depuració</span>
+</code></pre></div>
+<h4 id="establir-valors-predeterminats">Establir valors predeterminats<a class="headerlink" href="#establir-valors-predeterminats" title="Permanent link">&para;</a></h4>
+<p>Si el valor no existeix, pots establir un valor predeterminat:</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">$value = config(&#39;app.missing_key&#39;, &#39;valor per defecte&#39;);</span>
+</code></pre></div>
+Aquestes funcions són útils per ajustar l'aplicació a les necessitats de l'entorn o per gestionar configuracions específiques durant l'execució.</p>
+<h3 id="el-comanament-artisan">El comanament Artisan<a class="headerlink" href="#el-comanament-artisan" title="Permanent link">&para;</a></h3>
+<p>Laravel inclou un interfície de línia de comandos (CLI, Command line interface) anomenat <strong>Artisan</strong>. Aquesta utilitat ens va a permetre realitzar múltiples tasques necessàries durant el procés de desenvolupament o desplegament a producció d'una aplicació, per la qual cosa ens facilitarà i accelerarà el treball.
+Per a veure una llista de totes les opcions que inclou Artisan podem executar el següent comando en un consola o terminal del sistema en la carpeta arrel del nostre projecte:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>php<span class="w"> </span>artisan<span class="w"> </span>list
+</code></pre></div>
+<p>Si volem obtenir una ajuda més detallada sobre alguna de les opcions de Artisan simplement hem d'escriure la paraula <strong>help</strong> davant del comando en qüestió, per exemple:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>php<span class="w"> </span>artisan<span class="w"> </span><span class="nb">help</span><span class="w"> </span>migrate
+</code></pre></div>
+<p>A poc a poc anirem veient més opcions de Artisan, de moment anem a comentar solament dues opcions importants: el llistat de rutes i la generació de codi.</p>
+<p>Per a veure un llistat amb totes les rutes que hem definit en el fitxer routes.php podem executar el comando:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>php<span class="w"> </span>artisan<span class="w"> </span>route:list
+</code></pre></div>
+<p>Açò ens mostrarà una taula amb el mètode, l'adreça, l'acció i els filtres definits per a totes les rutes. D'aquesta forma podem comprovar totes les rutes de la nostra aplicació i assegurar-nos que estiga tot correcte.</p>
+<h3 id="estructura-dun-projecte-laravel">Estructura d'un projecte Laravel<a class="headerlink" href="#estructura-dun-projecte-laravel" title="Permanent link">&para;</a></h3>
+<p>Laravel segueix una estructura modular basada en el patró <strong>MVC (Model-Vista-Controlador)</strong>. Aquesta organització facilita la separació de responsabilitats, manteniment i escalabilitat. A continuació, es descriuen les carpetes més importants.</p>
+<h4 id="carpetes-principals">Carpetes principals<a class="headerlink" href="#carpetes-principals" title="Permanent link">&para;</a></h4>
+<h5 id="1-app"><strong>1. app/</strong><a class="headerlink" href="#1-app" title="Permanent link">&para;</a></h5>
+<p>Conté la lògica principal de l'aplicació.</p>
+<ul>
+<li><strong>Models/</strong>: Classes que representen les taules de la base de dades. Gestionen les relacions i la lògica de negoci.</li>
+<li><strong>Http/Controllers/</strong>: Controladors que processen les peticions i retornen respostes.</li>
+<li><strong>Http/Middleware/</strong>: Classes per filtrar i processar les peticions abans d'arribar als controladors.</li>
+<li><strong>Observers/</strong>: Classes per observar i respondre a esdeveniments dels models.</li>
+<li><strong>Policies/</strong>: Gestionen l'autenticació basada en permisos.</li>
+</ul>
+<h5 id="2-bootstrap"><strong>2. bootstrap/</strong><a class="headerlink" href="#2-bootstrap" title="Permanent link">&para;</a></h5>
+<p>Conté el fitxer <code>app.php</code>, que inicialitza el framework i carrega configuracions bàsiques. També inclou la <strong>caché de rutes i serveis</strong> per millorar el rendiment.</p>
+<h5 id="3-config"><strong>3. config/</strong><a class="headerlink" href="#3-config" title="Permanent link">&para;</a></h5>
+<p>Fitxers de configuració global de l'aplicació (base de dades, mail, cues, etc.). És recomanable revisar aquests fitxers per personalitzar-los segons les necessitats del projecte.</p>
+<h5 id="4-database"><strong>4. database/</strong><a class="headerlink" href="#4-database" title="Permanent link">&para;</a></h5>
+<p>Gestió de bases de dades.</p>
+<ul>
+<li><strong>Migrations/</strong>: Fitxers per definir l'estructura de les taules de manera programàtica.</li>
+<li><strong>Factories/</strong>: Generació de dades de prova per als models.</li>
+<li><strong>Seeders/</strong>: Inserció de dades inicials per a la base de dades.</li>
+</ul>
+<h5 id="5-public"><strong>5. public/</strong><a class="headerlink" href="#5-public" title="Permanent link">&para;</a></h5>
+<p>Punt d'entrada de l'aplicació. Conté:</p>
+<ul>
+<li>Fitxer <code>index.php</code>, que gestiona totes les peticions.</li>
+<li>Recursos públics com <strong>CSS, JavaScript, imatges</strong>.</li>
+</ul>
+<h5 id="6-resources"><strong>6. resources/</strong><a class="headerlink" href="#6-resources" title="Permanent link">&para;</a></h5>
+<p>Carpeta de recursos per a la interfície d'usuari.</p>
+<ul>
+<li><strong>views/</strong>: Conté les vistes Blade.</li>
+<li><strong>lang/</strong>: Fitxers de traducció per a aplicacions multilingües.</li>
+<li><strong>css/</strong> i <strong>js/</strong>: Recursos d'estil i funcionalitat del client.</li>
+</ul>
+<h5 id="7-routes"><strong>7. routes/</strong><a class="headerlink" href="#7-routes" title="Permanent link">&para;</a></h5>
+<p>Defineix totes les rutes de l'aplicació.</p>
+<ul>
+<li><strong>web.php</strong>: Rutes per a l'aplicació web.</li>
+<li><strong>api.php</strong>: Rutes per a APIs RESTful.</li>
+<li><strong>console.php</strong>: Comandes Artisan personalitzades.</li>
+<li><strong>channels.php</strong>: Rutes per a canals de difusió.</li>
+</ul>
+<h5 id="8-storage"><strong>8. storage/</strong><a class="headerlink" href="#8-storage" title="Permanent link">&para;</a></h5>
+<p>Emmagatzematge d'arxius generats per l'aplicació.</p>
+<ul>
+<li><strong>app/</strong>: Conté arxius d'usuari o aplicació.</li>
+<li><strong>framework/</strong>: Caché, sessions, i altres fitxers temporals.</li>
+<li><strong>logs/</strong>: Registres d'errors i activitat.</li>
+</ul>
+<h5 id="9-tests"><strong>9. tests/</strong><a class="headerlink" href="#9-tests" title="Permanent link">&para;</a></h5>
+<p>Inclou proves automatitzades per garantir el bon funcionament de l'aplicació.</p>
+<ul>
+<li><strong>Feature/</strong>: Proves completes que cobreixen múltiples components.</li>
+<li><strong>Unit/</strong>: Proves individuals per a components o mètodes específics.</li>
+</ul>
+<h5 id="10-vendor"><strong>10. vendor/</strong><a class="headerlink" href="#10-vendor" title="Permanent link">&para;</a></h5>
+<p>Carpeta gestionada per Composer. Conté totes les dependències i paquets de tercers utilitzats pel projecte. <strong>No s'ha de modificar manualment.</strong></p>
+<h3 id="desenvolupament-del-frontend">Desenvolupament del Frontend<a class="headerlink" href="#desenvolupament-del-frontend" title="Permanent link">&para;</a></h3>
+<p>Laravel ofereix diverses opcions per al desenvolupament del frontend, depenent de si prefereixes utilitzar PHP o frameworks JavaScript com Vue o React.</p>
+<h4 id="utilitzant-php">Utilitzant PHP<a class="headerlink" href="#utilitzant-php" title="Permanent link">&para;</a></h4>
+<h5 id="blade">Blade<a class="headerlink" href="#blade" title="Permanent link">&para;</a></h5>
+<p>Blade és el motor de plantilles lleuger de Laravel que permet crear vistes amb una sintaxi senzilla per mostrar dades i iterar sobre elles.</p>
+<h5 id="livewire">Livewire<a class="headerlink" href="#livewire" title="Permanent link">&para;</a></h5>
+<p>Livewire és un framework que facilita la construcció d'interfícies dinàmiques utilitzant PHP, sense necessitat de JavaScript addicional.</p>
+<h4 id="utilitzant-vue-o-react">Utilitzant Vue o React<a class="headerlink" href="#utilitzant-vue-o-react" title="Permanent link">&para;</a></h4>
+<h5 id="inertia">Inertia<a class="headerlink" href="#inertia" title="Permanent link">&para;</a></h5>
+<p>Inertia actua com a pont entre Laravel i frameworks com Vue o React, permetent construir aplicacions modernes sense gestionar rutes o autenticació al costat del client.</p>
+<h4 id="kits-dinici">Kits d'Inici<a class="headerlink" href="#kits-dinici" title="Permanent link">&para;</a></h4>
+<p>Laravel proporciona kits com Breeze i Jetstream que ofereixen scaffolding per a l'autenticació i altres funcionalitats, utilitzant Blade, Livewire, Vue o React.</p>
+<h4 id="agrupacio-dactius">Agrupació d'Actius<a class="headerlink" href="#agrupacio-dactius" title="Permanent link">&para;</a></h4>
+<p>Laravel utilitza <strong>Vite</strong> per compilar i agrupar els actius del frontend, oferint temps de compilació ràpids i reemplaçament de mòduls en calent durant el desenvolupament.</p>
+<h3 id="laravel-kits-dinici">Laravel : Kits d'Inici<a class="headerlink" href="#laravel-kits-dinici" title="Permanent link">&para;</a></h3>
+<p>Laravel ofereix diversos kits d'inici per agilitzar el desenvolupament d'aplicacions, proporcionant scaffolding per a l'autenticació i altres funcionalitats essencials.</p>
+<h4 id="laravel-breeze">Laravel Breeze<a class="headerlink" href="#laravel-breeze" title="Permanent link">&para;</a></h4>
+<p>Breeze és un kit d'inici minimalista que implementa les funcionalitats bàsiques d'autenticació, incloent:</p>
+<ul>
+<li>Inici de sessió</li>
+<li>Registre</li>
+<li>Restabliment de contrasenya</li>
+<li>Verificació de correu electrònic</li>
+<li>Confirmació de contrasenya</li>
+</ul>
+<p>Per defecte, Breeze utilitza plantilles Blade estilitzades amb Tailwind CSS. També ofereix opcions de scaffolding basades en Livewire o Inertia, amb la possibilitat d'utilitzar Vue o React.</p>
+<h4 id="laravel-jetstream">Laravel Jetstream<a class="headerlink" href="#laravel-jetstream" title="Permanent link">&para;</a></h4>
+<p>Jetstream és un kit d'inici més robust que amplia les funcionalitats de Breeze, afegint:</p>
+<ul>
+<li>Autenticació de dos factors</li>
+<li>Gestió de sessions</li>
+<li>Suport per a API mitjançant Laravel Sanctum</li>
+<li>Opcionalment, gestió d'equips</li>
+</ul>
+<p>Jetstream està dissenyat amb Tailwind CSS i ofereix la possibilitat d'utilitzar Livewire o Inertia per al frontend.</p>
+<h5 id="installacio">Instal·lació<a class="headerlink" href="#installacio" title="Permanent link">&para;</a></h5>
+<p>Per instal·lar Laravel Breeze en una aplicació Laravel existent:</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>composer<span class="w"> </span>require<span class="w"> </span>laravel/breeze<span class="w"> </span>--dev
+<span class="linenos" data-linenos="2 "></span>php<span class="w"> </span>artisan<span class="w"> </span>breeze:install
+<span class="linenos" data-linenos="3 "></span>php<span class="w"> </span>artisan<span class="w"> </span>migrate
+<span class="linenos" data-linenos="4 "></span>npm<span class="w"> </span>install
+<span class="linenos" data-linenos="5 "></span>npm<span class="w"> </span>run<span class="w"> </span>dev
+</code></pre></div>
+Per instal·lar Laravel Jetstream:</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>composer<span class="w"> </span>require<span class="w"> </span>laravel/jetstream
+<span class="linenos" data-linenos="2 "></span>php<span class="w"> </span>artisan<span class="w"> </span>jetstream:install<span class="w"> </span>livewire
+<span class="linenos" data-linenos="3 "></span>php<span class="w"> </span>artisan<span class="w"> </span>migrate
+<span class="linenos" data-linenos="4 "></span>npm<span class="w"> </span>install
+<span class="linenos" data-linenos="5 "></span>npm<span class="w"> </span>run<span class="w"> </span>dev
+</code></pre></div>
+Nota: Substitueix livewire per inertia si prefereixes utilitzar Inertia.</p>
+<h3 id="arquitectura-dun-projecte-laravel">Arquitectura d'un projecte Laravel<a class="headerlink" href="#arquitectura-dun-projecte-laravel" title="Permanent link">&para;</a></h3>
+<h4 id="cicle-de-vida-duna-sollicitud-en-laravel">Cicle de Vida d'una Sol·licitud en Laravel<a class="headerlink" href="#cicle-de-vida-duna-sollicitud-en-laravel" title="Permanent link">&para;</a></h4>
+<p>Quan una sol·licitud HTTP arriba a una aplicació Laravel, aquesta segueix una sèrie de passos abans de retornar una resposta al client. A continuació, es detallen les etapes principals d'aquest procés:</p>
+<h5 id="1-creacio-de-la-instancia-de-laplicacio">1. Creació de la Instància de l'Aplicació<a class="headerlink" href="#1-creacio-de-la-instancia-de-laplicacio" title="Permanent link">&para;</a></h5>
+<p>Laravel inicia creant una instància de l'aplicació, que serveix com a contenidor de serveis per a la gestió de dependències.</p>
+<h5 id="2-seleccio-del-nucli-kernel">2. Selecció del Nucli (Kernel)<a class="headerlink" href="#2-seleccio-del-nucli-kernel" title="Permanent link">&para;</a></h5>
+<p>Segons el tipus de sol·licitud (HTTP o consola), Laravel dirigeix la sol·licitud al nucli corresponent:</p>
+<ul>
+<li><strong>HTTP Kernel</strong>: Gestiona sol·licituds web.</li>
+<li><strong>Console Kernel</strong>: Gestiona comandes de consola.</li>
+</ul>
+<h5 id="3-carregant-els-bootstrapers">3. Carregant els Bootstrapers<a class="headerlink" href="#3-carregant-els-bootstrapers" title="Permanent link">&para;</a></h5>
+<p>Abans de processar la sol·licitud, Laravel executa una sèrie de bootstrapers que configuren aspectes com la gestió d'errors, el registre de logs i la detecció de l'entorn de l'aplicació.</p>
+<h5 id="4-registre-dels-proveidors-de-serveis">4. Registre dels Proveïdors de Serveis<a class="headerlink" href="#4-registre-dels-proveidors-de-serveis" title="Permanent link">&para;</a></h5>
+<p>Els proveïdors de serveis són responsables de carregar i configurar els diversos components de Laravel, com la base de dades, la cua de treballs, la validació i el sistema de rutes.</p>
+<h5 id="5-execucio-del-middleware">5. Execució del Middleware<a class="headerlink" href="#5-execucio-del-middleware" title="Permanent link">&para;</a></h5>
+<p>Laravel passa la sol·licitud a través d'una cadena de middleware, que poden realitzar tasques com la verificació d'autenticació, la protecció CSRF i la gestió de sessions.</p>
+<h5 id="6-despatx-de-la-sollicitud">6. Despatx de la Sol·licitud<a class="headerlink" href="#6-despatx-de-la-sollicitud" title="Permanent link">&para;</a></h5>
+<p>Després de passar pel middleware, la sol·licitud és dirigida al controlador o ruta corresponent, on es processa la lògica de l'aplicació.</p>
+<h5 id="7-retorn-de-la-resposta">7. Retorn de la Resposta<a class="headerlink" href="#7-retorn-de-la-resposta" title="Permanent link">&para;</a></h5>
+<p>Un cop processada la sol·licitud, es genera una resposta que és retornada al client.</p>
+<h3 id="els-proveidors-de-serveis-service-providers">Els Proveïdors de Serveis (Service Providers)<a class="headerlink" href="#els-proveidors-de-serveis-service-providers" title="Permanent link">&para;</a></h3>
+<p>Els <strong>proveïdors de serveis</strong> són responsables de l'arrencada o "bootstrapping" de qualsevol projecte Laravel. La seva funció principal és registrar els components, dependències externes, classes i mètodes que hem definit, fent-los accessibles a tota l'aplicació.</p>
+<p>Al fitxer <strong>config/app.php</strong> del projecte, trobaràs una secció anomenada <strong>providers</strong>. Aquest array conté tots els proveïdors de serveis que Laravel carrega quan l'aplicació s'inicia. Alguns exemples són:</p>
+<ul>
+<li><strong>DatabaseServiceProvider</strong>: Gestiona l'accés a bases de dades.</li>
+<li><strong>AuthServiceProvider</strong>: Configura el sistema d'autenticació d'usuaris.</li>
+</ul>
+<p>Un proveïdor de serveis pot contenir dos mètodes principals:</p>
+<ul>
+<li><strong>register</strong>: Defineix els serveis i els vincula al contenidor de Laravel.</li>
+<li><strong>boot</strong>: S'executa després de carregar tots els serveis, ideal per inicialitzar funcionalitats.</li>
+</ul>
+<hr />
+<h3 id="les-classes-del-nucli-de-laravel">Les Classes del Nucli de Laravel<a class="headerlink" href="#les-classes-del-nucli-de-laravel" title="Permanent link">&para;</a></h3>
+<p>Laravel proporciona una infraestructura robusta de classes que faciliten el desenvolupament. Algunes d'aquestes classes són:</p>
+<ul>
+<li><strong>Route</strong>: Permet definir i gestionar rutes.</li>
+<li><strong>Model</strong>: Proporciona funcionalitats per a treballar amb la base de dades mitjançant Eloquent ORM.</li>
+</ul>
+<p>Aquestes classes estan organitzades dins de l'espai de noms <strong>Illuminate</strong>, per la qual cosa sovint veurem imports com:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">use Illuminate\Database\Eloquent\Model;</span>
+</code></pre></div>
+<h3 id="altres-elements">Altres elements<a class="headerlink" href="#altres-elements" title="Permanent link">&para;</a></h3>
+<p>A més dels dos pilars anteriors sobre els quals se sustenta fonamentalment el desenvolupament de projectes en Laravel, podem parlar d'altres elements que ens poden resultar d'utilitat en el desenvolupament, com són els facades i els contracts.</p>
+<p>Les facades proporcionen una interfície estàtica als elements de l'aplicació, de manera que faciliten l'accésa uns certs mètodes o utilitats. Per exemple, la facade <strong>cache</strong> permet accedir de manera senzilla amb el seu mètode <strong>get</strong>a unes certes propietats cachejades prèviament.</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">return Cache::get(&#39;key&#39;);</span>
+</code></pre></div>
+<p>Els <strong>contracts</strong> són un conjunt d'interfícies que proporcionen el nucli de serveis oferits per Laravel. Per exemple, mètodes per a enviar e-mails, o encolar tasques en una cola de prioritat, etc.</p>
+<h3 id="mvc-model-vista-controlador">MVC: Model - Vista - Controlador<a class="headerlink" href="#mvc-model-vista-controlador" title="Permanent link">&para;</a></h3>
+<p>El model–vista–controlador (MVC) és un patró d'arquitectura de programari que separa les dades i la lògica de negoci d'una aplicació de la interfície d'usuari i el mòdul encarregat de gestionar els esdeveniments i les comunicacions. Per a açò MVC proposa la construcció de tres components diferents que són el model, la vista i el controlador, és a dir, d'una banda defineix components per a la representació de la informació, i d'altra banda per a la interacció de l'usuari. Aquest patró d'arquitectura de programari es basa en les idees de <strong>reutilització de codi</strong> i la <strong>separació de conceptes</strong>, característiques que cerquen facilitar la tasca de desenvolupament d'aplicacions i el seu posterior manteniment.
+De manera genèrica, els components de MVC es podrien definir com segueix:</p>
+<ul>
+<li>El <strong>Model</strong>: És la <strong>representació de la informació</strong> amb la qual el sistema opera, per tant gestiona tots els accessos a aquesta informació, tant consultes com a actualitzacions. Les peticions d'accés o manipulació d'informació arriben al 'model' a través del 'controlador'.</li>
+<li>El <strong>Controlador</strong>: <strong>Respon a esdeveniments</strong> (usualment accions de l'usuari) i <strong>invoca peticions al 'model'</strong> quan es fa alguna sol·licitud d'informació (per exemple, editar un document o un registre en una base de dades). Per tant es podria dir que el 'controlador' fa d'intermediari entre la 'vista' i el 'model'.</li>
+<li>La <strong>Vista</strong>: <strong>Presenta el 'model'</strong> i les dades preparades pel controlador a l'usuari de <strong>forma visual</strong>. L'usuari podrà interactuar amb la vista i realitzar altres peticions que s'enviaran al controlador.</li>
+</ul>
+<p><img alt="Modelo Vista Controlador" src="imagenes/07/mvc.png" /></p>
+<h4 id="funcionament-basic">Funcionament bàsic<a class="headerlink" href="#funcionament-basic" title="Permanent link">&para;</a></h4>
+<p>El funcionament bàsic que segueix Laravel després d'una petició web a una URL del nostre lloc és el següent:</p>
+<ul>
+<li>
+<p>Totes les peticions entren a través del fitxer <strong>public/index.php</strong>, el qual en primer lloc comprovarà en el fitxer de rutes (<strong>routes/web.php</strong>) si la URL és vàlida i en cas de ser-ho al fet que controlador ha de fer la petició.</p>
+</li>
+<li>
+<p>A continuació cridarà al mètode del controlador assignat per a aquesta ruta. Com hem vist, el controlador és el punt d'entrada de les peticions de l'usuari, el qual, depenent de la petició:</p>
+</li>
+<li>Accedirà a la base de dades (si fóra necessari) a través dels "models" per a obtenir dades (o per a afegir, modificar o eliminar).</li>
+<li>
+<p>Després d'obtenir les dades necessàries els prepararà per a passar-li'ls a la vista.</p>
+</li>
+<li>
+<p>En el tercer pas el controlador cridarà a una vista amb una sèrie de dades associades, la qual es prepararà per a
+  mostrar-se correctament a partir de les dades d'entrada i finalment es mostrarà a l'usuari.
+  A continuació s'inclou un xicotet esquema d'aquest funcionament:</p>
+</li>
+</ul>
+<p><img alt="Funcionament Bàsic Laravel" src="imagenes/07/l101.png" /></p>
+<h2 id="rutes">Rutes<a class="headerlink" href="#rutes" title="Permanent link">&para;</a></h2>
+<p><a href="https://youtu.be/oHJokaq0yeY"><img alt="" src="../img/ull.png" />Video</a></p>
+<p>Podríem dir que existeixen dos tipus principals de rutes:</p>
+<ul>
+<li><strong>Rutes web</strong>: Emmagatzemades a l'arxiu <code>web.php</code>, ens permeten carregar diferents vistes en funció de la URL que indique el client.</li>
+<li><strong>Rutes API</strong>: Emmagatzemades a l'arxiu <code>api.php</code>, s'utilitzen per definir serveis <strong>REST</strong>.</li>
+</ul>
+<p>En aquest tema, ens centrarem en les rutes web, per la qual cosa editarem el contingut de l'arxiu <code>routes/web.php</code>. Aquest fitxer és el punt centralitzat per a la definició de rutes. Qualsevol ruta no definida en aquest fitxer no serà vàlida i generarà un error 404.</p>
+<p>Les rutes poden:
+1. Retornar directament un valor des del fitxer de rutes.
+2. Cridar una vista o un controlador.</p>
+<h3 id="rutes-simples">Rutes simples<a class="headerlink" href="#rutes-simples" title="Permanent link">&para;</a></h3>
+<p>Una ruta simple té una URL fixa i una funció que retorna una resposta. Per exemple, una petició tipus GET es defineix així:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">Route::get(&#39;/salut&#39;, function () {</span>
+<span class="linenos" data-linenos="2 "></span><span class="x"> return &#39;Hola món!&#39;;</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">});</span>
+</code></pre></div>
+<p>Quan accedim a <code>http://localhost/salut</code>, Laravel retornarà "Hola món!".</p>
+<h3 id="rutes-amb-parametres">Rutes amb paràmetres<a class="headerlink" href="#rutes-amb-parametres" title="Permanent link">&para;</a></h3>
+<p>Es poden definir paràmetres dinàmics a les rutes mitjançant claus <code>{}</code>. Per exemple:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">Route::get(&#39;/salut/{nom}&#39;, function ($nom) {</span>
+<span class="linenos" data-linenos="2 "></span><span class="x"> return &#39;Bon dia, &#39; . $nom;</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">});</span>
+</code></pre></div>
+<p>Si accedim a <code>/salut/Joan</code>, retornarà "Bon dia, Joan". Per definir un paràmetre opcional, afegim un símbol <code>?</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">Route::get(&#39;/salut/{nom?}&#39;, function ($nom = &#39;Convidat&#39;) {</span>
+<span class="linenos" data-linenos="2 "></span><span class="x"> return &#39;Bon dia, &#39; . $nom;</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">});</span>
+</code></pre></div>
+<p>Ara, <code>/salut</code> retornarà "Bon dia, Convidat".</p>
+<h3 id="validacio-de-parametres">Validació de paràmetres<a class="headerlink" href="#validacio-de-parametres" title="Permanent link">&para;</a></h3>
+<p>Podem validar els paràmetres usant el mètode <code>where</code>. Per exemple:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">Route::get(&#39;/salut/{nom}&#39;, function ($nom) {</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="x"> return &#39;Hola, &#39; . $nom;</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">})-&gt;where(&#39;nom&#39;, &#39;[A-Za-z]+&#39;);</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">Route::get(&#39;/producte/{id}&#39;, function ($id) {</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x"> return &#39;Producte ID: &#39; . $id;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">})-&gt;where(&#39;id&#39;, &#39;[0-9]+&#39;);</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">Route::get(&#39;/usuari/{nom}/{id}&#39;, function ($nom, $id) {</span>
+<span class="linenos" data-linenos="10 "></span><span class="x"> return &#39;Usuari: &#39; . $nom . &#39;, ID: &#39; . $id;</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">})-&gt;where([&#39;nom&#39; =&gt; &#39;[A-Za-z]+&#39;, &#39;id&#39; =&gt; &#39;[0-9]+&#39;]);</span>
+</code></pre></div>
+<h3 id="rutes-amb-nom-named-routes">Rutes amb nom (Named Routes)<a class="headerlink" href="#rutes-amb-nom-named-routes" title="Permanent link">&para;</a></h3>
+<p>És possible assignar un nom a una ruta utilitzant el mètode <code>name</code>. Això permet referenciar-la fàcilment:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">Route::get(&#39;/contacte&#39;, function () {</span>
+<span class="linenos" data-linenos="2 "></span><span class="x"> return &#39;Pàgina de contacte&#39;;</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">})-&gt;name(&#39;contacte&#39;);</span>
+</code></pre></div>
+<p>Podem utilitzar el nom de la ruta a les plantilles Blade:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>[Contacte]({{ route(&#39;contacte&#39;) }})
+</code></pre></div>
+<h3 id="grups-de-rutes">Grups de rutes<a class="headerlink" href="#grups-de-rutes" title="Permanent link">&para;</a></h3>
+<p>Laravel permet agrupar rutes per compartir configuracions com prefixos o middleware:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">Route::prefix(&#39;admin&#39;)-&gt;group(function () {</span>
+<span class="linenos" data-linenos="2 "></span><span class="x"> Route::get(&#39;/dashboard&#39;, function () {</span>
+<span class="linenos" data-linenos="3 "></span><span class="x"> return &#39;Admin Dashboard&#39;;</span>
+<span class="linenos" data-linenos="4 "></span><span class="x"> });</span>
+<span class="linenos" data-linenos="5 "></span>
+<span class="linenos" data-linenos="6 "></span><span class="x"> Route::get(&#39;/usuaris&#39;, function () {</span>
+<span class="linenos" data-linenos="7 "></span><span class="x"> return &#39;Admin Usuaris&#39;;</span>
+<span class="linenos" data-linenos="8 "></span><span class="x"> });</span>
+<span class="linenos" data-linenos="9 "></span><span class="x">});</span>
+</code></pre></div>
+<p>Això crea les rutes <code>/admin/dashboard</code> i <code>/admin/usuaris</code>.</p>
+<h3 id="rutes-amb-controladors">Rutes amb controladors<a class="headerlink" href="#rutes-amb-controladors" title="Permanent link">&para;</a></h3>
+<p>Per gestionar lògica més complexa, és recomanable utilitzar controladors:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">Route::get(&#39;/usuari/{id}&#39;, [UsuariController::class, &#39;mostrar&#39;]);</span>
+<span class="linenos" data-linenos="2 "></span>
+<span class="linenos" data-linenos="3 "></span><span class="x">// Controlador definit amb l&#39;artisan:</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">// php artisan make:controller UsuariController</span>
+</code></pre></div>
+<h3 id="recursos-i-apis">Recursos i APIS<a class="headerlink" href="#recursos-i-apis" title="Permanent link">&para;</a></h3>
+<p>Podem definir rutes amb el mètode <code>resource</code> per a CRUDs:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">Route::resource(&#39;articles&#39;, ArticleController::class);</span>
+</code></pre></div>
+<p>Aquest mètode genera automàticament les rutes per accions com <code>index</code>, <code>create</code>, <code>store</code>, <code>show</code>, <code>edit</code>, <code>update</code> i <code>destroy</code>.</p>
+<hr />
+<h2 id="vistes">Vistes<a class="headerlink" href="#vistes" title="Permanent link">&para;</a></h2>
+<p><a href="https://youtu.be/D3uLYwkQ3C0"><img alt="" src="../img/ull.png" />Video</a></p>
+<p>Les vistes són la forma de presentar el resultat (una pantalla del nostre lloc web) de forma visual a l'usuari. Laravel permet estructurar aquesta part de l'aplicació utilitzant <strong>vistes simples</strong> o <strong>plantilles Blade</strong>, una eina potent per modularitzar i reutilitzar el codi de les nostres vistes.</p>
+<h3 id="que-son-les-vistes">Què són les vistes?<a class="headerlink" href="#que-son-les-vistes" title="Permanent link">&para;</a></h3>
+<p>Les vistes es defineixen a la carpeta <code>resources/views</code> i estan dissenyades per separar la part visual de la lògica de l'aplicació. Aquesta separació millora l'estructura del projecte i facilita el manteniment del codi.</p>
+<p>Les vistes no han de contenir lògica de negoci ni fer consultes a bases de dades. Només han de rebre dades dels controladors i presentar-les a l'usuari.</p>
+<h3 id="mostrar-una-vista">Mostrar una vista<a class="headerlink" href="#mostrar-una-vista" title="Permanent link">&para;</a></h3>
+<p>Per mostrar una vista, podem utilitzar la funció <code>view()</code> des d'una ruta o controlador. Per exemple:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">Route::get(&#39;/&#39;, function () {</span>
+<span class="linenos" data-linenos="2 "></span><span class="x"> return view(&#39;welcome&#39;);</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">});</span>
+</code></pre></div>
+<h3 id="passar-dades-a-una-vista">Passar dades a una vista<a class="headerlink" href="#passar-dades-a-una-vista" title="Permanent link">&para;</a></h3>
+<p>És habitual passar dades a les vistes des d'una ruta o controlador. Es poden passar dades de diverses maneres:</p>
+<ol>
+<li><strong>Amb <code>with</code>:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">Route::get(&#39;/&#39;, function () {</span>
+<span class="linenos" data-linenos="2 "></span><span class="x"> $nom = &#39;Nacho&#39;;</span>
+<span class="linenos" data-linenos="3 "></span><span class="x"> return view(&#39;inici&#39;)-&gt;with(&#39;nom&#39;, $nom);</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">});</span>
+</code></pre></div>
+<ol start="2">
+<li><strong>Amb un array associatiu:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">return view(&#39;inici&#39;, [&#39;nom&#39; =&gt; $nom]);</span>
+</code></pre></div>
+<ol start="3">
+<li><strong>Amb la funció <code>compact</code>:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">return view(&#39;inici&#39;, compact(&#39;nom&#39;));</span>
+</code></pre></div>
+<ol start="4">
+<li><strong>Utilitzant la funció <code>Route::view</code>:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">Route::view(&#39;/&#39;, &#39;inici&#39;, [&#39;nom&#39; =&gt; &#39;Nacho&#39;]);</span>
+</code></pre></div>
+<p>A la vista, podem utilitzar Blade per mostrar aquestes dades:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>Benvingut/a, {{ $nom }}
+</code></pre></div>
+<hr />
+<h2 id="plantilles-mitjancant-blade">Plantilles mitjançant Blade<a class="headerlink" href="#plantilles-mitjancant-blade" title="Permanent link">&para;</a></h2>
+<p>Laravel utilitza <strong>Blade</strong> per modularitzar i optimitzar les vistes. Els fitxers Blade tenen l'extensió <code>.blade.php</code> i permeten utilitzar una sintaxi específica per treballar amb dades, herència de plantilles, i estructures de control.</p>
+<h3 id="mostrar-dades">Mostrar dades<a class="headerlink" href="#mostrar-dades" title="Permanent link">&para;</a></h3>
+<p>Per mostrar dades en Blade, utilitzem doble claus:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>Hola, {{ $nom }}
+</code></pre></div>
+<p>Per evitar problemes de seguretat com <strong>XSS</strong>, Blade utilitza la funció <code>e()</code> per escapar dades. Si volem mostrar dades sense escapament, podem fer servir:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>{!! $html !!}
+</code></pre></div>
+<h3 id="comentaris">Comentaris<a class="headerlink" href="#comentaris" title="Permanent link">&para;</a></h3>
+<p>Els comentaris en Blade s'escriuen així:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>{{-- Això és un comentari --}}
+</code></pre></div>
+<h3 id="estructures-de-control">Estructures de control<a class="headerlink" href="#estructures-de-control" title="Permanent link">&para;</a></h3>
+<ol>
+<li><strong>Condicionals:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>@if($condicio)
+<span class="linenos" data-linenos=" 2 "></span> Condició complerta
+<span class="linenos" data-linenos=" 3 "></span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span>@elseif($altraCondicio)
+<span class="linenos" data-linenos=" 6 "></span> Altra condició complerta
+<span class="linenos" data-linenos=" 7 "></span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span>@else
+<span class="linenos" data-linenos="10 "></span> No s&#39;ha complert cap condició
+<span class="linenos" data-linenos="11 "></span>
+<span class="linenos" data-linenos="12 "></span>
+<span class="linenos" data-linenos="13 "></span>@endif
+</code></pre></div>
+<ol start="2">
+<li><strong>Bucle foreach:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>@foreach($elements as $element)
+<span class="linenos" data-linenos="2 "></span> {{ $element }}
+<span class="linenos" data-linenos="3 "></span>
+<span class="linenos" data-linenos="4 "></span>
+<span class="linenos" data-linenos="5 "></span>@endforeach
+</code></pre></div>
+<ol start="3">
+<li><strong>Forelse amb condició buida:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>@forelse($elements as $element)
+<span class="linenos" data-linenos="2 "></span> {{ $element }}
+<span class="linenos" data-linenos="3 "></span>
+<span class="linenos" data-linenos="4 "></span>
+<span class="linenos" data-linenos="5 "></span>@empty
+<span class="linenos" data-linenos="6 "></span> No hi ha elements
+<span class="linenos" data-linenos="7 "></span>
+<span class="linenos" data-linenos="8 "></span>
+<span class="linenos" data-linenos="9 "></span>@endforelse
+</code></pre></div>
+<h3 id="herencia-de-plantilles">Herència de plantilles<a class="headerlink" href="#herencia-de-plantilles" title="Permanent link">&para;</a></h3>
+<p>Per modularitzar, podem definir una plantilla base amb la directiva <code>@yield</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>@yield(&#39;title&#39;)
+<span class="linenos" data-linenos="2 "></span>
+<span class="linenos" data-linenos="3 "></span>
+<span class="linenos" data-linenos="4 "></span> @include(&#39;partials.nav&#39;)
+<span class="linenos" data-linenos="5 "></span> @yield(&#39;content&#39;)
+</code></pre></div>
+<p>Les vistes poden heretar aquesta plantilla amb <code>@extends</code> i definir les seccions:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>@extends(&#39;layout&#39;)
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span>@section(&#39;title&#39;, &#39;Pàgina d&#39;inici&#39;)
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span>@section(&#39;content&#39;)
+<span class="linenos" data-linenos=" 6 "></span> Benvingut/a!
+<span class="linenos" data-linenos=" 7 "></span>============
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span>
+<span class="linenos" data-linenos="10 "></span>@endsection
+</code></pre></div>
+<h3 id="components-blade">Components Blade<a class="headerlink" href="#components-blade" title="Permanent link">&para;</a></h3>
+<p>Els <strong>Components Blade</strong> permeten definir elements reutilitzables:</p>
+<ol>
+<li>Crear component:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>php<span class="w"> </span>artisan<span class="w"> </span>make:component<span class="w"> </span>Alert
+</code></pre></div>
+<ol start="2">
+<li>Definir la lògica:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">class Alert extends Component {</span>
+<span class="linenos" data-linenos="2 "></span><span class="x"> public $type;</span>
+<span class="linenos" data-linenos="3 "></span><span class="x"> public function __construct($type) {</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">    $this-&gt;type = $type;</span>
+<span class="linenos" data-linenos="5 "></span><span class="x"> }</span>
+<span class="linenos" data-linenos="6 "></span><span class="x"> public function render() {</span>
+<span class="linenos" data-linenos="7 "></span><span class="x">    return view(&#39;components.alert&#39;);</span>
+<span class="linenos" data-linenos="8 "></span><span class="x"> }</span>
+<span class="linenos" data-linenos="9 "></span><span class="x">}</span>
+</code></pre></div>
+<ol start="3">
+<li>Vista del component:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span> {{ $slot }}
+</code></pre></div>
+<ol start="4">
+<li>Utilitzar-lo en una vista:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>&lt;x-alert &gt;Missatge Enviat&lt;/x-alert&gt;
+</code></pre></div>
+<h2 id="enllacant-amb-css-i-javascript-en-el-client">Enllaçant amb CSS i Javascript en el client<a class="headerlink" href="#enllacant-amb-css-i-javascript-en-el-client" title="Permanent link">&para;</a></h2>
+<p>Ara que ja coneixem com utilitzar Blade per modularitzar les nostres vistes, és moment d'afegir estils CSS i scripts Javascript per millorar la presentació i funcionalitat del nostre projecte Laravel. Laravel integra <strong>Vite</strong>, una eina moderna per gestionar i empaquetar els recursos del frontend.</p>
+<h3 id="que-es-vite">Què és Vite?<a class="headerlink" href="#que-es-vite" title="Permanent link">&para;</a></h3>
+<p>Vite és una eina de construcció de frontend que ofereix un entorn de desenvolupament extremadament ràpid i empaqueta el codi per a producció. Amb Laravel, Vite permet:</p>
+<ul>
+<li>Gestionar fitxers CSS i Javascript del projecte.</li>
+<li>Optimitzar els recursos per a producció.</li>
+<li>Carregar els canvis en temps real durant el desenvolupament.</li>
+</ul>
+<p>Laravel inclou per defecte un connector oficial per treballar amb Vite.</p>
+<hr />
+<h3 id="installacio-del-connector-vite-per-a-laravel">Instal·lació del connector Vite per a Laravel<a class="headerlink" href="#installacio-del-connector-vite-per-a-laravel" title="Permanent link">&para;</a></h3>
+<p>Si has creat una nova aplicació Laravel, trobaràs el fitxer <code>package.json</code> al directori arrel. Per començar, instal·la les dependències del frontend executant:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>npm<span class="w"> </span>install
+</code></pre></div>
+<p>Això instal·larà totes les dependències definides al fitxer <code>package.json</code>, incloent-hi el connector de Laravel per a Vite.</p>
+<hr />
+<h3 id="configuracio-de-vite">Configuració de Vite<a class="headerlink" href="#configuracio-de-vite" title="Permanent link">&para;</a></h3>
+<p>La configuració de Vite es troba al fitxer <code>vite.config.js</code>. Aquest fitxer defineix els punts d'entrada (CSS i Javascript) del projecte:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="k">import</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">defineConfig</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;vite&#39;</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="k">import</span><span class="w"> </span><span class="nx">laravel</span><span class="w"> </span><span class="kr">from</span><span class="w"> </span><span class="s1">&#39;laravel-vite-plugin&#39;</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 3 "></span>
+<span class="linenos" data-linenos=" 4 "></span><span class="k">export</span><span class="w"> </span><span class="k">default</span><span class="w"> </span><span class="nx">defineConfig</span><span class="p">({</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w"> </span><span class="nx">plugins</span><span class="o">:</span><span class="w"> </span><span class="p">[</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w"> </span><span class="nx">laravel</span><span class="p">([</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w"> </span><span class="s1">&#39;resources/css/app.css&#39;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="w"> </span><span class="s1">&#39;resources/js/app.js&#39;</span><span class="p">,</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w"> </span><span class="p">]),</span>
+<span class="linenos" data-linenos="10 "></span><span class="w"> </span><span class="p">],</span>
+<span class="linenos" data-linenos="11 "></span><span class="p">});</span>
+</code></pre></div>
+<p>És possible afegir connectors addicionals si utilitzes frameworks com Vue o React.</p>
+<hr />
+<h3 id="carregar-css-i-javascript-a-les-vistes">Carregar CSS i Javascript a les vistes<a class="headerlink" href="#carregar-css-i-javascript-a-les-vistes" title="Permanent link">&para;</a></h3>
+<p>Un cop configurats els punts d'entrada al fitxer <code>vite.config.js</code>, pots carregar els recursos utilitzant la directiva <code>@vite</code> de Blade. Per exemple:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span> {{-- Altres metadades i configuracions --}}
+<span class="linenos" data-linenos="2 "></span> @vite([&#39;resources/css/app.css&#39;, &#39;resources/js/app.js&#39;])
+<span class="linenos" data-linenos="3 "></span>
+<span class="linenos" data-linenos="4 "></span>
+<span class="linenos" data-linenos="5 "></span> {{-- Contingut de la vista --}}
+</code></pre></div>
+<p>Aquesta directiva s'encarrega automàticament de:
+- Injectar el client de desenvolupament per a substitució de mòduls (Hot Module Replacement - HMR).
+- Carregar els fitxers versionats en producció.</p>
+<hr />
+<h3 id="executar-vite">Executar Vite<a class="headerlink" href="#executar-vite" title="Permanent link">&para;</a></h3>
+<p>Pots executar Vite de dues maneres:</p>
+<ol>
+<li><strong>Entorn de desenvolupament:</strong></li>
+</ol>
+<p>Durant el desenvolupament, pots executar el servidor de Vite per reflectir els canvis automàticament al navegador:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>npm<span class="w"> </span>run<span class="w"> </span>dev
+</code></pre></div>
+<ol start="2">
+<li><strong>Producció:</strong></li>
+</ol>
+<p>Per empaquetar i versionar els recursos per a producció, executa:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>npm<span class="w"> </span>run<span class="w"> </span>build
+</code></pre></div>
+<hr />
+<h2 id="controladors">Controladors<a class="headerlink" href="#controladors" title="Permanent link">&para;</a></h2>
+<p><a href="https://www.youtube.com/watch?v=VwNTfrN8XTU&amp;t=629s"><img alt="" src="../img/ull.png" />Video</a></p>
+<p>Els controladors són una peça clau a Laravel per organitzar i estructurar la lògica de la nostra aplicació. Permeten separar la gestió de les rutes i la lògica del negoci, fent que el codi sigui més net, escalable i fàcil de mantenir.</p>
+<hr />
+<h3 id="crear-un-controlador">Crear un controlador<a class="headerlink" href="#crear-un-controlador" title="Permanent link">&para;</a></h3>
+<p>Per crear un controlador, podem utilitzar l'ordre <code>php artisan make:controller</code>. Per convenció, els controladors solen acabar amb el sufix <code>Controller</code>. Exemple:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>php<span class="w"> </span>artisan<span class="w"> </span>make:controller<span class="w"> </span>PruebaController
+</code></pre></div>
+<p>Això crea un fitxer dins de la carpeta <code>app/Http/Controllers</code>. El controlador estarà buit per defecte i podrem afegir-hi els mètodes necessaris.</p>
+<hr />
+<h3 id="controladors-de-recursos">Controladors de recursos<a class="headerlink" href="#controladors-de-recursos" title="Permanent link">&para;</a></h3>
+<p>Podem generar un controlador de recursos amb l'opció <code>-r</code>. Això crearà un controlador amb mètodes predeterminats per a operacions comunes:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>php<span class="w"> </span>artisan<span class="w"> </span>make:controller<span class="w"> </span>PruebaController<span class="w"> </span>-r
+</code></pre></div>
+<p>Els mètodes generats són:</p>
+<ul>
+<li><code>index</code>: Mostrar un llistat d'elements.</li>
+<li><code>create</code>: Mostrar un formulari per crear un nou element.</li>
+<li><code>store</code>: Emmagatzemar un nou element a la base de dades.</li>
+<li><code>show</code>: Mostrar un element específic.</li>
+<li><code>edit</code>: Mostrar un formulari per editar un element existent.</li>
+<li><code>update</code>: Actualitzar un element a la base de dades.</li>
+<li><code>destroy</code>: Eliminar un element.</li>
+</ul>
+<p>Per cridar un mètode d'aquest tipus des d'una ruta:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">Route::get(&#39;prueba&#39;, [PruebaController::class, &#39;index&#39;])-&gt;name(&#39;listado\_prueba&#39;);</span>
+</code></pre></div>
+<hr />
+<h3 id="rutes-i-controladors">Rutes i controladors<a class="headerlink" href="#rutes-i-controladors" title="Permanent link">&para;</a></h3>
+<p>Laravel permet registrar totes les rutes associades a un controlador de recursos amb el mètode <code>Route::resource</code>:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">Route::resource(&#39;catalog&#39;, CatalogController::class);</span>
+</code></pre></div>
+<p>Això genera rutes per a tots els mètodes del controlador de recursos (<code>index</code>, <code>show</code>, <code>create</code>, etc.). Si només volem algunes rutes, podem utilitzar:</p>
+<ul>
+<li><strong><code>only</code>:</strong></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">Route::resource(&#39;catalog&#39;, CatalogController::class)-&gt;only([&#39;index&#39;, &#39;show&#39;]);</span>
+</code></pre></div>
+<ul>
+<li><strong><code>except</code>:</strong></li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">Route::resource(&#39;catalog&#39;, CatalogController::class)-&gt;except([&#39;update&#39;, &#39;edit&#39;]);</span>
+</code></pre></div>
+<hr />
+<h3 id="organitzacio-de-vistes-i-controladors">Organització de vistes i controladors<a class="headerlink" href="#organitzacio-de-vistes-i-controladors" title="Permanent link">&para;</a></h3>
+<p>Les vistes associades a un controlador solen estar estructurades dins de la carpeta <code>resources/views</code> seguint el nom del controlador o el model. Exemple:</p>
+<ul>
+<li>Controlador: <code>CatalogController</code></li>
+<li>Vistes: <code>resources/views/catalog/index.blade.php</code>, <code>resources/views/catalog/show.blade.php</code>, etc.</li>
+</ul>
+<p>Per renderitzar aquestes vistes des del controlador:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">public function index() {</span>
+<span class="linenos" data-linenos="2 "></span><span class="x"> return view(&#39;catalog.index&#39;);</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">}</span>
+</code></pre></div>
+<hr />
+<h3 id="subcarpetes-i-espais-de-noms">Subcarpetes i espais de noms<a class="headerlink" href="#subcarpetes-i-espais-de-noms" title="Permanent link">&para;</a></h3>
+<p>Els controladors es poden organitzar en subcarpetes dins de <code>app/Http/Controllers</code>. Si un controlador es troba en una subcarpeta, cal incloure el seu espai de noms:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">// Fitxer: app/Http/Controllers/Photos/AdminController.php</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">Route::get(&#39;admin&#39;, [App\Http\Controllers\Photos\AdminController::class, &#39;method&#39;]);</span>
+</code></pre></div>
+<p>Laravel afegeix automàticament l'espai de noms per als controladors a <code>RouteServiceProvider</code>. Si crees subcarpetes, assegura't d'actualitzar el fitxer de rutes amb el nom complet del controlador.</p>
+<hr />
+<h2 id="exercici-practic-guia-dequips-de-futbol-femeni">Exercici Pràctic: Guia d'Equips de Futbol Femení<a class="headerlink" href="#exercici-practic-guia-dequips-de-futbol-femeni" title="Permanent link">&para;</a></h2>
+<p>L'objectiu d'aquest exercici és construir una aplicació Laravel per gestionar una guia d'equips de futbol femení. Aprendrem a configurar rutes, controladors, vistes i a passar dades utilitzant les funcionalitats de Laravel.</p>
+<hr />
+<h4 id="pas-1-configurar-el-projecte">Pas 1: Configurar el projecte<a class="headerlink" href="#pas-1-configurar-el-projecte" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>Crear un projecte Laravel anomenat <code>futbol-femeni</code>:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w"> </span>curl<span class="w"> </span>-s<span class="w"> </span><span class="s2">&quot;https://laravel.build/futbol-femeni?with=mysql,mailpit&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>bash
+</code></pre></div>
+<p>Problemes:  des de dins de l'institut no funciona perquè els repositoris estan capats.</p>
+<p>Solució: </p>
+<ul>
+<li>Quan falle . Copiar la següent <a href="recursos/docker.zip">carpeta</a> a la carpeta del projecte.</li>
+<li>Canviar este troç del docker-compose.yml per este:</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>    laravel.test:
+<span class="linenos" data-linenos="2 "></span>        build:
+<span class="linenos" data-linenos="3 "></span>            context: &#39;./vendor/laravel/sail/runtimes/8.3&#39;  
+</code></pre></div>
+per
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>    laravel.test:
+<span class="linenos" data-linenos="2 "></span>        build:
+<span class="linenos" data-linenos="3 "></span>            context: &#39;./docker&#39;
+</code></pre></div></p>
+<p>i despres acabem la instal·lació:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="w">  </span><span class="nb">cd</span><span class="w"> </span>futbol-femeni
+<span class="linenos" data-linenos="2 "></span><span class="w">  </span>./vendor/bin/sail<span class="w"> </span>up<span class="w"> </span>
+<span class="linenos" data-linenos="3 "></span><span class="w">  </span>./vendor/bin/sail<span class="w"> </span>artisan<span class="w"> </span>migrate
+</code></pre></div>
+<ol start="2">
+<li><strong>Qüestió:</strong> Per què és important tenir una estructura clara al projecte Laravel?</li>
+</ol>
+<hr />
+<h4 id="pas-2-definir-la-ruta-inicial">Pas 2: Definir la ruta inicial<a class="headerlink" href="#pas-2-definir-la-ruta-inicial" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>Editar <code>routes/web.php</code> per crear una ruta inicial:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">Route::get(&#39;/&#39;, function () {</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">   return &quot;Benvingut a la Guia d&quot;Equips de Futbol Femení!&quot;;</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">});</span>
+</code></pre></div>
+<ol start="2">
+<li><strong>Qüestió:</strong> Quina diferència hi ha entre definir una ruta directa i una que utilitza un controlador?</li>
+</ol>
+<hr />
+<h4 id="pas-3-crear-un-controlador">Pas 3: Crear un controlador<a class="headerlink" href="#pas-3-crear-un-controlador" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>Generar un controlador anomenat <code>EquipController</code>:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>./vendor/bin/sail<span class="w"> </span>artisan<span class="w"> </span>make:controller<span class="w"> </span>EquipController
+</code></pre></div>
+<ol start="2">
+<li><strong>Afegir un mètode <code>index</code> al controlador:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">public function index() {</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">   return view(&#39;equips.index&#39;);</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">}</span>
+</code></pre></div>
+<ol start="3">
+<li><strong>Definir una ruta per al mètode <code>index</code>:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">Route::get(&#39;/equips&#39;, [EquipController::class, &#39;index&#39;]);</span>
+</code></pre></div>
+<ol start="4">
+<li><strong>Qüestió:</strong> Per què és recomanable separar la lògica en controladors?</li>
+</ol>
+<hr />
+<h4 id="pas-4-crear-una-vista">Pas 4: Crear una vista<a class="headerlink" href="#pas-4-crear-una-vista" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>Crear una vista a <code>resources/views/equips/index.blade.php</code>:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Guia d&#39;Equips<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</code></pre></div>
+<ol start="2">
+<li><strong>Qüestió:</strong> Què fa especial el motor de plantilles Blade en comparació amb HTML estàndard?</li>
+</ol>
+<hr />
+<h4 id="pas-5-passar-dades-a-la-vista">Pas 5: Passar dades a la vista<a class="headerlink" href="#pas-5-passar-dades-a-la-vista" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>Modifica el mètode <code>index</code> per passar un array d'equips:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">public function index() {</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">   $equips = [&#39;Barça Femení&#39;, &#39;Atlètic de Madrid&#39;, &#39;Real Madrid Femení&#39;];</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">   return view(&#39;equips.index&#39;, compact(&#39;equips&#39;));</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">}</span>
+</code></pre></div>
+<ol start="2">
+<li><strong>Afegeix un bucle <code>@foreach</code> a la vista:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Guia d&#39;Equips<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="2 "></span><span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="3 "></span>   @foreach($equips as $equip)
+<span class="linenos" data-linenos="4 "></span>       <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>{{ $equip }}<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="5 "></span>   @endforeach
+<span class="linenos" data-linenos="6 "></span><span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</code></pre></div>
+<ol start="3">
+<li><strong>Qüestió:</strong> Com podem utilitzar Blade per fer el codi més segur?</li>
+</ol>
+<hr />
+<h4 id="pas-6-afegir-estils-amb-vite">Pas 6: Afegir estils amb Vite<a class="headerlink" href="#pas-6-afegir-estils-amb-vite" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>Crear un fitxer CSS a <code>resources/css/equips.css</code>:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="nt">body</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">   </span><span class="k">font-family</span><span class="p">:</span><span class="w"> </span><span class="n">Arial</span><span class="p">,</span><span class="w"> </span><span class="kc">sans-serif</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="p">}</span>
+<span class="linenos" data-linenos=" 4 "></span>
+<span class="linenos" data-linenos=" 5 "></span><span class="nt">h1</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">   </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">darkblue</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="p">}</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span><span class="nt">nav</span><span class="w"> </span><span class="nt">ul</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="10 "></span><span class="k">list-style-type</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
+<span class="linenos" data-linenos="11 "></span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos" data-linenos="12 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="13 "></span>
+<span class="linenos" data-linenos="14 "></span><span class="nt">nav</span><span class="w"> </span><span class="nt">ul</span><span class="w"> </span><span class="nt">li</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="15 "></span><span class="k">display</span><span class="p">:</span><span class="w"> </span><span class="kc">inline</span><span class="p">;</span>
+<span class="linenos" data-linenos="16 "></span><span class="k">margin-right</span><span class="p">:</span><span class="w"> </span><span class="mi">15</span><span class="kt">px</span><span class="p">;</span>
+<span class="linenos" data-linenos="17 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="18 "></span>
+<span class="linenos" data-linenos="19 "></span><span class="nt">nav</span><span class="w"> </span><span class="nt">ul</span><span class="w"> </span><span class="nt">li</span><span class="w"> </span><span class="nt">a</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="20 "></span><span class="k">text-decoration</span><span class="p">:</span><span class="w"> </span><span class="kc">none</span><span class="p">;</span>
+<span class="linenos" data-linenos="21 "></span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">darkblue</span><span class="p">;</span>
+<span class="linenos" data-linenos="22 "></span><span class="p">}</span>
+<span class="linenos" data-linenos="23 "></span>
+<span class="linenos" data-linenos="24 "></span><span class="nt">nav</span><span class="w"> </span><span class="nt">ul</span><span class="w"> </span><span class="nt">li</span><span class="w"> </span><span class="nt">a</span><span class="p">:</span><span class="nd">hover</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="25 "></span><span class="k">text-decoration</span><span class="p">:</span><span class="w"> </span><span class="kc">underline</span><span class="p">;</span>
+<span class="linenos" data-linenos="26 "></span><span class="p">}</span>
+</code></pre></div>
+<ol start="2">
+<li><strong>Incloure el fitxer CSS amb <code>@vite</code>:</strong></li>
+</ol>
+<p>Modificar el fitxer vite.config.js per a que inclogui el fitxer CSS:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>import laravel from &#39;laravel-vite-plugin&#39;;
+<span class="linenos" data-linenos=" 2 "></span>
+<span class="linenos" data-linenos=" 3 "></span>export default defineConfig({
+<span class="linenos" data-linenos=" 4 "></span>  plugins: [
+<span class="linenos" data-linenos=" 5 "></span>    laravel({
+<span class="linenos" data-linenos=" 6 "></span>      input: [
+<span class="linenos" data-linenos=" 7 "></span>        &#39;resources/css/app.css&#39;,
+<span class="linenos" data-linenos=" 8 "></span>        &#39;resources/css/equips.css&#39;,
+<span class="linenos" data-linenos=" 9 "></span>        &#39;resources/js/app.js&#39;],
+<span class="linenos" data-linenos="10 "></span>      refresh: true,
+<span class="linenos" data-linenos="11 "></span>    }),
+<span class="linenos" data-linenos="12 "></span>  ],
+<span class="linenos" data-linenos="13 "></span>});
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>i incloure el fitxer CSS a la vista:
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>@vite(&#39;resources/css/equips.css&#39;)
+</code></pre></div>
+<ol start="3">
+<li><strong>Executar Vite:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>npm<span class="w"> </span>install
+<span class="linenos" data-linenos="2 "></span>npm<span class="w"> </span>run<span class="w"> </span>build
+</code></pre></div>
+<ol start="4">
+<li><strong>Qüestió:</strong> Què és Hot Module Replacement (HMR) i com ajuda en el desenvolupament?</li>
+</ol>
+<hr />
+<h4 id="pas-7-ampliar-funcionalitats">Pas 7: Ampliar funcionalitats<a class="headerlink" href="#pas-7-ampliar-funcionalitats" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>Afegir més camps als equips:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">public function index() {</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">    $equips = [</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">        [&#39;nom&#39; =&gt; &#39;Barça Femení&#39;, &#39;estadi&#39; =&gt; &#39;Camp Nou&#39;, &#39;titols&#39; =&gt; 30],</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">        [&#39;nom&#39; =&gt; &#39;Atlètic de Madrid&#39;, &#39;estadi&#39; =&gt; &#39;Cívitas Metropolitano&#39;, &#39;titols&#39; =&gt; 10],</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">        [&#39;nom&#39; =&gt; &#39;Real Madrid Femení&#39;, &#39;estadi&#39; =&gt; &#39;Alfredo Di Stéfano&#39;, &#39;titols&#39; =&gt; 5],</span>
+<span class="linenos" data-linenos="6 "></span><span class="x">    ];</span>
+<span class="linenos" data-linenos="7 "></span><span class="x">    return view(&#39;equips.index&#39;, compact(&#39;equips&#39;));</span>
+<span class="linenos" data-linenos="8 "></span><span class="x">}</span>
+</code></pre></div>
+<ol start="2">
+<li><strong>Actualitzar la vista per mostrar una taula:</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Guia d&#39;Equips<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="p">&lt;</span><span class="nt">table</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 3 "></span>    <span class="p">&lt;</span><span class="nt">thead</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 4 "></span>        <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 5 "></span>            <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Nom<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 6 "></span>            <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Estadi<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 7 "></span>            <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>Títols<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 8 "></span>        <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="p">&lt;/</span><span class="nt">thead</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="10 "></span>    <span class="p">&lt;</span><span class="nt">tbody</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="11 "></span>        @foreach($equips as $equip)
+<span class="linenos" data-linenos="12 "></span>            <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="13 "></span>                <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{ $equip[&#39;nom&#39;] }}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="14 "></span>                <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{ $equip[&#39;estadi&#39;] }}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="15 "></span>                <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{ $equip[&#39;titols&#39;] }}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="16 "></span>            <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="17 "></span>        @endforeach
+<span class="linenos" data-linenos="18 "></span>    <span class="p">&lt;/</span><span class="nt">tbody</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="19 "></span><span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+</code></pre></div>
+<ol start="3">
+<li><strong>Crear una nova vista parcial per al menú de navegació:</strong></li>
+</ol>
+<ul>
+<li>Afegeix un fitxer nou a resources/views/partials/menu.blade.php amb el contingut següent:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="p">&lt;</span><span class="nt">nav</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="2 "></span>    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="3 "></span>        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/&quot;</span><span class="p">&gt;</span>Inici<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="4 "></span>        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/equips&quot;</span><span class="p">&gt;</span>Guia d&#39;Equips<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="5 "></span>        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/estadis&quot;</span><span class="p">&gt;</span>Llistat d&#39;Estadis<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="6 "></span>    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="7 "></span><span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+</code></pre></div>
+<ul>
+<li>Modifica la vista resources/views/equips/index.blade.php per incloure el menú amb la directiva @include:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>@include(&#39;partials.menu&#39;)
+</code></pre></div>
+<ol start="4">
+<li>Crear una plantilla base</li>
+</ol>
+<ul>
+<li>Crea el fitxer resources/views/layouts/app.blade.php:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;ca&quot;</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 4 "></span>      <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 5 "></span>      <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;X-UA-Compatible&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;IE=edge&quot;</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 6 "></span>      <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 7 "></span>      <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>@yield(&#39;title&#39;,&#39;Guia de futbol femení&#39;)<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 8 "></span>      @vite([&#39;resources/css/app.css&#39;, &#39;resources/css/equips.css&#39;])
+<span class="linenos" data-linenos=" 9 "></span><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="10 "></span><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="11 "></span>      <span class="p">&lt;</span><span class="nt">header</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="12 "></span>        @include(&#39;partials.menu&#39;)
+<span class="linenos" data-linenos="13 "></span>      <span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="14 "></span>      <span class="p">&lt;</span><span class="nt">main</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="15 "></span>       @yield(&#39;content&#39;)
+<span class="linenos" data-linenos="16 "></span>      <span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="17 "></span>      <span class="p">&lt;</span><span class="nt">footer</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="18 "></span>          <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="ni">&amp;copy;</span> 2024 Guia de Futbol Femení<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="19 "></span>      <span class="p">&lt;/</span><span class="nt">footer</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="20 "></span><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="21 "></span><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<ul>
+<li>Modifica la vista resources/views/equips/index.blade.php per heretar de la plantilla base:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x"> @extends(&#39;layouts.app&#39;)</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="x">@section(&#39;title&#39;, &quot; Guia d&#39;Equips&quot; )</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">@section(&#39;content&#39;)</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">    &lt;h1&gt;Guia d&#39;Equips&lt;/h1&gt;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">    &lt;table&gt;</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">        &lt;thead&gt;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">        &lt;tr&gt;</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">            &lt;th&gt;Nom&lt;/th&gt;</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">            &lt;th&gt;Estadi&lt;/th&gt;</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">            &lt;th&gt;Títols&lt;/th&gt;</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">        &lt;/tr&gt;</span>
+<span class="linenos" data-linenos="12 "></span><span class="x">        &lt;/thead&gt;</span>
+<span class="linenos" data-linenos="13 "></span><span class="x">        &lt;tbody&gt;</span>
+<span class="linenos" data-linenos="14 "></span><span class="x">        @foreach($equips as $equip )</span>
+<span class="linenos" data-linenos="15 "></span><span class="x">            &lt;tr&gt;</span>
+<span class="linenos" data-linenos="16 "></span><span class="x">                &lt;td class=&quot;equip&quot;&gt;&lt;h2&gt;{{ $equip[&#39;nom&#39;]  }}&lt;/h2&gt;&lt;/td&gt;</span>
+<span class="linenos" data-linenos="17 "></span><span class="x">                &lt;td class=&quot;equip&quot;&gt;{{ $equip[&#39;estadi&#39;]  }}&lt;/td&gt;</span>
+<span class="linenos" data-linenos="18 "></span><span class="x">                &lt;td class=&quot;equip&quot;&gt;{{ $equip[&#39;titols&#39;]  }}&lt;/td&gt;</span>
+<span class="linenos" data-linenos="19 "></span><span class="x">            &lt;/tr&gt;</span>
+<span class="linenos" data-linenos="20 "></span><span class="x">        @endforeach</span>
+<span class="linenos" data-linenos="21 "></span><span class="x">        &lt;/tbody&gt;</span>
+<span class="linenos" data-linenos="22 "></span><span class="x">    &lt;/table&gt;</span>
+<span class="linenos" data-linenos="23 "></span><span class="x">@endsection</span>
+</code></pre></div>
+<ol start="5">
+<li>Crear un component per als equips</li>
+</ol>
+<ul>
+<li>Executa la següent comanda per crear un component Blade anomenat Equip:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>./vendor/bin/sail<span class="w"> </span>artisan<span class="w"> </span>make:component<span class="w"> </span>Equip
+</code></pre></div>
+<ul>
+<li>Afegeix els estils al fitxer CSS resources/css/equips.css:</li>
+</ul>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="w">  </span><span class="p">.</span><span class="nc">equip</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="w">  </span><span class="k">border</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="kt">px</span><span class="w"> </span><span class="kc">solid</span><span class="w"> </span><span class="mh">#ddd</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="w">  </span><span class="k">padding</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="w">  </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="w">  </span><span class="k">border-radius</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="kt">px</span><span class="p">;</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="w">  </span><span class="k">box-shadow</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="w"> </span><span class="mi">2</span><span class="kt">px</span><span class="w"> </span><span class="mi">5</span><span class="kt">px</span><span class="w"> </span><span class="nb">rgba</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0.1</span><span class="p">);</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="w">  </span><span class="p">}</span>
+<span class="linenos" data-linenos=" 8 "></span>
+<span class="linenos" data-linenos=" 9 "></span><span class="w">  </span><span class="p">.</span><span class="nc">equip</span><span class="w"> </span><span class="nt">h2</span><span class="w"> </span><span class="p">{</span>
+<span class="linenos" data-linenos="10 "></span><span class="w">  </span><span class="k">margin</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="linenos" data-linenos="11 "></span><span class="w">  </span><span class="k">color</span><span class="p">:</span><span class="w"> </span><span class="kc">darkblue</span><span class="p">;</span>
+<span class="linenos" data-linenos="12 "></span><span class="w">  </span><span class="p">}</span>
+</code></pre></div>
+* Modifica la vista resources/views/components/equip.blade.php per crear el component:</p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;equip&quot;</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="2 "></span>    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>{{ $nom }}<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>Estadi:<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span> {{ $estadi }}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="4 "></span>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>Títols:<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span> {{ $titols }}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="5 "></span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+* Crea un mètode al controlador d'equips per mostrar un equip:</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">public function show($id) {</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">    $equips = [</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">        [&#39;nom&#39; =&gt; &#39;Barça Femení&#39;, &#39;estadi&#39; =&gt; &#39;Camp Nou&#39;, &#39;titols&#39; =&gt; 30],</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">        [&#39;nom&#39; =&gt; &#39;Atlètic de Madrid&#39;, &#39;estadi&#39; =&gt; &#39;Cívitas Metropolitano&#39;, &#39;titols&#39; =&gt; 10],</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">        [&#39;nom&#39; =&gt; &#39;Real Madrid Femení&#39;, &#39;estadi&#39; =&gt; &#39;Alfredo Di Stéfano&#39;, &#39;titols&#39; =&gt; 5],</span>
+<span class="linenos" data-linenos="6 "></span><span class="x">    ];</span>
+<span class="linenos" data-linenos="7 "></span><span class="x">    $equip = $equips[$id];</span>
+<span class="linenos" data-linenos="8 "></span><span class="x">    return view(&#39;equips.show&#39;, compact(&#39;equip&#39;));</span>
+<span class="linenos" data-linenos="9 "></span><span class="x">}</span>
+</code></pre></div>
+<ul>
+<li>Crea la vista resources/views/equips/show.blade.php per utilitzar el component:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>@extends(&#39;layouts.app&#39;)
+<span class="linenos" data-linenos="2 "></span>@section(&#39;title&#39;, &quot; Guia d&#39;Equips&quot; )
+<span class="linenos" data-linenos="3 "></span>@section(&#39;content&#39;)
+<span class="linenos" data-linenos="4 "></span><span class="p">&lt;</span><span class="nt">x-equip</span>
+<span class="linenos" data-linenos="5 "></span>   <span class="na">:nom</span><span class="o">=</span><span class="s">&quot;$equip[&#39;nom&#39;]&quot;</span>
+<span class="linenos" data-linenos="6 "></span>   <span class="na">:estadi</span><span class="o">=</span><span class="s">&quot;$equip[&#39;estadi&#39;]&quot;</span>
+<span class="linenos" data-linenos="7 "></span>   <span class="na">:titols</span><span class="o">=</span><span class="s">&quot;$equip[&#39;titols&#39;]&quot;</span>
+<span class="linenos" data-linenos="8 "></span><span class="p">/&gt;</span>
+<span class="linenos" data-linenos="9 "></span>@endsection 
+</code></pre></div>
+<ul>
+<li>Modifica el component (app/Views/components/Equip.php) per utilitzar les dades passades:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">public function __construct(</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">     public string $nom,</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">     public string $estadi,</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">     public int $titols ) { }</span>
+</code></pre></div>
+<ul>
+<li>Crea la ruta:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">Route::get(&#39;/equips/{id}&#39;, [EquipController::class, &#39;show&#39;]);</span>
+</code></pre></div>
+<ol start="6">
+<li>
+<p><strong>Qüestió:</strong> Com podem fer per no repetir l'array d'equips en el controlador ?</p>
+</li>
+<li>
+<p><strong>Qüestió:</strong> Què és un component Blade i quins avantatges té respecte a les vistes parcials?</p>
+</li>
+<li>
+<p><strong>Qüestio:</strong> Què permet la directiva @yield i com es relaciona amb @section?</p>
+</li>
+</ol>
+<h2 id="9-questio-per-que-es-important-tenir-una-plantilla-base-en-una-aplicacio-web">9. <strong>Qüestió:</strong> Per què és important tenir una plantilla base en una aplicació web?<a class="headerlink" href="#9-questio-per-que-es-important-tenir-una-plantilla-base-en-una-aplicacio-web" title="Permanent link">&para;</a></h2>
+<h4 id="pas-8-refactoritzar-el-codi">Pas 8: Refactoritzar el codi<a class="headerlink" href="#pas-8-refactoritzar-el-codi" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>No repetir l'array d'equips en el controlador</strong></li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">public $equips = [</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="x">        [&#39;nom&#39; =&gt; &#39;Barça Femení&#39;, &#39;estadi&#39; =&gt; &#39;Camp Nou&#39;, &#39;titols&#39; =&gt; 30],</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">        [&#39;nom&#39; =&gt; &#39;Atlètic de Madrid&#39;, &#39;estadi&#39; =&gt; &#39;Cívitas Metropolitano&#39;, &#39;titols&#39; =&gt; 10],</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">        [&#39;nom&#39; =&gt; &#39;Real Madrid Femení&#39;, &#39;estadi&#39; =&gt; &#39;Alfredo Di Stéfano&#39;, &#39;titols&#39; =&gt; 5],</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">    ];</span>
+<span class="linenos" data-linenos=" 6 "></span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">    public function index() {</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">        $equips = $this-&gt;equips;</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">        return view(&#39;equips.index&#39;, compact(&#39;equips&#39;));</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">    }</span>
+<span class="linenos" data-linenos="11 "></span>
+<span class="linenos" data-linenos="12 "></span><span class="x">    public function show($id) {</span>
+<span class="linenos" data-linenos="13 "></span><span class="x">        $equip = $this-&gt;equips[$id];</span>
+<span class="linenos" data-linenos="14 "></span><span class="x">        return view(&#39;equips.show&#39;, compact(&#39;equip&#39;));</span>
+<span class="linenos" data-linenos="15 "></span><span class="x">    }</span>
+</code></pre></div>
+<ol start="2">
+<li><strong>Passar les rutes a resource</strong></li>
+</ol>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">Route::resource(&#39;equips&#39;, EquipController::class);</span>
+</code></pre></div>
+3. <strong>Crear l'enllaç en el index per a vore un equip</strong></p>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>@foreach($equips as $key =&gt; $equip)
+<span class="linenos" data-linenos="2 "></span>    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="3 "></span>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ route(&#39;equips.show&#39;, $key) }}&quot;</span><span class="p">&gt;</span>{{ $equip[&#39;nom&#39;] }}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="4 "></span>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{ $equip[&#39;estadi&#39;] }}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="5 "></span>        <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>{{ $equip[&#39;titols&#39;] }}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="6 "></span>    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="7 "></span>@endforeach
+</code></pre></div>
+4. <strong>Utilitza chatgpt per a donar estil a les vistes mitjançant tailwind</strong></p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>app.blade.php
+<span class="linenos" data-linenos=" 2 "></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;ca&quot;</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 5 "></span>    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 6 "></span>    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&quot;X-UA-Compatible&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;IE=edge&quot;</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 7 "></span>    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 8 "></span>    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>@yield(&#39;title&#39;, &#39;Guia de futbol femení&#39;)<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 9 "></span>    @vite([&#39;resources/css/app.css&#39;])
+<span class="linenos" data-linenos="10 "></span><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="11 "></span><span class="p">&lt;</span><span class="nt">body</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;font-sans bg-gray-100 text-gray-900&quot;</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="12 "></span><span class="p">&lt;</span><span class="nt">header</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;bg-blue-800 text-white p-4&quot;</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="13 "></span>    @include(&#39;partials.menu&#39;)
+<span class="linenos" data-linenos="14 "></span><span class="p">&lt;/</span><span class="nt">header</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="15 "></span><span class="p">&lt;</span><span class="nt">main</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;container mx-auto p-6&quot;</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="16 "></span>    @yield(&#39;content&#39;)
+<span class="linenos" data-linenos="17 "></span><span class="p">&lt;/</span><span class="nt">main</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="18 "></span><span class="p">&lt;</span><span class="nt">footer</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;bg-blue-800 text-white text-center p-4&quot;</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="19 "></span>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="ni">&amp;copy;</span> 2024 Guia de Futbol Femení<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="20 "></span><span class="p">&lt;/</span><span class="nt">footer</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="21 "></span><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="22 "></span><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<p><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span>index.blade.php
+<span class="linenos" data-linenos=" 2 "></span>@extends(&#39;layouts.app&#39;)
+<span class="linenos" data-linenos=" 3 "></span>
+<span class="linenos" data-linenos=" 4 "></span>@section(&#39;title&#39;, &quot;Guia d&#39;Equips&quot;)
+<span class="linenos" data-linenos=" 5 "></span>
+<span class="linenos" data-linenos=" 6 "></span>@section(&#39;content&#39;)
+<span class="linenos" data-linenos=" 7 "></span><span class="p">&lt;</span><span class="nt">h1</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-3xl font-bold text-blue-800 mb-6&quot;</span><span class="p">&gt;</span>Guia d&#39;Equips<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="p">&lt;</span><span class="nt">table</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;w-full border-collapse border border-gray-300&quot;</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos=" 9 "></span>    <span class="p">&lt;</span><span class="nt">thead</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;bg-gray-200&quot;</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="10 "></span>    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="11 "></span>        <span class="p">&lt;</span><span class="nt">th</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;border border-gray-300 p-2&quot;</span><span class="p">&gt;</span>Nom<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="12 "></span>        <span class="p">&lt;</span><span class="nt">th</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;border border-gray-300 p-2&quot;</span><span class="p">&gt;</span>Estadi<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="13 "></span>        <span class="p">&lt;</span><span class="nt">th</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;border border-gray-300 p-2&quot;</span><span class="p">&gt;</span>Títols<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="14 "></span>    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="15 "></span>    <span class="p">&lt;/</span><span class="nt">thead</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="16 "></span>    <span class="p">&lt;</span><span class="nt">tbody</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="17 "></span>    @foreach($equips as $key =&gt; $equip)
+<span class="linenos" data-linenos="18 "></span>    <span class="p">&lt;</span><span class="nt">tr</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;hover:bg-gray-100&quot;</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="19 "></span>        <span class="p">&lt;</span><span class="nt">td</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;border border-gray-300 p-2&quot;</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="20 "></span>            <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;{{ route(&#39;equips.show&#39;, $key) }}&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-blue-700 hover:underline&quot;</span><span class="p">&gt;</span>{{ $equip[&#39;nom&#39;] }}<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="21 "></span>        <span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="22 "></span>        <span class="p">&lt;</span><span class="nt">td</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;border border-gray-300 p-2&quot;</span><span class="p">&gt;</span>{{ $equip[&#39;estadi&#39;] }}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="23 "></span>        <span class="p">&lt;</span><span class="nt">td</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;border border-gray-300 p-2&quot;</span><span class="p">&gt;</span>{{ $equip[&#39;titols&#39;] }}<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="24 "></span>    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="25 "></span>    @endforeach
+<span class="linenos" data-linenos="26 "></span>    <span class="p">&lt;/</span><span class="nt">tbody</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="27 "></span><span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="28 "></span>@endsection
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>equip.blade.php
+<span class="linenos" data-linenos="2 "></span><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;equip border rounded-lg shadow-md p-4 bg-white&quot;</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="p">&lt;</span><span class="nt">h2</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-xl font-bold text-blue-800&quot;</span><span class="p">&gt;</span>{{ $nom }}<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="4 "></span>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>Estadi:<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span> {{ $estadi }}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="5 "></span>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;&lt;</span><span class="nt">strong</span><span class="p">&gt;</span>Títols:<span class="p">&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span> {{ $titols }}<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="6 "></span><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span>menu.blade.php
+<span class="linenos" data-linenos="2 "></span><span class="p">&lt;</span><span class="nt">nav</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="3 "></span>    <span class="p">&lt;</span><span class="nt">ul</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;flex space-x-4&quot;</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="4 "></span>        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-white hover:underline&quot;</span><span class="p">&gt;</span>Inici<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="5 "></span>        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/equips&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-white hover:underline&quot;</span><span class="p">&gt;</span>Guia d&#39;Equips<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="6 "></span>        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;/estadis&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;text-white hover:underline&quot;</span><span class="p">&gt;</span>Llistat d&#39;Estadis<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="7 "></span>    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="linenos" data-linenos="8 "></span><span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+</code></pre></div></p>
+<h2 id="exercici-guia-destadis-de-futbol">Exercici: Guia d'Estadis de Futbol<a class="headerlink" href="#exercici-guia-destadis-de-futbol" title="Permanent link">&para;</a></h2>
+<p>L'objectiu d'aquest exercici és crear una extensió de la guia d'equips de futbol femení per incloure una nova funcionalitat: un llistat d'estadis de futbol. Els alumnes implementaran rutes, controladors i vistes per mostrar estadis i les seves característiques.</p>
+<hr />
+<h3 id="instruccions">Instruccions<a class="headerlink" href="#instruccions" title="Permanent link">&para;</a></h3>
+<h4 id="1-crear-un-controlador-destadis"><strong>1. Crear un controlador d'estadis</strong><a class="headerlink" href="#1-crear-un-controlador-destadis" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<p>Genera un nou controlador anomenat <code>EstadiController</code>.</p>
+</li>
+<li>
+<p>Afegeix un mètode <code>index</code> al controlador per retornar una vista amb un llistat d'estadis.</p>
+</li>
+</ol>
+<h2 id="estadiosfutbolfemeni-nom-estadi-johan-cruyff-ciutat-sant-joan-despi-capacitat-6000-equip_principal-fc-barcelona-femeni-nom-centro-deportivo-wanda-alcala-de-henares-ciutat-alcala-de-henares-capacitat-2800-equip_principal-atletic-de-madrid-femeni-nom-estadio-alfredo-di-stefano-ciutat-madrid-capacitat-6000-equip_principal-real-madrid-femeni"><div class="highlight"><pre><span></span><code><span class="linenos" data-linenos=" 1 "></span><span class="x">$estadiosFutbolFemeni = [</span>
+<span class="linenos" data-linenos=" 2 "></span><span class="x">    [</span>
+<span class="linenos" data-linenos=" 3 "></span><span class="x">    &#39;nom&#39; =&gt; &#39;Estadi Johan Cruyff&#39;,</span>
+<span class="linenos" data-linenos=" 4 "></span><span class="x">    &#39;ciutat&#39; =&gt; &#39;Sant Joan Despí&#39;,</span>
+<span class="linenos" data-linenos=" 5 "></span><span class="x">    &#39;capacitat&#39; =&gt; 6000,</span>
+<span class="linenos" data-linenos=" 6 "></span><span class="x">    &#39;equip_principal&#39; =&gt; &#39;FC Barcelona Femení&#39;</span>
+<span class="linenos" data-linenos=" 7 "></span><span class="x">    ],</span>
+<span class="linenos" data-linenos=" 8 "></span><span class="x">    [</span>
+<span class="linenos" data-linenos=" 9 "></span><span class="x">    &#39;nom&#39; =&gt; &#39;Centro Deportivo Wanda Alcalá de Henares&#39;,</span>
+<span class="linenos" data-linenos="10 "></span><span class="x">    &#39;ciutat&#39; =&gt; &#39;Alcalá de Henares&#39;,</span>
+<span class="linenos" data-linenos="11 "></span><span class="x">    &#39;capacitat&#39; =&gt; 2800,</span>
+<span class="linenos" data-linenos="12 "></span><span class="x">    &#39;equip_principal&#39; =&gt; &#39;Atlètic de Madrid Femení&#39;</span>
+<span class="linenos" data-linenos="13 "></span><span class="x">    ],</span>
+<span class="linenos" data-linenos="14 "></span><span class="x">    [</span>
+<span class="linenos" data-linenos="15 "></span><span class="x">    &#39;nom&#39; =&gt; &#39;Estadio Alfredo Di Stéfano&#39;,</span>
+<span class="linenos" data-linenos="16 "></span><span class="x">    &#39;ciutat&#39; =&gt; &#39;Madrid&#39;,</span>
+<span class="linenos" data-linenos="17 "></span><span class="x">    &#39;capacitat&#39; =&gt; 6000,</span>
+<span class="linenos" data-linenos="18 "></span><span class="x">    &#39;equip_principal&#39; =&gt; &#39;Real Madrid Femení&#39;</span>
+<span class="linenos" data-linenos="19 "></span><span class="x">    ]</span>
+<span class="linenos" data-linenos="20 "></span><span class="x">];</span>
+</code></pre></div><a class="headerlink" href="#estadiosfutbolfemeni-nom-estadi-johan-cruyff-ciutat-sant-joan-despi-capacitat-6000-equip_principal-fc-barcelona-femeni-nom-centro-deportivo-wanda-alcala-de-henares-ciutat-alcala-de-henares-capacitat-2800-equip_principal-atletic-de-madrid-femeni-nom-estadio-alfredo-di-stefano-ciutat-madrid-capacitat-6000-equip_principal-real-madrid-femeni" title="Permanent link">&para;</a></h2>
+<h4 id="2-crear-una-ruta-per-als-estadis"><strong>2. Crear una ruta per als estadis</strong><a class="headerlink" href="#2-crear-una-ruta-per-als-estadis" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Defineix una nova ruta a <code>routes/web.php</code> que apunti al mètode <code>index</code> del controlador.</li>
+</ol>
+<hr />
+<h4 id="3-crear-una-vista-per-mostrar-els-estadis"><strong>3. Crear una vista per mostrar els estadis</strong><a class="headerlink" href="#3-crear-una-vista-per-mostrar-els-estadis" title="Permanent link">&para;</a></h4>
+<ol>
+<li>Crea un fitxer de vista a <code>resources/views/estadis/index.blade.php</code> per mostrar els estadis en format de taula.</li>
+<li>Inclou el menu.</li>
+</ol>
+<hr />
+<h4 id="4-afegir-estils-al-llistat-destadis"><strong>4. Afegir estils al llistat d'estadis</strong><a class="headerlink" href="#4-afegir-estils-al-llistat-destadis" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<p>Crea un fitxer CSS a <code>resources/css/estadis.css</code> per estilitzar la taula.</p>
+</li>
+<li>
+<p>Inclou el CSS a la vista utilitzant <code>@vite</code>.</p>
+</li>
+<li>
+<p>Executa Vite per aplicar els estils.</p>
+</li>
+</ol>
+<hr />
+<h4 id="5-ampliar-la-guia-destadis"><strong>5. Ampliar la guia d'estadis</strong><a class="headerlink" href="#5-ampliar-la-guia-destadis" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<p>Afegir una nova ruta /estadis/crear per mostrar un formulari que permet afegir un nou estadi.</p>
+</li>
+<li>
+<p>Crear un controlador amb un mètode crear que retorne una vista amb el formulari.</p>
+</li>
+<li>
+<p>Dissenyar un formulari Blade que contingui camps per al nom de l'estadi, ciutat i capacitat.</p>
+</li>
+<li>
+<p>Mostrar un missatge de confirmació quan l'usuari faci clic al botó d'enviar.</p>
+</li>
+<li>
+<p>Crea un component per als estadis.</p>
+</li>
+<li>
+<p>Modifica la vista resources/views/estadis/index.blade.php per heretar de layouts.app.</p>
+</li>
+</ol>
+<h4 id="6-jugadores"><strong>6. Jugadores</strong><a class="headerlink" href="#6-jugadores" title="Permanent link">&para;</a></h4>
+<p>Fes el mateix amb les jugadores, crea un controlador, una vista i un component.</p>
+<p>Exemple : </p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">$jugadores = [</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">    [&#39;nom&#39; =&gt; &#39;Alexia Putellas&#39;, &#39;equip&#39; =&gt; &#39;Barça Femení&#39;, &#39;posició&#39; =&gt; &#39;Migcampista&#39;],</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">    [&#39;nom&#39; =&gt; &#39;Esther González&#39;, &#39;equip&#39; =&gt; &#39;Atlètic de Madrid&#39;, &#39;posició&#39; =&gt; &#39;Davantera&#39;],</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">    [&#39;nom&#39; =&gt; &#39;Misa Rodríguez&#39;, &#39;equip&#39; =&gt; &#39;Real Madrid Femení&#39;, &#39;posició&#39; =&gt; &#39;Portera&#39;],</span>
+<span class="linenos" data-linenos="5 "></span><span class="x">];</span>
+</code></pre></div>
+<h4 id="7-partits"><strong>7. Partits</strong><a class="headerlink" href="#7-partits" title="Permanent link">&para;</a></h4>
+<p>Fes el mateix amb els partits, crea un controlador, una vista i un component.</p>
+<p>Exemple :</p>
+<div class="highlight"><pre><span></span><code><span class="linenos" data-linenos="1 "></span><span class="x">$partits = [</span>
+<span class="linenos" data-linenos="2 "></span><span class="x">    [&#39;local&#39; =&gt; &#39;Barça Femení&#39;, &#39;visitant&#39; =&gt; &#39;Atlètic de Madrid&#39;, &#39;data&#39; =&gt; &#39;2024-11-30&#39;, &#39;resultat&#39; =&gt; null],</span>
+<span class="linenos" data-linenos="3 "></span><span class="x">    [&#39;local&#39; =&gt; &#39;Real Madrid Femení&#39;, &#39;visitant&#39; =&gt; &#39;Barça Femení&#39;, &#39;data&#39; =&gt; &#39;2024-12-15&#39;, &#39;resultat&#39; =&gt; &#39;0-3&#39;],</span>
+<span class="linenos" data-linenos="4 "></span><span class="x">];</span>
+</code></pre></div>
+<h4 id="8-modifica-el-menu"><strong>8. Modifica el menu</strong><a class="headerlink" href="#8-modifica-el-menu" title="Permanent link">&para;</a></h4>
+<p>Per poder anar a totes les pantalles i canvia les rutes a anomenades.</p>
+<hr />
+<h4 id="preguntes-per-reflexionar">Preguntes per reflexionar<a class="headerlink" href="#preguntes-per-reflexionar" title="Permanent link">&para;</a></h4>
+<ol>
+<li><strong>Rutes:</strong> Per què utilitzem un controlador per gestionar la lògica d'aquesta funcionalitat?</li>
+<li><strong>Blade:</strong> Què passa si intentem accedir a una clau que no existeix en un array?</li>
+<li><strong>CSS i Vite:</strong> Quina diferència hi ha entre incloure un fitxer CSS estàtic i utilitzar <code>@vite</code>?</li>
+</ol>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      2021-2025 Aitor Medrano, Luis Alemañ, Ignasi Gomis - Licencia CC BY-NC-SA
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/aitormedrano" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22.46 6c-.77.35-1.6.58-2.46.69.88-.53 1.56-1.37 1.88-2.38-.83.5-1.75.85-2.72 1.05C18.37 4.5 17.26 4 16 4c-2.35 0-4.27 1.92-4.27 4.29 0 .34.04.67.11.98C8.28 9.09 5.11 7.38 3 4.79c-.37.63-.58 1.37-.58 2.15 0 1.49.75 2.81 1.91 3.56-.71 0-1.37-.2-1.95-.5v.03c0 2.08 1.48 3.82 3.44 4.21a4.2 4.2 0 0 1-1.93.07 4.28 4.28 0 0 0 4 2.98 8.52 8.52 0 0 1-5.33 1.84q-.51 0-1.02-.06C3.44 20.29 5.7 21 8.12 21 16 21 20.33 14.46 20.33 8.79c0-.19 0-.37-.01-.56.84-.6 1.56-1.36 2.14-2.23"/></svg>
+    </a>
+  
+    
+    
+    
+    
+    <a href="mailto:<a.medrano@edu.gva.es>" target="_blank" rel="noopener" title="" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 12.13c-.15.01-.29.06-.39.17l-1 1 2.05 2 1-1c.22-.21.22-.56 0-.77l-1.24-1.23a.56.56 0 0 0-.38-.17m-2 1.75L13 19.94V22h2.06l6.06-6.07M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h7v-.89l8.24-8.22c.47-.49 1.12-.76 1.8-.76.34 0 .68.06 1 .19V6c0-1.12-.92-2-2.04-2m0 4-8 5-8-5V6l8 5 8-5"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": ".", "features": ["header.autohide", "toc.integrate", "content.tabs.link"], "search": "assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copiat al porta-retalls", "clipboard.copy": "C\u00f2pia al porta-retalls", "search.result.more.one": "1 m\u00e9s en aquesta p\u00e0gina", "search.result.more.other": "# m\u00e9s en aquesta p\u00e0gina", "search.result.none": "Cap document coincideix", "search.result.one": "1 document coincident", "search.result.other": "# documents coincidents", "search.result.placeholder": "Escriu per a comen\u00e7ar a cercar", "search.result.term.missing": "Desaparegut", "select.version": "Selecciona la versi\u00f3"}, "version": null}</script>
+    
+    
+      <script src="assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+    
+  </body>
+</html>
